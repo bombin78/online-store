@@ -1,0 +1,58 @@
+<section class="su-sidebar-catalog">
+	<div class="su-sidebar-menu">
+		<h2 class="su-sidebar-menu_title">{{ sidebarCatalog.title }}</h2>
+
+		<ul class="su-level1 su-sidebar-menu_list su-list">
+
+			{% for data in sidebarCatalog.data %}
+				<li class="su-level1 su-list_item">
+					<a class="su-level1 su-list_link su-link-catalog {{ data.modifier }}" href="{{ data.href }}">
+						<span class="su-link-catalog_title">{{ data.title }}</span>
+					</a>
+
+					{% if data.dropdown %}
+						<div class="su-level1 su-list_dropdown su-dropdown">
+							<div class="su-dropdown_container">
+								<h3 class="su-dropdown_title">{{ data.title }}</h3>
+								<ul class="su-level2 su-dropdown_list su-list">
+
+									{% for rows in data.dropdown %}
+										<li class="su-level2 su-list_item">
+											<a class="su-level2 su-list_link su-link-catalog {{ rows.modifier }}" href="{{ rows.href }}">
+												<span class="su-link-catalog_title">{{ rows.title }}</span>
+											</a>
+
+											{% if rows.sublist %}
+												<div class="su-level2 su-list_dropdown su-dropdown">
+													<div class="su-dropdown_container">
+														<h4 class="su-dropdown_title">{{ rows.title }}</h4>
+														<ul class="su-dropdown_list su-list">
+
+															{% for row in rows.sublist %}
+																<li class="su-list_item">
+																	<a class="su-list_link su-link-catalog {{ row.modifier }}" href="{{ row.href }}">
+																		<span class="su-link-catalog_title">{{ row.title }}</span>
+																	</a>
+																</li>
+															{% endfor %}
+
+														</ul>
+													</div>
+												</div>
+											{% endif %}
+
+										</li>
+									{% endfor %}
+
+								</ul>
+							</div>
+
+						</div>
+					{% endif %}
+
+				</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+</section>

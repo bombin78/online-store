@@ -1,0 +1,13 @@
+<ol class="su-breadcrumb">
+
+	{% for row in breadcrumb %}
+		{% if row.href %}
+			<li class="su-breadcrumb_item">
+				<a class="su-breadcrumb_link {{ row.modifier }}" href="{{ row.modifier }}">{{ row.title }}</a>
+			</li>
+		{% else %}
+			<li class="su-breadcrumb_item">{{ row.title }}</li>
+		{% endif %}
+	{% endfor %}
+
+</ol>

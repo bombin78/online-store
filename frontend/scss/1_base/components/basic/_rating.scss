@@ -1,0 +1,32 @@
+//Цвета
+$color-rating-icon : lib-color(accent-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('rating');
+//-------------------------------
+
+#{$wrapper} {
+	&_link {
+		position        : relative;
+		display         : inline-block;
+		height          : 18px;
+
+		text-decoration : none;
+
+		@include lib-rating-icon ($text-shadow : true);
+
+		@at-root {
+			#{$wrapper}_current {
+				position : absolute;
+				top      : 0;
+				left     : 0;
+				height   : 100%;
+
+				overflow : hidden;
+
+				@include lib-rating-icon ($color : $color-rating-icon);
+			}
+		}
+	}
+}

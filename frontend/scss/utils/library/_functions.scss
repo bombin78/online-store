@@ -1,0 +1,60 @@
+// ФУНКЦИИ
+
+// ВАЖНО!!!
+// Для избежания конфликтов с подключаемыми scss фреймфорками и библиотеками
+// обязательно добавляйте "lib-" в начале функций этого файла
+
+// 1. Получить класс.
+@function lib-get-class($class-name) {
+	@return '.' + $lib-class-prefix + $class-name;
+}
+
+// 2. Получить класс-модификатор.
+@function lib-get-modifier($modifier-name) {
+	@return '._' + $lib-class-prefix + $modifier-name;
+}
+
+// 3. Получить значение из масива (map).
+@function lib-val($map, $key) {
+	@if map-has-key($map, $key) {
+		@return map-get($map, $key);
+	} @else {
+		@warn "Unknown `#{$key}` in `#{$map}`.";
+		@return null;
+	}
+}
+
+// 4. Получить цвет
+@function lib-color($key) {
+	@return lib-val($lib-palette, $key);
+}
+
+// 5. Получить точку переключения
+@function lib-breakpoints($key) {
+	@return lib-val($lib-breakpoints, $key);
+}
+
+// 6. Получить размер шрифта
+@function lib-font-size($level) {
+	@return lib-val($lib-type-scale, $level);
+}
+
+// 7. Получить высоту строки
+@function lib-line-height($level) {
+	@return map-get($lib-line-heights, $level);
+}
+
+// 8. Получить верхний отступ строки
+@function lib-line-top($level) {
+	@return map-get($lib-padding-top, $level);
+}
+
+// 9. Получить размещение по z-оси
+@function lib-z($name) {
+	@if index($lib-z-indexes, $name) {
+		@return (length($lib-z-indexes) - index($lib-z-indexes, $name)) + 1;
+	} @else {
+		@warn 'There is no item "#{$name}" in this list; choose one of: #{$lib-z-indexes}';
+		@return null;
+	}
+}

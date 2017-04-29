@@ -1,0 +1,19 @@
+{% if typeField == "full" %}
+<div class="su-field-textarea _su-error">
+	<label class="su-field-textarea_label" for="textarea-text">Название метки</label>
+	<textarea id="textarea-text" class="su-field-textarea_textarea" rows="4" name="#" placeholder="Текстовая область" required></textarea>
+	<span class="su-field-textarea_help">Текст подсказки</span>
+	<span class="su-field-textarea_error">Текст ошибки</span>
+</div>
+{% elseif typeField == "label" %}
+<div class="su-field-textarea">
+	<label class="su-field-textarea_label" for="textarea-text">Название метки</label>
+	<textarea id="textarea-text" class="su-field-textarea_textarea" rows="4" name="#" placeholder="Текстовая область" required></textarea>
+	<span class="su-field-textarea_error">Текст ошибки</span>
+</div>
+{% else %}
+	<div class="su-field-textarea">
+		<textarea id="textarea-text" class="su-field-textarea_textarea" rows="4" name="#" placeholder="Текстовая область" required></textarea>
+		<span class="su-field-textarea_error">Текст ошибки</span>
+	</div>
+{% endif %}

@@ -1,0 +1,16 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('workshop');
+$banner-block : lib-get-class('banner-block');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&_partner#{$banner-block} {
+		margin-top: 30px;
+	}
+}

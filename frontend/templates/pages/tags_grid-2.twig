@@ -1,0 +1,75 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-tags">
+		{% if tagsPage == 'links'%}
+			<h1 class="su-tags_title">Тэги</h1>
+			<ul class="su-tags_tag-list su-list _su-circle">
+
+				{% for row in listTags %}
+					<li class="su-list_item">
+						<a class="su-tags-link {{ modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+					</li>
+				{% endfor %}
+
+			</ul>
+		{% else %}
+			<h1 class="su-tags_title">Маникюрные кусачки</h1>
+			{% include 'blocks/popular.twig' with {overrideClassPopular: 'su-tags_popular'} %}
+			{% include 'blocks/group-buttons.twig' with {overrideGroupButtons: 'su-tags_sorting'} %}
+			<ul class="su-tags_offers su-list">
+
+				{% for row in offers %}
+					<li class="su-list_item">
+						{% include 'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+					</li>
+				{% endfor %}
+
+			</ul>
+			{% include 'blocks/pagination.twig' with {overrideClassPagination: 'su-tags_pagination'} %}
+			<ul class="su-tags_articles su-list">
+				<li class="su-list_item">
+					{% include 'blocks/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+				</li>
+				<li class="su-list_item">
+					{% include 'blocks/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+				</li>
+				<li class="su-list_item">
+					{% include 'blocks/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+				</li>
+			</ul>
+			{% include 'blocks/videoblock.twig' with {overrideClassVideo: 'su-list_video'} %}
+			<dl class="su-tags_blog su-detail">
+				<dt class="su-detail_label">Читайте также</dt>
+				<dd class="su-detail_value">
+					<ul class="su-tag-blog-links su-list _su-circle">
+
+						{% for row in linksBlog %}
+							<li class="su-list_item">
+								<a class="su-tags-link {{ modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+							</li>
+						{% endfor %}
+
+					</ul>
+				</dd>
+			</dl>
+		{% endif %}
+
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		//............................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

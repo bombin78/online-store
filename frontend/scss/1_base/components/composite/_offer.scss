@@ -1,0 +1,173 @@
+//Цвета
+$bg-offer : lib-color(primary-lighter);
+$bg-offer-hover : lib-color(accent-lighter);
+$bg-offer-view : lib-color(primary-lighter);
+$color-offer-border : lib-color(primary-base-light);
+$color-offer-shadow : lib-color(primary-dark);
+$color-title : lib-color(secondary-base);
+$color-price : lib-color(accent-base-bright);
+$color-price-hover : lib-color(secondary-dark);
+$color-new-price : lib-color(accent-base-bright);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('offer');
+$description : lib-get-class('offer-description');
+$accent : lib-get-class('offer-accent');
+$title : lib-get-class('offer-title');
+$annotation : lib-get-class('offer-annotation');
+$text : lib-get-class('offer-text');
+$new-price : lib-get-class('offer-new-price');
+$old-price : lib-get-class('offer-old-price');
+$price : lib-get-class('offer-price');
+$button : lib-get-class('offer-button');
+$preview : lib-get-class('preview');
+$link : lib-get-class('link');
+$detail : lib-get-class('detail');
+$rating : lib-get-class('rating');
+$block : lib-get-class('block');
+//-------------------------------
+
+#{$wrapper} {
+	position         : relative;
+	padding          : 16px 15px 62px 15px;
+	width            : 100%;
+
+	border           : 1px solid $color-offer-border;
+	border-radius    : 5px;
+	background-color : $bg-offer;
+	box-shadow       : 0 1px 2px $color-offer-shadow;
+	&:hover {
+		background : $bg-offer-hover;
+		#{$description} {
+			&_container {
+				@include lib-text-blackout-change;
+			}
+
+			@at-root #{$wrapper}:hover {
+				#{$annotation},
+				#{$old-price},
+				#{$new-price},
+				#{$price} {
+					@include lib-text-blackout-change;
+				}
+
+				#{$price} {
+					color : $color-price-hover;
+				}
+			}
+
+		}
+	}
+	&_preview#{$preview} {
+		position : absolute;
+		z-index  : 1;
+	}
+
+	@at-root {
+		#{$description} {
+			position : relative;
+			&_container {
+				position : relative;
+				height   : 188px;
+
+				overflow : hidden;
+
+				@include lib-text-blackout(
+						$height : 20px,
+						$width : 15px
+				);
+
+				@at-root {
+					#{$title}#{$block} {
+						padding-left : 170px;
+						#{$block}_element#{$link} {
+							color           : $color-title;
+							font-size       : lib-font-size(-2);
+							font-family     : 'OpenSansBold';
+							text-decoration : none;
+						}
+					}
+
+					#{$annotation} {
+						position   : relative;
+						margin-top : 10px;
+						height     : 40px;
+
+						font-size  : lib-font-size(-1);
+						text-align : center;
+
+						@include lib-text-hyphens($type : limitРyphens);
+						@include lib-text-blackout(
+								$height : 50%,
+								$width : 12px
+						);
+					}
+
+					#{$text} {
+						padding-top  : 8px;
+						padding-left : 170px;
+
+						font-size    : lib-font-size(-3);
+					}
+				}
+
+			}
+
+			@at-root {
+				#{$description}_rating#{$rating} {
+					position : absolute;
+					bottom   : 3px;
+				}
+
+				#{$new-price},
+				#{$old-price} {
+					@include lib-text-hyphens($type : lastClip);
+					@include lib-text-blackout;
+				}
+
+				#{$new-price}#{$detail} {
+					bottom : -37px;
+
+					color  : $color-new-price;
+
+					@include lib-price-detail (
+							$position : absolute
+					);
+					#{$detail}_value {
+						font-weight : $lib-font-weight-bold;
+					}
+				}
+
+				#{$old-price} {
+					@include lib-price-detail;
+					#{$detail}_value {
+						text-decoration : line-through;
+					}
+				}
+
+				#{$price} {
+					position    : absolute;
+					bottom      : 15px;
+					width       : 65px;
+
+					color       : $color-price;
+					font-size   : lib-font-size(e2);
+					font-family : 'OpenSansBold';
+
+					@include lib-text-hyphens($type : lastClip);
+					@include lib-text-blackout;
+				}
+
+				#{$button}#{$block} {
+					position : absolute;
+					right    : 0;
+					bottom   : -47px;
+					z-index  : 1;
+				}
+			}
+
+		}
+	}
+
+}

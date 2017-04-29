@@ -1,0 +1,31 @@
+//Классы
+$wrapper : lib-get-class('grid-1');
+//-------------------------------
+
+#{$wrapper} {
+	&_container {
+		$padding: 10px;
+
+		position  : relative;
+		margin    : 0 auto;
+		padding  : $padding;
+		width    : $lib-width-container-normal;
+
+		@include lib-respond-to(normal) {
+			width   : $lib-width-container-narrow;
+
+		}
+		@include lib-respond-to(narrow) {
+			width   : $lib-width-container-mobile;
+		}
+		@extend %lib-clearfix;
+
+		@at-root {
+			@include lib-grid-param (
+					$grid-class: $wrapper,
+					$content-float: only-full-width
+			);
+		}
+
+	}
+}

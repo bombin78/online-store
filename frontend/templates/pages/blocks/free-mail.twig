@@ -1,0 +1,19 @@
+<div class="{{ overrideClassfreeMail }} su-free-mail">
+	<div class="su-free-mail_title">
+		Хит! Получите бесплатную книгу на email "Про маникюр"
+	</div>
+	<div class="su-free-mail_description">
+		<p class="su-free-mail_text-1">
+			В книге вы найдете ссылки на видео-уроки по евроманикюру, парафинотерапии и много чего еще.<br>
+			За 5 лет этот курс скачали 27568 подписчиц. Мы получили тысячи отличных отзывов. И это совершенно бесплатно для вас.
+		</p>
+		<p class="su-free-mail_text-2">
+			Кроме самого курса вы получите от интернет-магазина Маникюр Шоп специальный подарок-сюрприз. Подписывайтесь прямо сейчас!
+		</p>
+	</div>
+	<div class="su-free-mail_user-data">
+
+		{% include '../../../vendors/mailerlite/mailerlite.twig' with {overrideClassMailerlite: 'free-mail_mailerlite'} %}
+
+	</div>
+</div>

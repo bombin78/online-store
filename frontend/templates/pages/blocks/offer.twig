@@ -1,0 +1,64 @@
+<div class="{{ overrideClassOffer }} su-offer">
+	<div class="su-offer_preview su-preview">
+		<a class="su-preview_link su-link-img" href="{{ row.href }}">
+			<img class="su-link-img_img" src="{{ row.src }}" alt="">
+		</a>
+	</div>
+	<div class="su-offer-description">
+		<div class="su-offer-description_container">
+			{% if row.accent %}
+				<div class="su-offer-accent">{{ row.accent }}</div>
+			{% endif %}
+
+			{% if row.title %}
+				<div class="su-offer-title su-block">
+					<a class="su-block_element su-link" href="{{ row.href }}">{{ row.title }}</a>
+				</div>
+			{% endif %}
+
+			{% if row.annotation %}
+				<div class="su-offer-annotation">{{ row.annotation }}</div>
+			{% endif %}
+
+			{% if row.text %}
+				<p class="su-offer-text">{{ row.text }}</p>
+			{% endif %}
+		</div>
+
+		{% if row.rating %}
+			<div class="su-offer-description_rating su-rating">
+				Рейтинг:
+				<a class="su-rating_link" href="#">
+					<span class="su-rating_current" style="width:50%"></span>
+				</a>
+			</div>
+		{% endif %}
+
+		{% if row.priceValue %}
+			<dl class="su-offer-new-price su-detail">
+				<dt class="su-detail_label">{{ row.priceLabel }}</dt>
+				<dd class="su-detail_value su-currency">{{ row.priceValue }}</dd>
+			</dl>
+		{% endif %}
+
+		{% if row.oldPriceValue %}
+			<dl class="su-offer-old-price su-detail">
+				<dt class="su-detail_label">{{ row.oldPriceLabel }}</dt>
+				<dd class="su-detail_value su-currency">{{ row.oldPriceValue }}</dd>
+			</dl>
+		{% endif %}
+
+		{% if row.price %}
+			<div class="su-offer-price su-currency">{{ row.price }}</div>
+		{% endif %}
+
+		{% if row.buttonTitle %}
+			<div class="su-offer-button su-block">
+				<a class="su-block_element su-link-btn {{ row.buttonModifier }}" href="{{ buttonHref }}">{{ row.buttonTitle }}</a>
+			</div>
+		{% endif %}
+		{% if row.close %}
+			<div class="su-offer-close"></div>
+		{% endif %}
+	</div>
+</div>

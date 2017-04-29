@@ -1,0 +1,69 @@
+//Цвета
+$bg-field : lib-color(primary-lighter);
+$color-border-field : lib-color(primary-base);
+$color-error : lib-color(accent-base-bright);
+$color-border-field-error : lib-color(accent-base-bright);
+$color-label-required : lib-color(accent-base-bright);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('field-select');
+$_error : lib-get-modifier('error');
+$_required : lib-get-modifier('required');
+//-------------------------------
+
+#{$wrapper} {
+	&_label,
+	&_help {
+		display : block;
+	}
+	&_label {
+		margin-bottom: 3px;
+		&#{$_required} {
+			padding-left: 12px;
+			&:before {
+				content      : '*';
+				float        : left;
+				margin-left : -12px;
+
+				color        : $color-label-required
+			}
+		}
+	}
+	&_select {
+		display       : inline-block;
+		padding-right : 5px;
+		padding-left  : 5px;
+		height        : 30px;
+		width         : 100%;
+
+		line-height   : 30px;
+		background    : $bg-field;
+		border-top    : 3px solid $color-border-field;
+		border-right  : 1px solid $color-border-field;
+		border-bottom : 1px solid $color-border-field;
+		border-left   : 3px solid $color-border-field;
+	}
+	&_help {
+		margin-top: 3px;
+		font-size: lib-font-size(-2);
+	}
+	&_error {
+		display : none;
+
+		color   : $color-error,
+	}
+	&_error {
+		display : none;
+
+		color   : $color-error,
+	}
+	&#{$_error} {
+		#{$wrapper}_select {
+			border-color : $color-border-field-error,
+		}
+		#{$wrapper}_error {
+			display : block;
+		}
+	}
+}

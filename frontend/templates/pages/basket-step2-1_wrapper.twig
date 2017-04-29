@@ -1,0 +1,55 @@
+{% extends '../layout/template_wrapper.twig' %}
+
+{% block wrapper_sections %}
+
+	<div class="su-basket">
+		{% include 'blocks/basket-header.twig' %}
+		{% include 'blocks/basket-steps.twig' %}
+		<div class="su-basket-tab">
+			<div class="su-order-login">
+				<div class="su-order-spoiler">
+					<h2 class="su-order-spoiler_title su-block">
+						<a class="su-block_element" href="#">Я уже регистрировался раньше</a>
+					</h2>
+					<div class="su-order-spoiler_content ">
+						{% include '../layout/modal/blocks/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true } %}
+						{% include '../layout/modal/blocks/login-form.twig' with { overrideClassLoginForm: 'su-order-spoiler_login', textButton: 'Оформить' } %}
+					</div>
+				</div>
+			</div>
+			<div class="su-order-reg">
+				<div class="su-order-spoiler">
+					<h2 class="su-order-spoiler_title su-block">
+						<a class="su-block_element" href="#">Я впервые делаю у вас покупку</a>
+					</h2>
+					<div class="su-order-spoiler_content">
+						{% include '../layout/modal/blocks/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true }%}
+						{% include '../layout/modal/blocks/reg-form.twig' with { overrideClassRegForm: 'su-order-spoiler_reg', textButton: 'Оформить' } %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ОТКРЫТЬ/ЗАКРЫТЬ СПОЙЛЕР
+		$(document).on('click', '.su-order-spoiler_title', function(e){
+			e.preventDefault();
+
+			var self = $(this).closest('.su-order-spoiler').find('.su-order-spoiler_content');
+
+			self.slideToggle();
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

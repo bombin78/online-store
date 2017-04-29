@@ -1,0 +1,10 @@
+<div class="{{ overrideGroupButtons }} su-group-buttons">
+	{{ groupButtons.typeAction }}
+	<ul class="su-group-buttons_list su-list">
+		{% for item in groupButtons.valueAction %}
+			<li class="su-list_item {{ item.modifier }}">
+				<a class="su-group-link" href="{{ item.href }}">{{ item.textLink }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

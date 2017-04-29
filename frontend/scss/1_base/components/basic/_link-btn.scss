@@ -1,0 +1,142 @@
+//Цвета
+$color-link : lib-color(primary-lighter);
+$color-link-animation : lib-color(primary-lighter);
+$color-icon-shadow : lib-color(primary-darker);
+$bg-link : lib-color(secondary-light);
+$bg-link-hover : lib-color(secondary-base);
+$bg-link-bestsellers : lib-color(accent-base-bright);
+$bg-link-sale : lib-color(primary-dark);
+$bg-link-vk : lib-color(background-vk);
+$bg-link-fb : lib-color(background-fb);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('link-btn');
+$_buy : lib-get-modifier('buy');
+$_comment : lib-get-modifier('comment');
+$_favorites : lib-get-modifier('favorites');
+$_bestsellers : lib-get-modifier('bestsellers');
+$_sale : lib-get-modifier('sale');
+$_vk : lib-get-modifier('vk');
+$_fb : lib-get-modifier('fb');
+//-------------------------------
+
+#{$wrapper} {
+	display         : inline-block;
+	position        : relative;
+	padding         : 0 12px;
+	height          : 32px;
+
+	line-height     : 32px;
+	cursor          : pointer;
+	color           : $color-link;
+	background      : $bg-link;
+	font-weight     : $lib-font-weight-bold;
+	text-decoration : none;
+	&:focus,
+	&:hover,
+	&:visited {
+		color           : $color-link-animation;
+		text-decoration : none;
+	}
+	&:hover {
+		background : $bg-link-hover;
+	}
+	&#{$_buy},
+	&#{$_comment},
+	&#{$_favorites},
+	&#{$_vk},
+	&#{$_fb},
+	&#{$_bestsellers},
+	&#{$_sale} {
+		&:after {
+			position : absolute;
+
+			@include lib-font-icon;
+		}
+	}
+	&#{$_buy},
+	&#{$_comment},
+	&#{$_favorites},
+	&#{$_vk},
+	&#{$_fb} {
+		border-radius : 3px;
+		&:after {
+			left : 11px;
+		}
+	}
+	&#{$_buy} {
+		padding-left : 35px;
+		&:after {
+			content : '\f291';
+			top     : 7px;
+		}
+	}
+	&#{$_comment} {
+		padding-left : 33px;
+		&:after {
+			content : '\f075';
+			top     : 7px;
+		}
+	}
+	&#{$_favorites} {
+		padding-left : 33px;
+		&:after {
+			content : '\f005';
+			top     : 8px;
+		}
+	}
+	&#{$_vk},
+	&#{$_fb} {
+		padding-left   : 40px;
+
+		font-size      : lib-font-size(-2);
+		letter-spacing : -0.025em;
+		&:after {
+			top       : 5px;
+
+			font-size : lib-font-size(2);
+		}
+	}
+	&#{$_vk} {
+		background : $bg-link-vk;
+		&:after {
+			content : '\f189';
+		}
+	}
+	&#{$_fb} {
+		background : $bg-link-fb;
+		&:after {
+			content : '\f230';
+		}
+	}
+	&#{$_bestsellers},
+	&#{$_sale} {
+		padding-left   : 38px;
+		height         : 38px;
+
+		line-height    : 38px;
+		border-radius  : 5px;
+		font-size      : lib-font-size(-3);
+		text-transform : uppercase;
+		&:after {
+			top         : 11px;
+			left        : 12px;
+
+			font-size   : lib-font-size(0);
+			text-shadow : 1px 1px 2px $color-icon-shadow;
+		}
+	}
+	&#{$_bestsellers} {
+		background : $bg-link-bestsellers;
+		&:after {
+			content : '\f004';
+		}
+	}
+	&#{$_sale} {
+		background : $bg-link-sale;
+		&:after {
+			content : '\f02b';
+		}
+	}
+}

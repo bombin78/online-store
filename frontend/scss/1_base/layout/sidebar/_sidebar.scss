@@ -1,0 +1,121 @@
+//Импорт файлов
+@import 'blocks/sidebar-banner';
+@import 'blocks/sidebar-blog';
+@import 'blocks/sidebar-buttons';
+@import 'blocks/sidebar-catalog';
+@import 'blocks/sidebar-menu';
+@import 'blocks/sidebar-viewed';
+//-------------------------------
+
+//Цвета
+$bg-menu : lib-color(primary-light);
+$bg-dropdown-container : lib-color(primary-light);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('sidebar');
+$catalog : lib-get-class('sidebar-catalog');
+$buttons : lib-get-class('sidebar-buttons');
+$banner: lib-get-class('sidebar-banner');
+$blog: lib-get-class('sidebar-blog');
+$viewed: lib-get-class('sidebar-viewed');
+$menu : lib-get-class('sidebar-menu');
+$link-catalog : lib-get-class('link-catalog');
+$dropdown : lib-get-class('dropdown');
+$list : lib-get-class('list');
+$_show : lib-get-modifier('_show');
+$_open : lib-get-modifier('_open');
+$_list : lib-get-modifier('_list');
+//-------------------------------
+
+#{$wrapper} {
+	position    : relative;
+	padding-top : 20px;
+	z-index     : lib-z('aside');
+
+	@include lib-respond-to(mobile) {
+		position    : fixed;
+		margin-left : -270px;
+		height      : 100%;
+		width       : 260px;
+	}
+	#{$catalog},
+	#{$buttons},
+	#{$banner},
+	#{$blog},
+	#{$viewed} {
+		margin-top : 30px;
+		&:first-child {
+			margin-top : 0;
+		}
+	}
+	#{$catalog} {
+		@include lib-respond-to(mobile) {
+			margin-top : -42px;
+			height     : 100%;
+			width      : 100%;
+
+			overflow   : auto;
+			#{$menu} {
+				background    : $bg-menu;
+				border        : none;
+				border-radius : 0;
+				&_list#{$list} {
+					#{$list}_item {
+						padding-left : 0;
+						> #{$list}_dropdown#{$dropdown}#{$_show} {
+							display : block;
+						}
+						&:hover {
+							> #{$list}_dropdown#{$dropdown}:not(#{$_show}) {
+								display : none;
+							}
+						}
+						#{$list}_link#{$link-catalog} {
+							padding-left : 0;
+							&#{$_list} {
+								&:before {
+									display : none;
+								}
+								&:after {
+									content : '\f078';
+									display : block;
+								}
+								&#{$_open} {
+									&:after {
+										content : '\f077';
+									}
+								}
+							}
+						}
+						#{$list}_dropdown#{$dropdown} {
+							position : relative;
+							left     : 0;
+							padding  : 0;
+							#{$dropdown}_container {
+								padding       : 0 5px 15px 5px;
+								min-height    : 100%;
+								width         : 100%;
+
+								border-radius : 0;
+								border        : none;
+								background    : $bg-dropdown-container;
+								box-shadow    : none;
+								#{$dropdown}_title {
+									display : none;
+								}
+								#{$dropdown}_list#{$list} {
+									margin-top   : 0;
+									padding-top  : 0;
+									padding-left : 10px;
+
+									background   : transparent;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

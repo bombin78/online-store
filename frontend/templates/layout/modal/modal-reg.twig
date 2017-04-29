@@ -1,0 +1,15 @@
+<div class="su-modal-reg modal fade">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<div class="su-reg-title">Регистрация на сайте</div>
+			<div class="su-reg-close" data-dismiss="modal" aria-label="Close"></div>
+		</div>
+		<div class="modal-body">
+			<div class="su-reg">
+				{% include 'blocks/social-links.twig' with { overrideClassSocialLinks: 'su-reg_links' } %}
+				{% include 'blocks/reg-form.twig' with { overrideClassLoginForm: 'su-reg_form', textButton: 'Зарегистрироваться' } %}
+			</div>
+		</div>
+		{#<div class="modal-footer"></div>#}
+	</div>
+</div>

@@ -1,0 +1,95 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-contacts">
+		<h1 class="su-contacts_main-title">Контакты</h1>
+		<h2 class="su-contacts_title">Свяжитесь с нами</h2>
+		<p class="su-contacts_text">Звоните по будням с 10:00 до 19:00</p>
+		<p class="su-contacts_text"><b>+7 (495) 645-35-03</b> (Москва)</p>
+		<p class="su-contacts_text"><b>+7 (812) 309-53-28</b> (Санкт-Петербург)</p>
+		<h3 class="su-contacts_subtitle">Адреса пунктов выдачи заказов в Москве:</h3>
+		<ul class="su-contacts_list su-list">
+			<li class="su-list_item">
+				<p>м. Планерная 30 секунд от метро, ул. Планерная, 7 ТПУ Планерная (2 этаж)</p>
+				<div class="su-contacts-map">
+					<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=0RF_RVwcnwyMLcf39q-qUZPwo8HorCFJ&width=100%&height=400&lang=ru_RU&sourceType=constructor"></script>
+				</div>
+			</li>
+			<li class="su-list_item">
+				<p>м. Юго-Западная 1 минута от метро, Проспект Вернадского, 86 Б ТЦ Альмирал (1 этаж)</p>
+				<div class="su-contacts-map">
+					<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=pBUakcVNbKCbZSZbtfMSEyYLDlv-xOFB&width=100%&height=400&lang=ru_RU&sourceType=constructor"></script>
+				</div>
+			</li>
+		</ul>
+		<h2 class="su-contacts_title">Напишите нам</h2>
+		<form class="su-contacts-feedback" name="#" action="#" method="POST">
+			<div class="su-contacts-feedback_name su-field-text">
+				<label class="su-field-text_label" for="input-name">Ваше имя</label>
+				<input id="input-name" class="su-field-text_input" type="text" name="#" placeholder="" required>
+				<span class="su-field-text_error">Текст ошибки</span>
+			</div>
+			<div class="su-contacts-feedback_email su-field-text">
+				<label class="su-field-text_label" for="input-email">Ваш email</label>
+				<input id="input-email" class="su-field-text_input" type="text" name="#" placeholder="" required>
+				<span class="su-field-text_error">Текст ошибки</span>
+			</div>
+			<div class="su-contacts-feedback_message su-field-textarea">
+				<label class="su-field-textarea_label" for="textarea-text">Ваше сообщение</label>
+				<textarea id="textarea-text" class="su-field-textarea_textarea" rows="4" name="#" placeholder="" required></textarea>
+				<span class="su-field-textarea_error">Текст ошибки</span>
+			</div>
+			<div class="su-contacts-feedback_button su-block">
+				<button class="su-block_element su-btn">Отправить</button>
+			</div>
+			{#<div class="su-contacts-feedback_captcha su-captcha">
+				<div class="su-captcha_title">Защита сообщений</div>
+				<img class="su-captcha_img" src="img/captcha/captcha.jpg" alt="captcha">
+				<div class="su-captcha_field su-field-text">
+					<label class="su-field-text_label" for="captcha-text">Введите слово на картинке</label>
+					<div class="su-field-text_block">
+						<input id="captcha-text" class="su-field-text_input" type="text" name="#" placeholder="" required>
+						<span class="su-field-text_postfix"></span>
+					</div>
+					<span class="su-field-text_error">Текст ошибки</span>
+				</div>
+				<div class="su-captcha_button su-block">
+					<button class="su-block_element su-btn">Отправить</button>
+				</div>
+			</div>#}
+		</form>
+	</div>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ИНИЦИАЛИЗАЦИЯ СЛАЙДЕРА
+		$('#slider').nivoSlider({
+			effect: 'random',
+			slices: 10,
+			boxCols: 6,
+			boxRows: 4,
+			animSpeed: 1500,
+			pauseTime: 5000,
+			directionNav: true,
+			directionNavHide: false,
+			controlNav: false,
+			keyboardNav: false,
+			pauseOnHover: true,
+			captionOpacity: 0.8,
+			prevText: '',
+			nextText: ''
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

@@ -1,0 +1,156 @@
+//Цвета
+$bg-wrapper : lib-color(primary-lighter);
+$bg-dropdown : lib-color(primary-lighter);
+$bg-link-catalog : lib-color(accent-light);
+$color-wrapper-border : lib-color(primary-light);
+$color-dropdown-border : lib-color(primary-light);
+$color-dropdown-shadow : lib-color(primary-base);
+$color-title-shadow : lib-color(primary-dark);
+$color-link-catalog : lib-color(primary-dark);
+$color-link-catalog-animation : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('sidebar-menu');
+$list : lib-get-class('list');
+$link-catalog: lib-get-class('link-catalog');
+$dropdown : lib-get-class('dropdown');
+$_list : lib-get-modifier('list');
+$_show : lib-get-modifier('show');
+//-------------------------------
+
+#{$wrapper} {
+	position      : relative;
+	padding       : 0 5px 15px 5px;
+
+	border        : 2px solid $color-wrapper-border;
+	border-radius : 5px;
+	background    : $bg-wrapper url('../../../../../img/bg_3.png') center top repeat-x;
+	&_title {
+		padding-top    : 14px;
+		padding-left   : 10px;
+
+		color          : $color-title-shadow;
+		font-size      : lib-font-size(0);
+		text-transform : uppercase;
+
+		@include lib-text-hyphens($type : lastEllipsis);
+	}
+	&_list#{$list} {
+		margin-top  : 12px;
+		padding-top : 12px;
+
+		background  : transparent url('../../../../../img/black-dot.png') left top repeat-x;
+		#{$list}_item {
+			&:hover {
+				> #{$link-catalog} {
+					background      : $bg-link-catalog;
+					text-decoration : none;
+					#{$link-catalog}_title {
+						text-decoration : none;
+					}
+					&#{$_list}:before {
+						display : none;
+					}
+					&#{$_list}:after {
+						display : block;
+					}
+				}
+				> #{$list}_dropdown#{$dropdown}:not(#{$_show}) {
+					display : block;
+				}
+			}
+
+			@at-root {
+				#{$link-catalog} {
+					position        : relative;
+					display         : block;
+					padding         : 6px 20px 6px 25px;
+
+					color           : $color-link-catalog;
+					font-size       : lib-font-size(-4);
+					font-weight     : $lib-font-weight-bold;
+					text-transform  : uppercase;
+					text-decoration : none;
+
+					@include lib-text-hyphens;
+					&:focus,
+					&:hover,
+					&:visited {
+						color : $color-link-catalog-animation;
+					}
+					&_title {
+						text-decoration : underline;
+					}
+					&#{$_list}:before,
+					&#{$_list}:after {
+						content  : '\f054';
+						position : absolute;
+						top      : 10px;
+
+						@include lib-font-icon;
+					}
+					&#{$_list}:before {
+						left : 10px;
+					}
+					&#{$_list}:after {
+						right   : 5px;
+						display : none;
+					}
+				}
+			}
+
+			@at-root #{$wrapper}_list#{$list} {
+				#{$list}_dropdown#{$dropdown} {
+					display     : none;
+					left        : 100%;
+					margin-left : -5px;
+					padding     : 5px 0;
+					height      : 100%;
+					width       : 100%;
+
+					#{$dropdown}_container {
+						position      : relative;
+						padding       : 0 5px 15px 5px;
+						min-height    : 100%;
+						width         : 110%;
+
+						border-radius : 5px;
+						border        : 2px solid $color-dropdown-border;
+						background    : $bg-dropdown url('../../../../../img/bg_3.png') center top repeat-x;
+						box-shadow    : 0 0 15px $color-dropdown-shadow;
+
+						@at-root #{$wrapper}_list#{$list} #{$list}_dropdown#{$dropdown} {
+							#{$dropdown}_title {
+								padding-top  : 13px;
+								padding-left : 10px;
+
+								color        : $color-title-shadow;
+								font-size    : lib-font-size(-1);
+							}
+							#{$dropdown}_list#{$list} {
+								margin-top     : 11px;
+								padding-top    : 11px;
+
+								background     : transparent url('../../../../../img/black-dot.png') left top repeat-x;
+								text-transform : uppercase;
+								#{$dropdown}_title {
+									padding-top : 11px;
+
+									font-size   : lib-font-size(-2);
+								}
+								#{$dropdown}_list#{$list} {
+									margin-top  : 9px;
+									padding-top : 10px;
+								}
+							}
+						}
+
+					}
+				}
+			}
+
+		}
+
+	}
+}

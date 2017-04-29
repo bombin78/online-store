@@ -1,0 +1,65 @@
+{% extends '../layout/template_wrapper.twig' %}
+
+{% block wrapper_sections %}
+
+	<div class="su-basket">
+		{% include 'blocks/basket-header.twig' %}
+		{% include 'blocks/basket-steps.twig' %}
+		<div class="su-basket-tab">
+			<div class="su-order-cart">
+				<form class="su-order-cart_form" action="#" method="post">
+					<ul class="su-order-cart-list su-list">
+
+						{% for row in orders %}
+							<li class="su-list_item">
+								{% include 'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
+							</li>
+						{% endfor %}
+
+					</ul>
+					<div class="su-order-cart-cost">
+						<dl class="su-cost-order su-detail">
+							<dt class="su-detail_label">Общая стоимость:</dt>
+							<dd class="su-detail_value su-currency">10 000</dd>
+						</dl>
+					</div>
+					<div class="su-order-cart-button su-block">
+						<button class="su-block_element su-btn _su-buy">Купить</button>
+					</div>
+					<div class="su-order-cart-hint">* Воспользоваться сертификатом на скидку можно на этапе заказа</div>
+					<div class="su-order-cart-one-click su-block">
+						<a class="su-block_element su-link" data-toggle="modal" data-target=".su-modal-application">Оформить заказ в 1 клик</a>
+					</div>
+				</form>
+			</div>
+			<div class="su-special-offers">
+				<h2 class="su-special-offers_title">Специальное предложение</h2>
+				<div class="su-special-offers_text">Только с эти заказом вы можете приобрести по специальной цене</div>
+				<ul class="su-special-offers_list su-list">
+
+					{% for row in specialOffers %}
+						<li class="su-list_item">
+							{% include 'blocks/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+						</li>
+					{% endfor %}
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		//............................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

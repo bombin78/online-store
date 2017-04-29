@@ -1,0 +1,16 @@
+<dl class="su-footer-info su-detail">
+	<dt class="su-detail_label">
+		{{ footerInfo.title }}
+	</dt>
+	<dd class="su-detail_value">
+		<ul class="su-footer-info-list su-list">
+
+			{% for row in footerInfo.row %}
+				<li class="su-list_item">
+					<a class="su-list_link su-link" href="{{ row.href }}">{{ row.title }}</a>
+				</li>
+			{% endfor %}
+
+		</ul>
+	</dd>
+</dl>

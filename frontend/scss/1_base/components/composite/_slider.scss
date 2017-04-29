@@ -1,0 +1,150 @@
+//Классы
+$wrapper : lib-get-class('slider-wrapper');
+$slider : lib-get-class('slider');
+$offer : lib-get-class('offer');
+$description : lib-get-class('offer-description');
+$title : lib-get-class('offer-title');
+$price : lib-get-class('offer-price');
+$button : lib-get-class('offer-button');
+$list : lib-get-class('list');
+$preview : lib-get-class('preview');
+$img : lib-get-class('link-img');
+$link : lib-get-class('link');
+$block : lib-get-class('block');
+//-------------------------------
+
+#{$wrapper} {
+	position : relative;
+	&_title {
+		text-align : center;
+	}
+	#{$slider} {
+		position   : relative;
+		margin-top : 25px;
+		&_prev,
+		&_next {
+			position   : absolute;
+			top        : 50%;
+			margin-top : -15px;
+			height     : 30px;
+			width      : 20px;
+
+			cursor     : pointer;
+			opacity    : 0.7;
+			font-size  : 32px;
+			&:after {
+				@include lib-font-icon();
+			}
+			&:hover {
+				opacity : 1;
+			}
+		}
+		&_prev {
+			left : 77px;
+			&:after {
+				content : '\f053';
+			}
+		}
+		&_next {
+			right : 81px;
+			&:after {
+				content : '\f054';
+			}
+		}
+		&_container {
+			margin       : 0 auto;
+			height       : 254px;
+			width        : 595px;
+
+			overflow     : hidden;
+			font-size    : 0;
+
+			@at-root #{$slider} {
+				#{$slider}_list#{$list} {
+					position : relative;
+					#{$list}_item {
+						float         : left;
+						position      : relative;
+						margin-left   : 20px;
+						margin-bottom : 10px;
+						width         : 185px;
+						&:first-child {
+							margin-left : 0;
+						}
+
+						@at-root #{$slider}_list#{$list} {
+							#{$list}_offer#{$offer} {
+								padding : 10px 10px 62px 10px;
+								#{$offer}_preview#{$preview} {
+									position : relative;
+
+									@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
+										#{$preview}_link#{$img} {
+											@include lib-link-img-param(
+													$height : 180px,
+													$vertical-align : top
+											);
+										}
+									}
+
+								}
+								#{$description} {
+									position : relative;
+									z-index  : 1;
+									&_container {
+										height   : auto;
+										overflow : visible;
+
+										@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
+											#{$title}#{$block} {
+												position     : relative;
+												margin-top   : -45px;
+												padding-left : 0;
+												height       : 45px;
+
+												overflow     : hidden;
+												text-align   : center;
+												background   : linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
+
+												@include lib-text-blackout(
+														$height : 50%,
+														$width : 12px
+												);
+												#{$block}_element#{$link} {
+													padding-top : 5px;
+													height      : 100%;
+													max-width   : 100%;
+												}
+											}
+										}
+
+									}
+
+									@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
+										#{$price} {
+											right     : auto;
+											bottom    : -40px;
+											width     : 60px;
+
+											font-size : lib-font-size(1);
+										}
+
+										#{$button}#{$block} {
+											right  : 0;
+											bottom : -45px;
+										}
+									}
+
+								}
+							}
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+
+}
+

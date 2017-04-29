@@ -1,0 +1,81 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-sitemap">
+		<h1 class="su-sitemap_title">Карта сайта</h1>
+		<ul class="su-sitemap-level1 su-list">
+			<li class="su-list_item">
+				<a class="su-sitemap-link" href="#">
+					<span class="su-sitemap-link_text">Главная</span>
+				</a>
+			</li>
+			<li class="su-list_item">
+				<a class="su-sitemap-link" href="#">
+					<span class="su-sitemap-link_text">О магазине</span>
+				</a>
+			</li>
+			<li class="su-list_item">
+				<a class="su-sitemap-link" href="#">
+					<span class="su-sitemap-link_text">Каталог товаров</span>
+				</a>
+				<ul class="su-sitemap-level2 su-list">
+					<li class="su-list_item">
+						<a class="su-sitemap-link" href="#">
+							<span class="su-sitemap-link_text">Маникюрные наборы</span>
+						</a>
+					</li>
+					<li class="su-list_item">
+						<a class="su-sitemap-link" href="#">
+							<span class="su-sitemap-link_text">Маникюрный инструмент</span>
+						</a>
+						<ul class="su-sitemap-level3 su-list">
+							<li class="su-list_item">
+								<a class="su-sitemap-link" href="#">
+									<span class="su-sitemap-link_text">Маникюрные кусачки</span>
+								</a>
+							</li>
+							<li class="su-list_item">
+								<a class="su-sitemap-link" href="#">
+									<span class="su-sitemap-link_text">Маникюрные ножницы</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="su-list_item">
+						<a class="su-sitemap-link" href="#">
+							<span class="su-sitemap-link_text">Оборудование и приборы</span>
+						</a>
+						<ul class="su-sitemap-level3 su-list">
+							<li class="su-list_item">
+								<a class="su-sitemap-link" href="#">
+									<span class="su-sitemap-link_text">Аппараты для маникюра и педикюра по ценам от производителя</span>
+								</a>
+							</li>
+							<li class="su-list_item">
+								<a class="su-sitemap-link" href="#">
+									<span class="su-sitemap-link_text">LED-лампы</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ...........................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

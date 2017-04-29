@@ -1,0 +1,29 @@
+//Классы
+$wrapper : lib-get-class('dropdown');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	position     : absolute;
+	top          : 0;
+	left         : 0;
+	padding-left : 0;
+
+	list-style   : none;
+	&_container {
+
+		@at-root {
+			#{$wrapper}_title {
+				text-transform : uppercase;
+
+				@include lib-text-hyphens($type : lastEllipsis);
+			}
+			#{$wrapper}_list#{$list} {
+				#{$list}_item {
+					padding-top : 0;
+				}
+			}
+		}
+
+	}
+}

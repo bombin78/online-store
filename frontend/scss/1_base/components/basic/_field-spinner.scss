@@ -1,0 +1,64 @@
+//Цвета
+$bg-field : lib-color(primary-lighter);
+$color-border-field : lib-color(primary-base);
+$color-error : lib-color(accent-base-bright);
+$color-border-field-error : lib-color(accent-base-bright);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('field-spinner');
+//-------------------------------
+
+#{$wrapper} {
+	&_input {
+		display        : inline-block;
+		padding-right  : 5px;
+		padding-left   : 5px;
+		height         : 22px;
+		width          : 100%;
+
+		line-height    : 22px;
+		text-align     : center;
+		background     : $bg-field;
+		border-top     : 2px solid $color-border-field;
+		border-right   : 1px solid $color-border-field;
+		border-bottom  : 1px solid $color-border-field;
+		border-left    : 2px solid $color-border-field;
+		vertical-align : bottom;
+	}
+	&_block {
+		padding : 10px;
+		width   : 56px;
+
+		@at-root {
+			#{$wrapper}_prefix,
+			#{$wrapper}_postfix {
+				display  : block;
+				position : relative;
+				height   : 0;
+				width    : 100%;
+
+				cursor   : pointer;
+			}
+
+			#{$wrapper}_prefix {
+				&:before {
+					@include css-triangle(
+							$direction : up,
+							$center : true
+					);
+				}
+			}
+
+			#{$wrapper}_postfix {
+				&:before {
+					@include css-triangle(
+							$center : true
+					);
+				}
+
+			}
+		}
+
+	}
+}

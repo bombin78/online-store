@@ -1,0 +1,15 @@
+<section class="su-sidebar-blog">
+	<div class="su-sidebar-menu">
+		<h2 class="su-sidebar-menu_title">{{ sidebarBlog.title }}</h2>
+
+		<ul class="su-sidebar-menu_list su-list">
+
+			{% for row in sidebarBlog.row %}
+				<li class="su-list_item">
+					<a class="su-list_link {{ row.modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+				</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+</section>

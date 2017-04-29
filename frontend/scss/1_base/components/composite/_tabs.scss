@@ -1,0 +1,305 @@
+//Цвета
+$bg-tabs-control : lib-color(accent-base-light);
+$bg-tabs-control-active : lib-color(accent-light);
+$bg-tabs-control-hover : lib-color(accent-light);
+$bg-tabs-content : lib-color(accent-light);
+$bg-tabs-personal-control : lib-color(primary-light);
+$bg-tabs-personal-control-active : lib-color(primary-base-light);
+$bg-tabs-personal-content : lib-color(primary-light);
+$bg-filter-buttons : lib-color(primary-lighter);
+$bg-filter-button-desc : lib-color(secondary-accent);
+$color-tabs-control : lib-color(accent-dark);
+$color-tabs-personal-control : lib-color(primary-darker);
+$color-tabs-control-active : lib-color(accent-base-bright);
+$color-tabs-personal-control-active : lib-color(accent-base-bright);
+$color-tabs-content : lib-color(accent-darker);
+$color-tabs-personal-content : lib-color(primary-darker);
+$color-tabs-content-title : lib-color(accent-darker);
+$color-icon-benefit : lib-color(accent-base-bright);
+$color-border-item : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('tabs-block');
+$control : lib-get-class('tabs-control');
+$content : lib-get-class('tabs-content');
+$page : lib-get-class('tab-page');
+$address : lib-get-class('tab-page-address');
+$list-address : lib-get-class('tab-list-address');
+$group-buttons : lib-get-class('group-buttons');
+$special-offer : lib-get-class('special-offer');
+$favorites-offer : lib-get-class('favorites-offer');
+$offer : lib-get-class('offer');
+$offer-description : lib-get-class('offer-description');
+$offer-button : lib-get-class('offer-button');
+$offer-close : lib-get-class('offer-close');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
+$list : lib-get-class('list');
+$_personal : lib-get-modifier('personal');
+$_active : lib-get-modifier('active');
+$_open : lib-get-modifier('open');
+$_pickup : lib-get-modifier('pickup');
+$_courier-moscow : lib-get-modifier('courier-moscow');
+$_courier-spb : lib-get-modifier('courier-spb');
+$_courier-russia : lib-get-modifier('courier-russia');
+$_post-russia : lib-get-modifier('post-russia');
+$_desc : lib-get-modifier('desc');
+//-------------------------------
+
+#{$wrapper} {
+	&_container {
+		margin        : 0 auto;
+
+		border-radius : 4px;
+		#{$control} {
+			margin   : 0 auto 5px;
+
+			overflow : hidden;
+			&_list#{$list} {
+				#{$list}_item {
+					float            : left;
+					margin-left      : 10px;
+					padding          : 10px 8px;
+					height           : 60px;
+					width            : 156px;
+
+					color            : $color-tabs-control;
+					cursor           : pointer;
+					font-size        : lib-font-size(-2);
+					font-weight      : bold;
+					text-align       : center;
+					text-transform   : uppercase;
+					background-color : $bg-tabs-control;
+					&:first-child {
+						margin-left : -1px;
+					}
+					&:hover,
+					&#{$_active} {
+						color            : $color-tabs-control-active;
+						background-color : $bg-tabs-control-active;
+					}
+					&#{$_pickup},
+					&#{$_courier-moscow},
+					&#{$_courier-spb},
+					&#{$_courier-russia},
+					&#{$_post-russia} {
+						height : 114px;
+						&:before {
+							display    : block;
+							margin-top : -10px;
+							height     : 65px;
+							width      : 100%;
+
+							font-size  : 40px;
+							@include lib-font-icon (
+								$line-height : 65px
+							);
+						}
+					}
+					&#{$_pickup} {
+						&:before {
+							content : '\f290';
+						}
+					}
+					&#{$_courier-moscow} {
+						&:before {
+							content : '\e901';
+						}
+					}
+					&#{$_courier-spb} {
+						&:before {
+							content : '\e902';
+						}
+					}
+					&#{$_courier-russia} {
+						&:before {
+							content : '\f072';
+						}
+					}
+					&#{$_post-russia} {
+						&:before {
+							content : '\e903';
+						}
+					}
+				}
+			}
+		}
+		#{$content} {
+			margin        : 0;
+			padding       : 20px 15px;
+
+			color         : $color-tabs-content;
+			border-radius : 0 0 4px 4px;
+			background    : $bg-tabs-content;
+
+			@at-root {
+				#{$page} {
+					display : none;
+					&#{$_open} {
+						display : block;
+					}
+					&_title {
+						padding-top : 0;
+
+						color       : $color-tabs-content-title;
+						font-size   : lib-font-size(1);
+					}
+					&_benefit#{$list} {
+						padding-top : 20px;
+						#{$list}_item {
+							&:before {
+								content     : '\f00c';
+								display     : inline-block;
+								margin-left : 40px;
+								height      : 100%;
+								width       : 25px;
+
+								color       : $color-icon-benefit;
+								font-size   : lib-font-size(0);
+
+								@include lib-font-icon;
+							}
+						}
+					}
+					&_address#{$detail} {
+						padding-top : 30px;
+						#{$detail}_value {
+							padding-top : 5px;
+							#{$address}#{$list} {
+								#{$list}_item {
+									margin-top : 10px;
+								}
+							}
+						}
+
+					}
+					&_delivery#{$detail} {
+						padding-top : 30px;
+						min-height  : lib-line-height(0);
+						#{$detail}_label {
+							float        : left;
+							margin-right : 4px;
+						}
+					}
+					&_filter#{$group-buttons},
+					&_sorting#{$group-buttons},
+					&_orders#{$list},
+					&_special#{$list},
+					&_favorites#{$list} {
+						display : none;
+					}
+				}
+			}
+
+		}
+	}
+	&#{$_personal} {
+		#{$wrapper}_container {
+
+			@at-root #{$wrapper}#{$_personal} {
+				#{$control} {
+					&_list#{$list} {
+						#{$list}_item {
+							color            : $color-tabs-personal-control;
+							background-color : $bg-tabs-personal-control;
+							&:hover,
+							&#{$_active} {
+								color            : $color-tabs-personal-control-active;
+								background-color : $bg-tabs-personal-control-active;
+							}
+						}
+					}
+				}
+
+				#{$content} {
+					color      : $color-tabs-personal-content;
+					background : $bg-tabs-personal-content;
+
+					@at-root #{$wrapper}#{$_personal} {
+						#{$page} {
+							&_filter#{$group-buttons},
+							&_sorting#{$group-buttons},
+							&_orders#{$list},
+							&_special#{$list},
+							&_favorites#{$list} {
+								display : block;
+							}
+							&_filter#{$group-buttons},
+							&_sorting#{$group-buttons} {
+								margin-bottom : 20px;
+								#{$group-buttons}_list#{$list} {
+									margin-top : -2px;
+									#{$list}_item {
+										background-color : $bg-filter-buttons;
+										&#{$_desc} {
+											background-color : $bg-filter-button-desc;
+										}
+									}
+								}
+							}
+							&_orders#{$list},
+							&_special#{$list},
+							&_favorites#{$list},
+							&_address#{$list} {
+								#{$list}_item {
+									border-bottom : 1px solid $color-border-item;
+									&:first-child {
+										border-top : 1px solid $color-border-item;
+									}
+								}
+							}
+							&_special#{$list} {
+								#{$list}_item {
+									#{$special-offer}#{$offer} {
+										padding : 5px 125px 25px 85px;
+
+										@include mix-common-personal-offer();
+									}
+								}
+							}
+							&_favorites#{$list} {
+								#{$list}_item {
+									#{$favorites-offer}#{$offer} {
+										padding : 5px 150px 25px 85px;
+
+										@include mix-common-personal-offer();
+										#{$offer-description} {
+											#{$offer-close} {
+												@include lib-close(
+													$top : 0,
+													$right : -146px
+												);
+											}
+										}
+									}
+								}
+							}
+							&_address#{$list} {
+								#{$list}_item {
+									#{$list-address} {
+										position : relative;
+										padding  : 5px 35px 5px 25px;
+										&_number {
+											position : absolute;
+											top      : 5px;
+											left     : 5px;
+										}
+										&_close {
+											@include lib-close(
+												$top : 4px,
+												$right : 4px
+											);
+										}
+									}
+								}
+							}
+						}
+					}
+
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{% extends '../layout/template_wrapper.twig' %}
+
+{% block wrapper_sections %}
+
+	{#<section class="su-page-base">
+		{% include '/blocks/article.twig' %}
+	</section>#}
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ...........................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

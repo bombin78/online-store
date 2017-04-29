@@ -1,0 +1,16 @@
+<section class="su-sidebar-banner">
+
+	<ul class="su-sidebar-banner_list su-list">
+
+		{% for row in sidebarBanner %}
+			<li class="su-list_item">
+				<div class="su-list_banner su-banner-block">
+					<a class="su-banner-block_link su-link-img {{ row.modifier }}" href="{{ row.href }}">
+						<img class="su-link-img_img" src="{{ row.src }}" alt="{{ row.alt }}">
+					</a>
+				</div>
+			</li>
+		{% endfor %}
+
+	</ul>
+</section>

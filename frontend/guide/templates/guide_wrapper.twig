@@ -1,0 +1,75 @@
+{% extends '../../templates/layout/template_wrapper.twig' %}
+
+{% block wrapper_sections %}
+
+	<div class="su-guide">
+
+		{% for data in basicBlocks %}
+			{% set item = loop.index %}
+			<h2 class="su-guide-title">{{ item }}. {{ data.title }}</h2>
+			<ol class="su-guide-list">
+
+				{% for row in data.rows %}
+					{% set subitem = loop.index %}
+					<li class="su-guide-list_item {{ row.modifier }}">
+						<h3 class="su-guide-subtitle">{{ item }}.{{ subitem }} {{ row.file }}</h3>
+						<div class="su-guide-code">
+							{% if row.withUrl %}
+								{% include row.url with row.withUrl %}
+							{% else %}
+								{% include row.url %}
+							{% endif %}
+						</div>
+					</li>
+				{% endfor %}
+
+			</ol>
+		{% endfor %}
+
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<script>
+		//------------------------------------------------------------
+		// ИНИЦИАЛИЗАЦИЯ ВЫПАДАЮЩЕГО СПИСКА КАРЗИНЫ
+		var toggleBasket = new ToggleShow();
+		toggleBasket.init(
+				{
+					closeDropdown: 'otherClose',
+					classNameMain: 'su-header-basket',
+					classNameOpen: 'su-header-basket_link',
+					classNameDrop: 'su-header-basket_dropdown',
+					modifierNameDrop: '_su-show'
+				}
+		);
+		//------------------------------------------------------------
+
+		//------------------------------------------------------------
+		// ИНИЦИАЛИЗАЦИЯ ВЫПАДАЮЩЕГО СПИСКА ПРОФИЛЯ ПОЛЬЗОВАТЕЛЯ
+		var toggleUser = new ToggleShow();
+		toggleUser.init(
+				{
+					closeDropdown: 'otherClose',
+					classNameMain: 'su-header-user',
+					classNameOpen: 'su-header-user_avatar',
+					classNameDrop: 'su-header-user_dropdown',
+					modifierNameDrop: '_su-show'
+				}
+		);
+		//------------------------------------------------------------
+		//------------------------------------------------------------
+		// ОТКРЫТЬ/ЗАКРЫТЬ БЛОК С КОМПОНЕНТОМ
+		$(document).on('click', '.su-guide-subtitle', function(){
+			var self = $(this).closest('.su-guide-list_item').find('.su-guide-code');
+
+			self.slideToggle();
+		});
+		//------------------------------------------------------------
+	</script>
+{% endblock %}

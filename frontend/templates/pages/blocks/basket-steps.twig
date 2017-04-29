@@ -1,0 +1,13 @@
+<div class="su-basket-steps">
+	<ul class="su-basket-steps_list su-list">
+
+		{% for row in basketSteps %}
+			<li class="su-list_item">
+				<div class="su-basket-step {{ row.modifiers }}">
+					<a class="su-basket-step_link" href="{{ row.href }}">{{ row.title }}</a>
+				</div>
+			</li>
+		{% endfor %}
+
+	</ul>
+</div>

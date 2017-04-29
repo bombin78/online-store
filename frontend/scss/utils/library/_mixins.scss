@@ -1,0 +1,398 @@
+// Импорт файлов
+@import 'variables';
+//-------------------------------
+
+// ВАЖНО!!! 
+// Для избежания конфликтов с подключаемыми scss фреймфорками и библиотеками
+// обязательно добавляйте "lib-" в начале переменных и примесей этого файла
+
+// Цвета
+$lib-color-rating-icon-base : lib-color(primary-base-dark);
+$lib-color-shadow-rating-icon : lib-color(primary-darker);
+$lib-color-triangle : lib-color(accent-base);
+$lib-color-close : lib-color(primary-dark);
+$lib-color-close-hover : lib-color(accent-base-bright);
+//-------------------------------
+
+// Классы
+$lib-grid-class-default : lib-get-class('grid');
+$lib-detail : lib-get-class('detail');
+//-------------------------------
+
+// 1. Установка точки переключения
+@mixin lib-respond-to($key) {
+
+	@media screen and (max-width : #{lib-breakpoints($key)}) {
+		@content;
+	}
+}
+
+//-------------------------------
+
+// 2. Ширина ячейки
+// 2.1. Для сетки из 14-ти колонок
+@mixin lib-box14($cell:14) {
+	float : left;
+	width : (100% * $cell / 14);
+}
+
+// 2.2. Для сетки из 12-ти колонок
+@mixin lib-box12($cell:12) {
+	float : left;
+	width : (100% * $cell / 12);
+}
+
+// 2.3. Для сетки из 10-ти колонок
+@mixin lib-box10($cell:10) {
+	float : left;
+	width : (100% * $cell / 10);
+}
+
+//-------------------------------
+
+// 3. Параметры сетки контента
+// Устанавливает основные параметры боковой панели и контента
+// сайта (их наличие, ширину и расположение) в зависимоти от:
+// - наличия и ширины боковой панели в px;
+// - ширины сайта и величины внутренних отсупов сайта в px;
+// - наличия и значения свойства float для этих колонок.
+
+@mixin lib-grid-param(
+	$grid-class: $lib-grid-class-default,
+	$padding-container-px: 15px,
+	$width-container-px: 1000px,
+	$width-aside-px: 200px,
+	$aside-float: none,//none,left,right,only-width
+	$content-float: only-width//left,right,only-width,only-full-width
+) {
+	$width-container-absolute : ($width-container-px / 1px); //преобразование к числу
+	$padding-container-absolute : ($padding-container-px / 1px); //преобразование к числу
+	$width-aside-absolute : ($width-aside-px / 1px); //преобразование к числу
+	$width-calculated : ($width-container-absolute - (2 * $padding-container-absolute));
+	$width-aside : ($width-aside-absolute * 100% / $width-calculated);
+	$width-content : (($width-calculated - $width-aside-absolute) * 100% / $width-calculated);
+
+	@if $aside-float == none {
+	} @else if $aside-float == only-width {
+		#{$grid-class}_aside {
+			width : $width-aside;
+		}
+	} @else {
+		#{$grid-class}_aside {
+			float : $aside-float;
+			width : $width-aside;
+		}
+	}
+
+	@if $content-float == only-width {
+		#{$grid-class}_content {
+			width : $width-content;
+		}
+	} @else if $content-float == only-full-width {
+		#{$grid-class}_content {
+			width : 100%;
+		}
+	} @else {
+		#{$grid-class}_content {
+			float : $content-float;
+			width : $width-content;
+		}
+	}
+}
+
+//-------------------------------
+
+// 4. Параметры текста
+// 4.1 Основные параметры
+@mixin lib-text-base-param($level: 0) {
+	padding-top : lib-line-top($level);
+
+	font-size   : lib-font-size($level);
+	line-height : lib-line-height($level);
+}
+
+// 4.2 Затемнение текста
+@mixin lib-text-blackout(
+	$vertical-position  : "bottom",
+	$height             : 100%,
+	$width              : 8px,
+	$color1             : 255,
+	$color2             : 255,
+	$color3             : 255
+) {
+	$bg1 : rgba($color1, $color2, $color3, 0.0);
+	$bg2 : rgba($color1, $color2, $color3, 0.8);
+	$bg3 : rgba($color1, $color2, $color3, 1.0);
+
+	&:before {
+		content                 : '';
+		position                : absolute;
+		#{$vertical-position}   : 0;
+		right                   : 0;
+		height                  : $height;
+		width                   : $width;
+		z-index                 : 1;
+
+		background              : linear-gradient(to right, $bg1, $bg2, $bg3);
+	}
+}
+
+// 4.3 Изменение цвета затемнения текста
+@mixin lib-text-blackout-change(
+	$color1     : 255,
+	$color2     : 252,
+	$color3     : 235
+) {
+	$bg1 : rgba($color1, $color2, $color3, 0.0);
+	$bg2 : rgba($color1, $color2, $color3, 0.8);
+	$bg3 : rgba($color1, $color2, $color3, 1.0);
+
+	&:before {
+		background : linear-gradient(to right, $bg1, $bg2, $bg3);
+	}
+
+}
+
+// 4.4 Перенос/обрыв текста
+@mixin lib-text-hyphens($type : hyphens) {
+	@if $type == lastEllipsis {
+		overflow      : hidden;
+		text-overflow : ellipsis;
+		white-space   : nowrap;
+		overflow-wrap : normal;
+		word-wrap     : normal;
+		hyphens       : none;
+	} @else if $type == lastClip {
+		overflow      : hidden;
+		text-overflow : clip;
+		white-space   : nowrap;
+		overflow-wrap : normal;
+		word-wrap     : normal;
+		hyphens       : none;
+	} @else if $type == breakword {
+		overflow-wrap : break-word;
+		word-wrap     : break-word;
+	} @else if $type == limitРyphens {
+		overflow      : hidden;
+		overflow-wrap : break-word;
+		word-wrap     : break-word;
+		hyphens       : auto;
+	} @else { //hyphens
+		overflow-wrap : break-word;
+		word-wrap     : break-word;
+		hyphens       : auto;
+	}
+}
+
+//-------------------------------
+
+// 5. Параметры иконочного шрифта
+@mixin lib-font-icon(
+	$font-weight: normal,
+	$line-height: 1
+) {
+	font-family             : 'icomoon';
+	font-style              : normal;
+	font-weight             : $font-weight;
+	font-variant            : normal;
+	text-transform          : none;
+	line-height             : $line-height;
+
+	// Better Font Rendering ============
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
+}
+
+//-------------------------------
+
+// 6. Иконки рейтинга (звезды)
+@mixin lib-rating-icon(
+	$color: $lib-color-rating-icon-base,
+	$text-shadow: false
+) {
+	&:before {
+		content        : '\f005\f005\f005\f005\f005';
+		display        : inline-block;
+		padding-left   : 2px;
+
+		color          : $color;
+		letter-spacing : 2px;
+		white-space    : nowrap;
+
+		@if $text-shadow == true {
+			text-shadow : 1px 1px 2px $lib-color-shadow-rating-icon;
+		}
+
+		@include lib-font-icon;
+	}
+}
+
+//-------------------------------
+
+// 7. Цена в деталях
+@mixin lib-price-detail(
+	$position: relative,
+	$width: 100%
+) {
+	display     : inline-block;
+	position    : $position;
+	margin-top  : 10px;
+	padding-top : 8px;
+	width       : $width;
+	#{$lib-detail}_label {
+		display : inline-block;
+	}
+	#{$lib-detail}_value {
+		display     : inline-block;
+		margin-left : 5px;
+
+		font-weight : $lib-font-weight-bold;
+	}
+}
+
+//-------------------------------
+
+// 8. Параметры ссылки в блоке предварительного просмотра
+@mixin lib-link-img-param(
+	//по умолчанию - квадрат
+	$height: 150px,
+	$ratio: 1,
+	$bg: none,
+	$border: none,
+	$text-align: none,
+	$vertical-align: none
+) {
+	$height-link-img : $height;
+	$width-link-img : ($height-link-img * $ratio);
+	//чтобы картинка гарантированно не выезжала за пределы блока,
+	// устанавливаем высоту строки на 6рх меньше
+	$line-height-link-img : ($height-link-img - 6);
+
+	height      : $height-link-img;
+	width       : $width-link-img;
+
+	line-height : $line-height-link-img;
+
+	@if ($bg != none) {
+		background : $bg,
+	}
+	@if ($border != none) {
+		border : 1px solid $border;
+	}
+	@if ($text-align != none) {
+		text-align : $text-align;
+	}
+	@if ($vertical-align != none) {
+		vertical-align : $vertical-align;
+	}
+}
+
+//-------------------------------
+
+//-------------------------------
+// 9. Отзывчивое соотношение
+// Миксин для создания масштабируемых элементов(обычно изображения/картинки заднего фона),
+// чтобы поддерживать соотношение.
+@mixin lib-responsive-ratio(
+	//по умолчанию - квадрат
+	$x:1,
+	$y:1
+) {
+	$padding : unquote(( $y / $x ) * 100 + '%');
+
+	&:before {
+		content     : '';
+		display     : block;
+		width       : 100%;
+		padding-top : $padding;
+	}
+}
+
+//-------------------------------
+
+// 10. CSS треугольники
+@mixin css-triangle(
+	$color: $lib-color-triangle,
+	$direction: 'down',
+	$size: 8px,
+	$ratio: 3,
+	$offset: 2px,
+	$center: false,
+	$round: false
+) {
+	$side-size : ($size * $ratio / 2);
+
+	content  : '';
+	display  : block;
+	position : absolute;
+	height   : 0;
+	width    : 0;
+
+	@if $round {
+		border-radius : 3px;
+	}
+	@if $direction == down {
+		border-left   : $side-size solid transparent;
+		border-right  : $side-size solid transparent;
+		border-top    : $size solid $color;
+		top           : $offset;
+		@if $center {
+			margin-left: 50%;
+			left: -$side-size;
+		}
+	} @else if $direction == up {
+		border-left   : $side-size solid transparent;
+		border-right  : $side-size solid transparent;
+		border-bottom : $size solid $color;
+		bottom        : $offset;
+		@if $center {
+			margin-left: 50%;
+			left: -$side-size;
+		}
+	} @else if $direction == right {
+		border-top    : $side-size solid transparent;
+		border-bottom : $side-size solid transparent;
+		border-left   : $size solid $color;
+		right         : $offset;
+		@if $center {
+			margin-top: 50%;
+			top: -$side-size;
+		}
+	} @else if $direction == left {
+		border-top    : $side-size solid transparent;
+		border-bottom : $side-size solid transparent;
+		border-right  : $size solid $color;
+		left          : $offset;
+		@if $center {
+			margin-top: 50%;
+			top: -$side-size;
+		}
+	}
+}
+
+//-------------------------------
+
+// 11. Кнопка закрыть
+@mixin lib-close(
+	$top: 8px,
+	$right: 8px
+) {
+	position  : absolute;
+	top       : $top;
+	right     : $right;
+	z-index   : 1;
+
+	cursor    : pointer;
+	color     : $lib-color-close;
+	font-size : lib-font-size(e2);
+	&:hover {
+		color     : $lib-color-close-hover;
+	}
+	&:after {
+		content : '\f057';
+
+		@include lib-font-icon;
+	}
+}
+
+//-------------------------------

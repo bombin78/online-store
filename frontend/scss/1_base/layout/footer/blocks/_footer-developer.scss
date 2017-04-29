@@ -1,0 +1,17 @@
+//Цвета
+$color-copyright : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('footer-developer');
+//-------------------------------
+
+#{$wrapper} {
+	float      : left;
+	margin-top : 20px;
+	width      : 30%;
+
+	color      : $color-copyright;
+	font-size  : lib-font-size(-4);
+	text-align : right;
+}

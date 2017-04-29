@@ -1,0 +1,125 @@
+/* font-family: "OpenSansRegular"; */
+@font-face {
+	font-family : "OpenSansRegular";
+	src         : url("../../../fonts/OpenSansRegular/OpenSansRegular.eot");
+	src         : url("../../../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"),
+	url("../../../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+	url("../../../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+/* font-family: "OpenSansBold"; */
+@font-face {
+	font-family : "OpenSansBold";
+	src         : url("../../../fonts/OpenSansBold/OpenSansBold.eot");
+	src         : url("../../../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"),
+	url("../../../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+	url("../../../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+/* font-family: "icomoon"; */
+@font-face {
+	font-family : 'icomoon';
+	font-weight : normal;
+	font-style  : normal;
+	src         : url('../../../fonts/icomoon/icomoon.eot?-xcfqdo');
+	src         : url('../../../fonts/icomoon/icomoon.eot?#iefix-xcfqdo') format('embedded-opentype'),
+	url('../../../fonts/icomoon/icomoon.woff?-xcfqdo') format('woff'),
+	url('../../../fonts/icomoon/icomoon.ttf?-xcfqdo') format('truetype'),
+	url('../../../fonts/icomoon/icomoon.svg?-xcfqdo#icomoon') format('svg');
+}
+
+html, body {
+	font-size   : $lib-font-size;
+	font-family : $lib-font-family;
+	color       : $lib-color-text;
+
+	@include lib-respond-to(narrow) {
+		font-size : $lib-font-size - 2;
+	}
+	@include lib-respond-to(mobile) {
+		font-size : $lib-font-size;
+	}
+}
+
+h1 {
+
+	color       : $lib-color-main-title;
+
+	@include lib-text-base-param(3);
+	padding-top : 0;
+}
+
+h2 {
+	color : $lib-color-big-title;
+
+	@include lib-text-base-param(2);
+}
+
+h3 {
+	color : $lib-color-title;
+
+	@include lib-text-base-param(1);
+}
+
+h4 {
+	@include lib-text-base-param(0);
+}
+
+h5 {
+	@include lib-text-base-param(-2);
+}
+
+h6 {
+	@include lib-text-base-param(-4);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family : 'OpenSansBold';
+
+	@include lib-text-hyphens($type : breakword);
+}
+
+p {
+	@include lib-text-base-param(0);
+	@include lib-text-hyphens;
+}
+
+dl {
+	padding-top: lib-line-top(0);
+}
+
+ul, ol {
+	padding-left : 15px;
+
+	list-style   : disc;
+	font-size    : 1.0rem;
+	line-height  : 1.25rem;
+	li {
+		padding-top : 0.35rem;
+	}
+}
+
+b,
+strong {
+	font-weight : $lib-font-weight-bold;
+}
+
+table {
+
+}
+
+thead {
+
+}
+
+tbody {
+
+}
+
+.input[type = 'text'] {
+	font-size : $lib-font-size-input;
+}

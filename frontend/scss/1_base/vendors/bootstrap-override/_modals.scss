@@ -1,0 +1,11 @@
+//Цвета
+$override-bg-modal-dialog : lib-color(primary-light);
+//-------------------------------
+
+.modal-dialog {
+	background : $override-bg-modal-dialog;
+}
+
+.modal-header {
+	border-bottom : none;
+}

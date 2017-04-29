@@ -1,0 +1,38 @@
+//Классы
+$wrapper : lib-get-class('reg-form');
+$field-text : lib-get-class('field-text');
+$block : lib-get-class('block');
+$link : lib-get-class('link');
+//-------------------------------
+
+#{$wrapper} {
+	&_name#{$field-text} {
+		padding-right : 10px;
+		width         : 50%;
+	}
+	&_row {
+		display        : inline-block;
+		width          : 100%;
+
+		vertical-align : bottom;
+
+		@at-root {
+			#{$wrapper}_email#{$field-text} {
+				float         : left;
+				padding-right : 10px;
+				width         : 50%;
+			}
+			#{$wrapper}_password#{$field-text} {
+				float        : right;
+				padding-left : 10px;
+				width        : 50%;
+			}
+		}
+
+	}
+	&_name#{$field-text},
+	&_row,
+	&_button#{$block} {
+		margin-top : 20px;
+	}
+}

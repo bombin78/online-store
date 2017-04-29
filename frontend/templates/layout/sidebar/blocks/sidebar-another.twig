@@ -1,0 +1,17 @@
+<section class="su-sidebar-another su-another">
+	<h3 class="su-another_title">{{ sidebarAnother.title }}</h3>
+
+	<ul class="su-another_list su-list-links">
+
+		{% for row in sidebarAnother.rows %}
+			<li class="su-list-links_item">
+				<a class="su-list-links_link su-link-list" href="{{ row.href }}">{{ row.title }}</a>
+			</li>
+		{% endfor %}
+
+	</ul>
+
+	<footer class="su-another_footer su-another-footer">
+		<a class="su-another-footer_link su-link-button" href="{{ sidebarJust.buttonHref }}" >{{ sidebarAnother.buttonTitle }}</a>
+	</footer>
+</section>

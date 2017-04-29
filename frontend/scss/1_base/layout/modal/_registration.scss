@@ -1,0 +1,36 @@
+//Цвета
+$color-title : lib-color(secondary-dark);
+//------------------------------
+
+//Классы
+$wrapper : lib-get-class('modal-reg');
+$reg-title : lib-get-class('reg-title');
+$reg-close : lib-get-class('reg-close');
+$reg : lib-get-class('reg');
+$reg-form : lib-get-class('reg-form');
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 465px;
+
+		@include lib-respond-to(narrow) {
+			width : 426px;
+		}
+	}
+
+	#{$reg-title} {
+		color     : $color-title;
+		font-size : lib-font-size(e2);
+	}
+	#{$reg-close} {
+		@include lib-close;
+	}
+	#{$reg} {
+		#{$reg-form} {
+			margin-top: 20px;
+		}
+	}
+
+}

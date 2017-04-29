@@ -1,0 +1,28 @@
+<div class="su-header-basket">
+	<a class="su-header-basket_link" href="#">
+		<span class="su-header-basket_title">Товаров</span>
+		<span class="su-header-basket_amount">2</span> (
+		<span class="su-header-basket_total su-currency">2400</span> )
+	</a>
+	<div class="su-header-basket_dropdown">
+		<ul class="su-basket-selected su-list">
+
+			{% for row in basketItems %}
+				<li class="su-list_item">
+					<a class="su-list_link su-link" href="{{ row.href }}">
+						<span class="su-basket-label">{{ row.title }}</span>
+						<span class="su-basket-value">
+							<span class="su-basket-value_cost su-currency">{{ row.cost }}</span>
+						</span>
+					</a>
+				</li>
+			{% endfor %}
+
+		</ul>
+		<div class="su-basket-total su-currency">Сумма: 2 400 </div>
+		<div class="su-basket-button su-block">
+			<a class="su-block_element su-link-btn" href="#">оформить заказ</a>
+		</div>
+	</div>
+
+</div>

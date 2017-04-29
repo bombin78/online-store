@@ -1,0 +1,22 @@
+//Классы
+$wrapper : lib-get-class('footer-catalog');
+$catalog-list : lib-get-class('footer-catalog-list');
+$detail : lib-get-class('detail');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper}#{$detail} {
+	padding-top : 0;
+	#{$detail}_label {
+		@include mix-footer-title;
+	}
+	#{$detail}_value {
+
+		@at-root {
+			#{$catalog-list}#{$list} {
+				@include mix-footer-list;
+			}
+		}
+
+	}
+}

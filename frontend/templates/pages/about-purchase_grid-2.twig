@@ -1,0 +1,45 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-about-purchase">
+		<h1 class="su-about-purchase_title">О доставке</h1>
+		{% include 'blocks/tabs.twig' with {overrideClassTabs: 'su-about-purchase_tabs'} %}
+		{% include 'blocks/payment-icons.twig' with {overrideClassPayment: 'su-about-purchase_payment'} %}
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		//ПЕРЕКЛЮЧЕНИЕ ЗАКЛАДОК БЛОКА "О ДОСТАВКЕ"
+		$('#su-tabscontrol').on('click','.su-list_item', function () {
+			var newTabControl = $(this),
+				newIdPage = newTabControl.attr('data-target'),
+				currentTabControl = $('.su-list_item._su-active'),
+				currentIdPage = '#' + $('#su-tabscontent').find('.su-tab-page._su-open').attr('id');
+
+			var togglePade = function () {
+				if(newIdPage != currentIdPage) {
+					$(currentTabControl).removeClass('_su-active');
+					$(currentIdPage).removeClass('_su-open');
+					$(newTabControl).addClass('_su-active');
+					$(newIdPage).addClass('_su-open');
+				}
+
+				currentTabControl = newTabControl;
+				currentIdPage = newIdPage;
+			};
+
+			togglePade();
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

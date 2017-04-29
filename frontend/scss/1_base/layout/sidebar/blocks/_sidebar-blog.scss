@@ -1,0 +1,19 @@
+//Классы
+$wrapper : lib-get-class('sidebar-blog');
+$menu : lib-get-class('sidebar-menu');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	//margin-top : 30px;
+
+	#{$menu} {
+		&_list#{$list} {
+			padding: 13px 10px 10px 10px;
+			#{$list}_item {
+				margin-top : 13px;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,25 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-catalog">
+		<h1 class="su-catalog_title">Каталог товаров</h1>
+		{% include 'blocks/tile.twig' with {overrideClassTile: 'su-catalog_sections', dataTile: catalog, onlyTile: true} %}
+		{% include 'blocks/tile.twig' with {overrideClassTile: 'su-catalog_popular', dataTile: popular, tileTitle: 'Самое популярное в этом разделе'} %}
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ...........................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

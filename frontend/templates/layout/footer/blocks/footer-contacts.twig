@@ -1,0 +1,19 @@
+<div class="su-footer-contacts">
+	<dl class="su-footer-contacts_phones su-detail">
+		<dt class="su-detail_label">
+			{{ footerContacts.title }}
+		</dt>
+		<dd class="su-detail_value">
+			<ul class="su-footer-contacts-list su-list">
+
+				{% for row in footerContacts.phones %}
+					<li class="su-list_item">{{ row.phone }}</li>
+				{% endfor %}
+
+			</ul>
+		</dd>
+	</dl>
+	<div class="su-footer-contacts_schedule">
+		{{ footerContacts.schedule }}
+	</div>
+</div>

@@ -1,0 +1,150 @@
+//Импорт файлов
+@import 'blocks/header-search';
+@import 'blocks/header-user';
+@import 'blocks/header-nav';
+@import 'blocks/header-basket';
+//-------------------------------
+
+//Цвета
+$bg-header : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('header-control');
+$search : lib-get-class('header-search');
+$nav : lib-get-class('header-nav');
+$basket : lib-get-class('header-basket');
+$user : lib-get-class('header-user');
+$userdropdown : lib-get-class('header-userdropdown');
+$dropdown : lib-get-class('dropdown');
+$list : lib-get-class('list');
+$link : lib-get-class('link');
+//-------------------------------
+
+#{$wrapper} {
+	position   : fixed;
+	height     : 40px;
+	width      : 100%;
+	z-index    : lib-z('header-control');
+
+	background : $bg-header;
+	&_container {
+		position : relative;
+		margin   : 0 auto;
+		padding  : 0 10px;
+		width    : $lib-width-container-normal;
+
+		@include lib-respond-to(normal) {
+			width : $lib-width-container-narrow;
+		}
+		@include lib-respond-to(narrow) {
+			width : $lib-width-container-mobile;
+		}
+		@include lib-respond-to(mobile) {
+			width : 100%;
+		}
+		@extend %lib-clearfix;
+
+		@at-root {
+			#{$search} {
+				float      : left;
+				margin-top : 5px;
+
+				@include lib-respond-to(narrow) {
+					width : 180px;
+				}
+				@include lib-respond-to(mobile) {
+					margin-left : 52px;
+					width       : 39%;
+				}
+			}
+			#{$nav} {
+				margin-top  : 10px;
+				margin-left : 20px;
+
+				@include lib-respond-to(narrow) {
+					margin-top  : 10px;
+					margin-left : 15px;
+				}
+				@include lib-respond-to(mobile) {
+					position      : absolute;
+					top           : 0;
+					left          : -260px;
+					margin-top    : 0;
+					margin-left   : 0;
+					padding       : 10px 20px 15px 20px;
+					width         : 260px;
+
+					background    : #ececec;
+					border-bottom : 1px dashed #717171;
+				}
+
+				@at-root {
+					#{$nav}_list#{$list} {
+						@include lib-respond-to(mobile) {
+							display     : block;
+
+							font-size   : lib-font-size(-4);
+							font-weight : $lib-font-weight-bold;
+						}
+						#{$list}_item {
+							@include lib-respond-to(mobile) {
+								float   : none;
+								margin  : 0;
+								padding : 6px 0;
+								&:after {
+									display : none;
+								}
+							}
+
+							@at-root {
+								#{$list}_link#{$link} {
+									@include lib-respond-to(mobile) {
+										color : #717171;
+									}
+								}
+							}
+
+						}
+					}
+				}
+
+				&_button {
+					&:after {
+						@include lib-respond-to(mobile) {
+							display : block;
+						}
+					}
+				}
+			}
+			#{$basket} {
+				float      : right;
+				margin-top : 5px;
+
+				@at-root {
+					#{$basket}_dropdown {
+						@include lib-respond-to(narrow) {
+							min-width : 225px;
+						}
+					}
+				}
+
+			}
+			#{$user} {
+				float        : right;
+				margin-top   : 5px;
+				margin-right : 20px;
+
+				@include lib-respond-to(narrow) {
+					max-width : 155px;
+				}
+				#{$userdropdown}#{$dropdown} {
+					@include lib-respond-to(narrow) {
+						width : 112px;
+					}
+				}
+			}
+		}
+
+	}
+}

@@ -1,0 +1,17 @@
+//Цвета
+$color-link : lib-color(primary-lighter);
+$color-link-animation : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('link');
+//-------------------------------
+
+#{$wrapper} {
+	color : $color-link;
+	&:focus,
+	&:hover,
+	&:visited {
+		color : $color-link-animation;
+	}
+}

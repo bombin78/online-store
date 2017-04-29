@@ -1,0 +1,96 @@
+<div class="su-header-stock">
+	<div class="su-stock-counter">
+		<div class="su-stock-counter_title">
+			<span class="su-stock-counter_text _su-start">КАЖДЫЙ ДЕНЬ</span>
+			<span class="su-stock-counter_text _su-middle">CУПЕРЦЕНА</span>
+			<span class="su-stock-counter_text _su-end">НА ОДИН ТОВАР</span>
+		</div>
+		<div class="su-stock-counter_done su-indicator">
+			<span class="su-indicator_info">Уже продано: 60%</span>
+			<div class="su-indicator_bar">
+				<div class="su-indicator_filler" style="width:60%"></div>
+			</div>
+		</div>
+		<div class="su-stock-counter_timer su-timer">
+			<span class="su-timer_title">До окончания акции:</span>
+			<div class="su-timer_time">
+				<div class="su-timer_label">час.</div>
+				<div class="su-timer_label">мин.</div>
+				<div class="su-timer_label">сек.</div>
+				<div class="su-timer_value _su-hour">99</div>
+				<div class="su-timer_value _su-minute">00</div>
+				<div class="su-timer_value _su-second">00</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="su-stock-offer">
+		<div class="su-stock-view">
+			<a class="su-stock-view_link su-link-img" href="card.html">
+				<img class="su-link-img_img" width="210" src="img/offers/offer_1.jpg">
+			</a>
+		</div>
+		<div class="su-stock-accent">
+			<div class="su-stock-accent_title">ТОВАР ДНЯ!</div>
+			<div class="su-stock-accent_name su-block">
+				<a class="su-block_element su-link" href="card.html">Маникюрный набор Mertz 9733</a>
+			</div>
+			<dl class="su-stock-accent_old-price su-detail">
+				<dt class="su-detail_label">Старая цена:</dt>
+				<dd class="su-detail_value su-currency">7245</dd>
+			</dl>
+			<dl class="su-stock-accent_new-price su-detail">
+				<dt class="su-detail_label">СУПЕРЦЕНА:</dt>
+				<dd class="su-detail_value su-currency">4453</dd>
+			</dl>
+			<div class="su-stock-accent_button su-block">
+				<a class="su-block_element su-link-btn _su-buy" data-toggle="modal" data-target=".su-modal-choice">Купить</a>
+			</div>
+			<dl class="su-stock-accent_stamp su-detail">
+				<dt class="su-detail_label">Экономия</dt>
+				<dd class="su-detail_value su-currency">2792</dd>
+			</dl>
+		</div>
+		<p class="su-stock-description">
+			Классика жанра. Для элегантных женщин и солидных мужчин!
+			Что-то в нем есть такое, что заставляет восхищаться!
+			Черный консервативный чехол и высококачественный инструмент.
+		</p>
+	</div>
+
+	<script>
+		var remain_rv = 356400;
+
+		function parseTime_rv(timestamp) {
+			var hour = Math.floor(timestamp / 60 / 60);
+			var mins = Math.floor((timestamp - hour * 60 * 60) / 60);
+			var secs = Math.floor(timestamp - hour * 60 * 60 - mins * 60);
+			//console.log(timestamp);
+
+			if (String(hour).length > 1)
+				$('._su-hour').text(hour);
+			else
+				$('._su-hour').text("0" + hour);
+
+			if (String(mins).length > 1)
+				$('._su-minute').text(mins);
+			else
+				$('._su-minute').text("0" + mins);
+
+			if (String(secs).length > 1)
+				$('._su-second').text(secs);
+			else
+				$('._su-second').text("0" + secs);
+		}
+
+		$(document).ready(function () {
+			setInterval(function () {
+				remain_rv = remain_rv - 1;
+				parseTime_rv(remain_rv);
+				if (remain_rv <= 0) {
+					$('.su-header-stock').hide();
+				}
+			}, 1000);
+		});
+	</script>
+</div>

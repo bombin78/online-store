@@ -1,0 +1,9 @@
+//Классы
+$wrapper : lib-get-class('block');
+//-------------------------------
+
+#{$wrapper} {
+	&_element {
+		display : inline-block;
+	}
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Теги</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/tags.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
+	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
+	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
+
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<!-- подключение jquery.js -->
+	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
+	<!-- подключение twig.js -->
+	<script src="../node_modules/twig/twig.js"></script>
+	<!-- файл с общими данными для работы сайта: используется только для верстки -->
+	<script src="js/config.js"></script>
+	<script>
+		(function ($) {
+			//дополнение объекта с данными для эмуляции
+			dataEmulation.typeHeader = '_su-active';
+
+			dataEmulation.contentBanner = {
+				href: '#',
+				src: 'img/banner/banner.jpg',
+				alt: 'баннер контента'
+			};
+
+			dataEmulation.breadcrumb = [
+				{modifier: '', href:'#', title:'Главная'},
+				{title:'Метки товаров'}
+			];
+
+			dataEmulation.tagsPage = 'links';
+
+			dataEmulation.listTags = [
+				{modifier:'', href: 'offers.html', title: 'Shellac CND'},
+				{modifier:'', href: 'offers.html', title: 'гель-лаки Кошачий глаз'},
+				{modifier:'', href: 'offers.html', title: 'Shellac Holy Rose'},
+				{modifier:'', href: 'offers.html', title: 'гель-лак Aurelia'},
+				{modifier:'', href: 'offers.html', title: 'гель-лак Irisk Professional'},
+				{modifier:'', href: 'offers.html', title: 'лазерные терки для ног Mertz'},
+				{modifier:'', href: 'offers.html', title: 'голографические лаки'},
+				{modifier:'', href: 'offers.html', title: 'Aurelia Glamour'},
+				{modifier:'', href: 'offers.html', title: 'Aurelia Professional'},
+				{modifier:'', href: 'offers.html', title: 'одноразовые терки'},
+				{modifier:'', href: 'offers.html', title: 'шлифовальные терки'},
+				{modifier:'', href: 'offers.html', title: 'материалы для дизайна ногтей'},
+				{modifier:'', href: 'offers.html', title: 'гель для дизайна ногтей'},
+				{modifier:'', href: 'offers.html', title: 'кисти для дизайна ногтей'},
+				{modifier:'', href: 'offers.html', title: 'led-лампы для ногтей'}
+			];
+
+
+			$(document).ready(function () {
+				//подключение шаблона с контентом
+				twig({
+					href: "templates/pages/tags_grid-2.twig",
+					load: function (template) {
+						$("body").html(template.render(dataEmulation));
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+</head>
+<body>
+
+</body>
+</html>

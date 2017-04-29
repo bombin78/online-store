@@ -1,0 +1,23 @@
+{% if typeField == "full" %}
+	<div class="su-field-text _su-error">
+		<label class="su-field-text_label" for="input-text">Название метки</label>
+		<div class="su-field-text_block">
+			<span class="su-field-text_prefix">Префикс</span>
+			<input id="input-text" class="su-field-text_input" type="text" name="#" placeholder="Плейсхолдер" required>
+			<span class="su-field-text_postfix">Постфикс</span>
+		</div>
+		<span class="su-field-text_help">Текст подсказки</span>
+		<span class="su-field-text_error">Текст ошибки</span>
+	</div>
+{% elseif typeField == "label" %}
+	<div class="su-field-text">
+		<label class="su-field-text_label" for="input-text">Название метки</label>
+		<input id="input-text" class="su-field-text_input" type="text" name="#" placeholder="Плейсхолдер" required>
+		<span class="su-field-text_error">Текст ошибки</span>
+	</div>
+{% else %}
+	<div class="su-field-text">
+		<input id="input-text" class="su-field-text_input" type="text" name="#" placeholder="Плейсхолдер" required>
+		<span class="su-field-text_error">Текст ошибки</span>
+	</div>
+{% endif %}

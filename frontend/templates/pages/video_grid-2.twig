@@ -1,0 +1,52 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-video">
+		{% if videoPage == 'links'%}
+			<h1 class="su-video_title">Видео Маникюр Шоп</h1>
+			<ul class="su-video_list su-list _su-circle">
+
+				{% for row in listVideo %}
+					<li class="su-list_item">
+						<a class="su-video-link {{ modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+					</li>
+				{% endfor %}
+
+			</ul>
+		{% else %}
+			<h1 class="su-video_title">Видео: заточка маникюрных кусачек</h1>
+			<p>
+				Что такое заточка маникюрного инструмента? Многие затачивают, но большинство не имеют представления как это делается. Видеоролик даст представление о заточке кутикульных кусачек.
+			</p>
+			<p>
+				Данный ролик не является учебным. Мы не ставили целью показать все тонкости процесса. Демонстрация заточки кусачек обобщенная, для получения общего представления.
+			</p>
+			{% include 'blocks/videoblock.twig' with {overrideClassVideo: 'su-list_video'} %}
+			<div class="su-video_partner su-banner-block">
+				<a class="su-banner-block_link su-link-img" href="#">
+					<img class="su-link-img_img" src="img/banner/banner-partner.gif" alt="Наш партнер">
+				</a>
+			</div>
+			<div class="su-video_back su-block">
+				<a class="su-block_element" href="video.html">Возврат ко всем видео</a>
+			</div>
+		{% endif %}
+
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		//............................................................
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

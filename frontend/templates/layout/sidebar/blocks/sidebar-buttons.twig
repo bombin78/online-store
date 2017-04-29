@@ -1,0 +1,12 @@
+<section class="su-sidebar-buttons">
+
+	<ul class="su-sidebar-buttons_list su-list">
+
+		{% for row in sidebarButtons %}
+			<li class="su-list_item">
+				<a class="su-list_link su-link-btn {{ row.modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+			</li>
+		{% endfor %}
+
+	</ul>
+</section>

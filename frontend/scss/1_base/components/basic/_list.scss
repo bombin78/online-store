@@ -1,0 +1,29 @@
+//Классы
+$wrapper : lib-get-class('list');
+$_circle : lib-get-modifier('circle');
+//-------------------------------
+
+#{$wrapper} {
+	padding-left: 0;
+
+	list-style: none;
+	&_item {
+		padding-top : 0;
+	}
+	&#{$_circle} {
+		#{$wrapper}_item {
+			position: relative;
+			margin-top: 7px;
+			padding-left: 15px;
+			&:before {
+				content: '\B0';
+				position     : absolute;
+				top          : 5px;
+				left         : 0;
+				padding-left : -15px;
+
+				font-size    : lib-font-size(e2);
+			}
+		}
+	}
+}

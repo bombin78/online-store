@@ -1,0 +1,62 @@
+.su-guide {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  width: 1170px;
+}
+
+@media screen and (max-width: 1200px) {
+  .su-guide {
+    width: 970px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-guide {
+    width: 750px;
+  }
+}
+
+.su-guide-title {
+  color: #232323;
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.71875rem;
+  text-transform: uppercase;
+}
+
+.su-guide-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.su-guide-list_item {
+  padding: 10px 0;
+  border-bottom: 2px solid #232323;
+}
+
+.su-guide-list_item._su-light {
+  background: #ffffff;
+}
+
+.su-guide-list_item._su-dark {
+  background: #a8a8a8;
+}
+
+.su-guide-list_item._su-for-dropdown .su-guide-code {
+  height: 105px;
+}
+
+.su-guide-subtitle {
+  padding-top: 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.su-guide-code {
+  display: none;
+  position: relative;
+  margin-top: 20px;
+}

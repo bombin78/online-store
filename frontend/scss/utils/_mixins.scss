@@ -1,0 +1,509 @@
+// ВАЖНО!!!
+// Для избежания конфликтов с подключаемыми scss фреймфорками и библиотеками
+// обязательно добавляйте "mix-" в начале переменных и примесей этого файла
+
+// В этот файл вынесены общие стили страниц, которые не могут быть добавлены
+// в библиотеку (относятся только к текущему проекту)
+
+// Цвета
+$mix-color-footer-title : lib-color(primary-lighter);
+$mix-bg-comments-list : lib-color(primary-lighter);
+$mix-bg-jsp-vertical-bar : lib-color(primary-lighter);
+$mix-bg-jsp-drag : lib-color(primary-lighter);
+$mix-bg-personal-offer : transparent;
+$mix-color-border-jsp-vertical-bar : lib-color(primary-base);
+$mix-color-border-jsp-drag : lib-color(primary-base);
+$mix-color-border-new-price : lib-color(primary-base-light);
+$mix-color-border-img : lib-color(primary-base-light);
+$mix-color-border-personal-offer-img : lib-color(primary-base-light);
+//-------------------------------
+
+// Классы
+$mix-tile : lib-get-class('tile');
+$mix-offer : lib-get-class('offer');
+$mix-offer-description : lib-get-class('offer-description');
+$mix-offer-title : lib-get-class('offer-title');
+$mix-offer-text : lib-get-class('offer-text');
+$mix-offer-annotation : lib-get-class('offer-annotation');
+$mix-offer-new-price : lib-get-class('offer-new-price');
+$mix-offer-old-price : lib-get-class('offer-old-price');
+$mix-offer-price : lib-get-class('offer-price');
+$mix-offer-button : lib-get-class('offer-button');
+$mix-link-img : lib-get-class('link-img');
+$mix-link-btn : lib-get-class('link-btn');
+$mix-list : lib-get-class('list');
+$mix-block : lib-get-class('block');
+$mix-preview : lib-get-class('preview');
+$mix-rating : lib-get-class('rating');
+$mix-detail : lib-get-class('detail');
+$mix-social-links : lib-get-class('social-links');
+$mix-social-link : lib-get-class('social-link');
+$mix-free-mail : lib-get-class('free-mail');
+$mix-slider : lib-get-class('slider');
+//-------------------------------
+
+// 1. Общие параметры контента
+@mixin mix-content-common-param(
+	$padding-top: 20px,
+	$padding-bottom: 15px
+) {
+	position  : relative;
+	margin    : 0 auto;
+	padding   : $padding-top 40px $padding-bottom 40px;
+	max-width : 1280px;
+
+	@include lib-respond-to(narrow) {
+		padding-right : 20px;
+		padding-left  : 20px;
+	}
+}
+
+//-------------------------------
+
+// 2. Общие стили для повторяющихся правил плитки
+@mixin mix-respond-normal-tile-common() {
+	#{$mix-tile}_list#{$mix-list} {
+		#{$mix-list}_item {
+			@include lib-respond-to(normal) {
+				@include lib-box12(4);
+			}
+		}
+	}
+}
+
+@mixin mix-respond-narrow-tile-common() {
+	#{$mix-tile}_list#{$mix-list} {
+		#{$mix-list}_item {
+			@include lib-respond-to(narrow) {
+				#{$mix-list}_offer#{$mix-offer} {
+					padding-bottom : 75px;
+					#{$mix-offer}_preview#{$mix-preview} {
+						#{$mix-preview}_link#{$mix-link-img} {
+							@include lib-link-img-param(
+								$height : 150px
+							);
+						}
+					}
+					#{$mix-offer-description} {
+						&_container {
+							#{$mix-offer-title}#{$mix-block} {
+								margin-top : -40px;
+								height     : 40px;
+							}
+							#{$mix-offer-annotation} {
+								height     : 35px;
+								margin-top : 4px;
+							}
+						}
+						#{$mix-offer-old-price} {
+							margin-top : 0;
+						}
+						#{$mix-offer-price} {
+							right      : auto;
+							bottom     : -20px;
+							width      : 134px;
+
+							text-align : center;
+						}
+						#{$mix-offer-button} {
+							right      : 0;
+							bottom     : -61px;
+							width      : 134px;
+
+							text-align : center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------------------
+
+// 3. Переопределение стилей пдагина "jscrollpane"
+@mixin mix-override-jscrollpane(
+	$after-height: 45px,
+	$before-height: 45px
+) {
+	$width-vertical-bar : 14px;
+	$offset-container-pseudo : $width-vertical-bar + 3;
+	//классы плагина "jscrollpane"
+	.jspContainer {
+		&:before,
+		&:after {
+			content  : '';
+			position : absolute;
+			left     : 0;
+			width    : 100%;
+			z-index  : 2;
+		}
+		&:before {
+			top        : 0;
+			height     : $before-height;
+
+			background : linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
+		}
+		&:after {
+			bottom     : 0;
+			height     : $after-height;
+
+			background : linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
+		}
+		//Добавленный модификатор для отслеживания вертикальной полосы прокрутки
+		&._jspOffset {
+			&:after,
+			&:before {
+				left : - $offset-container-pseudo;
+			}
+		}
+		.jspPane {
+			min-height : 100%;
+
+			background : $mix-bg-comments-list;
+		}
+		.jspVerticalBar {
+			width         : $width-vertical-bar;
+			z-index       : 3;
+
+			background    : $mix-bg-jsp-vertical-bar;
+			border        : 1px solid $mix-color-border-jsp-vertical-bar;
+			border-radius : 3px;
+			.jspTrack {
+				background : transparent;
+				.jspDrag {
+					background    : $mix-bg-jsp-drag url(../../img/scrollbar/scrollbar.png) center center no-repeat;
+					border        : 1px solid $mix-color-border-jsp-drag;
+					border-radius : 3px;
+					cursor        : pointer;
+				}
+			}
+		}
+	}
+}
+
+//-------------------------------
+
+// 4. Параметры элементов ячечеек подвала
+// 4.1 Заголовки
+@mixin mix-footer-title() {
+	color       : $mix-color-footer-title;
+	font-family : 'OpenSansBold';
+	font-size   : lib-font-size(-2);
+}
+
+// 4.2 Списки
+@mixin mix-footer-list() {
+	margin-top : 10px;
+
+	font-size  : lib-font-size(-2);
+	#{$mix-list}_item {
+		margin-top : 5px;
+	}
+}
+
+//-------------------------------
+
+// 5. Общие стили для входа/регистрации через
+// соц.сети на втором шаге оформелния заказа
+@mixin mix-common-order-social-links() {
+	@include lib-respond-to(narrow) {
+		#{$mix-social-links}_title {
+			display : block;
+		}
+		#{$mix-social-links}_list#{$mix-list} {
+			margin-top : 20px;
+			#{$mix-list}_item {
+				#{$mix-social-link}#{$mix-link-btn} {
+					#{$mix-link-btn}_addition {
+						display : none;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------------------
+
+// 6. Общие стили для предложений на странице тега
+// и странице предложений
+@mixin mix-common-offer(
+	$margin-top: 21px
+) {
+	margin-top : $margin-top;
+
+	@include lib-respond-to(normal) {
+		padding-bottom : 88px;
+	}
+	@include lib-respond-to(narrow) {
+		padding-bottom : 84px;
+	}
+	#{$mix-offer}_preview#{$mix-preview} {
+		#{$mix-preview}_link#{$mix-link-img} {
+
+			@include lib-link-img-param(
+				$border : $mix-color-border-img
+			);
+			@include lib-respond-to(normal) {
+				@include lib-link-img-param(
+					$height : 180px
+				);
+			}
+		}
+	}
+	#{$mix-offer-description} {
+		#{$mix-offer-new-price} {
+			width      : 368px;
+
+			border-top : 1px dotted $mix-color-border-new-price;
+		}
+
+		@include lib-respond-to(normal) {
+			#{$mix-offer-description}_container {
+				height : 108px;
+				#{$mix-offer-title}#{$mix-block},
+				#{$mix-offer-text} {
+					padding-left : 200px
+				}
+			}
+			&_rating#{$mix-rating} {
+				position : absolute;
+				bottom   : -25px;
+				left     : 200px;
+			}
+			#{$mix-offer-new-price}#{$mix-detail} {
+				bottom : -63px;
+				left   : 200px;
+				width  : 388px;
+			}
+			#{$mix-offer-button}#{$mix-block} {
+				bottom : -70px;
+			}
+		}
+		@include lib-respond-to(narrow) {
+			#{$mix-offer-description}_container {
+				height : 112px;
+			}
+			&_rating#{$mix-rating} {
+				bottom : -23px;
+			}
+			#{$mix-offer-new-price}#{$mix-detail} {
+				bottom      : -62px;
+				padding-top : 12px;
+				width       : 275px;
+			}
+			#{$mix-offer-button}#{$mix-block} {
+				bottom : -70px;
+			}
+		}
+	}
+}
+
+//-------------------------------
+
+// 7. Общие стили для повторяющихся правил блока "free-mail"
+@mixin mix-respond-normal-free-mail() {
+	@include lib-respond-to(normal) {
+		width : 632px;
+		#{$mix-free-mail}_title {
+			font-size : lib-font-size(0);
+		}
+		#{$mix-free-mail}_description {
+			width : 344px;
+		}
+		#{$mix-free-mail}_user-data {
+			width : 232px;
+		}
+	}
+}
+
+@mixin mix-respond-narrow-free-mail() {
+	@include lib-respond-to(narrow) {
+		width : 508px;
+		#{$mix-free-mail}_title {
+			padding   : 0 15px;
+
+			font-size : lib-font-size(-2);
+		}
+		#{$mix-free-mail}_description {
+			margin-left : 15px;
+			width       : 255px;
+		}
+		#{$mix-free-mail}_user-data {
+			margin-right : 15px;
+			width        : 215px;
+		}
+	}
+}
+
+//-------------------------------
+
+// 8. Общие стили для повторяющихся правил слайдера контента
+// в карточке товара и странице блога
+@mixin mix-respond-content-slider() {
+	#{$mix-slider} {
+		&_prev {
+			@include lib-respond-to(normal) {
+				left : -3px;
+			}
+		}
+		&_next {
+			@include lib-respond-to(normal) {
+				right : 0;
+			}
+		}
+		&_prev,
+		&_next {
+			@include lib-respond-to(narrow) {
+				margin-top : -12px;
+				height     : 24px;
+				width      : 16px;
+
+				font-size  : 24px;
+			}
+		}
+		&_container {
+			@include lib-respond-to(normal) {
+				width : 571px;
+			}
+			@include lib-respond-to(narrow) {
+				height : 228px;
+				width  : 468px;
+			}
+			#{$mix-slider}_list#{$mix-list} {
+				#{$mix-list}_item {
+					@include lib-respond-to(normal) {
+						margin-left : 8px;
+						&:first-child {
+							margin-left : 0;
+						}
+					}
+					@include lib-respond-to(narrow) {
+						margin-left : 6px;
+						width       : 152px;
+						&:first-child {
+							margin-left : 0;
+						}
+					}
+					#{$mix-list}_offer#{$mix-offer} {
+						@include lib-respond-to(narrow) {
+							padding-bottom : 10px;
+						}
+						#{$mix-offer}_preview#{$mix-preview} {
+							#{$mix-preview}_link#{$mix-link-img} {
+								@include lib-respond-to(narrow) {
+									@include lib-link-img-param(
+										$height : 132px
+									);
+								}
+							}
+						}
+						#{$mix-offer-description} {
+							&_container {
+								#{$mix-offer-title} {
+									@include lib-respond-to(narrow) {
+										margin-top : -40px;
+										height     : 40px;
+									}
+								}
+							}
+							#{$mix-offer-price} {
+								@include lib-respond-to(narrow) {
+									position   : relative;
+									bottom     : auto;
+									margin-top : 10px;
+									width      : 100%;
+
+									text-align : center;
+								}
+							}
+							#{$mix-offer-button} {
+								@include lib-respond-to(narrow) {
+									position   : relative;
+									bottom     : auto;
+									margin-top : 14px;
+
+									text-align : center;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------------------
+
+// 9. Общие стили предложений в личном кабинете
+@mixin mix-common-personal-offer() {
+	height           : 51px;
+
+	border           : none;
+	border-radius    : 0;
+	background-color : $mix-bg-personal-offer;
+	box-shadow       : none;
+	#{$mix-offer}_preview#{$mix-preview} {
+		left : 5px;
+		#{$mix-preview}_link#{$mix-link-img} {
+			@include lib-link-img-param(
+				$height : 40px,
+				$ratio : (16/9),
+				$border : $mix-color-border-personal-offer-img
+			);
+		}
+	}
+	#{$mix-offer-description} {
+		position : relative;
+		&:hover {
+			#{$mix-offer-description}_container,
+			#{$mix-offer-new-price}#{$mix-detail} {
+				@include lib-text-blackout-change (
+					$color1 : 236,
+					$color2 : 236,
+					$color3 : 236
+				);
+			}
+		}
+		&_container {
+			height : 100%;
+
+			@include lib-text-blackout(
+				$color1 : 236,
+				$color2 : 236,
+				$color3 : 236
+			);
+			#{$mix-offer-title}#{$mix-block} {
+				padding-left : 0;
+				@include lib-text-hyphens(
+					$type : lastClip
+				);
+			}
+			#{$mix-offer}_text {
+				padding-top : 10px;
+
+				font-size   : lib-font-size(-4);
+			}
+		}
+		#{$mix-offer-new-price}#{$mix-detail} {
+			bottom      : -20px;
+			margin-top  : 0;
+			padding-top : 0;
+
+			@include lib-text-blackout(
+				$color1 : 236,
+				$color2 : 236,
+				$color3 : 236
+			);
+		}
+		#{$mix-offer-button}#{$mix-block} {
+			right  : -115px;
+			bottom : -16px;
+		}
+	}
+}
+
+//-------------------------------
+

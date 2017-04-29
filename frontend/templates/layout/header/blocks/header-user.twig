@@ -1,0 +1,14 @@
+<div class="su-header-user">
+	<div class="su-header-user_avatar"></div>
+	<div class="su-header-user_dropdown su-dropdown">
+		<div class="su-dropdown_container">
+			<ul class="su-dropdown_list su-list">
+				{% for row in headerUser %}
+					<li class="su-list_item">
+						<a class="su-list_link su-link {{ row.modifier }}" href="{{ row.href }}" {{ row.attr }}>{{ row.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

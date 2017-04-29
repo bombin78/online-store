@@ -1,0 +1,32 @@
+//Цвета
+$color-text : lib-color(primary-dark);
+//------------------------------
+
+//Классы
+$wrapper : lib-get-class('modal-confirmation');
+$confirmation-close : lib-get-class('confirmation-close');
+$confirmation-text : lib-get-class('confirmation-text');
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 420px;
+	}
+
+	@at-root {
+		#{$confirmation-close} {
+			@include lib-close;
+		}
+
+		#{$confirmation-text} {
+			padding-top    : 0;
+			padding-bottom : 1.25rem;
+			line-height    : 2.25rem;
+
+			color          : $color-text;
+			font-size      : lib-font-size(3);
+		}
+	}
+
+}

@@ -1,0 +1,40 @@
+//Цвета
+$color-link : lib-color(secondary-base);
+$color-link-focus : lib-color(secondary-base);
+$color-link-hover : lib-color(secondary-base);
+$color-link-visited : lib-color(secondary-visited);
+//-------------------------------
+
+* {
+	box-sizing : border-box;
+}
+
+input[type = 'text'],
+input[type = 'search'] {
+	box-sizing : border-box;
+
+	outline    : 0;
+}
+
+a {
+	color           : $color-link;
+	cursor          : pointer;
+	text-decoration : underline;
+	&:focus {
+		color           : $color-link-focus;
+		text-decoration : underline;
+	}
+	&:hover {
+		color           : $color-link-hover;
+		text-decoration : none;
+	}
+	&:visited {
+		color           : $color-link-visited;
+		text-decoration : underline;
+	}
+}
+
+img {
+	height    : auto;
+	max-width : 100%;
+}

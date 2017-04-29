@@ -1,0 +1,54 @@
+//Цвета
+$color-btn : lib-color(primary-lighter);
+$bg-btn : lib-color(secondary-light);
+$bg-btn-hover : lib-color(secondary-base);
+$bg-btn-disabled : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('btn');
+$_buy : lib-get-modifier('buy');
+$_disabled : lib-get-modifier('disabled');
+//-------------------------------
+
+#{$wrapper} {
+	display         : inline-block;
+	position        : relative;
+	padding         : 0 12px;
+	height          : 32px;
+
+	line-height     : 32px;
+	cursor          : pointer;
+	color           : $color-btn;
+	border          : none;
+	border-radius   : 3px;
+	background      : $bg-btn;
+	font-size       : lib-font-size(0);
+	font-weight     : bold;
+	&:hover {
+		background : $bg-btn-hover;
+	}
+	&:focus {
+		outline : none;
+	}
+	&#{$_buy} {
+		padding-left : 35px;
+		&:after {
+			content : '\f291';
+			position : absolute;
+			top     : 7px;
+			left : 11px;
+
+			@include lib-font-icon;
+		}
+	}
+	&#{$_disabled} {
+		opacity : 0.5;
+		cursor  : default;
+		&:hover,
+		&:focus {
+			background      : $bg-btn-disabled;
+			text-decoration : none;
+		}
+	}
+}

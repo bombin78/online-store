@@ -1,0 +1,237 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Цвета
+$bg-personal-header : lib-color(primary-light);
+$bg-personal-account : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('personal');
+$personal-header : lib-get-class('personal-header');
+$personal-avatar : lib-get-class('personal-avatar');
+$personal-info : lib-get-class('personal-info');
+$personal-account : lib-get-class('personal-account');
+$personal-account-link : lib-get-class('personal-account-link');
+$tabs-block : lib-get-class('tabs-block');
+$tabs-control : lib-get-class('tabs-control');
+$tabs-content : lib-get-class('tabs-content');
+$tab-page : lib-get-class('tab-page');
+$group-buttons : lib-get-class('group-buttons');
+$special-offer : lib-get-class('special-offer');
+$favorites-offer : lib-get-class('favorites-offer');
+$offer : lib-get-class('offer');
+$offer-description : lib-get-class('offer-description');
+$offer-button : lib-get-class('offer-button');
+$offer-close : lib-get-class('offer-close');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+$_personal : lib-get-modifier('personal');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+
+	@at-root {
+		#{$personal-header} {
+			position   : relative;
+			margin-top : 30px;
+			padding    : 15px;
+			min-height : 145px;
+
+			background : $bg-personal-header;
+
+			@include lib-respond-to(narrow) {
+				padding    : 10px;
+				min-height : 122px;
+			}
+
+			@at-root {
+				#{$personal-avatar} {
+					position : absolute;
+					top      : 15px;
+					left     : 15px;
+					height   : 70px;
+					width    : 70px;
+
+					@include lib-respond-to(narrow) {
+						top  : 10px;
+						left : 10px;
+					}
+					&_img {
+						max-height : 100%;
+					}
+				}
+
+				#{$personal-info} {
+					padding : 0 315px 0 85px;
+
+					@include lib-respond-to(normal) {
+						padding-right : 275px;
+					}
+					@include lib-respond-to(narrow) {
+						padding-right : 220px;
+						padding-left  : 80px;
+					}
+					&_name {
+						display : block;
+					}
+					&_phone#{$detail},
+					&_email#{$detail} {
+						display     : table;
+						padding-top : 10px;
+						#{$detail} {
+							&_label,
+							&_value {
+								display : table-cell;
+							}
+							&_label {
+								padding-right : 4px;
+							}
+						}
+
+					}
+					&_button#{$block} {
+						margin-top : 15px;
+
+						@include lib-respond-to(narrow) {
+							margin-top : 10px;
+						}
+					}
+				}
+
+				#{$personal-account} {
+					position   : absolute;
+					top        : 15px;
+					right      : 15px;
+					padding    : 15px;
+					width      : 300px;
+
+					@include lib-respond-to(normal) {
+						width : 260px;
+					}
+					@include lib-respond-to(narrow) {
+						top     : 10px;
+						right   : 10px;
+						padding : 10px;
+						width   : 210px;
+					}
+					background : $bg-personal-account;
+					&_balance#{$detail} {
+						display     : table;
+						padding-top : 0;
+						#{$detail}_label,
+						#{$detail}_value {
+							display : table-cell;
+						}
+						#{$detail}_label {
+							padding-right : 4px;
+						}
+					}
+					&_links#{$list} {
+						margin-top : 19px;
+
+						@include lib-respond-to(narrow) {
+							margin-top : 25px;
+						}
+						#{$list}_item {
+							padding-top : 5px;
+						}
+					}
+				}
+			}
+
+		}
+
+		#{$tabs-block}#{$_personal} {
+			margin-top : 20px;
+			#{$tabs-block}_container {
+
+				@at-root #{$tabs-block}#{$_personal} {
+					#{$tabs-control} {
+						&_list#{$list} {
+							@include lib-respond-to(normal) {
+								#{$list}_item {
+									margin-left : 6px;
+									width       : 119px;
+
+									font-size   : lib-font-size(-3);
+									&:first-child {
+										margin-left : -1px;
+									}
+								}
+							}
+							@include lib-respond-to(narrow) {
+								#{$list}_item {
+									margin-left : 5px;
+									padding     : 6px 4px;
+									height      : 45px;
+									width       : 98px;
+									&:first-child {
+										margin-left : -1px;
+									}
+								}
+							}
+						}
+					}
+
+					#{$tabs-content} {
+						@include lib-respond-to(narrow) {
+							padding : 15px 10px;
+						}
+
+						@at-root #{$tabs-block}#{$_personal} {
+							#{$tab-page} {
+								&_special#{$list} {
+									#{$list}_item {
+										#{$special-offer}#{$offer} {
+											@include lib-respond-to(narrow) {
+												padding-right : 115px;
+											}
+											#{$offer-description} {
+												#{$offer-button}#{$block} {
+													@include lib-respond-to(narrow) {
+														right  : -105px;
+														bottom : -19px;
+													}
+												}
+											}
+										}
+									}
+								}
+								&_favorites#{$list} {
+									#{$list}_item {
+										#{$favorites-offer}#{$offer} {
+											@include lib-respond-to(narrow) {
+												padding-right : 135px;
+											}
+											#{$offer-description} {
+												#{$offer-button}#{$block} {
+													@include lib-respond-to(narrow) {
+														right  : -105px;
+														bottom : -19px;
+													}
+												}
+												#{$offer-close} {
+													@include lib-respond-to(narrow) {
+														right : -131px;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+}

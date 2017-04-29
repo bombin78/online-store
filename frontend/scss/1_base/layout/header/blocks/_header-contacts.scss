@@ -1,0 +1,25 @@
+//Классы
+$wrapper : lib-get-class('header-contacts');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	float       : right;
+	padding-top : 20px;
+	&_schedule {
+		font-size      : lib-font-size(-3);
+		letter-spacing : 0.03rem;
+	}
+	&_phones#{$list} {
+		font-size   : lib-font-size(e2);
+		font-weight : $lib-font-weight-bold;
+		text-align  : right;
+
+		#{$list}_item {
+			margin-top : 3px;
+			&:first-child {
+				margin-top : 6px;
+			}
+		}
+	}
+}

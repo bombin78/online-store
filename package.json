@@ -1,0 +1,27 @@
+{
+	"name": "Manicurshop",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.html",
+	"author": "Alexandr Bombin",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer-loader": "^3.2.0",
+		"babel-core": "^6.21.0",
+		"babel-loader": "^6.2.10",
+		"babel-preset-es2015": "^6.18.0",
+		"babel-preset-stage-0": "^6.16.0",
+		"babel-preset-stage-1": "^6.16.0",
+		"bootstrap-sass": "3.3.7",
+		"css-loader": "^0.26.1",
+		"extract-text-webpack-plugin": "^1.0.1",
+		"file-loader": "^0.10.0",
+		"jquery": "^2.2.4",
+		"node-sass": "^4.3.0",
+		"resolve-url-loader": "^1.6.1",
+		"sass-loader": "^4.1.1",
+		"twig": "0.8.5",
+		"url-loader": "^0.5.7",
+		"webpack": "^1.14.0"
+	}
+}

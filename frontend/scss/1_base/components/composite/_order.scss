@@ -1,0 +1,168 @@
+//Цвета
+$bg-order : lib-color(primary-light);
+$color-border-img : lib-color(primary-base-light);
+$color-title : lib-color(secondary-base);
+$color-price : lib-color(accent-base-bright);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('order');
+$order-state : lib-get-class('order-state');
+$field-spinner : lib-get-class('field-spinner');
+$preview : lib-get-class('preview');
+$detail : lib-get-class('detail');
+$link-img : lib-get-class('link-img');
+$link : lib-get-class('link');
+$block : lib-get-class('block');
+$_activated : lib-get-modifier('activated');
+$_canceled : lib-get-modifier('canceled');
+$_completed : lib-get-modifier('completed');
+//-------------------------------
+
+#{$wrapper} {
+	display          : inline-block;
+	position         : relative;
+	padding          : 5px 180px 5px 90px;
+	width            : 100%;
+
+	background-color : $bg-order;
+	#{$order-state} {
+		display : none;
+	}
+	&_preview#{$preview},
+	&_quantity,
+	&_spinner#{$field-spinner},
+	&_price {
+		position : absolute;
+		top      : 5px;
+	}
+	&_title#{$block},
+	&_quantity#{$block},
+	&_spinner#{$field-spinner},
+	&_price#{$block} {
+		line-height : 40px;
+	}
+	&_preview#{$preview} {
+		left : 5px;
+		#{$preview}_link#{$link-img} {
+			@include lib-link-img-param(
+				$height : 40px,
+				$ratio : (16/9),
+				$border : $color-border-img
+			);
+		}
+	}
+	&_title#{$block} {
+		display  : inline-block;
+		position : relative;
+		width    : 100%;
+
+		@include lib-text-blackout (
+			$height : 50%,
+			$width : 30px,
+			$color1 : 236,
+			$color2 : 236,
+			$color3 : 236
+		);
+		#{$block}_element#{$link} {
+			max-height      : 40px;
+			width           : auto;
+			max-width       : 100%;
+
+			line-height     : 20px;
+			vertical-align  : middle;
+			color           : $color-title;
+			font-size       : lib-font-size(-2);
+			font-family     : 'OpenSansBold';
+			text-decoration : none;
+
+			@include lib-text-hyphens(
+				$type : limitРyphens
+			);
+		}
+	}
+	&_quantity#{$block} {
+		right : 110px;
+		#{$block}_element {
+			position       : relative;
+			width          : 58px;
+
+			line-height    : 1;
+			vertical-align : middle;
+			font-size      : lib-font-size(1);
+			font-family    : 'OpenSansBold';
+			@include lib-text-hyphens($type : lastClip);
+			@include lib-text-blackout (
+				$color1 : 236,
+				$color2 : 236,
+				$color3 : 236
+			);
+		}
+	}
+	&_spinner#{$field-spinner} {
+		right : 110px;
+		width : 56px;
+		#{$field-spinner}_block {
+			display        : inline-block;
+
+			line-height    : 1;
+			vertical-align : middle;
+		}
+	}
+	&_price#{$block} {
+		right         : 0;
+		padding-left  : 12px;
+		padding-right : 25px;
+		width         : 110px;
+		#{$block}_element {
+			position       : relative;
+			width          : 73px;
+
+			line-height    : 1;
+			vertical-align : middle;
+			color          : $color-price;
+			font-size      : lib-font-size(1);
+			font-family    : 'OpenSansBold';
+
+			@include lib-text-hyphens($type : lastClip);
+			@include lib-text-blackout (
+				$color1 : 236,
+				$color2 : 236,
+				$color3 : 236
+			);
+		}
+
+	}
+	&_close {
+		@include lib-close(
+			$top : 5px,
+			$right : 4px
+		);
+	}
+	&#{$_activated},
+	&#{$_canceled},
+	&#{$_completed} {
+		padding-left : 172px;
+		#{$wrapper}_preview#{$preview} {
+			left : 87px;
+		}
+		#{$order-state} {
+			display     : block;
+			position    : absolute;
+			top         : 5px;
+			left        : 5px;
+			&_detail#{$detail} {
+				font-size: lib-font-size(-2);
+				#{$detail}_label {
+					padding-top : 0;
+				}
+			}
+		}
+	}
+	&#{$_canceled},
+	&#{$_completed} {
+		#{$wrapper}_close {
+			display: none;
+		}
+	}
+}

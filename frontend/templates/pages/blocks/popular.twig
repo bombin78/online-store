@@ -1,0 +1,16 @@
+<div class="{{ overrideClassPopular }} su-popular">
+	<dl class="su-popular_detail su-detail">
+		<dt class="su-detail_label">Популярное:</dt>
+		<dd class="su-detail_value">
+			<ul class="su-popular-links su-list">
+
+				{% for row in popular %}
+					<li class="su-list_item">
+						<a class="su-popular-link link {{ row.modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+					</li>
+				{% endfor %}
+
+			</ul>
+		</dd>
+	</dl>
+</div>

@@ -1,0 +1,64 @@
+//Цвета
+$color-text : lib-color(primary-lighter);
+$color-user-icon : lib-color(primary-lighter);
+$color-hover-user-icon : lib-color(accent-base-bright);
+$bg-dropdown : lib-color(primary-dark);
+$color-dropdown-shadow : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('header-user');
+$dropdown : lib-get-class('dropdown');
+$list : lib-get-class('list');
+$_show : lib-get-modifier('show');
+//-------------------------------
+
+#{$wrapper} {
+	float    : left;
+	position : relative;
+	&_avatar {
+		height : 30px;
+		width  : 30px;
+
+		color  : $color-user-icon;
+		cursor : pointer;
+		&:after {
+			content   : '\f2be';
+
+			font-size : 30px;
+
+			@include lib-font-icon;
+		}
+		&:hover {
+			color : $color-hover-user-icon;
+		}
+	}
+	&_dropdown#{$dropdown} {
+		display    : none;
+		position   : absolute;
+		top        : 100%;
+		right      : 0;
+		left       : auto;
+		margin-top : 8px;
+		width      : 124px;
+		&#{$_show} {
+			display : block;
+		}
+		#{$dropdown}_container {
+			padding       : 5px 8px;
+
+			border-radius : 3px;
+			background    : $bg-dropdown;
+			box-shadow    : 0 1px 5px 0 $color-dropdown-shadow;
+
+			@at-root #{$wrapper}_dropdown#{$dropdown} {
+				#{$dropdown}_list#{$list} {
+					#{$list}_item {
+						font-size : lib-font-size(-3);
+					}
+				}
+			}
+
+		}
+	}
+}

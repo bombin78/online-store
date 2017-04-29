@@ -1,0 +1,46 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('tags');
+$group-buttons : lib-get-class('group-buttons');
+$offer : lib-get-class('offer');
+$popular : lib-get-class('popular');
+$list : lib-get-class('list');
+$pagination : lib-get-class('pagination');
+$_desc : lib-get-modifier('desc');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&_tag-list#{$list} {
+		margin-top : 15px;
+	}
+	&_sorting#{$group-buttons} {
+		margin-top : 20px;
+	}
+	&_offers#{$list} {
+		@extend %lib-clearfix;
+		#{$list}_item {
+			float : left;
+			width : 400px;
+			&:nth-of-type(odd) {
+				margin-right : 19px;
+			}
+			@include lib-respond-to(normal) {
+				width : 100%;
+			}
+
+			@at-root #{$wrapper}_offers#{$list} {
+				#{$list}_offer#{$offer} {
+					@include mix-common-offer();
+				}
+			}
+		}
+	}
+	&_pagination#{$pagination} {
+		margin-top : 20px;
+	}
+}

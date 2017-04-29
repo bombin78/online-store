@@ -1,0 +1,36 @@
+//Цвета
+$color-title : lib-color(secondary-dark);
+//------------------------------
+
+//Классы
+$wrapper : lib-get-class('modal-login');
+$login-title : lib-get-class('login-title');
+$login-close : lib-get-class('login-close');
+$login : lib-get-class('login');
+$login-form : lib-get-class('login-form');
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 465px;
+
+		@include lib-respond-to(narrow) {
+			width : 426px;
+		}
+	}
+
+	#{$login-title} {
+		color     : $color-title;
+		font-size : lib-font-size(e2);
+	}
+	#{$login-close} {
+		@include lib-close;
+	}
+	#{$login} {
+		#{$login-form} {
+			margin-top: 20px;
+		}
+	}
+
+}

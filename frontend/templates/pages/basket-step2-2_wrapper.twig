@@ -1,0 +1,146 @@
+{% extends '../layout/template_wrapper.twig' %}
+
+{% block wrapper_sections %}
+
+	<div class="su-basket">
+		{% include 'blocks/basket-header.twig' %}
+		{% include 'blocks/basket-steps.twig' %}
+		<div class="su-basket-tab">
+			<div class="su-order-make">
+				<form class="su-order-make_form" action="#" method="post">
+					<div class="su-order-personal">
+						<h2 class="su-order-personal_title">Личные данные</h2>
+						<div class="su-order-personal_name su-field-text">
+							<label class="su-field-text_label _su-required" for="personal-name">
+								Ваше имя и фамилия
+							</label>
+							<input id="personal-name" class="su-field-text_input" type="text" name="#" placeholder="" required="">
+							<span class="su-field-text_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-personal_phone su-field-text">
+							<label class="su-field-text_label _su-required" for="personal-phone">
+								Ваш телефон
+							</label>
+							<input id="personal-phone" class="su-field-text_input" type="text" name="#" placeholder="+_(___) ___ __ __" required="">
+							<span class="su-field-text_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-personal_email su-field-text">
+							<label class="su-field-text_label _su-required" for="personal-email">
+								Электронная почта
+							</label>
+							<input id="personal-email" class="su-field-text_input" type="text" name="#" placeholder="" required="">
+							<span class="su-field-text_error">Текст ошибки</span>
+						</div>
+					</div>
+					<div class="su-order-delivery">
+						<h2 class="su-order-delivery_title">Адрес доставки</h2>
+						<div class="su-order-delivery_city su-field-text">
+							<label class="su-field-text_label _su-required" for="delivery-city">
+								Город
+							</label>
+							<input id="delivery-city" class="su-field-text_input" type="text" name="#" placeholder="" required="">
+							<span class="su-field-text_help">Начните набирать город и затем выберите из выпавшего списка</span>
+							<span class="su-field-text_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-delivery_address su-field-textarea">
+							<label class="su-field-textarea_label _su-required" for="delivery-address">
+								Ваш адрес
+							</label>
+							<textarea id="delivery-address" class="su-field-textarea_textarea" rows="4" name="#" placeholder="" required=""></textarea>
+							<span class="su-field-textarea_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-delivery_method su-field-select">
+							<label class="su-field-select_label _su-required" for="delivery-method">Как доставлять</label>
+							<select id="delivery-method" class="su-field-select_select" type="text" name="#" placeholder="Плейсхолдер">
+								<option class="su-field-select_option">Курьером</option>
+								<option class="su-field-select_option" value="Пункт 1">Способ доставки 1</option>
+								<option class="su-field-select_option" value="Пункт 2">Способ доставки 2</option>
+								<option class="su-field-select_option" value="Пункт 3">Способ доставки 3</option>
+							</select>
+							<span class="su-field-select_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-delivery_payment su-field-select">
+							<label class="su-field-select_label _su-required" for="delivery-payment">Оплата</label>
+							<select id="delivery-payment" class="su-field-select_select" type="text" name="#" placeholder="Плейсхолдер">
+								<option class="su-field-select_option" selected="selected">Наличными курьеру</option>
+								<option class="su-field-select_option" value="Пункт 1">Способ оплаты 1</option>
+								<option class="su-field-select_option" value="Пункт 2">Способ оплаты 2</option>
+								<option class="su-field-select_option" value="Пункт 3">Способ оплаты 3</option>
+							</select>
+							<span class="su-field-select_error">Текст ошибки</span>
+						</div>
+					</div>
+					<div class="su-order-promo">
+						<div class="su-order-promo_promo su-field-text">
+							<label class="su-field-text_label" for="promo-promo">
+								Промо-код, сертификат
+							</label>
+							<input id="promo-promo" class="su-field-text_input" type="text" name="#" placeholder="" required="">
+							<span class="su-field-text_help">Введите промо-код, сертификат, если у вас есть</span>
+							<span class="su-field-text_error">Текст ошибки</span>
+						</div>
+						<div class="su-order-promo_comment su-field-textarea">
+							<label class="su-field-textarea_label" for="promo-comment">
+								Комментарий к заказу
+							</label>
+							<textarea id="promo-comment" class="su-field-textarea_textarea" rows="4" name="#" placeholder="" required=""></textarea>
+							<span class="su-field-textarea_error">Текст ошибки</span>
+						</div>
+					</div>
+					<div class="su-order-make-button su-block">
+						<button class="su-block_element su-btn">Оформить заказ</button>
+					</div>
+				</form>
+			</div>
+			<div class="su-order-cart">
+				<h2 class="su-order-cart_title">Мой заказ</h2>
+				<form class="su-order-cart_form" action="#" method="post">
+					<ul class="su-order-cart-list su-list">
+
+						{% for row in orders %}
+							<li class="su-list_item">
+								{% include 'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
+							</li>
+						{% endfor %}
+
+					</ul>
+					<div class="su-order-cart-change su-block">
+						<a class="su-block_element su-link" href="basket-step1_wrapper.twig">Изменить заказ</a>
+					</div>
+					<div class="su-order-cart-cost">
+						<dl class="su-cost-delivery su-detail">
+							<dt class="su-detail_label">Стоимость доставки:</dt>
+							<dd class="su-detail_value su-currency">400</dd>
+						</dl>
+						<dl class="su-cost-total su-detail">
+							<dt class="su-detail_label">Стоимость заказа с доставкой:</dt>
+							<dd class="su-detail_value su-currency">10 400</dd>
+						</dl>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ОТКРЫТЬ/ЗАКРЫТЬ СПОЙЛЕР
+		$(document).on('click', '.su-order-spoiler_title', function (e) {
+			e.preventDefault();
+
+			var self = $(this).closest('.su-order-spoiler').find('.su-order-spoiler_content');
+
+			self.slideToggle();
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

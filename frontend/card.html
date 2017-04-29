@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Карточка товара</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/card.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="vendors/fancybox-1.3.4/css/jquery.fancybox-1.3.4.css">
+	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
+	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
+
+
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<!-- подключение jquery.js -->
+	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
+	<!-- подключение twig.js -->
+	<script src="../node_modules/twig/twig.js"></script>
+	<!-- файл с общими данными для работы сайта: используется только для верстки -->
+	<script src="js/config.js"></script>
+	<script>
+		(function ($) {
+			//дополнение объекта с данными для эмуляции
+			dataEmulation.typeHeader = '_su-active';
+
+			dataEmulation.contentBanner = {
+				href: '#',
+				src: 'img/offers/offer-banner.jpg',
+				alt: 'баннер контента'
+			};
+
+			dataEmulation.breadcrumb = [
+				{modifier: '', href:'#', title:'Главная'},
+				{modifier: '', href:'#', title:'Каталог товаров'},
+				{modifier: '', href:'#', title:'Маникюрный инструмент'},
+				{title:'Маникюрные кусачки'}
+			];
+
+			dataEmulation.card = {
+				title: 'Маникюрный набор-чемодан Zinger MS BG',
+				img: {
+					href: 'img/card/card_1.jpg', src: 'img/card/card_1.jpg', alt: 'фото', title: ''
+				},
+				moreImg: [
+					{href: 'img/card/card_1.jpg', src: 'img/card/preview/card_1.jpg', alt: 'фото 1', title: ''},
+					{href: 'img/card/card_2.jpg', src: 'img/card/preview/card_2.jpg', alt: 'фото 2', title: ''},
+					{href: 'img/card/card_3.jpg', src: 'img/card/preview/card_3.jpg', alt: 'фото 3', title: ''},
+					{href: 'img/card/card_4.jpg', src: 'img/card/preview/card_4.jpg', alt: 'фото 4', title: ''},
+					{href: 'img/card/card_1.jpg', src: 'img/card/preview/card_1.jpg', alt: 'фото 5', title: ''},
+					{href: 'img/card/card_2.jpg', src: 'img/card/preview/card_2.jpg', alt: 'фото 6', title: ''},
+					{href: 'img/card/card_3.jpg', src: 'img/card/preview/card_3.jpg', alt: 'фото 7', title: ''},
+					{href: 'img/card/card_4.jpg', src: 'img/card/preview/card_4.jpg', alt: 'фото 8', title: ''}
+				],
+				push: {
+					href: 'img/card/card_1.jpg', text: 'Нажмите, чтобы увеличить фото', src: 'img/card/card_1.jpg', alt: 'фото', title: ''
+				}
+			};
+
+			dataEmulation.comments = [
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '60',
+					author: 'Имя 1-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '100',
+					author: 'Имя 2-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '80',
+					author: 'Имя 3-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '50',
+					author: 'Имя 4-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '60',
+					author: 'Имя 5-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '50',
+					author: 'Имя 6-го автора'
+				},
+				{
+					text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+					valueRating: '20',
+					author: 'Имя 7-го автора'
+				}
+			];
+
+			dataEmulation.contentSlider = {
+				title: 'С этим товаром покупают',
+				data: [
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_2.jpg',
+						accent: false,
+						title: 'Кусачки Mertz 3420-14',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '3500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_3.jpg',
+						accent: false,
+						title: 'Кусачки Сталекс КМ0111111111111111111111111',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_1.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Сталекс КМ02',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '100',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_4.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 660 C',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '12000',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					},
+					{
+						href: 'offers.html',
+						src: 'img/offers/offer_5.jpg',
+						accent: false,
+						title: 'Маникюрные кусачки Mertz 664 RF',
+						annotation: false,
+						text: false,
+						rating: false,
+						priceLabel: false,
+						priceValue: false,
+						oldPriceLabel: false,
+						oldPriceValue: false,
+						price: '1500',
+						buttonModifier: '_su-buy',
+						buttonHref: '#',
+						buttonTitle: 'Купить'
+					}
+				]
+			};
+
+
+
+			$(document).ready(function () {
+				//подключение шаблона с контентом
+				twig({
+					href: "templates/pages/card_grid-2.twig",
+					load: function (template) {
+						$("body").html(template.render(dataEmulation));
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+</head>
+<body>
+
+</body>
+</html>

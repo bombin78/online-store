@@ -1,0 +1,14 @@
+<div class="su-dropdown">
+	<div class="su-dropdown_container">
+		<h3 class="su-dropdown_title">Заголовок выпадающего списка</h3>
+		<ul class="su-dropdown_list su-list">
+
+			{% for row in headerUser %}
+				<li class="su-list_item">
+					<a class="su-list_link su-link {{ row.modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+				</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+</div>

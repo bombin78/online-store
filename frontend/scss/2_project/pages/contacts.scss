@@ -1,0 +1,50 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Цвета
+$color-border-map : lib-color(primary-base-light);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('contacts');
+$map : lib-get-class('contacts-map');
+$feedback : lib-get-class('contacts-feedback');
+$list : lib-get-class('list');
+$field-text : lib-get-class('field-text');
+$field-textarea : lib-get-class('field-textarea');
+$block : lib-get-class('block');
+//$captcha : lib-get-class('captcha');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&_list#{$list} {
+		#{$list}_item {
+			#{$map} {
+				margin-top : 5px;
+				height     : 400px;
+				width      : 100%;
+
+				border     : 1px solid $color-border-map;
+			}
+		}
+	}
+
+	#{$feedback} {
+		width : 300px;
+		&_name#{$field-text},
+		&_email#{$field-text},
+		&_message#{$field-textarea} {
+			margin-top : 15px;
+		}
+		&_button#{$block} {
+			margin-top : 15px;
+		}
+		//&_captcha#{$captcha} {
+		//	margin-top : 15px;
+		//}
+	}
+}
+

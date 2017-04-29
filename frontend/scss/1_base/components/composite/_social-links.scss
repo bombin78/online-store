@@ -1,0 +1,23 @@
+//Классы
+$wrapper : lib-get-class('social-links');
+$social-link : lib-get-class('social-link');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	display : inline-block;
+	width   : 100%;
+	&_title {
+		display : none;
+	}
+	&_list#{$list} {
+		#{$list}_item {
+			float : left;
+			&:first-child {
+				#{$social-link} {
+					margin-right : 20px;
+				}
+			}
+		}
+	}
+}

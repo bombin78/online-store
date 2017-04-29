@@ -1,0 +1,13 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('about-store');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+}
+

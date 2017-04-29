@@ -1,0 +1,22 @@
+//Классы
+$wrapper : lib-get-class('sidebar-buttons');
+$list : lib-get-class('list');
+$list : lib-get-class('list');
+$link-btn : lib-get-class('link-btn');
+//-------------------------------
+
+#{$wrapper} {
+	&_list#{$list} {
+		//margin-top : 30px;
+		#{$list}_item {
+			margin-top : 6px;
+
+			@at-root #{$wrapper}_list#{$list} {
+				#{$list}_link#{$link-btn} {
+					width : 100%;
+				}
+			}
+
+		}
+	}
+}

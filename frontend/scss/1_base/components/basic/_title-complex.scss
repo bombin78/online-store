@@ -1,0 +1,43 @@
+//Цвета
+$color-text1 : lib-color(accent-base);
+$color-text2 : lib-color(primary-dark);
+$color-label : lib-color(primary-lighter);
+$bg-label : lib-color(accent-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('title-complex');
+//-------------------------------
+
+#{$wrapper} {
+	position     : relative;
+	padding-left : 80px;
+
+	@include lib-text-base-param(3);
+	&:after {
+		content       : '%';
+		position      : absolute;
+		top           : 40px;
+		left          : 0;
+		width         : 70px;
+		height        : 70px;
+
+		border-radius : 35px;
+		font-family   : 'OpenSansBold';
+		font-size     : 48px;
+		line-height   : 70px;
+		text-align    : center;
+		color         : $color-label;
+		background    : $bg-label;
+	}
+	&_text1 {
+		display : block;
+
+		color   : $color-text1;
+	}
+	&_text2 {
+		display : block;
+
+		color   : $color-text2;
+	}
+}

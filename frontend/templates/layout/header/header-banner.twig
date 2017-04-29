@@ -1,0 +1,13 @@
+<div class="su-header-banner">
+	<div class="su-header-banner_container">
+
+		{% if typeBunner == 'slider' %}
+			{# Слайдер #}
+			{% include 'blocks/header-slider.twig' %}
+		{% elseif typeBunner == 'stock' %}
+			{# Банер #}
+			{% include 'blocks/header-stock.twig' %}
+		{% endif %}
+
+	</div>
+</div>

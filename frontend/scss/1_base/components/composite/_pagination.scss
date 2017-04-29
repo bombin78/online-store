@@ -1,0 +1,57 @@
+//Цвета
+$bg-current : lib-color(secondary-accent-dark);
+$bg-link : lib-color(secondary-accent);
+$color-label : lib-color(primary-dark);
+$color-border-bottom : lib-color(secondary-accent-dark);
+$color-current : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('pagination');
+$pagination-current : lib-get-class('pagination-current');
+$pagination-link : lib-get-class('pagination-link');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	width      : 100%;
+
+	text-align : right;
+	&_label {
+		color       : $color-label;
+		font-family : OpenSansBold;
+		font-size   : lib-font-size(-3);
+	}
+	&_list#{$list} {
+		display        : inline-block;
+		margin-left    : 10px;
+
+		vertical-align : -5px;
+		#{$list}_item {
+			float : left;
+
+			@at-root {
+				#{$pagination-current},
+				#{$pagination-link}#{$link} {
+					margin-right  : -4px;
+					padding       : 5px 13px;
+
+					border-bottom : 2px solid $color-border-bottom;
+				}
+
+				#{$pagination-current} {
+					color            : $color-current;
+					font-size        : lib-font-size(-4);
+
+					background-color : $bg-current;
+				}
+
+				#{$pagination-link}#{$link} {
+					background-color : $bg-link;
+				}
+			}
+
+		}
+	}
+}

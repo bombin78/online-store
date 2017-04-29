@@ -1,0 +1,14 @@
+<nav class="su-header-nav">
+	<div class="su-header-nav_button"></div>
+	<ul class="su-header-nav_list su-list">
+
+		{% for row in headerNav %}
+			<li class="su-list_item">
+				<a class="su-list_link su-link {{ row.modifier }}" href="{{ row.href }}">
+					{{ row.title }}
+				</a>
+			</li>
+		{% endfor %}
+
+	</ul>
+</nav>

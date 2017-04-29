@@ -1,0 +1,17 @@
+//Классы
+$wrapper : lib-get-class('link-img');
+//-------------------------------
+
+#{$wrapper} {
+	display      : block;
+	height       : 100%;
+	max-width    : 100%;
+
+	line-height  : 0;
+	&_img {
+		display        : inline-block;
+		max-height     : 100%;
+
+		vertical-align : middle;
+	}
+}

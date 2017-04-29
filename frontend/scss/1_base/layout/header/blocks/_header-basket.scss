@@ -1,0 +1,149 @@
+//Цвета
+$bg-link : lib-color(accent-base-bright);
+$bg-cost : lib-color(primary-lighter);
+$bg-dropdown : lib-color(accent-light);
+$bg-dropdown-detail-hover : lib-color(primary-light);
+$color-dropdown-shadow : lib-color(primary-base-dark);
+$color-dropdown-border-detail : lib-color(primary-base-light);
+$color-label : lib-color(secondary-base);
+$color-cost : lib-color(accent-base-bright);
+$color-total : lib-color(accent-base-bright);
+$color-link : lib-color(primary-lighter);
+$color-link-visited : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('header-basket');
+$selected : lib-get-class('basket-selected');
+$label : lib-get-class('basket-label');
+$value : lib-get-class('basket-value');
+$total : lib-get-class('basket-total');
+$button : lib-get-class('basket-button');
+$list : lib-get-class('list');
+$link : lib-get-class('link');
+$currency : lib-get-class('currency');
+$block : lib-get-class('block');
+$_show : lib-get-modifier('show');
+//-------------------------------
+
+#{$wrapper} {
+	position : relative;
+	&_link {
+		float           : right;
+		position        : relative;
+		padding         : 0 12px 0 37px;
+		height          : 30px;
+		z-index         : lib-z('header-basket');
+
+		line-height     : 30px;
+		color           : $color-link;
+		background      : $bg-link;
+		border-radius   : 15px;
+		font-size       : lib-font-size(-3);
+		font-weight     : $lib-font-weight-bold;
+		letter-spacing  : 0.03rem;
+		text-decoration : none;
+		&:focus,
+		&:hover,
+		&:visited {
+			color           : $color-link-visited;
+			text-decoration : none;
+		}
+		&:after {
+			content   : '\f291';
+			position  : absolute;
+			top       : 8px;
+			left      : 12px;
+
+			font-size : lib-font-size(-2);
+			@include lib-font-icon;
+		}
+	}
+	&_dropdown {
+		display       : none;
+		position      : absolute;
+		top           : 100%;
+		right         : 0;
+		margin-top    : 8px;
+		padding       : 8px 0 10px 0;
+		min-width     : 250px;
+
+		border-radius : 3px;
+		background    : $bg-dropdown;
+		box-shadow    : 0 1px 5px 0 $color-dropdown-shadow;
+		&#{$_show} {
+			display : block;
+		}
+
+		@at-root {
+			#{$selected}#{$list} {
+				display   : table;
+				width     : 100%;
+
+				font-size : lib-font-size(-2);
+				#{$list}_item {
+					display    : table-row-group;
+
+					list-style : none;
+					&:hover {
+						background : $bg-dropdown-detail-hover;
+					}
+
+					@at-root #{$selected}#{$list} {
+						#{$list}_link#{$link} {
+							display : table-row;
+
+							@at-root {
+								#{$label} {
+									display        : table-cell;
+									padding        : 5px 0 5px 10px;
+
+									color          : $color-label;
+									vertical-align : middle;
+									border-bottom  : 1px dashed $color-dropdown-border-detail;
+								}
+								#{$value} {
+									display        : table-cell;
+									padding        : 5px 10px 5px 5px;
+
+									vertical-align : middle;
+									text-align     : right;
+									white-space    : nowrap;
+									border-bottom  : 1px dashed $color-dropdown-border-detail;
+									&_cost {
+										display          : inline-block;
+										padding          : 6px 10px;
+
+										color            : $color-cost;
+										border-radius    : 12px;
+										background-color : $bg-cost;
+										font-weight      : $lib-font-weight-bold;
+										&#{$currency}:after {
+											vertical-align : middle;
+										}
+									}
+								}
+							}
+
+						}
+					}
+
+				}
+			}
+
+			#{$total} {
+				margin-top  : 12px;
+
+				color       : $color-total;
+				text-align  : center;
+				font-weight : $lib-font-weight-bold;
+			}
+
+			#{$button}#{$block} {
+				margin-top : 10px;
+
+				text-align : center;
+			}
+		}
+	}
+}

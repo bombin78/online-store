@@ -1,0 +1,31 @@
+{% for row in order %}
+	<div class="su-order">
+		<div class="su-order_preview su-preview">
+			<a class="su-preview_link su-link-img" href="{{ row.href }}">
+				<img class="su-link-img_img" src="{{ row.src }}">
+			</a>
+		</div>
+		<div class="su-order_title su-block">
+				<a class="su-block_element su-link" href="{{ row.href }}">{{ row.title }}</a>
+			</div>
+
+		{% if row.quantity %}
+			<div class="su-order_quantity su-block">
+				<div class="su-block_element">{{ row.quantity }}</div>
+			</div>
+		{% else %}
+			<div class="su-order_spinner su-field-spinner">
+				<div class="su-field-spinner_block">
+					<span class="su-field-spinner_prefix"></span>
+					<input class="su-field-spinner_input" type="text" name="#" value="1" required="">
+					<span class="su-field-spinner_postfix"></span>
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="su-order_price su-block">
+			<div class="su-block_element su-currency">{{ row.price }}</div>
+		</div>
+		<div class="su-order_close"></div>
+	</div>
+{% endfor %}

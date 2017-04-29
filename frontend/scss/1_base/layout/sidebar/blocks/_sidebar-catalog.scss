@@ -1,0 +1,15 @@
+//Классы
+$wrapper : lib-get-class('sidebar-catalog');
+$menu : lib-get-class('sidebar-menu');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	#{$menu} {
+		&_list#{$list} {
+			#{$list}_item {
+				margin-top : 0;
+			}
+		}
+	}
+}

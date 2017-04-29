@@ -1,0 +1,8 @@
+//Классы
+$wrapper : lib-get-class('header-logo');
+//-------------------------------
+
+#{$wrapper} {
+	float       : left;
+	padding-top : 20px;
+}

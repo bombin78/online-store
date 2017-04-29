@@ -1,0 +1,68 @@
+//Импорт файлов
+@import '../../utils/lib';
+@import '../../utils/mixins';
+//-------------------------------
+
+//Цвета
+$color-border-article : lib-color(primary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('faq');
+$section : lib-get-class('faq-section');
+$article : lib-get-class('faq-article');
+$list : lib-get-class('list');
+$block : lib-get-class('block');
+$_border : lib-get-modifier('border');
+$_open : lib-get-modifier('open');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&_list#{$list} {
+		#{$list}_item {
+
+			@at-root {
+				#{$section} {
+					&_title {
+
+					}
+					&_list#{$list} {
+						#{$list}_item {
+
+							@at-root {
+								#{$article} {
+									margin  : 8px 0 8px -8px;
+									padding : 8px 8px 0 8px;
+
+									border  : 1px solid transparent;
+									&_header {
+										#{$article}_title#{$block} {
+											padding-top : 0;
+
+											font-family: 'OpenSansRegular';
+										}
+									}
+									&_description {
+										display : none;
+									}
+									&#{$_border} {
+										border-color : $color-border-article;
+									}
+									&#{$_open} {
+										#{$article}_description {
+											display        : block;
+											padding-bottom : 8px;
+										}
+									}
+								}
+							}
+
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

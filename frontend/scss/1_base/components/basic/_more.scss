@@ -1,0 +1,47 @@
+//Цвета
+$bg-more : lib-color(accent-base);
+$color-border-more : lib-color(accent-base-dark);
+$color-border-more-before : lib-color(accent-base-dark);
+$color-border-more-after : lib-color(accent-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('more');
+//-------------------------------
+
+#{$wrapper} {
+	display          : inline-block;
+	position         : relative;
+	padding          : 10px 30px;
+	height           : 40px;
+
+	border-radius    : 5px;
+	background-color : $bg-more;
+	border-bottom    : 3px solid $color-border-more;
+	text-decoration  : none;
+	font-weight      : $lib-font-weight-bold;
+	&:before {
+		content      : '';
+		position     : absolute;
+		left         : 50%;
+		top          : 100%;
+		margin-left  : -13px;
+		width        : 0;
+		height       : 0;
+
+		border-left  : 15px solid transparent;
+		border-right : 15px solid transparent;
+		border-top   : 15px solid $color-border-more-before;
+	}
+	&:after {
+		content      : '';
+		position     : absolute;
+		left         : 50%;
+		top          : 100%;
+		margin-left  : -9px;
+
+		border-left  : 11px solid transparent;
+		border-right : 11px solid transparent;
+		border-top   : 11px solid $color-border-more-after;
+	}
+}

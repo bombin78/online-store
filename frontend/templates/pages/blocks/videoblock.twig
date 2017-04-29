@@ -1,0 +1,28 @@
+<div class="{{ overrideClassVideo }} su-videoblock">
+	<ul class="su-videoblock_list su-list">
+
+		{% for row in videoList %}
+			<li class="su-list_item">
+				<div class="su-video">
+
+					{% if row.title %}
+						<div class="su-video_title">{{ row.title }}</div>
+					{% endif %}
+
+					{% if row.preview %}
+						<div class="su-video_preview">{{ row.preview }}</div>
+					{% endif %}
+
+					{% if row.src %}
+						<div class="su-video_content">
+							<noindex>
+								<iframe frameborder="0" allowfullscreen="" src="{{ row.src }}"></iframe>
+							</noindex>
+						</div>
+					{% endif %}
+				</div>
+			</li>
+		{% endfor %}
+
+	</ul>
+</div>

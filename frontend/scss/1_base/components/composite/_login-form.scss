@@ -1,0 +1,29 @@
+//Цвета
+$color-link : lib-color(secondary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('login-form');
+$field-text : lib-get-class('field-text');
+$block : lib-get-class('block');
+$link : lib-get-class('link');
+//-------------------------------
+
+#{$wrapper} {
+	&_email#{$field-text},
+	&_password#{$field-text} {
+		padding-right : 10px;
+		width         : 50%;
+	}
+	&_email#{$field-text},
+	&_password#{$field-text},
+	&_row#{$block} {
+		margin-top : 20px;
+	}
+	&_row#{$block} {
+		#{$block}_element#{$link} {
+			margin-left : 20px;
+			color       : $color-link;
+		}
+	}
+}

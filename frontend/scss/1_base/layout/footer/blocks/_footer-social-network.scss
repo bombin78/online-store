@@ -1,0 +1,13 @@
+//Классы
+$wrapper : lib-get-class('footer-social-network');
+//-------------------------------
+
+#{$wrapper} {
+	&_title {
+		@include mix-footer-title;
+	}
+	//pluso - класс плагина
+	&_pluso.pluso {
+		margin-top : 10px;
+	}
+}

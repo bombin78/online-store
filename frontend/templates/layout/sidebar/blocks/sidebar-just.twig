@@ -1,0 +1,11 @@
+<section class="su-sidebar-just su-just">
+	<h3 class="su-just_title">{{ sidebarJust.title }}</h3>
+
+	{% for row in sidebarJust.rows %}
+		<p class="su-just_text">{{ row.text }} }}</p>
+	{% endfor %}
+
+	<footer class="su-just_footer su-just-footer">
+		<a class="su-just-footer_link su-link-button" href="{{ sidebarJust.buttonHref }}">{{ sidebarJust.buttonTitle }}</a>
+	</footer>
+</section>

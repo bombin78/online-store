@@ -1,0 +1,72 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-faq">
+		<h1 class="su-faq_title">Часто задаваемые вопросы</h1>
+		<ul class="su-faq_list su-list">
+
+			{% for data in faq %}
+				<li class="su-list_item">
+					<section class="su-faq-section">
+						<h2 class="su-faq-section_title">{{ data.title }}</h2>
+						<ul class="su-faq-section_list su-list">
+
+							{% for row in data.content %}
+								<li class="su-list_item">
+									<article class="su-faq-article {{ row.modifierArticle }}">
+										<header class="su-faq-article_header">
+											<h3 class="su-faq-article_title su-block">
+												<a class="su-block_element" href="#">{{ row.subtitle }}</a>
+											</h3>
+										</header>
+										<div class="su-faq-article_description">{{ row.description }}</div>
+									</article>
+								</li>
+							{% endfor %}
+
+						</ul>
+					</section>
+				</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ОТКРЫТЬ/ЗАКРЫТЬ СТАТЬЮ СПРАВКИ
+		$('.su-faq-article').on('click', '.su-block_element', function(e){
+			e.preventDefault();
+
+			var header = $(this),
+				wrapper = header.closest('.su-faq-article'),
+				description = wrapper.find('.su-faq-article_description');
+
+			if (wrapper.hasClass('_su-open')){
+				description.slideUp(function (){
+					wrapper.removeClass('_su-border')
+							.removeClass('_su-open');
+					description.removeAttr('style');
+				});
+			}
+			else {
+				wrapper.addClass('_su-border');
+				description.slideDown(function (){
+					wrapper.addClass('_su-open');
+					description.removeAttr('style');
+				});
+			}
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

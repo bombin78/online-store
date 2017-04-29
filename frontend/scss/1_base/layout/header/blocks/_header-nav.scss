@@ -1,0 +1,72 @@
+//Цвета
+$color-button : lib-color(primary-lighter);
+$color-border-button : lib-color(primary-lighter);
+$color-separator : lib-color(primary-base-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('header-nav');
+$list : lib-get-class('list');
+$link : lib-get-class('link');
+//-------------------------------
+
+#{$wrapper} {
+	float     : left;
+	max-width : 400px;
+	&_button {
+		&:after {
+			content       : '\e900';
+			display       : none;
+			position      : absolute;
+			top           : 5px;
+			right         : -47px;
+			padding-top   : 1px;
+			height        : 26px;
+			width         : 32px;
+
+			color         : $color-button;
+			border-radius : 5px;
+			border        : 2px solid $color-border-button;
+			font-size     : 24px;
+			text-align    : center;
+
+			@include lib-font-icon;
+		}
+	}
+	&_list#{$list} {
+		float        : left;
+		position     : relative;
+		padding-left : 0;
+
+		font-size    : lib-font-size(-3);
+		#{$list}_item {
+			float          : left;
+			position       : relative;
+			margin         : 0 12px 0 16px;
+
+			color          : $color-separator;
+			text-transform : uppercase;
+			&:after {
+				content  : '|';
+				position : absolute;
+				top      : 0;
+				left     : -17px;
+				height   : 100%;
+				width    : 10px;
+			}
+			&:first-child {
+				margin-left : 0;
+				&:after {
+					display : none;
+				}
+			}
+
+			@at-root #{$list}_item {
+				#{$list}_link#{$link} {
+					display : block;
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,49 @@
+//Цвета
+$color-postfix : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('captcha');
+$field : lib-get-class('field-text');
+$block : lib-get-class('block');
+//-------------------------------
+
+#{$wrapper} {
+	&_title {
+		margin-bottom : 3px;
+	}
+	&_img {
+		width         : 100%;
+		height        : 40px;
+		padding-right : 40px;
+	}
+	&_field#{$field} {
+		margin-top : 15px;
+		#{$field}_postfix {
+			position     : relative;
+			padding-left : 10px;
+			height       : 30px;
+			width        : 40px;
+
+			cursor       : pointer;
+			&:after {
+				content    : '\e984';
+				position   : absolute;
+				height     : 100%;
+				width      : 30px;
+
+				color      : $color-postfix;
+				font-size  : lib-font-size(e2);
+				text-align : center;
+
+				@include lib-font-icon (
+						$font-weight : $lib-font-weight-bold,
+						$line-height : 30px
+				);
+			}
+		}
+	}
+	&_button#{$block} {
+		margin-top : 20px;
+	}
+}

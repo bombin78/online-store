@@ -1,0 +1,12 @@
+//Классы
+$wrapper : lib-get-class('sidebar-banner');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	&_list#{$list} {
+		#{$list}_item {
+			margin-top : 30px;
+		}
+	}
+}

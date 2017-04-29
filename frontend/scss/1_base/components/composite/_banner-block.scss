@@ -1,0 +1,14 @@
+//Классы
+$wrapper : lib-get-class('banner-block');
+$link-img : lib-get-class('link-img');
+//-------------------------------
+
+#{$wrapper} {
+	display: inline-block;
+	width: 100%;
+
+	vertical-align: bottom;
+	&_link#{$link-img} {
+		float: left;
+	}
+}

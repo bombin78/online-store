@@ -1,0 +1,39 @@
+{% extends '../layout/template_grid-1.twig' %}
+
+{% block content %}
+
+	{#<div class="su-page-one">
+		{% include '/blocks/article.twig' %}
+	</div>#}
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		// ИНИЦИАЛИЗАЦИЯ СЛАЙДЕРА
+		$('#slider').nivoSlider({
+			effect: 'random',
+			slices: 10,
+			boxCols: 6,
+			boxRows: 4,
+			animSpeed: 1500,
+			pauseTime: 5000,
+			directionNav: true,
+			directionNavHide: false,
+			controlNav: false,
+			keyboardNav: false,
+			pauseOnHover: true,
+			captionOpacity: 0.8,
+			prevText: '',
+			nextText: ''
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

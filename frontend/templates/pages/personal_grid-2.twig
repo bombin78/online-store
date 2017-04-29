@@ -1,0 +1,82 @@
+{% extends '../layout/template_grid-2.twig' %}
+
+{% block content %}
+
+	<div class="su-personal">
+		<h1 class="su-catalog_title">Личный кабинет</h1>
+		<div class="su-personal-header">
+			<div class="su-personal-avatar">
+				<img class="su-personal-avatar_img" src="img/personal/avatar_new.png" alt="пользователь: фото-заглушка">
+			</div>
+			<div class="su-personal-info">
+				<span class="su-personal-info_name">Александр Иванов</span>
+				<dl class="su-personal-info_phone su-detail">
+					<dt class="su-detail_label">Тел:</dt>
+					<dd class="su-detail_value">+7(999) 999-99-99</dd>
+				</dl>
+				<dl class="su-personal-info_email su-detail">
+					<dt class="su-detail_label">Email:</dt>
+					<dd class="su-detail_value">post@mail.ru</dd>
+				</dl>
+				<div class="su-personal-info_button su-block">
+					<a class="su-block_element su-link-btn" href="#" data-toggle="modal" data-target=".su-modal-change-personal">Изменить данные</a>
+				</div>
+			</div>
+			<div class="su-personal-account">
+				<dl class="su-personal-account_balance su-detail">
+					<dt class="su-detail_label">На вашем счету:</dt>
+					<dd class="su-detail_value su-currency">0</dd>
+				</dl>
+				<ul class="su-personal-account_links su-list">
+					<li class="su-list_item">
+						<a class="su-personal-account-link" href="#">
+							Пополнить счет
+						</a>
+					</li>
+					<li class="su-list_item">
+						<a class="su-personal-account-link" href="#">
+							История платежей
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<h2 class="su-personal_title">Ваши заказы</h2>
+		{% include 'blocks/tabs.twig' with {overrideClassTabsPersonal: 'su-personal_tabs', modifierTabs: '_su-personal'} %}
+	</div>
+
+{% endblock %}
+
+{% block wrapper_fixed %}
+{% endblock %}
+
+{% block script %}
+	{{ parent() }}
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<script>
+		//------------------------------------------------------------
+		//ПЕРЕКЛЮЧЕНИЕ ЗАКЛАДОК БЛОКА "ВАШИ ЗАКАЗЫ"
+		$('#su-tabscontrol').on('click','.su-list_item', function () {
+			var newTabControl = $(this),
+				newIdPage = newTabControl.attr('data-target'),
+				currentTabControl = $('.su-list_item._su-active'),
+				currentIdPage = '#' + $('#su-tabscontent').find('.su-tab-page._su-open').attr('id');
+
+			var togglePade = function () {
+				if(newIdPage != currentIdPage) {
+					$(currentTabControl).removeClass('_su-active');
+					$(currentIdPage).removeClass('_su-open');
+					$(newTabControl).addClass('_su-active');
+					$(newIdPage).addClass('_su-open');
+				}
+
+				currentTabControl = newTabControl;
+				currentIdPage = newIdPage;
+			};
+
+			togglePade();
+		});
+		//------------------------------------------------------------
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+{% endblock %}

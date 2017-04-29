@@ -1,0 +1,55 @@
+//Классы
+$wrapper : lib-get-class('list-multilevel');
+//-------------------------------
+
+#{$wrapper} {
+	counter-reset : level1;
+	margin-left   : 0;
+	padding-left  : 0;
+	ol {
+		margin-left  : 0;
+		padding-left : 0;
+	}
+	li {
+		padding-top     : 1.25rem;
+
+		list-style-type : none;
+		&:before {
+			font-weight : bold;
+		}
+	}
+	ul li {
+		&:before {
+			content     : '-';
+			float       : left;
+			margin-left : -10px;
+		}
+	}
+	> li {
+		&:before {
+			content : none;
+		}
+		& h2:before {
+			counter-increment : level1 1;
+			content           : counter(level1) ". ";
+		}
+		& > ol {
+			counter-reset : level2;
+			& > li {
+				&:before {
+					counter-increment : level2;
+					content           : counter(level1) "." counter(level2) ". ";
+				}
+				& > ol {
+					counter-reset : level3;
+					& > li {
+						&:before {
+							counter-increment : level3;
+							content           : counter(level1) "." counter(level2) "." counter(level3) ". ";
+						}
+					}
+				}
+			}
+		}
+	}
+}

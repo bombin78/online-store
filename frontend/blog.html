@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Блог</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/blog.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="vendors/mailerlite/mailerlite.css">
+	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
+	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
+
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<!-- подключение jquery.js -->
+	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
+	<!-- подключение twig.js -->
+	<script src="../node_modules/twig/twig.js"></script>
+	<!-- файл с общими данными для работы сайта: используется только для верстки -->
+	<script src="js/config.js"></script>
+	<script>
+		(function ($) {
+			//дополнение объекта с данными для эмуляции
+			dataEmulation.typeHeader = '_active';
+
+			dataEmulation.contentBanner = {
+				href: '#',
+				src: 'img/offers/offer-banner.jpg',
+				alt: 'баннер контента'
+			};
+
+			dataEmulation.breadcrumb = [
+				{modifier: '', href:'#', title:'Главная'},
+				{title:'Блог'}
+			];
+
+			dataEmulation.listBlogArticle1 = [
+				{modifier:'', href: 'blog-page.html', title: '10 главных «нельзя» и 5 «нужно» для создания здоровых ногтей!'},
+				{modifier:'', href: 'blog-page.html', title: '10 простых способов укрепить ногти'},
+				{modifier:'', href: 'blog-page.html', title: '50 Новогодних дизайнов ногтей'},
+				{modifier:'', href: 'blog-page.html', title: 'Shellac, маникюр и педикюр на весь отпуск! Как сделать самой?'},
+				{modifier:'', href: 'blog-page.html', title: 'Shellac-маникюр в 2 раза быстрее обычного: как сделать на дому?'},
+				{modifier:'', href: 'blog-page.html', title: '«Лунный» маникюр'},
+				{modifier:'', href: 'blog-page.html', title: 'В двух словах о наращивании ногтей'}
+			];
+
+			dataEmulation.listBlogArticle2 = [
+				{modifier:'', href: 'blog-page.html', title: 'Бархатные ручки или правила ухода'},
+				{modifier:'', href: 'blog-page.html', title: 'Восковая депиляция — краткий обзор'},
+				{modifier:'', href: 'blog-page.html', title: 'Восстанавливающие процедуры для рук в домашних условиях'},
+				{modifier:'', href: 'blog-page.html', title: 'Европейский и классический маникюр. Что лучше?'},
+				{modifier:'', href: 'blog-page.html', title: 'Зачем нужно удалять кутикулу?'}
+			];
+
+
+			$(document).ready(function () {
+				//подключение шаблона с контентом
+				twig({
+					href: "templates/pages/blog_grid-2.twig",
+					load: function (template) {
+						$("body").html(template.render(dataEmulation));
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+</head>
+<body>
+
+</body>
+</html>

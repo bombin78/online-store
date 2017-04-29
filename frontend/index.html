@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Главная</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="vendors/nivoslider/nivo-slider.css">
+	<link rel="stylesheet" href="vendors/nivoslider/themes/default/default.css">
+	<link rel="stylesheet" href="vendors/mailerlite/mailerlite.css">
+	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
+	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
+	<script src="vendors/nivoslider/jquery.nivo.slider.pack.js"></script>
+
+	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	<!-- подключение jquery.js -->
+	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
+	<!-- подключение twig.js -->
+	<script src="../node_modules/twig/twig.js"></script>
+	<!-- файл с общими данными для работы сайта: используется только для верстки -->
+	<script src="js/config.js"></script>
+	<script>
+		(function ($) {
+			//дополнение объекта с данными для эмуляции
+			dataEmulation.typeHeader = '_su-active';
+
+			dataEmulation.headerBunner = 'slider';
+
+			dataEmulation.mineOffer = [
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_2.jpg',
+					accent: false,
+					title: 'Кусачки Mertz 3420-14',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '5000',
+					price: '3500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_3.jpg',
+					accent: false,
+					title: 'Кусачки Сталекс КМ0111111111111111111111111',
+					annotation: 'Прекрасный выбор! Стильный и надежныйййййййййййййййййййййййййййййййййййййййййййййййййййййййййййй.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '5060',
+					price: '500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_1.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Сталекс КМ02',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '510',
+					price: '100',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_4.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Mertz 660 C',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '5109999',
+					price: '12000',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_5.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Mertz 664 RF',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '3500',
+					price: '1500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_5.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Mertz 664 RF',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '3500',
+					price: '1500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_5.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Mertz 664 RF',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '3500',
+					price: '1500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				},
+				{
+					href: 'offers.html',
+					src: 'img/offers/offer_5.jpg',
+					accent: false,
+					title: 'Маникюрные кусачки Mertz 664 RF',
+					annotation: 'Прекрасный выбор! Стильный и надежный.',
+					text: false,
+					rating: false,
+					priceLabel: false,
+					priceValue: false,
+					oldPriceLabel: 'Старая цена:',
+					oldPriceValue: '3500',
+					price: '1500',
+					buttonModifier: '_su-buy',
+					buttonHref: '#',
+					buttonTitle: 'Купить'
+				}
+			];
+
+
+			$(document).ready(function () {
+				//подключение шаблона с контентом
+				twig({
+					href: "templates/pages/index_grid-2.twig",
+					load: function (template) {
+						$("body").html(template.render(dataEmulation));
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+	<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+</head>
+<body>
+
+</body>
+</html>

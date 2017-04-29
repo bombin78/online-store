@@ -1,0 +1,222 @@
+//Импорт файлов
+@import 'blocks/header-stock';
+@import 'blocks/header-slider';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('header-banner');
+$header-stock : lib-get-class('header-stock');
+$stock-counter : lib-get-class('stock-counter');
+$stock-view : lib-get-class('stock-view');
+$stock-offer : lib-get-class('stock-offer');
+$stock-accent : lib-get-class('stock-accent');
+$stock-description : lib-get-class('stock-description');
+$indicator : lib-get-class('indicator');
+$timer : lib-get-class('timer');
+$link-img : lib-get-class('link-img');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
+//-------------------------------
+
+#{$wrapper} {
+	position        : relative;
+	margin-top      : -5px;
+	z-index         : lib-z('header-banner');
+
+	background      : transparent url('../../../../img/bg_2.jpg') 100% 100% no-repeat;
+	background-size : cover;
+
+	@include lib-respond-to(mobile) {
+		display : none;
+	}
+	&_container {
+		position : relative;
+		margin   : 0 auto;
+		padding  : 0 10px;
+		height   : 350px;
+		width    : $lib-width-container-normal;
+
+		@extend %lib-clearfix;
+
+		@include lib-respond-to(normal) {
+			height : 339px;
+			width  : $lib-width-container-narrow;
+		}
+
+		@include lib-respond-to(narrow) {
+			height : 260px;
+			width  : $lib-width-container-mobile;
+		}
+
+		@at-root {
+			#{$header-stock} {
+				@include lib-respond-to(normal) {
+					height : 304px;
+				}
+				@include lib-respond-to(narrow) {
+					margin-top : 14px;
+					height     : 230px;
+				}
+				@at-root {
+					#{$stock-counter} {
+						@include lib-respond-to(normal) {
+							width : 300px;
+						}
+						@include lib-respond-to(narrow) {
+							width : 200px;
+						}
+						&_title {
+							#{$stock-counter}_text {
+								&#{$_start} {
+									@include lib-respond-to(narrow) {
+										padding-top : 15px;
+										font-size   : lib-font-size(1);
+									}
+								}
+								&#{$_middle} {
+									@include lib-respond-to(narrow) {
+										padding-top : 15px;
+										font-size   : lib-font-size(2);
+									}
+								}
+								&#{$_end} {
+									@include lib-respond-to(narrow) {
+										padding-top : 7px;
+										font-size   : lib-font-size(1);
+									}
+								}
+							}
+						}
+						&_done#{$indicator} {
+							#{$indicator}_info {
+								@include lib-respond-to(narrow) {
+									padding-top : 15px;
+								}
+							}
+						}
+						&_timer#{$timer} {
+							#{$timer}_title {
+								@include lib-respond-to(narrow) {
+									padding-top : 15px;
+								}
+							}
+							#{$timer}_time {
+								@include lib-respond-to(narrow) {
+									padding : 2%;
+								}
+								#{$timer}_value {
+									@include lib-respond-to(normal) {
+										font-size : lib-font-size(3);
+									}
+									@include lib-respond-to(narrow) {
+										font-size : lib-font-size(2)
+									}
+								}
+							}
+
+						}
+					}
+
+					#{$stock-offer} {
+						@include lib-respond-to(normal) {
+							padding : 20px 20px 20px 320px;
+						}
+						@include lib-respond-to(narrow) {
+							padding : 15px 15px 15px 215px;
+						}
+						#{$stock-view} {
+							&_link#{$link-img} {
+								@include lib-respond-to(normal) {
+									@include lib-link-img-param(
+										$height : 190px
+									);
+								}
+								@include lib-respond-to(narrow) {
+									@include lib-link-img-param(
+										$height : 140px
+									);
+								}
+							}
+						}
+						#{$stock-accent} {
+							@include lib-respond-to(normal) {
+								padding-left : 210px;
+								height       : 190px;
+							}
+							@include lib-respond-to(narrow) {
+								padding-left : 155px;
+								height       : 140px;
+							}
+							&_title {
+								@include lib-respond-to(narrow) {
+									font-size   : lib-font-size(1);
+									line-height : lib-line-height(1);
+								}
+							}
+							&_name#{$block} {
+								@include lib-respond-to(normal) {
+									margin-top : 22px;
+								}
+								@include lib-respond-to(narrow) {
+									margin-top : 10px;
+								}
+								#{$block}_element#{$link} {
+									@include lib-respond-to(normal) {
+										font-size : lib-font-size(0);
+									}
+								}
+							}
+							&_old-price#{$detail} {
+								@include lib-respond-to(narrow) {
+									padding-top : 13px;
+								}
+							}
+							&_new-price#{$detail} {
+								@include lib-respond-to(narrow) {
+									padding-top : 5px;
+								}
+								#{$detail}_label {
+									@include lib-respond-to(narrow) {
+										font-size : lib-font-size(1);
+									}
+								}
+								#{$detail}_value {
+									@include lib-respond-to(narrow) {
+										font-size : lib-font-size(2);
+									}
+								}
+							}
+							&_stamp#{$detail} {
+								@include lib-respond-to(normal) {
+									top   : 45%;
+									right : 20px;
+								}
+								@include lib-respond-to(narrow) {
+									height : 84px;
+									width  : 84px;
+								}
+								#{$detail}_label {
+									@include lib-respond-to(narrow) {
+										padding-top : 23px;
+									}
+								}
+							}
+							&_button#{$block} {
+								@include lib-respond-to(narrow) {
+									margin-top : 14px;
+								}
+							}
+						}
+						#{$stock-description} {
+							@include lib-respond-to(narrow) {
+								padding-top : 12px;
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+}

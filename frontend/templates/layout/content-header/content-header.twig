@@ -1,0 +1,10 @@
+{% if contentBanner %}
+	<div class="su-banner-block">
+		<a class="su-banner-block_link su-link-img {{ contentBanner.modifier }}" href="{{ contentBanner.href }}">
+			<img class="su-link-img_img" src="{{ contentBanner.src }}" alt="{{ contentBanner.alt }}">
+		</a>
+	</div>
+{% endif %}
+{% if breadcrumb %}
+	{% include 'blocks/breadcrumb.twig' %}
+{% endif %}
