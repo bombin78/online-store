@@ -1,0 +1,12 @@
+{
+    "name": "manicurshop",
+    "authors": [
+        {
+            "name": "Alexandr Bombin",
+            "email": "bombin78@mail.ru"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
