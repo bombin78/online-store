@@ -54,7 +54,10 @@ $dataEmulation['headerBanner'] = false;
 
 //---------------------------------------------------
 //SIDEBAR
-//1. Каталог
+//1. Тип (расположение) боковой панели
+$dataEmulation['typeSidebar'] = '';
+
+//2. Каталог
 $dataEmulation['sidebarCatalog'] = [
 	'title' => 'Каталог',
 	'data' => [
@@ -207,19 +210,19 @@ $dataEmulation['sidebarCatalog'] = [
 	]
 ];
 
-//2. Sidebar buttons
+//3. Sidebar buttons
 $dataEmulation['sidebarButtons'] = [
 	['modifier' => '_su-bestsellers', 'href' => '#', 'title' => 'Хиты продаж'],
 	['modifier' => '_su-sale', 'href' => '#', 'title' => 'Распродажа']
 ];
 
-//3. Sidebar banner
+//4. Sidebar banner
 $dataEmulation['sidebarBanner'] = [
 	['modifier' => '', 'href' => '#', 'src' => 'img/sidebar/banner/banner_1.png', 'alt' => 'Бесплатный курс "ПРО Маникюр"'],
 	['modifier' => '', 'href' => '#', 'src' => 'img/sidebar/banner/banner_2.png', 'alt' => 'Заточка маникюрного инструмента']
 ];
 
-//4. Sidebar blog
+//5. Sidebar blog
 $dataEmulation['sidebarBlog'] = [
 	'title' => 'Наш блог',
 	'row' => [
@@ -232,7 +235,7 @@ $dataEmulation['sidebarBlog'] = [
 	]
 ];
 
-//5. Sidebar viewed offers
+//6. Sidebar viewed offers
 $dataEmulation['viewedOffers'] = [
 	[
 		'href' => 'card.html',

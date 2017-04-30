@@ -42,6 +42,7 @@
 		'basketItems'       	=> $dataEmulation['basketItems'],
 		'headerLogo'        	=> $dataEmulation['headerLogo'],
 		'headerBanner'       	=> $dataEmulation['headerBanner'],
+		'typeSidebar'        	=> $dataEmulation['typeSidebar'],
 		'sidebarCatalog'        => $dataEmulation['sidebarCatalog'],
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],

@@ -1,9 +1,13 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathContent = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 
 	{#<div class="su-page-left">
-		{% include '/blocks/article.twig' %}
+		{% include pathContent~'/blocks/article.twig' %}
 	</div>#}
 
 {% endblock %}

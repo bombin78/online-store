@@ -21,70 +21,15 @@
 	<script src="vendors/nivoslider/jquery.nivo.slider.pack.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-page-left.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.headerBanner = 'slider';
-
-			dataEmulation.contentBanner = {
-				href: '#',
-				src: 'img/banner/banner.jpg',
-				alt: 'баннер контента'
-			};
-
-			dataEmulation.breadcrumb = [
-				{modifier: '', href:'#', title:'Главная'},
-				{title:'Текущая страница'}
-			];
-
-			dataEmulation.contentArticle = {
-				headerTitle: 'Left Sidebar',
-				headerText: 'Sidebar on the left, content on the right.',
-				bunner: {
-					src:'img/example/banner.jpg',
-					alt: 'банер'
-				},
-				texts: [
-					{text:  'Consequat quam turpis, feugiat sit amet ornare in, hendrerit in lectus.' +
-							'Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.' +
-							'Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi'},
-					{text:  'Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.' +
-							'Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.' +
-							'Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi' +
-							'consequat etiam lorem ipsum dolor sit amet nullam.'}
-				],
-				subtext: [
-					{
-						title: 'And Yet Another Subheading',
-						texts: [
-							{text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus' +
-									'justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,' +
-									'ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet' +
-									'vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.' +
-									'Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis' +
-									'rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.' +
-									'Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.' +
-									'Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.'},
-							{text:  'Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim' +
-									'quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.' +
-									'Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,' +
-									'fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.' +
-									'Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.' +
-									'Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.'}
-						]
-					}
-				]
-			};
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/page-left_grid-2.twig",
 					load: function (template) {

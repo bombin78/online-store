@@ -21,20 +21,15 @@
 	<script src="vendors/nivoslider/jquery.nivo.slider.pack.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-page-one.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.headerBanner = 'slider';
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/page-one_grid-1.twig",
 					load: function (template) {

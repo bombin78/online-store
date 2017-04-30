@@ -1,0 +1,2 @@
+<?php
+$dataEmulation['headerBanner'] = 'slider';

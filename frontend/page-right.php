@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Главная для гостя</title>
+	<title>Правая боковая панель</title>
 	<meta charset="utf-8">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -10,11 +10,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="vendors/nivoslider/nivo-slider.css">
 	<link rel="stylesheet" href="vendors/nivoslider/themes/default/default.css">
-	<link rel="stylesheet" href="vendors/mailerlite/mailerlite.css">
 	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
 	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
 	<script src="js/vendors/bootstrap.min.js"></script>
@@ -28,9 +26,9 @@
 
 	require_once 'config.php';
 	require_once 'data-emulation/php/data-common.php';
-	require_once 'data-emulation/php/data-index-guest.php';
+	require_once 'data-emulation/php/data-page-right.php';
 
-	$template = $twig->load('templates/pages/index_grid-2.twig');
+	$template = $twig->load('templates/pages/page-right_grid-2.twig');
 
 	echo $template->render([
 		//Данные шаблона
@@ -56,7 +54,8 @@
 		'footerCopyright'    	=> $dataEmulation['footerCopyright'],
 		'footerDeveloper'    	=> $dataEmulation['footerDeveloper'],
 		//Данные контента
-		'mineOffer'         	=> $dataEmulation['mineOffer']
+		'contentBanner'         => $dataEmulation['contentBanner'],
+		'breadcrumb'         	=> $dataEmulation['breadcrumb']
 	]);
 ?>
 </body>

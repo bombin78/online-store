@@ -1,5 +1,5 @@
 {% if typeTwig == 'php' %}
-	{% set path = 'templates/layout/content-header/' %}
+	{% set pathContentHeader = 'templates/layout/content-header/' %}
 {% endif %}
 
 {% if contentBanner %}
@@ -10,5 +10,5 @@
 	</div>
 {% endif %}
 {% if breadcrumb %}
-	{% include path~'blocks/breadcrumb.twig' %}
+	{% include pathContentHeader~'blocks/breadcrumb.twig' %}
 {% endif %}

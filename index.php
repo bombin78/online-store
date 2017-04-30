@@ -43,19 +43,19 @@
 <ul>
 	<li>
 		0. Инструкция
-		<a class="link" href="frontend/guide/guide.html" target="_blank">
+		<a class="link" href="frontend/guide/guide.php" target="_blank">
 			0.1 Kомпоненты
 		</a>
-		<a class="link" href="frontend/page-base.html" target="_blank">
+		<a class="link" href="frontend/page-base.php" target="_blank">
 			0.2 Шаблон (базовый - используется для корзины)
 		</a>
-		<a class="link" href="frontend/page-left.html" target="_blank">
+		<a class="link" href="frontend/page-left.php" target="_blank">
 			0.3 Шаблон (двухколоночный с левым сайдбаром - основной шаблон)
 		</a>
-		<a class="link" href="frontend/page-right.html" target="_blank">
+		<a class="link" href="frontend/page-right.php" target="_blank">
 			0.4 Шаблон (двухколоночный с правым сайдбаром - дополнительно)
 		</a>
-		<a class="link" href="frontend/page-one.html" target="_blank">
+		<a class="link" href="frontend/page-one.php" target="_blank">
 			0.5 Шаблон (одноколоночный - дополнительно)
 		</a>
 	</li>
