@@ -5,7 +5,7 @@
 			<ul class="su-dropdown_list su-list">
 				{% for row in headerUser %}
 					<li class="su-list_item">
-						<a class="su-list_link su-link {{ row.modifier }}" href="{{ row.href }}" {{ row.attr }}>{{ row.title }}</a>
+						<a class="su-list_link su-link {{ row.modifier }}" href="{{ row.href }}" {{ row.attr | raw }}>{{ row.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>

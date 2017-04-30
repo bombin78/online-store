@@ -1,16 +1,29 @@
-dataEmulation.headerBanner = 'stock';
+dataEmulation['headerBanner'] = 'stock';
 
-delete dataEmulation.headerUser;
-
-dataEmulation.headerUser = [
-	{modifier: '', href: 'card.html', attr: '', title:'Мои заказы'},
-	{modifier: '', href: '#', attr: 'data-toggle="modal" data-target=".su-modal-login"', title:'Вход'},
-	{modifier: '', href: '#', attr: 'data-toggle="modal" data-target=".su-modal-reg"', title:'Регистрация'}
+dataEmulation['headerUser'] = [
+	{
+		modifier: '',
+		href: 'card.html',
+		attr: '',
+		title:'Мои заказы'
+	},
+	{
+		modifier: '',
+		href: '#',
+		attr: 'data-toggle="modal" data-target=".su-modal-login"',
+		title:'Вход'
+	},
+	{
+		modifier: '',
+		href: '#',
+		attr: 'data-toggle="modal" data-target=".su-modal-reg"',
+		title:'Регистрация'
+	}
 ];
 
-dataEmulation.mineOffer = [
+dataEmulation['mineOffer'] = [
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_2.jpg',
 		accent: false,
 		title: 'Кусачки Mertz 3420-14',
@@ -27,7 +40,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_3.jpg',
 		accent: false,
 		title: 'Кусачки Сталекс КМ0111111111111111111111111',
@@ -44,7 +57,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_1.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Сталекс КМ02',
@@ -61,7 +74,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_4.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Mertz 660 C',
@@ -78,7 +91,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Mertz 664 RF',
@@ -95,7 +108,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Mertz 664 RF',
@@ -112,7 +125,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Mertz 664 RF',
@@ -129,7 +142,7 @@ dataEmulation.mineOffer = [
 		buttonTitle: 'Купить'
 	},
 	{
-		href: '#',
+		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
 		title: 'Маникюрные кусачки Mertz 664 RF',

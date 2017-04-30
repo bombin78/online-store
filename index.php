@@ -67,7 +67,7 @@
 		<a class="link" href="frontend/index.php" target="_blank">
 			1.2 Новый вариант
 		</a>
-		<a class="link" href="frontend/index-guest.html" target="_blank">
+		<a class="link" href="frontend/index-guest.php" target="_blank">
 			1.3 Новый вариант (для гостя + акция)
 		</a>
 	</li>
