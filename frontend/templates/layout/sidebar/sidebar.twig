@@ -1,14 +1,18 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/sidebar/' %}
+{% endif %}
+
 {% if typeSidebar != '_su-aside-right' %}
 	{# Catalog #}
-	{% include 'blocks/sidebar-catalog.twig' %}
+	{% include path~'blocks/sidebar-catalog.twig' %}
 {% endif %}
 
 {# Sidebar buttons #}
-{% include 'blocks/sidebar-buttons.twig' %}
+{% include path~'blocks/sidebar-buttons.twig' %}
 {# Sidebar bunner #}
-{% include 'blocks/sidebar-banner.twig' %}
+{% include path~'blocks/sidebar-banner.twig' %}
 {# Sidebar blog #}
-{% include 'blocks/sidebar-blog.twig' %}
+{% include path~'blocks/sidebar-blog.twig' %}
 {# Sidebar viewed #}
-{% include 'blocks/sidebar-viewed.twig' %}
+{% include path~'blocks/sidebar-viewed.twig' %}
 {# Another #}

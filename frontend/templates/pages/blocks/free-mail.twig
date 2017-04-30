@@ -1,3 +1,9 @@
+{% if typeTwig == 'php' %}
+	{% set pathMail = '' %}
+{% else %}
+	{% set pathMail = '../../../' %}
+{% endif %}
+
 <div class="{{ overrideClassfreeMail }} su-free-mail">
 	<div class="su-free-mail_title">
 		Хит! Получите бесплатную книгу на email "Про маникюр"
@@ -13,7 +19,7 @@
 	</div>
 	<div class="su-free-mail_user-data">
 
-		{% include '../../../vendors/mailerlite/mailerlite.twig' with {overrideClassMailerlite: 'free-mail_mailerlite'} %}
+		{% include pathMail~'vendors/mailerlite/mailerlite.twig' with {overrideClassMailerlite: 'free-mail_mailerlite'} %}
 
 	</div>
 </div>

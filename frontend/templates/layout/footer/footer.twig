@@ -1,34 +1,38 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/footer/' %}
+{% endif %}
+
 <footer class="su-footer">
 	<div class="su-footer_row">
 
 		{% if typeTemplate == '_su-normal' %}
 			<div class="su-footer_cell">
 				{# Социальные сети #}
-				{% include 'blocks/footer-social-network.twig' %}
+				{% include path~'blocks/footer-social-network.twig' %}
 			</div>
 			<div class="su-footer_cell">
 				{# Информация #}
-				{% include 'blocks/footer-info.twig' %}
+				{% include path~'blocks/footer-info.twig' %}
 			</div>
 			<div class="su-footer_cell">
 				{# Каталог #}
-				{% include 'blocks/footer-catalog.twig' %}
+				{% include path~'blocks/footer-catalog.twig' %}
 			</div>
 			<div class="su-footer_cell">
 				{# О нас #}
-				{% include 'blocks/footer-about-us.twig' %}
+				{% include path~'blocks/footer-about-us.twig' %}
 			</div>
 		{% endif %}
 
 		<div class="su-footer_cell">
 			{# Контаткы #}
-			{% include 'blocks/footer-contacts.twig' %}
+			{% include path~'blocks/footer-contacts.twig' %}
 		</div>
 	</div>
 	<div class="su-footer_row">
 		{# Копирайт #}
-		{% include 'blocks/footer-copyright.twig' %}
+		{% include path~'blocks/footer-copyright.twig' %}
 		{# Разработчик сайта #}
-		{% include 'blocks/footer-developer.twig' %}
+		{% include path~'blocks/footer-developer.twig' %}
 	</div>
 </footer>

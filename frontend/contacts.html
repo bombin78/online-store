@@ -26,14 +26,14 @@
 	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
-	<!-- файл с общими данными для работы сайта: используется только для верстки -->
-	<script src="js/config.js"></script>
+	<!-- файлы с данными для эмуляции работы сайта -->
+	<script src="data-emulation/js/data-common.js"></script>
 	<script>
 		(function ($) {
 			//дополнение объекта с данными для эмуляции
 			dataEmulation.typeHeader = '_su-active';
 
-			dataEmulation.headerBunner = 'slider';
+			dataEmulation.headerBanner = 'slider';
 
 			dataEmulation.breadcrumb = [
 				{modifier: '', href:'#', title:'Главная'},

@@ -1,3 +1,7 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/content-header/' %}
+{% endif %}
+
 {% if contentBanner %}
 	<div class="su-banner-block">
 		<a class="su-banner-block_link su-link-img {{ contentBanner.modifier }}" href="{{ contentBanner.href }}">
@@ -6,5 +10,5 @@
 	</div>
 {% endif %}
 {% if breadcrumb %}
-	{% include 'blocks/breadcrumb.twig' %}
+	{% include path~'blocks/breadcrumb.twig' %}
 {% endif %}

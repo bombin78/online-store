@@ -1,4 +1,8 @@
-{% extends 'template_wrapper.twig' %}
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/' %}
+{% endif %}
+
+{% extends path~'template_wrapper.twig' %}
 
 {% block wrapper_sections %}
 

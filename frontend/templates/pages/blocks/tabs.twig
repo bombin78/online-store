@@ -1,3 +1,7 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/pages/blocks/' %}
+{% endif %}
+
 <div class="{{ overrideClassTabs }} su-tabs-block {{ modifierTabs }}">
 	<div class="su-tabs-block_container">
 		<div id="su-tabscontrol" class="su-tabs-control">
@@ -47,12 +51,12 @@
 				<ul class="su-tabs-content_list su-list">
 					<li class="su-list_item">
 						<article id="tabpage_1" class="su-tab-page _su-open">
-							{% include 'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_filter', groupButtons: groupButtonsFilter } %}
+							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_filter', groupButtons: groupButtonsFilter } %}
 							<ul class="su-tab-page_orders su-list">
 
 								{% for row in orders %}
 									<li class="su-list_item">
-										{% include 'order.twig' with {overrideClassOrder: 'su-list_order', modifierOrders: '_su-personal'} %}
+										{% include path~'order.twig' with {overrideClassOrder: 'su-list_order', modifierOrders: '_su-personal'} %}
 									</li>
 								{% endfor %}
 
@@ -61,12 +65,12 @@
 					</li>
 					<li class="su-list_item">
 						<article id="tabpage_2" class="su-tab-page">
-							{% include 'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
 							<ul class="su-tab-page_favorites su-list">
 
 								{% for row in favoritesOffers %}
 									<li class="su-list_item">
-										{% include 'offer.twig' with {overrideClassOffer: 'su-favorites-offer'} %}
+										{% include path~'offer.twig' with {overrideClassOffer: 'su-favorites-offer'} %}
 									</li>
 								{% endfor %}
 
@@ -75,12 +79,12 @@
 					</li>
 					<li class="su-list_item">
 						<article id="tabpage_3" class="su-tab-page">
-							{% include 'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
 							<ul class="su-tab-page_special su-list">
 
 								{% for row in specialOffers %}
 									<li class="su-list_item">
-										{% include 'offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+										{% include path~'offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
 									</li>
 								{% endfor %}
 

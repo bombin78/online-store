@@ -1,3 +1,7 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/pages/blocks/' %}
+{% endif %}
+
 <div class="{{ overrideClassSlider }} su-slider-wrapper">
 	<h2 class="su-slider-wrapper_title">{{ contentSlider.title }}</h2>
 	<div class="su-slider">
@@ -10,7 +14,7 @@
 
 				{% for row in contentSlider.data %}
 					<li class="su-list_item">
-						{% include 'offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+						{% include path~'offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
 					</li>
 				{% endfor %}
 

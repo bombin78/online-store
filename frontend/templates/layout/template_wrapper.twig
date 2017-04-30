@@ -1,23 +1,27 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/' %}
+{% endif %}
+
 <div class="su-wrapper {{ typeTemplate }}">
 
 	{# Шапка #}
 	<header class="su-wrapper-header {{ typeHeader }}">
 
 		{% if typeTemplate == '_su-normal' %}
-			{% include 'header/header-control.twig' %}
-			{% include 'header/header-info.twig' %}
+			{% include path~'header/header-control.twig' %}
+			{% include path~'header/header-info.twig' %}
 
-			{% if headerBunner == 'slider' %}
-				{% include 'header/header-banner.twig'  with {typeBunner: 'slider'} %}
-			{% elseif headerBunner == 'stock' %}
-				{% include 'header/header-banner.twig'  with {typeBunner: 'stock'} %}
+			{% if headerBanner == 'slider' %}
+				{% include path~'header/header-banner.twig'  with {typeBunner: 'slider'} %}
+			{% elseif headerBanner == 'stock' %}
+				{% include path~'header/header-banner.twig'  with {typeBunner: 'stock'} %}
 			{% endif %}
 
 		{% elseif typeTemplate == '_su-basket' %}
-			{% include 'header/header-info.twig' %}
+			{% include path~'header/header-info.twig' %}
 		{% else %}
-			{% include 'header/header-control.twig' %}
-			{% include 'header/header-info.twig' %}
+			{% include path~'header/header-control.twig' %}
+			{% include path~'header/header-info.twig' %}
 		{% endif %}
 
 	</header>
@@ -30,7 +34,7 @@
 
 	{# Обертка подвала #}
 	<div class="su-wrapper-footer">
-		{% include 'footer/footer.twig' %}
+		{% include path~'footer/footer.twig' %}
 	</div>
 
 	{# Обертка для фиксированных элементов #}
@@ -42,13 +46,13 @@
 	{# Обертка для модальных окон #}
 	<div class="su-wrapper-modal">
 		{% if typeTemplate != '_su-guide' %}
-			{% include 'modal/modal-application.twig' %}
-			{% include 'modal/modal-change-personal.twig' %}
-			{% include 'modal/modal-choice.twig' %}
-			{% include 'modal/modal-confirmation.twig' %}
-			{% include 'modal/modal-delivery.twig' %}
-			{% include 'modal/modal-login.twig' %}
-			{% include 'modal/modal-reg.twig' %}
+			{% include path~'modal/modal-application.twig' %}
+			{% include path~'modal/modal-change-personal.twig' %}
+			{% include path~'modal/modal-choice.twig' %}
+			{% include path~'modal/modal-confirmation.twig' %}
+			{% include path~'modal/modal-delivery.twig' %}
+			{% include path~'modal/modal-login.twig' %}
+			{% include path~'modal/modal-reg.twig' %}
 		{% endif %}
 	</div>
 

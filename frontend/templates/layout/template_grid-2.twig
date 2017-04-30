@@ -1,4 +1,8 @@
-{% extends 'template_wrapper.twig' %}
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/' %}
+{% endif %}
+
+{% extends path~'/template_wrapper.twig' %}
 
 {% block wrapper_sections %}
 
@@ -6,12 +10,12 @@
 		<div class="su-grid-2_container">
 			<aside class="su-grid-2_aside {{ typeSidebar }}">
 				<div class="su-sidebar">
-					{% include 'sidebar/sidebar.twig' %}
+					{% include path~'sidebar/sidebar.twig' %}
 				</div>
 			</aside>
 			<div class="su-grid-2_content">
 				<div class="su-content-header">
-					{% include 'content-header/content-header.twig' %}
+					{% include path~'content-header/content-header.twig' %}
 				</div>
 				{% block content %}
 				{% endblock %}

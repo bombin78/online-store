@@ -1,12 +1,16 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/header/' %}
+{% endif %}
+
 <div class="su-header-banner">
 	<div class="su-header-banner_container">
 
 		{% if typeBunner == 'slider' %}
 			{# Слайдер #}
-			{% include 'blocks/header-slider.twig' %}
+			{% include path~'blocks/header-slider.twig' %}
 		{% elseif typeBunner == 'stock' %}
 			{# Банер #}
-			{% include 'blocks/header-stock.twig' %}
+			{% include path~'blocks/header-stock.twig' %}
 		{% endif %}
 
 	</div>

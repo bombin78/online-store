@@ -1,12 +1,16 @@
+{% if typeTwig == 'php' %}
+	{% set path = 'templates/layout/header/' %}
+{% endif %}
+
 <div class="su-header-control">
 	<div class="su-header-control_container">
 		{# Поиск #}
-		{% include 'blocks/header-search.twig' %}
+		{% include path~'blocks/header-search.twig' %}
 		{# Меню #}
-		{% include 'blocks/header-nav.twig' %}
+		{% include path~'blocks/header-nav.twig' %}
 		{# Карзина #}
-		{% include 'blocks/header-basket.twig' %}
+		{% include path~'blocks/header-basket.twig' %}
 		{# Пользователь #}
-		{% include 'blocks/header-user.twig' %}
+		{% include path~'blocks/header-user.twig' %}
 	</div>
 </div>
