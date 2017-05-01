@@ -14,18 +14,14 @@
 	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-page-base.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeTemplate = '_su-basket';
-
-
 			$(document).ready(function () {
 				//подключение шаблона с контентом
 				twig({
