@@ -1,5 +1,5 @@
 {% if typeTwig == 'php' %}
-	{% set pathContent = 'templates/pages/' %}
+	{% set pathContentPageBase = 'templates/pages/' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/template_wrapper.twig' : '../layout/template_wrapper.twig' %}
@@ -7,7 +7,7 @@
 {% block wrapper_sections %}
 
 	{#<section class="su-page-base">
-		{% include pathContent~'/blocks/article.twig' %}
+		{% include pathContentPageBase~'/blocks/article.twig' %}
 	</section>#}
 
 {% endblock %}

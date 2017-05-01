@@ -1,14 +1,14 @@
 {% if typeTwig == 'php' %}
-	{% set pathContentPageOne = 'templates/pages/' %}
+	{% set pathContentSearch = 'templates/pages/' %}
 {% endif %}
 
-{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-1.twig' : '../layout/template_grid-1.twig' %}
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 
-	{#<div class="su-page-one">
-		{% include pathContentPageOne~'/blocks/article.twig' %}
-	</div>#}
+	<div class="su-search">
+		{% include pathContentSearch~'blocks/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
+	</div>
 
 {% endblock %}
 

@@ -1,9 +1,15 @@
 //Цвета
+$bg-search-popup : lib-color(primary-lighter);
+$bg-search-popup-row-hover : lib-color(primary-light);
 $color-title-block-link : lib-color(accent-base-bright);
+$color-search-shadow : lib-color(primary-dark);
+$color-search-popup-shadow : lib-color(primary-base-dark);
+$color-search-popup-border : lib-color(primary-base);
 //-------------------------------
 
 //Классы
 $wrapper : lib-get-class('tile');
+$tile-search : lib-get-class('tile-search');
 $tile-block : lib-get-class('tile-block');
 $offer : lib-get-class('offer');
 $description : lib-get-class('offer-description');
@@ -11,12 +17,15 @@ $title : lib-get-class('offer-title');
 $old-price : lib-get-class('offer-old-price');
 $price : lib-get-class('offer-price');
 $button : lib-get-class('offer-button');
+$field : lib-get-class('field-search');
+$search-popup : lib-get-class('tile-search-popup');
 $list : lib-get-class('list');
 $link : lib-get-class('link');
 $img : lib-get-class('link-img');
 $preview : lib-get-class('preview');
 $detail : lib-get-class('detail');
 $block : lib-get-class('block');
+$pagination : lib-get-class('pagination');
 //-------------------------------
 
 #{$wrapper} {
@@ -29,6 +38,60 @@ $block : lib-get-class('block');
 		padding-top    : lib-line-top(0);
 		padding-bottom : lib-line-top(0);
 		padding-left   : 4px;
+	}
+	#{$tile-search} {
+		position : relative;
+		padding  : 10px 5px;
+		z-index  : 2;
+		&_form {
+			position : relative;
+			#{$tile-search}_line#{$field} {
+				border-radius : 5px;
+				border-width  : 1px;
+				box-shadow    : 0 1px 2px $color-search-shadow;
+				#{$field}_postfix {
+					margin-top : 0;
+				}
+			}
+
+			@at-root #{$wrapper} {
+				#{$search-popup} {
+					display       : table;
+					position      : absolute;
+					top           : 100%;
+					left          : 0;
+					padding       : 2px;
+					margin-top    : 2px;
+					width         : 100%;
+
+					font-size     : 14px;
+					border-radius : 5px;
+					border        : 1px solid $color-search-popup-border;
+					background    : $bg-search-popup;
+					box-shadow    : 0 1px 5px 0 $color-search-popup-shadow;
+					&_row {
+						display : table-row;
+						padding : 2px 4px;
+
+						#{$search-popup}_name,
+						#{$search-popup}_quantity {
+							display : table-cell;
+							padding : 4px;
+
+							cursor  : pointer;
+						}
+						&:hover,
+						&.active {
+							background-color : $bg-search-popup-row-hover;
+						}
+						#{$search-popup}_quantity {
+							text-align : right;
+						}
+					}
+				}
+			}
+
+		}
 	}
 	&_list#{$list} {
 
@@ -99,8 +162,8 @@ $block : lib-get-class('block');
 						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
 							#{$preview}_link#{$img} {
 								@include lib-link-img-param(
-										$height : 180px,
-										$vertical-align : top
+									$height : 180px,
+									$vertical-align : top
 								);
 							}
 						}
@@ -125,8 +188,8 @@ $block : lib-get-class('block');
 									background   : linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
 
 									@include lib-text-blackout(
-											$height : 50%,
-											$width : 12px
+										$height : 50%,
+										$width : 12px
 									);
 									#{$block}_element#{$link} {
 										padding-top : 5px;
@@ -168,5 +231,8 @@ $block : lib-get-class('block');
 		width          : 100%;
 
 		text-align     : center;
+	}
+	&_pagination#{$pagination} {
+		padding : 10px;
 	}
 }

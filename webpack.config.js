@@ -20,6 +20,7 @@ module.exports = {
 		offers                  : './scss/2_project/pages/offers.scss',
 		password                : './scss/2_project/pages/password.scss',
 		personal                : './scss/2_project/pages/personal.scss',
+		search                 	: './scss/2_project/pages/search.scss',
 		sitemap                 : './scss/2_project/pages/sitemap.scss',
 		styles                  : './scss/styles.scss',
 		tags                    : './scss/2_project/pages/tags.scss',
