@@ -1,4 +1,4 @@
-{% extends '../../templates/layout/template_wrapper.twig' %}
+{% extends (typeTwig == 'php') ? 'templates/layout/template_wrapper.twig' : '../../templates/layout/template_wrapper.twig' %}
 
 {% block wrapper_sections %}
 
@@ -11,13 +11,20 @@
 
 				{% for row in data.rows %}
 					{% set subitem = loop.index %}
+
+					{%if typeTwig == 'php' %}
+						{% set pathContent = 'guide/'~row.url %}
+					{% else %}
+						{% set pathContent = '../'~row.url %}
+					{% endif %}
+
 					<li class="su-guide-list_item {{ row.modifier }}">
 						<h3 class="su-guide-subtitle">{{ item }}.{{ subitem }} {{ row.file }}</h3>
 						<div class="su-guide-code">
 							{% if row.withUrl %}
-								{% include row.url with row.withUrl %}
+								{% include pathContent with row.withUrl %}
 							{% else %}
-								{% include row.url %}
+								{% include pathContent %}
 							{% endif %}
 						</div>
 					</li>

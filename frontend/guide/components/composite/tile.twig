@@ -1,9 +1,13 @@
+{%if typeTwig == 'php' %}
+	{% set pathTile = 'guide/components/composite/' %}
+{% endif %}
+
 <div class="su-tile">
 	<ul class="su-tile_list su-list">
 
 		{% for row in tileOffers %}
 			<li class="su-list_item">
-				{% include 'offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+				{% include pathTile~'offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
 			</li>
 		{% endfor %}
 
