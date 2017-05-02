@@ -1,5 +1,5 @@
 {% if typeTwig == 'php' %}
-	{% set pathContentSearch = 'templates/pages/' %}
+	{% set pathSearch = 'templates/pages/' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
@@ -7,7 +7,7 @@
 {% block content %}
 
 	<div class="su-search">
-		{% include pathContentSearch~'blocks/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
+		{% include pathSearch~'blocks/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
 	</div>
 
 {% endblock %}

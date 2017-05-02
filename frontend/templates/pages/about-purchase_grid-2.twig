@@ -1,11 +1,15 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathAboutPurchase = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 
 	<div class="su-about-purchase">
 		<h1 class="su-about-purchase_title">О доставке</h1>
-		{% include 'blocks/tabs.twig' with {overrideClassTabs: 'su-about-purchase_tabs'} %}
-		{% include 'blocks/payment-icons.twig' with {overrideClassPayment: 'su-about-purchase_payment'} %}
+		{% include pathAboutPurchase~'blocks/tabs.twig' with {overrideClassTabs: 'su-about-purchase_tabs'} %}
+		{% include pathAboutPurchase~'blocks/payment-icons.twig' with {overrideClassPayment: 'su-about-purchase_payment'} %}
 	</div>
 
 {% endblock %}

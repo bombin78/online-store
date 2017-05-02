@@ -16,54 +16,15 @@
 	<script src="js/vendors/bootstrap.min.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-basket-step2_1.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeTemplate = '_su-basket';
-
-			dataEmulation.typeHeader = '_su-active';
-
-			dataEmulation.basketSteps = [
-				{modifiers:'_su-first',             href:'basket-step1.html',   title:'Корзина'},
-				{modifiers:'_su-second _su-active', href:'#',                   title:'Доставка'}
-			];
-
-			dataEmulation.orders = [
-				{
-					href: '#',
-					src: 'img/offers/offer_1.jpg',
-					title: 'Кусачки Mertz 3420-14 fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-					quantity: false,
-					price: 999,
-					close: true
-				},
-				{
-					href: '#',
-					src: 'img/offers/offer_2.jpg',
-					title: 'Кусачки Mertz 3420-14',
-					quantity: false,
-					price: 155000,
-					close: true
-				},
-				{
-					href: '#',
-					src: 'img/offers/offer_3.jpg',
-					title: 'Кусачки Mertz 3420-14',
-					quantity: false,
-					price: 3000,
-					close: true
-				}
-			];
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/basket-step2-1_wrapper.twig",
 					load: function (template) {

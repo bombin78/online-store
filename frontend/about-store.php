@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Шаблон для карзины</title>
+	<title>О магазине</title>
 	<meta charset="utf-8">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -10,18 +10,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/about-store.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
 	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
 	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
 </head>
 <body>
 <?php
-$dataEmulation = [];
+	$dataEmulation = [];
 
 	require_once 'config.php';
 	require_once 'data-emulation/php/data-common.php';
-	require_once 'data-emulation/php/data-page-base.php';
+	require_once 'data-emulation/php/data-about-store.php';
 
-	$template = $twig->load('templates/pages/page-base_wrapper.twig');
+	$template = $twig->load('templates/pages/about-store_grid-2.twig');
 
 	echo $template->render([
 		//Данные шаблона
@@ -47,6 +52,8 @@ $dataEmulation = [];
 		'footerCopyright'    	=> $dataEmulation['footerCopyright'],
 		'footerDeveloper'    	=> $dataEmulation['footerDeveloper'],
 		//Данные контента
+		'contentBanner'        	=> $dataEmulation['contentBanner'],
+		'breadcrumb'         	=> $dataEmulation['breadcrumb']
 	]);
 ?>
 </body>

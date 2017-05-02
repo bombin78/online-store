@@ -8,7 +8,7 @@
 	<h2 class="su-sidebar-viewed_title">Вы уже смотрели:</h2>
 	<ul class="su-sidebar-viewed_list su-list">
 
-		{% for row in viewedOffers %}
+		{% for row in sidebarViewedOffers %}
 			<li class="su-list_item">
 				{% include path~'pages/blocks/offer.twig' with {overrideClassOffer: 'su-viewed-offer'} %}
 			</li>

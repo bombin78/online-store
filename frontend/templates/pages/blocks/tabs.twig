@@ -1,5 +1,5 @@
 {% if typeTwig == 'php' %}
-	{% set path = 'templates/pages/blocks/' %}
+	{% set pathTabs = 'templates/pages/blocks/' %}
 {% endif %}
 
 <div class="{{ overrideClassTabs }} su-tabs-block {{ modifierTabs }}">
@@ -51,7 +51,7 @@
 				<ul class="su-tabs-content_list su-list">
 					<li class="su-list_item">
 						<article id="tabpage_1" class="su-tab-page _su-open">
-							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_filter', groupButtons: groupButtonsFilter } %}
+							{% include pathTabs~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_filter', groupButtons: groupButtonsFilter } %}
 							<ul class="su-tab-page_orders su-list">
 
 								{% for row in orders %}
@@ -65,7 +65,7 @@
 					</li>
 					<li class="su-list_item">
 						<article id="tabpage_2" class="su-tab-page">
-							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							{% include pathTabs~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
 							<ul class="su-tab-page_favorites su-list">
 
 								{% for row in favoritesOffers %}
@@ -79,7 +79,7 @@
 					</li>
 					<li class="su-list_item">
 						<article id="tabpage_3" class="su-tab-page">
-							{% include path~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							{% include pathTabs~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
 							<ul class="su-tab-page_special su-list">
 
 								{% for row in specialOffers %}

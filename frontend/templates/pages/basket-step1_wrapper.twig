@@ -1,10 +1,14 @@
-{% extends '../layout/template_wrapper.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathBasketStep1 = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_wrapper.twig' : '../layout/template_wrapper.twig' %}
 
 {% block wrapper_sections %}
 
 	<div class="su-basket">
-		{% include 'blocks/basket-header.twig' %}
-		{% include 'blocks/basket-steps.twig' %}
+		{% include pathBasketStep1~'blocks/basket-header.twig' %}
+		{% include pathBasketStep1~'blocks/basket-steps.twig' %}
 		<div class="su-basket-tab">
 			<div class="su-order-cart">
 				<form class="su-order-cart_form" action="#" method="post">
@@ -12,7 +16,7 @@
 
 						{% for row in orders %}
 							<li class="su-list_item">
-								{% include 'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
+								{% include pathBasketStep1~'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
 							</li>
 						{% endfor %}
 
@@ -39,7 +43,7 @@
 
 					{% for row in specialOffers %}
 						<li class="su-list_item">
-							{% include 'blocks/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+							{% include pathBasketStep1~'blocks/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
 						</li>
 					{% endfor %}
 

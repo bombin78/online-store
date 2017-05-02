@@ -1,5 +1,5 @@
 {% if typeTwig == 'php' %}
-	{% set pathContentPageOne = 'templates/pages/' %}
+	{% set pathPageOne = 'templates/pages/' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/template_grid-1.twig' : '../layout/template_grid-1.twig' %}
@@ -7,7 +7,7 @@
 {% block content %}
 
 	{#<div class="su-page-one">
-		{% include pathContentPageOne~'/blocks/article.twig' %}
+		{% include pathPageOne~'/blocks/article.twig' %}
 	</div>#}
 
 {% endblock %}

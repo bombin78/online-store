@@ -20,49 +20,15 @@
 	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-blog.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeHeader = '_active';
-
-			dataEmulation.contentBanner = {
-				href: '#',
-				src: 'img/offers/offer-banner.jpg',
-				alt: 'баннер контента'
-			};
-
-			dataEmulation.breadcrumb = [
-				{modifier: '', href:'#', title:'Главная'},
-				{title:'Блог'}
-			];
-
-			dataEmulation.listBlogArticle1 = [
-				{modifier:'', href: 'blog-page.html', title: '10 главных «нельзя» и 5 «нужно» для создания здоровых ногтей!'},
-				{modifier:'', href: 'blog-page.html', title: '10 простых способов укрепить ногти'},
-				{modifier:'', href: 'blog-page.html', title: '50 Новогодних дизайнов ногтей'},
-				{modifier:'', href: 'blog-page.html', title: 'Shellac, маникюр и педикюр на весь отпуск! Как сделать самой?'},
-				{modifier:'', href: 'blog-page.html', title: 'Shellac-маникюр в 2 раза быстрее обычного: как сделать на дому?'},
-				{modifier:'', href: 'blog-page.html', title: '«Лунный» маникюр'},
-				{modifier:'', href: 'blog-page.html', title: 'В двух словах о наращивании ногтей'}
-			];
-
-			dataEmulation.listBlogArticle2 = [
-				{modifier:'', href: 'blog-page.html', title: 'Бархатные ручки или правила ухода'},
-				{modifier:'', href: 'blog-page.html', title: 'Восковая депиляция — краткий обзор'},
-				{modifier:'', href: 'blog-page.html', title: 'Восстанавливающие процедуры для рук в домашних условиях'},
-				{modifier:'', href: 'blog-page.html', title: 'Европейский и классический маникюр. Что лучше?'},
-				{modifier:'', href: 'blog-page.html', title: 'Зачем нужно удалять кутикулу?'}
-			];
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/blog_grid-2.twig",
 					load: function (template) {

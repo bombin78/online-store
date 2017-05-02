@@ -1,7 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathMail = '' %}
+	{% set pathFreeMail = '' %}
 {% else %}
-	{% set pathMail = '../../../' %}
+	{% set pathFreeMail = '../../../' %}
 {% endif %}
 
 <div class="{{ overrideClassfreeMail }} su-free-mail">
@@ -19,7 +19,7 @@
 	</div>
 	<div class="su-free-mail_user-data">
 
-		{% include pathMail~'vendors/mailerlite/mailerlite.twig' with {overrideClassMailerlite: 'free-mail_mailerlite'} %}
+		{% include pathFreeMail~'vendors/mailerlite/mailerlite.twig' with {overrideClassMailerlite: 'free-mail_mailerlite'} %}
 
 	</div>
 </div>
