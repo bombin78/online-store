@@ -15,15 +15,125 @@ dataEmulation['breadcrumb'] = [
 	{
 		modifier: '',
 		href:'#',
-		title:'Блог'
+		title:'Каталог товаров'
 	},
 	{
-		title:'Дизайн ногтей Moscow street'
+		modifier: '',
+		href:'#',
+		title:'Маникюрный инструмент'
+	},
+	{
+		title:'Маникюрные кусачки'
+	}
+];
+
+dataEmulation['card'] = {
+	title: 'Маникюрный набор-чемодан Zinger MS BG',
+	img: {
+		href: 'img/card/card_1.jpg',
+		src: 'img/card/card_1.jpg',
+		alt: 'фото',
+		title: ''
+	},
+	moreImg: [
+		{
+			href: 'img/card/card_1.jpg',
+			src: 'img/card/preview/card_1.jpg',
+			alt: 'фото 1',
+			title: ''
+		},
+		{
+			href: 'img/card/card_2.jpg',
+			src: 'img/card/preview/card_2.jpg',
+			alt: 'фото 2',
+			title: ''
+		},
+		{
+			href: 'img/card/card_3.jpg',
+			src: 'img/card/preview/card_3.jpg',
+			alt: 'фото 3',
+			title: ''
+		},
+		{
+			href: 'img/card/card_4.jpg',
+			src: 'img/card/preview/card_4.jpg',
+			alt: 'фото 4',
+			title: ''
+		},
+		{
+			href: 'img/card/card_1.jpg',
+			src: 'img/card/preview/card_1.jpg',
+			alt: 'фото 5',
+			title: ''
+		},
+		{
+			href: 'img/card/card_2.jpg',
+			src: 'img/card/preview/card_2.jpg',
+			alt: 'фото 6',
+			title: ''
+		},
+		{
+			href: 'img/card/card_3.jpg',
+			src: 'img/card/preview/card_3.jpg',
+			alt: 'фото 7',
+			title: ''
+		},
+		{
+			href: 'img/card/card_4.jpg',
+			src: 'img/card/preview/card_4.jpg',
+			alt: 'фото 8',
+			title: ''
+		}
+	],
+	push: {
+		href: 'img/card/card_1.jpg',
+		text: 'Нажмите, чтобы увеличить фото',
+		src: 'img/card/card_1.jpg',
+		alt: 'фото',
+		title: ''
+	}
+};
+
+dataEmulation['comments'] = [
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '60',
+		author: 'Имя 1-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '100',
+		author: 'Имя 2-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '80',
+		author: 'Имя 3-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '50',
+		author: 'Имя 4-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '60',
+		author: 'Имя 5-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '50',
+		author: 'Имя 6-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '20',
+		author: 'Имя 7-го автора'
 	}
 ];
 
 dataEmulation['contentSlider'] = {
-	title: 'Обратите внимание на эти товары',
+	title: 'С этим товаром покупают',
 	data: [
 		{
 			href: 'offers.html',

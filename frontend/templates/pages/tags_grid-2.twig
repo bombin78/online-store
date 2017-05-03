@@ -17,7 +17,7 @@
 		{% else %}
 			<h1 class="su-tags_title">Маникюрные кусачки</h1>
 			{% include 'blocks/popular.twig' with {overrideClassPopular: 'su-tags_popular'} %}
-			{% include 'blocks/group-buttons.twig' with {overrideGroupButtons: 'su-tags_sorting'} %}
+			{% include 'blocks/group-buttons.twig' with {overrideGroupButtons: 'su-tags_sorting', groupButtons: groupButtonsSorting} %}
 			<ul class="su-tags_offers su-list">
 
 				{% for row in offers %}

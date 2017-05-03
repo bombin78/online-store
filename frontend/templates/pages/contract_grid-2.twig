@@ -1,4 +1,8 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathContract = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 

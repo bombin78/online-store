@@ -1,21 +1,26 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathOffers = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
+
 
 {% block content %}
 
 	<div class="su-offers">
 		<h1 class="su-offers_title">Маникюрные кусачки</h1>
-		{% include 'blocks/popular.twig' with {overrideClassPopular: 'su-offers_popular'} %}
-		{% include 'blocks/group-buttons.twig' with {overrideGroupButtons: 'su-offers_sorting'} %}
+		{% include pathOffers~'blocks/popular.twig' with {overrideClassPopular: 'su-offers_popular'} %}
+		{% include pathOffers~'blocks/group-buttons.twig' with {overrideGroupButtons: 'su-offers_sorting', groupButtons: groupButtonsSorting} %}
 		<ul class="su-offers_list su-list">
 
 			{% for row in offers %}
 				<li class="su-list_item">
-					{% include 'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+					{% include pathOffers~'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
 				</li>
 			{% endfor %}
 
 		</ul>
-		{% include 'blocks/pagination.twig' with {overrideClassPagination: 'su-offers_pagination'} %}
+		{% include pathOffers~'blocks/pagination.twig' with {overrideClassPagination: 'su-offers_pagination'} %}
 	</div>
 
 {% endblock %}

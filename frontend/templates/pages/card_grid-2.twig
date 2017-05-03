@@ -1,4 +1,8 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathCard = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 
@@ -100,8 +104,8 @@
 
 			<p><b>Хотите порадовать себя или близкого человека? Тогда заказывайте набор Mertz 7207 прямо сейчас!</b></p>
 		</div>
-		{% include 'blocks/comments.twig' with {overrideClassComments: 'su-card_comments'} %}
-		{% include 'blocks/slider.twig' with {overrideClassSlider: 'su-card_slider'} %}
+		{% include pathCard~'blocks/comments.twig' with {overrideClassComments: 'su-card_comments'} %}
+		{% include pathCard~'blocks/slider.twig' with {overrideClassSlider: 'su-card_slider'} %}
 	</div>
 
 {% endblock %}

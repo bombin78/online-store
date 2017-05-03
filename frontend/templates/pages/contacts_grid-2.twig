@@ -1,4 +1,8 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathContacts = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
 {% block content %}
 
@@ -59,7 +63,6 @@
 				</div>
 			</div>#}
 		</form>
-	</div>
 	</div>
 
 {% endblock %}

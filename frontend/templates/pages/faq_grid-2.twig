@@ -1,4 +1,9 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathFaq = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
+
 
 {% block content %}
 
@@ -20,7 +25,7 @@
 												<a class="su-block_element" href="#">{{ row.subtitle }}</a>
 											</h3>
 										</header>
-										<div class="su-faq-article_description">{{ row.description }}</div>
+										<div class="su-faq-article_description">{{ row.description | raw }}</div>
 									</article>
 								</li>
 							{% endfor %}
