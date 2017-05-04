@@ -253,7 +253,7 @@
 		<a class="link" href="http://manicurshop.ru/login/?forgot_password=yes" target="_blank">
 			21.1 Вид страницы на сайте
 		</a>
-		<a class="link" href="frontend/password-recover.php" target="_blank">
+		<a class="link" href="frontend/password-restore.php" target="_blank">
 			21.2 Новый вариант
 		</a>
 	</li>

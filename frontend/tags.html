@@ -19,51 +19,15 @@
 	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-tags.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeHeader = '_su-active';
-
-			dataEmulation.contentBanner = {
-				href: '#',
-				src: 'img/banner/banner.jpg',
-				alt: 'баннер контента'
-			};
-
-			dataEmulation.breadcrumb = [
-				{modifier: '', href:'#', title:'Главная'},
-				{title:'Метки товаров'}
-			];
-
-			dataEmulation.tagsPage = 'links';
-
-			dataEmulation.listTags = [
-				{modifier:'', href: 'offers.html', title: 'Shellac CND'},
-				{modifier:'', href: 'offers.html', title: 'гель-лаки Кошачий глаз'},
-				{modifier:'', href: 'offers.html', title: 'Shellac Holy Rose'},
-				{modifier:'', href: 'offers.html', title: 'гель-лак Aurelia'},
-				{modifier:'', href: 'offers.html', title: 'гель-лак Irisk Professional'},
-				{modifier:'', href: 'offers.html', title: 'лазерные терки для ног Mertz'},
-				{modifier:'', href: 'offers.html', title: 'голографические лаки'},
-				{modifier:'', href: 'offers.html', title: 'Aurelia Glamour'},
-				{modifier:'', href: 'offers.html', title: 'Aurelia Professional'},
-				{modifier:'', href: 'offers.html', title: 'одноразовые терки'},
-				{modifier:'', href: 'offers.html', title: 'шлифовальные терки'},
-				{modifier:'', href: 'offers.html', title: 'материалы для дизайна ногтей'},
-				{modifier:'', href: 'offers.html', title: 'гель для дизайна ногтей'},
-				{modifier:'', href: 'offers.html', title: 'кисти для дизайна ногтей'},
-				{modifier:'', href: 'offers.html', title: 'led-лампы для ногтей'}
-			];
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/tags_grid-2.twig",
 					load: function (template) {

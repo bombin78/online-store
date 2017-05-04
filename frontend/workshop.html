@@ -20,25 +20,15 @@
 	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-workshop.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeHeader = '_active';
-
-			dataEmulation.breadcrumb = [
-				{modifier: '', href:'#', title:'Главная'},
-				{title:'Мастерская по заточке'}
-			];
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/workshop_grid-2.twig",
 					load: function (template) {

@@ -56,7 +56,7 @@
 
 								{% for row in orders %}
 									<li class="su-list_item">
-										{% include path~'order.twig' with {overrideClassOrder: 'su-list_order', modifierOrders: '_su-personal'} %}
+										{% include pathTabs~'order.twig' with {overrideClassOrder: 'su-list_order', modifierOrders: '_su-personal'} %}
 									</li>
 								{% endfor %}
 
@@ -70,7 +70,7 @@
 
 								{% for row in favoritesOffers %}
 									<li class="su-list_item">
-										{% include path~'offer.twig' with {overrideClassOffer: 'su-favorites-offer'} %}
+										{% include pathTabs~'offer.twig' with {overrideClassOffer: 'su-favorites-offer'} %}
 									</li>
 								{% endfor %}
 
@@ -84,7 +84,7 @@
 
 								{% for row in specialOffers %}
 									<li class="su-list_item">
-										{% include path~'offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+										{% include pathTabs~'offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
 									</li>
 								{% endfor %}
 

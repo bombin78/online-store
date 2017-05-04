@@ -1,4 +1,9 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathPersonal = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
+
 
 {% block content %}
 
@@ -42,7 +47,7 @@
 			</div>
 		</div>
 		<h2 class="su-personal_title">Ваши заказы</h2>
-		{% include 'blocks/tabs.twig' with {overrideClassTabsPersonal: 'su-personal_tabs', modifierTabs: '_su-personal'} %}
+		{% include pathPersonal~'blocks/tabs.twig' with {overrideClassTabsPersonal: 'su-personal_tabs', modifierTabs: '_su-personal'} %}
 	</div>
 
 {% endblock %}

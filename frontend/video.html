@@ -11,56 +11,23 @@
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/video.css">
+	<link rel="stylesheet" href="vendors/jscrollpane/jquery.jscrollpane.css">
 	<script src="vendors/jquery-1/jquery-1.11.1.min.js"></script>
 	<script src="vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
 	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
+	<script src="vendors/jscrollpane/jquery.mousewheel.js"></script>
 
 	<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-	<!-- подключение jquery.js -->
-	<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
 	<!-- подключение twig.js -->
 	<script src="../node_modules/twig/twig.js"></script>
 	<!-- файлы с данными для эмуляции работы сайта -->
 	<script src="data-emulation/js/data-common.js"></script>
+	<script src="data-emulation/js/data-video.js"></script>
+	<!-- подключение шаблона с контентом -->
 	<script>
 		(function ($) {
-			//дополнение объекта с данными для эмуляции
-			dataEmulation.typeHeader = '_su-active';
-
-			dataEmulation.contentBanner = {
-				href: '#',
-				src: 'img/banner/banner.jpg',
-				alt: 'баннер контента'
-			};
-
-			dataEmulation.breadcrumb = [
-				{modifier: '', href:'#', title:'Главная'},
-				{title:'Видео'}
-			];
-
-			dataEmulation.videoPage = 'links';
-
-			dataEmulation.listVideo = [
-				{modifier:'', href: 'video-page.html', title: 'Видео: заточка маникюрных кусачек'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: удалитель кутикулы за 45 секунд Cuticle Away'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: ультрамодный уход за ногами - Callus Away'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: парафинотерапия в домашних условиях'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: ATLANTICA ODYSSEY'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: Cuticle Away - удалитель кутикулы за 45 секунд'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: DILIS CLASSIC COLLECTION'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: DILIS CLASSIC COLLECTION NEW'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: NUELLE'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: делаем самостоятельно евроманикюр в домашних условиях'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: Как пользоваться Shellac CND'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: Как пользоваться Косметологической Петлей'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: ограниченная коллекция лаков Винилюкс'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: Потрясающая Крем-помада Glam Look lip Cream Velvet от Luxvisage'},
-				{modifier:'', href: 'video-page.html', title: 'Видео: слепой тест "Аромат дороже денег"'}
-			];
-
-
 			$(document).ready(function () {
-				//подключение шаблона с контентом
 				twig({
 					href: "templates/pages/video_grid-2.twig",
 					load: function (template) {

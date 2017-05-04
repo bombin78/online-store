@@ -1,4 +1,9 @@
-{% extends '../layout/template_grid-2.twig' %}
+{% if typeTwig == 'php' %}
+	{% set pathVideo = 'templates/pages/' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
+
 
 {% block content %}
 
@@ -22,7 +27,7 @@
 			<p>
 				Данный ролик не является учебным. Мы не ставили целью показать все тонкости процесса. Демонстрация заточки кусачек обобщенная, для получения общего представления.
 			</p>
-			{% include 'blocks/videoblock.twig' with {overrideClassVideo: 'su-list_video'} %}
+			{% include pathVideo~'blocks/videoblock.twig' with {overrideClassVideo: 'su-list_video'} %}
 			<div class="su-video_partner su-banner-block">
 				<a class="su-banner-block_link su-link-img" href="#">
 					<img class="su-link-img_img" src="img/banner/banner-partner.gif" alt="Наш партнер">
