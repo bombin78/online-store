@@ -5,6 +5,14 @@ $color-link-hover : lib-color(secondary-base);
 $color-link-visited : lib-color(secondary-visited);
 //-------------------------------
 
+//Классы
+$clearfix : lib-get-class('clearfix');
+//-------------------------------
+
+#{$clearfix} {
+	@extend %lib-clearfix;
+}
+
 * {
 	box-sizing : border-box;
 }

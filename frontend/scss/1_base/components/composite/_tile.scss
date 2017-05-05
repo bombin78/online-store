@@ -233,6 +233,6 @@ $pagination : lib-get-class('pagination');
 		text-align     : center;
 	}
 	&_pagination#{$pagination} {
-		padding : 10px;
+		padding : 10px 5px;
 	}
 }

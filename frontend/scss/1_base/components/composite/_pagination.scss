@@ -1,17 +1,20 @@
 //Цвета
-$bg-current : lib-color(secondary-accent-dark);
-$bg-link : lib-color(secondary-accent);
+$bg-link : lib-color(primary-lighter);
 $color-label : lib-color(primary-dark);
-$color-border-bottom : lib-color(secondary-accent-dark);
-$color-current : lib-color(primary-lighter);
+$color-el : lib-color(primary-dark);
+$color-el-visited : lib-color(primary-dark);
+$color-el-border : lib-color(primary-light);
+$color-el-border-hover : lib-color(accent-base-bright);
+$color-current : lib-color(accent-base-bright);
+$color-current-border : lib-color(accent-base-bright);
 //-------------------------------
 
 //Классы
 $wrapper : lib-get-class('pagination');
-$pagination-current : lib-get-class('pagination-current');
-$pagination-link : lib-get-class('pagination-link');
+$pagination-el : lib-get-class('pagination-el');
 $link : lib-get-class('link');
 $list : lib-get-class('list');
+$_current : lib-get-modifier('current');
 //-------------------------------
 
 #{$wrapper} {
@@ -25,30 +28,39 @@ $list : lib-get-class('list');
 	}
 	&_list#{$list} {
 		display        : inline-block;
-		margin-left    : 10px;
+		margin-left    : 8px;
 
-		vertical-align : -5px;
+		vertical-align : -9px;
 		#{$list}_item {
 			float : left;
 
 			@at-root {
-				#{$pagination-current},
-				#{$pagination-link}#{$link} {
-					margin-right  : -4px;
-					padding       : 5px 13px;
+				#{$pagination-el} {
+					float            : left;
+					display          : block;
+					box-sizing       : content-box;
+					margin-right     : 2px;
+					padding          : 3px 6px;
+					height           : 100%;
 
-					border-bottom : 2px solid $color-border-bottom;
-				}
-
-				#{$pagination-current} {
-					color            : $color-current;
-					font-size        : lib-font-size(-4);
-
-					background-color : $bg-current;
-				}
-
-				#{$pagination-link}#{$link} {
+					color            : $color-el;
+					font-size        : lib-font-size(-2);
+					border           : solid 1px $color-el-border;
 					background-color : $bg-link;
+					text-decoration  : none;
+					&:visited {
+						color           : $color-el-visited;
+						text-decoration : none;
+					}
+					&:hover {
+						border-color : $color-el-border-hover;
+					}
+				}
+
+				#{$_current} {
+					color        : $color-current;
+					font-weight  : $lib-font-weight-bold;
+					border-color : $color-current-border;
 				}
 			}
 
