@@ -16,12 +16,16 @@
 					<span class="su-field-search_postfix"></span>
 				</div>
 				<div class="su-tile-search-popup">
-					{% for row in searchPopup %}
-						<div class="su-tile-search-popup_row">
-							<div class="su-tile-search-popup_name">{{ row.name }}</div>
-							<div class="su-tile-search-popup_quantity">{{ row.quantity }}</div>
-						</div>
-					{% endfor %}
+					<ul class="su-tile-search-popup_list su-list">
+
+						{% for row in searchPopup %}
+							<li class="su-list_item">
+								<div class="su-tile-search-name">{{ row.name }}</div>
+								<div class="su-tile-search-quantity">{{ row.quantity }}</div>
+							</li>
+						{% endfor %}
+
+					</ul>
 				</div>
 			</form>
 		</div>

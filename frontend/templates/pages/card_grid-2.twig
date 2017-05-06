@@ -4,6 +4,7 @@
 
 {% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
 
+
 {% block content %}
 
 	<div class="su-card">
@@ -124,9 +125,8 @@
 
 {% endblock %}
 
-{% block wrapper_fixed %}
+{% block wrapper_popup %}
 {% endblock %}
-
 
 {% block script %}
 	{{ parent() }}

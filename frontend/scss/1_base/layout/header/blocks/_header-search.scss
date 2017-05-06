@@ -12,16 +12,19 @@ $field : lib-get-class('field-search');
 #{$wrapper} {
 	float : left;
 	width : 250px;
-	&_line#{$field} {
-		border-radius       : 3px;
-		border-width        : 1px;
-		border-top-color    : $color-line-border-top;
-		border-right-color  : $color-line-border-side;
-		border-bottom-color : $color-line-border-bottom;
-		border-left-color   : $color-line-border-side;
-		box-shadow          : inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-		#{$field}_postfix {
-			margin-top : 0;
+	&_form {
+		position : relative;
+		#{$wrapper}_line#{$field} {
+			border-radius       : 3px;
+			border-width        : 1px;
+			border-top-color    : $color-line-border-top;
+			border-right-color  : $color-line-border-side;
+			border-bottom-color : $color-line-border-bottom;
+			border-left-color   : $color-line-border-side;
+			box-shadow          : inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+			#{$field}_postfix {
+				margin-top : 0;
+			}
 		}
 	}
 }

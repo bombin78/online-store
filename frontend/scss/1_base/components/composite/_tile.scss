@@ -10,6 +10,9 @@ $color-search-popup-border : lib-color(primary-base);
 //Классы
 $wrapper : lib-get-class('tile');
 $tile-search : lib-get-class('tile-search');
+$tile-search-popup : lib-get-class('tile-search-popup');
+$tile-search-name : lib-get-class('tile-search-name');
+$tile-search-quantity : lib-get-class('tile-search-quantity');
 $tile-block : lib-get-class('tile-block');
 $offer : lib-get-class('offer');
 $description : lib-get-class('offer-description');
@@ -18,7 +21,6 @@ $old-price : lib-get-class('offer-old-price');
 $price : lib-get-class('offer-price');
 $button : lib-get-class('offer-button');
 $field : lib-get-class('field-search');
-$search-popup : lib-get-class('tile-search-popup');
 $list : lib-get-class('list');
 $link : lib-get-class('link');
 $img : lib-get-class('link-img');
@@ -55,8 +57,7 @@ $pagination : lib-get-class('pagination');
 			}
 
 			@at-root #{$wrapper} {
-				#{$search-popup} {
-					display       : table;
+				#{$tile-search-popup} {
 					position      : absolute;
 					top           : 100%;
 					left          : 0;
@@ -64,28 +65,30 @@ $pagination : lib-get-class('pagination');
 					margin-top    : 2px;
 					width         : 100%;
 
-					font-size     : 14px;
 					border-radius : 5px;
 					border        : 1px solid $color-search-popup-border;
 					background    : $bg-search-popup;
 					box-shadow    : 0 1px 5px 0 $color-search-popup-shadow;
-					&_row {
-						display : table-row;
-						padding : 2px 4px;
+					&_list#{$list} {
+						display : table;
+						width   : 100%;
+						#{$list}_item {
+							display : table-row;
+							&:hover,
+							&.active {
+								background-color : $bg-search-popup-row-hover;
+							}
+							#{$tile-search-name},
+							#{$tile-search-quantity} {
+								display   : table-cell;
+								padding : 2px 4px;
 
-						#{$search-popup}_name,
-						#{$search-popup}_quantity {
-							display : table-cell;
-							padding : 4px;
-
-							cursor  : pointer;
-						}
-						&:hover,
-						&.active {
-							background-color : $bg-search-popup-row-hover;
-						}
-						#{$search-popup}_quantity {
-							text-align : right;
+								font-size : 14px;
+								cursor    : pointer;
+							}
+							#{$tile-search-quantity} {
+								text-align : right;
+							}
 						}
 					}
 				}

@@ -1,0 +1,29 @@
+<div class="su-popup-search">
+	<ul class="su-popup-search_list su-list">
+
+		{% for row in popupSearch %}
+			<li class="su-list_item">
+
+				{% if row.more %}
+					<div class="su-popup-search-more">
+						<a class="su-popup-search-more_link" href="{{ row.hrefMore }}">{{ row.more }}</a>
+					</div>
+				{% else %}
+					<div class="su-popup-search-offer">
+						<div class="su-popup-search-offer_preview su-preview">
+							<a class="su-preview_link su-link-img" href="{{ row.hrefImg }}">
+								<img class="su-link-img_img" src="img/offers/offer_2.jpg">
+							</a>
+						</div>
+						<div class="su-popup-search-offer_info">
+							<div class="su-popup-search-offer_section">{{ row.section | raw }}</div>
+							<a class="su-popup-search-offer_title" href="{{ row.hrefInfo }}">{{ row.title | raw }}</a>
+						</div>
+					</div>
+				{% endif %}
+
+			</li>
+		{% endfor %}
+
+	</ul>
+</div>

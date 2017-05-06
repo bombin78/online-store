@@ -20,23 +20,59 @@ $dataEmulation['typeHeader'] = '_su-guest';
 
 //2. Меню профиля пользователя
 $dataEmulation['headerUser'] = [
-	['modifier' => '', 'href' => 'card.html', 'attr' => '', 'title' => 'Мои заказы'],
-	['modifier' => '', 'href' => '#', 'attr' => '', 'title' => 'Личный кабинет'],
-	['modifier' => '', 'href' => '#', 'attr' => '', 'title' => 'Выход']
+	[
+		'modifier' => '',
+		'href' => 'card.html',
+		'attr' => '',
+		'title' => 'Мои заказы'
+	],
+	[
+		'modifier' => '',
+		'href' => '#',
+		'attr' => '',
+		'title' => 'Личный кабинет'
+	],
+	[
+		'modifier' => '',
+		'href' => '#',
+		'attr' => '',
+		'title' => 'Выход'
+	]
 ];
 
 //3. Главное меню
 $dataEmulation['headerNav'] = [
-	['title' => 'О доставке и оплате', 'href' => 'about-purchase.html'],
-	['title' => 'Помощь', 'href' => 'faq.html'],
-	['title' => 'Контакты', 'href' => 'contacts.html']
+	[
+		'title' => 'О доставке и оплате',
+		'href' => 'about-purchase.html'
+	],
+	[
+		'title' => 'Помощь',
+		'href' => 'faq.html'
+	],
+	[
+		'title' => 'Контакты',
+		'href' => 'contacts.html'
+	]
 ];
 
 //4. Карзина
-$dataEmulation['basketItems'] = [
-	['href' => '#', 'title' => 'LED- UV лампа 24W с таймером ELSA Professional', 'cost' => '2 400'],
-	['href' => '#', 'title' => 'Маникюрный набор Mertz 9736', 'cost' => '51 574'],
-	['href' => '#', 'title' => 'Терка Mertz 544', 'cost' => '75']
+$dataEmulation['headerBasketItems'] = [
+	[
+		'href' => '#',
+		'title' => 'LED- UV лампа 24W с таймером ELSA Professional',
+		'cost' => '2 400'
+	],
+	[
+		'href' => '#',
+		'title' => 'Маникюрный набор Mertz 9736',
+		'cost' => '51 574'
+	],
+	[
+		'href' => '#',
+		'title' => 'Терка Mertz 544',
+		'cost' => '75'
+	]
 ];
 
 //5. Ссылка логотипа
@@ -46,7 +82,7 @@ $dataEmulation['headerLogo'] = [
 	'alt' => 'Магазин ManicurShop.ru'
 ];
 
-//6. Вывод баннера в шапке (по умолчнию не выводиться]
+//6. Вывод баннера в шапке (по умолчанию не выводиться)
 $dataEmulation['headerBanner'] = false;
 
 //---------------------------------------------------
@@ -244,12 +280,36 @@ $dataEmulation['sidebarBanner'] = [
 $dataEmulation['sidebarBlog'] = [
 	'title' => 'Наш блог',
 	'row' => [
-		['modifier' => '', 'href' => '#', 'title' => 'Что подарить мужчине на 23 февраля?'],
-		['modifier' => '', 'href' => '#', 'title' => 'Shellac-маникюр в 2 раза быстрее обычного: как сделать на дому?'],
-		['modifier' => '', 'href' => '#', 'title' => 'Как сделать ему мужской маникюр своими руками на 23 февраля?'],
-		['modifier' => '', 'href' => '#', 'title' => 'Зачем нужно удалять кутикулу?'],
-		['modifier' => '', 'href' => '#', 'title' => 'Маникюр к 14 февраля, который вы сможете повторить самостоятельно'],
-		['modifier' => '', 'href' => '#', 'title' => 'читать еще']
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'Что подарить мужчине на 23 февраля?'
+		],
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'Shellac-маникюр в 2 раза быстрее обычного: как сделать на дому?'
+		],
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'Как сделать ему мужской маникюр своими руками на 23 февраля?'
+		],
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'Зачем нужно удалять кутикулу?'
+		],
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'Маникюр к 14 февраля, который вы сможете повторить самостоятельно'
+		],
+		[
+			'modifier' => '',
+			'href' => '#',
+			'title' => 'читать еще'
+		]
 	]
 ];
 
@@ -405,6 +465,13 @@ $dataEmulation['footerDeveloper'] = 'Компания "Название комп
 
 
 //---------------------------------------------------
+//POPUP
+//1. Popup search (по умолчанию не показывается)
+$dataEmulation['popupSearch'] = false;
+//---------------------------------------------------
+
+
+//---------------------------------------------------
 //FOR PAGE GUIDE.CSS
 //1. guideDropdown
 $dataEmulation['guideDropdown'] = [
@@ -421,6 +488,7 @@ $dataEmulation['guideDropdown'] = [
 		'title' => 'Контакты', 'href' => '#', 'modifier' => ''
 	]
 ];
+
 //2. guideListLinks
 $dataEmulation['guideListLinks'] = [
 	['href' => 'index.html', 'title' => 'Главная'],

@@ -37,10 +37,15 @@
 		{% include path~'footer/footer.twig' %}
 	</div>
 
-	{# Обертка для фиксированных элементов #}
-	<div class="su-wrapper-fixed">
+	{# Обертка для фиксированных элементов (в данном проекте не используються) #}
+	{#<div class="su-wrapper-fixed">
 		{% block wrapper_fixed %}
 		{% endblock %}
+	</div>#}
+
+	{# Обертка для всплывающих окон #}
+	<div class="su-wrapper-popup">
+		{% include path~'popup/popup-container.twig' %}
 	</div>
 
 	{# Обертка для модальных окон #}

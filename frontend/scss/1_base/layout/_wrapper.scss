@@ -7,6 +7,7 @@ $wrapper : lib-get-class('wrapper');
 $wrapper-header : lib-get-class('wrapper-header');
 $wrapper-sections : lib-get-class('wrapper-sections');
 $wrapper-footer : lib-get-class('wrapper-footer');
+$wrapper-popup : lib-get-class('wrapper-popup');
 $wrapper-fixed : lib-get-class('wrapper-fixed');
 $wrapper-modal : lib-get-class('wrapper-modal');
 $header-info : lib-get-class('header-info');
@@ -58,7 +59,7 @@ $_menu : lib-get-modifier('menu');
 						&_schedule {
 							text-align : left;
 							br {
-								display: none;
+								display : none;
 							}
 						}
 					}
@@ -105,6 +106,14 @@ $_menu : lib-get-modifier('menu');
 				z-index    : lib-z('footer');
 
 				background : url('../../../img/bg_4.jpg') center top repeat-x;
+			}
+
+			#{$wrapper-popup} {
+				position : absolute;
+				top      : 0;
+				left     : 0;
+				width    : 100%;
+				z-index  : lib-z('popup');
 			}
 
 			#{$wrapper-fixed} {

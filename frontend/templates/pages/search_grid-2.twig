@@ -1,8 +1,12 @@
 {% if typeTwig == 'php' %}
 	{% set pathSearch = 'templates/pages/' %}
+	{% set pathSearchPopup = 'templates/' %}
+{% else %}
+	{% set pathSearchPopup = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/template_grid-2.twig' : '../layout/template_grid-2.twig' %}
+
 
 {% block content %}
 
@@ -12,7 +16,10 @@
 
 {% endblock %}
 
-{% block wrapper_fixed %}
+{% block wrapper_popup %}
+
+	{% include pathSearchPopup~'layout/popup/popup-search.twig' %}
+
 {% endblock %}
 
 {% block script %}

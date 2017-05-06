@@ -175,3 +175,34 @@ $dataEmulation['searchResults'] = [
 		'buttonTitle' => 'Купить'
 	]
 ];
+
+$dataEmulation['popupSearch'] = [
+	[
+		'hrefImg' 	=> '#',
+		'src' 		=> 'img/offers/offer_1.jpg',
+		'alt' 		=> 'Фото товара 1',
+		'hrefInfo' 	=> '#',
+		'section'	=> '<b>Маникюрные наборы</b>',
+		'title' 	=> '<b>Ман</b>икюрный набор Mertz 9741'
+	],
+	[
+		'hrefImg' 	=> '#',
+		'src' 		=> 'img/offers/offer_2.jpg',
+		'alt' 		=> 'Фото товара 2',
+		'hrefInfo' 	=> '#',
+		'section'	=> '<b>Маникюрные наборы</b>',
+		'title' 	=> '<b>Ман</b>икюрный набор Mertz 9741'
+	],
+	[
+		'hrefImg' 	=> '#',
+		'src' 		=> 'img/offers/offer_3.jpg',
+		'alt' 		=> 'Фото товара 3',
+		'hrefInfo' 	=> '#',
+		'section'	=> '<b>Маникюрные наборыыыыыыыыыыыыыыыыыыыыы</b>',
+		'title' 	=> '<b>Ман</b>икюрный набор Mertz 9741234145426576536778478857625652637676784774652656245'
+	],
+	[
+		'hrefMore'	=> '#',
+		'more' 		=> 'Все результаты'
+	]
+];

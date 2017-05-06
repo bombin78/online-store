@@ -1,0 +1,93 @@
+//Цвета
+$bg-popup : lib-color(primary-lighter);
+$bg-popup-row-hover : lib-color(primary-light);
+$color-popup-shadow : lib-color(primary-base-dark);
+$color-popup-border : lib-color(primary-base);
+$color-img-border : lib-color(primary-base-light);
+$color-offer-title : lib-color(secondary-base);
+$color-offer-more : lib-color(primary-dark);
+$color-offer-more-visited : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('popup-search');
+$popup-search-offer : lib-get-class('popup-search-offer');
+$popup-search-view : lib-get-class('popup-search-view');
+$popup-search-info : lib-get-class('popup-search-info');
+$popup-search-more : lib-get-class('popup-search-more');
+$preview : lib-get-class('preview');
+$link-img : lib-get-class('link-img');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	position      : absolute;
+	top           : 42px;
+	left          : 0;
+	padding       : 2px;
+	width         : 350px;
+
+	border-radius : 5px;
+	border        : 1px solid $color-popup-border;
+	background    : $bg-popup;
+	box-shadow    : 0 1px 5px 0 $color-popup-shadow;
+	&_list#{$list} {
+		width : 100%;
+		#{$list}_item {
+			width : 100%;
+
+			@at-root {
+				#{$popup-search-offer} {
+					display   : inline-block;
+					padding   : 5px;
+					width     : 100%;
+
+					font-size : lib-font-size(-3);
+					&:hover,
+					&.active {
+						background-color : $bg-popup-row-hover;
+					}
+					&_preview#{$preview} {
+						float : left;
+						#{$preview}_link#{$link-img} {
+							@include lib-link-img-param(
+								$height : 60px,
+								$ratio : (4/3),
+								$border : $color-img-border
+							);
+						}
+					}
+					&_info {
+						padding-left : 87px;
+						width        : 100%;
+						#{$popup-search-offer}_section {
+							@include lib-text-hyphens($type : lastEllipsis);
+						}
+						#{$popup-search-offer}_title {
+							display: block;
+
+							color : $color-offer-title;
+
+							@include lib-text-hyphens($type : limitРyphens);
+						}
+					}
+				}
+
+				#{$popup-search-more} {
+					margin-top    : 10px;
+					margin-bottom : 10px;
+
+					text-align    : center;
+					font-size     : lib-font-size(-4);
+					&_link {
+						color : $color-offer-more;
+						&:visited {
+							color : $color-offer-more-visited;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

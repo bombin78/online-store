@@ -36,7 +36,7 @@
 		'typeHeader'        	=> $dataEmulation['typeHeader'],
 		'headerUser'        	=> $dataEmulation['headerUser'],
 		'headerNav'        		=> $dataEmulation['headerNav'],
-		'basketItems'       	=> $dataEmulation['basketItems'],
+		'headerBasketItems'     => $dataEmulation['headerBasketItems'],
 		'headerLogo'        	=> $dataEmulation['headerLogo'],
 		'headerBanner'       	=> $dataEmulation['headerBanner'],
 		'typeSidebar'        	=> $dataEmulation['typeSidebar'],
@@ -52,6 +52,7 @@
 		'footerContacts'    	=> $dataEmulation['footerContacts'],
 		'footerCopyright'    	=> $dataEmulation['footerCopyright'],
 		'footerDeveloper'    	=> $dataEmulation['footerDeveloper'],
+		'popupSearch'    		=> $dataEmulation['popupSearch'],
 		//Данные контента
 		'contentBanner'        	=> $dataEmulation['contentBanner'],
 		'breadcrumb'        	=> $dataEmulation['breadcrumb'],
