@@ -77,6 +77,7 @@ dataEmulation['catalog'] = [
 
 dataEmulation['popular'] = [
 	{
+		offerModifier: '_su-top-sales',
 		href: 'offers.html',
 		src: 'img/offers/offer_2.jpg',
 		accent: false,
@@ -94,6 +95,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_3.jpg',
 		accent: false,
@@ -111,6 +113,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_1.jpg',
 		accent: false,
@@ -128,6 +131,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_4.jpg',
 		accent: false,
@@ -145,6 +149,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
@@ -162,6 +167,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
@@ -179,6 +185,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,
@@ -196,6 +203,7 @@ dataEmulation['popular'] = [
 		buttonTitle: 'Купить'
 	},
 	{
+		offerModifier: '',
 		href: 'offers.html',
 		src: 'img/offers/offer_5.jpg',
 		accent: false,

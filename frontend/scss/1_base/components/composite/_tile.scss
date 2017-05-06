@@ -23,7 +23,7 @@ $button : lib-get-class('offer-button');
 $field : lib-get-class('field-search');
 $list : lib-get-class('list');
 $link : lib-get-class('link');
-$img : lib-get-class('link-img');
+$link-img : lib-get-class('link-img');
 $preview : lib-get-class('preview');
 $detail : lib-get-class('detail');
 $block : lib-get-class('block');
@@ -81,7 +81,7 @@ $pagination : lib-get-class('pagination');
 							#{$tile-search-name},
 							#{$tile-search-quantity} {
 								display   : table-cell;
-								padding : 2px 4px;
+								padding   : 2px 4px;
 
 								font-size : 14px;
 								cursor    : pointer;
@@ -159,11 +159,21 @@ $pagination : lib-get-class('pagination');
 			@at-root #{$wrapper}_list#{$list} {
 				#{$list}_offer#{$offer} {
 					padding : 10px 10px 62px 10px;
+					&._su-top-sales {
+						#{$offer}_preview#{$preview} {
+							#{$preview}_link#{$link-img} {
+								&:after {
+									top   : -13px;
+									right : -14px;
+								}
+							}
+						}
+					}
 					#{$offer}_preview#{$preview} {
 						position : relative;
 
 						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
-							#{$preview}_link#{$img} {
+							#{$preview}_link#{$link-img} {
 								@include lib-link-img-param(
 									$height : 180px,
 									$vertical-align : top

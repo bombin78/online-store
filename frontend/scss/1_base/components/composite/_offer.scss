@@ -22,6 +22,7 @@ $old-price : lib-get-class('offer-old-price');
 $price : lib-get-class('offer-price');
 $button : lib-get-class('offer-button');
 $preview : lib-get-class('preview');
+$link-img : lib-get-class('link-img');
 $link : lib-get-class('link');
 $detail : lib-get-class('detail');
 $rating : lib-get-class('rating');
@@ -57,6 +58,22 @@ $block : lib-get-class('block');
 				}
 			}
 
+		}
+	}
+	&._su-top-sales {
+		#{$wrapper}_preview#{$preview} {
+			#{$preview}_link#{$link-img} {
+				&:after {
+					content    : '';
+					position   : absolute;
+					top        : -3px;
+					right      : -3px;
+					height     : 72px;
+					width      : 89px;
+
+					background : url('../../../../img/offers/top-sales.png') top right no-repeat;
+				}
+			}
 		}
 	}
 	&_preview#{$preview} {

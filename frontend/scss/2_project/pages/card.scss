@@ -37,6 +37,27 @@ $slider : lib-get-class('slider');
 
 #{$wrapper} {
 	@include mix-content-common-param();
+	&._su-top-sales {
+		#{$wrapper}_main {
+			#{$view} {
+				#{$view-big}#{$preview} {
+					#{$preview}_link#{$link-img} {
+						position: relative;
+						&:after {
+							content    : '';
+							position   : absolute;
+							top        : -3px;
+							right      : -3px;
+							height     : 72px;
+							width      : 89px;
+
+							background : url('../../../img/offers/top-sales.png') top right no-repeat;
+						}
+					}
+				}
+			}
+		}
+	}
 	&_main {
 		display    : table;
 		margin-top : 15px;

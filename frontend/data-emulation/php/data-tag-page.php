@@ -59,6 +59,7 @@ $dataEmulation['groupButtonsSorting'] = [
 
 $dataEmulation['offers'] = [
 	[
+		'offerModifier' => '_su-top-sales',
 		'href' =>'card.html',
 		'src' => 'img/offers/offer_2.jpg',
 		'accent' => false,
@@ -78,6 +79,7 @@ $dataEmulation['offers'] = [
 		'buttonTitle' => 'Купить'
 	],
 	[
+		'offerModifier' => '',
 		'href' =>'card.html',
 		'src' => 'img/offers/offer_3.jpg',
 		'accent' => false,
@@ -97,6 +99,7 @@ $dataEmulation['offers'] = [
 		'buttonTitle' => 'Купить'
 	],
 	[
+		'offerModifier' => '',
 		'href' =>'card.html',
 		'src' => 'img/offers/offer_1.jpg',
 		'accent' => false,
@@ -116,6 +119,7 @@ $dataEmulation['offers'] = [
 		'buttonTitle' => 'Купить'
 	],
 	[
+		'offerModifier' => '',
 		'href' =>'card.html',
 		'src' => 'img/offers/offer_4.jpg',
 		'accent' => false,
@@ -135,6 +139,7 @@ $dataEmulation['offers'] = [
 		'buttonTitle' => 'Купить'
 	],
 	[
+		'offerModifier' => '',
 		'href' =>'card.html',
 		'src' => 'img/offers/offer_5.jpg',
 		'accent' => false,
