@@ -61,6 +61,11 @@ dataEmulation['basicBlocks'] = [
 			},
 			{
 				modifier: '_su-light',
+				file: 'Нумерация страниц (pagination.twig)',
+				url: 'components/composite/pagination.twig'
+			},
+			{
+				modifier: '_su-light',
 				file: 'Блок "посмотреть все/еще" (more.twig)',
 				url: 'components/basic/more.twig'
 			}
@@ -88,6 +93,16 @@ dataEmulation['basicBlocks'] = [
 				modifier: '_su-light',
 				file: 'Рейтинг (rating.twig)',
 				url: 'components/basic/rating.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Фотография в тексте (photo-paragraph.twig)',
+				url: 'components/basic/photo-paragraph.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Фотография (photo-figure.twig)',
+				url: 'components/basic/photo-figure.twig'
 			}
 		]
 	},
@@ -181,7 +196,7 @@ dataEmulation['basicBlocks'] = [
 		]
 	},
 	{
-		title: 'Предложения',
+		title: 'Предложения/заказы',
 		rows: [
 			{
 				modifier: '_su-light',
@@ -198,6 +213,31 @@ dataEmulation['basicBlocks'] = [
 				modifier: '_su-light',
 				file: 'Заказ (order.twig)',
 				url: 'components/composite/order.twig'
+			}
+		]
+	},
+	{
+		title: 'Прочее',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Комментарии/отзывы - для полноценного отображения необходимо подключить и инициализировать плагин jscrollpane (comments.twig)',
+				url: 'components/composite/comments.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Получите бесплатно (free-mail.twig + mailerlite.twig)',
+				url: 'components/composite/free-mail.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Способы оплаты (payment-icons.twig)',
+				url: 'components/composite/payment-icons.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Видео (videoblock.twig)',
+				url: 'components/composite/videoblock.twig'
 			}
 		]
 	}
@@ -229,6 +269,19 @@ dataEmulation['groupButtons'] = {
 	]
 };
 
+dataEmulation['popular'] = [
+	{
+		modifier: '',
+		href:'#',
+		title:'кусачки Сталекс'
+	},
+	{
+		modifier: '',
+		href:'#',
+		title:'кусачки Zinger'
+	}
+];
+
 dataEmulation['offer'] = [
 	{
 		href: '#',
@@ -253,11 +306,58 @@ dataEmulation['offer'] = [
 
 dataEmulation['order'] = [
 	{
+		modifierOrders: false,
+		stateLabel: false,
+		stateValue: false,
 		href: '#',
 		src: 'img/offers/offer_1.jpg',
 		title: 'Кусачки Mertz 3420-14',
 		quantity: false,
 		price: 999,
+		close: true
+	},
+	{
+		modifierOrders: false,
+		stateLabel: false,
+		stateValue: false,
+		href: '#',
+		src: 'img/offers/offer_1.jpg',
+		title: 'Кусачки Mertz 3420-14',
+		quantity: '10 шт.',
+		price: 999,
+		close: true
+	},
+	{
+		modifierOrders: '_su-activated',
+		stateLabel: 'Активен с:',
+		stateValue: '10.04.17',
+		href: '#',
+		src: 'img/offers/offer_1.jpg',
+		title: 'Кусачки Mertz 3420-14',
+		quantity: '2 шт.',
+		price: 999,
+		close: true
+	},
+	{
+		modifierOrders: '_su-canceled',
+		stateLabel: 'Отменен:',
+		stateValue: '11.04.17',
+		href: '#',
+		src: 'img/offers/offer_1.jpg',
+		title: 'Кусачки Mertz 3420-14',
+		quantity: '10 шт.',
+		price: 155000,
+		close: true
+	},
+	{
+		modifierOrders: '_su-completed',
+		stateLabel: 'Выполнен:',
+		stateValue: '12.04.17',
+		href: '#',
+		src: 'img/offers/offer_1.jpg',
+		title: 'Кусачки Mertz 3420-14',
+		quantity: '999 шт.',
+		price: 3000,
 		close: true
 	}
 ];
@@ -398,5 +498,51 @@ dataEmulation['tileOffers'] = [
 		buttonModifier: '_su-buy',
 		buttonHref: '#',
 		buttonTitle: 'Купить'
+	}
+];
+
+dataEmulation['comments'] = [
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '60',
+		author: 'Имя 1-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '100',
+		author: 'Имя 2-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '80',
+		author: 'Имя 3-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '50',
+		author: 'Имя 4-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '60',
+		author: 'Имя 5-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '50',
+		author: 'Имя 6-го автора'
+	},
+	{
+		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
+		valueRating: '20',
+		author: 'Имя 7-го автора'
+	}
+];
+
+dataEmulation['videoList'] = [
+	{
+		title: false,
+		preview: false,
+		src: '//www.youtube.com/embed/BuNxtVF3kDs?rel=0'
 	}
 ];

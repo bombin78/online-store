@@ -26,11 +26,16 @@ $offer : lib-get-class('offer');
 $offer-description : lib-get-class('offer-description');
 $offer-button : lib-get-class('offer-button');
 $offer-close : lib-get-class('offer-close');
+$order : lib-get-class('order');
+$preview : lib-get-class('preview');
 $detail : lib-get-class('detail');
 $block : lib-get-class('block');
 $link : lib-get-class('link');
 $list : lib-get-class('list');
 $_personal : lib-get-modifier('personal');
+$_activated : lib-get-modifier('activated');
+$_canceled : lib-get-modifier('canceled');
+$_completed : lib-get-modifier('completed');
 //-------------------------------
 
 #{$wrapper} {
@@ -219,6 +224,24 @@ $_personal : lib-get-modifier('personal');
 												#{$offer-close} {
 													@include lib-respond-to(narrow) {
 														right : -131px;
+													}
+												}
+											}
+										}
+									}
+								}
+								&_orders#{$list} {
+									#{$list}_item {
+										#{$list}_order#{$order} {
+											&#{$_activated},
+											&#{$_canceled},
+											&#{$_completed} {
+												@include lib-respond-to(narrow) {
+													padding-left : 156px;
+												}
+												#{$order}_preview#{$preview} {
+													@include lib-respond-to(narrow) {
+														left: 78px;
 													}
 												}
 											}

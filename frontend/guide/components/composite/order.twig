@@ -1,13 +1,23 @@
 {% for row in order %}
-	<div class="su-order">
+	<div class="su-order {{ row.modifierOrders }}">
+
+		{% if row.modifierOrders %}
+			<div class="su-order-state">
+				<dl class="su-order-state_detail su-detail">
+					<dt class="su-detail_label">{{ row.stateLabel }}</dt>
+					<dd class="su-detail_value">{{ row.stateValue }}</dd>
+				</dl>
+			</div>
+		{% endif %}
+
 		<div class="su-order_preview su-preview">
 			<a class="su-preview_link su-link-img" href="{{ row.href }}">
 				<img class="su-link-img_img" src="{{ row.src }}">
 			</a>
 		</div>
 		<div class="su-order_title su-block">
-				<a class="su-block_element su-link" href="{{ row.href }}">{{ row.title }}</a>
-			</div>
+			<a class="su-block_element su-link" href="{{ row.href }}">{{ row.title }}</a>
+		</div>
 
 		{% if row.quantity %}
 			<div class="su-order_quantity su-block">
@@ -28,4 +38,7 @@
 		</div>
 		<div class="su-order_close"></div>
 	</div>
+
+	<!-- Теги <br> - использованы для разделения строк, чтобы не ломать стили -->
+	<br><br>
 {% endfor %}

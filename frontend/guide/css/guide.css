@@ -60,3 +60,7 @@
   position: relative;
   margin-top: 20px;
 }
+
+.su-guide-code._open {
+  display: block;
+}

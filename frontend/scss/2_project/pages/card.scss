@@ -29,8 +29,6 @@ $block : lib-get-class('block');
 $detail : lib-get-class('detail');
 $one-click : lib-get-class('one-click');
 $field-text : lib-get-class('field-text');
-$comments : lib-get-class('comments');
-$comment : lib-get-class('comment');
 $slider-wrapper : lib-get-class('slider-wrapper');
 $slider : lib-get-class('slider');
 //-------------------------------
@@ -202,26 +200,6 @@ $slider : lib-get-class('slider');
 						margin-top : 17px;
 					}
 				}
-			}
-		}
-	}
-	&_description {
-
-	}
-	&_comments#{$comments} {
-		#{$comments}_title {
-		}
-		#{$comments}_list#{$list} {
-			#{$list}_item {
-				&:first-child {
-					margin-top : 40px;
-				}
-
-				@at-root {
-					#{$comment} {
-					}
-				}
-
 			}
 		}
 	}

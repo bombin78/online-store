@@ -11,11 +11,9 @@
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../favicon.ico">
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="css/guide.css">
-	<link rel="stylesheet" href="../vendors/jscrollpane/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="../vendors/mailerlite/mailerlite.css">
 	<script src="../vendors/jquery-1/jquery-1.11.1.min.js"></script>
 	<script src="../vendors/jquery-1/jquery-migrate-1.2.1.min.js"></script>
-	<script src="../vendors/jscrollpane/jquery.jscrollpane.min.js"></script>
-	<script src="../vendors/jscrollpane/jquery.mousewheel.js"></script>
 </head>
 <body>
 <?php
@@ -42,7 +40,7 @@
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],
 		'sidebarBlog'        	=> $dataEmulation['sidebarBlog'],
-		'viewedOffers'        	=> $dataEmulation['viewedOffers'],
+		'sidebarViewedOffers'   => $dataEmulation['viewedOffers'],
 		'footerSocialNetwork'	=> $dataEmulation['footerSocialNetwork'],
 		'footerInfo'        	=> $dataEmulation['footerInfo'],
 		'footerCatalog'        	=> $dataEmulation['footerCatalog'],
@@ -53,9 +51,12 @@
 		//Данные контента
 		'basicBlocks'         	=> $dataEmulation['basicBlocks'],
 		'groupButtons'         	=> $dataEmulation['groupButtons'],
+		'popular'         		=> $dataEmulation['popular'],
 		'offer'         		=> $dataEmulation['offer'],
 		'order'         		=> $dataEmulation['order'],
-		'tileOffers'         	=> $dataEmulation['tileOffers']
+		'tileOffers'         	=> $dataEmulation['tileOffers'],
+		'comments'	         	=> $dataEmulation['comments'],
+		'videoList'	         	=> $dataEmulation['videoList']
 	]);
 ?>
 </body>

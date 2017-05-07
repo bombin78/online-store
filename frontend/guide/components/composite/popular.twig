@@ -1,11 +1,16 @@
 <div class="su-popular">
-	<span class="su-popular_title">Популярное:</span>
-	<ul class="su-popular_list su-list">
-		<li class="su-list_item">
-			<a class="su-list_link" href="#">кусачки Сталекс</a>
-		</li>
-		<li class="su-list_item">
-			<a class="su-list_link" href="#">кусачки Zinger</a>
-		</li>
-	</ul>
+	<dl class="su-popular_detail su-detail">
+		<dt class="su-detail_label">Популярное:</dt>
+		<dd class="su-detail_value">
+			<ul class="su-popular-links su-list">
+
+				{% for row in popular %}
+					<li class="su-list_item">
+						<a class="su-popular-link link {{ row.modifier }}" href="{{ row.href }}">{{ row.title }}</a>
+					</li>
+				{% endfor %}
+
+			</ul>
+		</dd>
+	</dl>
 </div>

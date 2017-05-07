@@ -1,5 +1,6 @@
 {% extends (typeTwig == 'php') ? 'templates/layout/template_wrapper.twig' : '../../templates/layout/template_wrapper.twig' %}
 
+
 {% block wrapper_sections %}
 
 	<div class="su-guide">
@@ -37,9 +38,6 @@
 
 {% endblock %}
 
-{% block wrapper_fixed %}
-{% endblock %}
-
 {% block script %}
 	{{ parent() }}
 	<script>
@@ -70,6 +68,7 @@
 				}
 		);
 		//------------------------------------------------------------
+
 		//------------------------------------------------------------
 		// ОТКРЫТЬ/ЗАКРЫТЬ БЛОК С КОМПОНЕНТОМ
 		$(document).on('click', '.su-guide-subtitle', function(){

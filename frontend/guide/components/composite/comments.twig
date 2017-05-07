@@ -1,0 +1,24 @@
+<div class="su-comments">
+	<h2 class="su-comments_title">Отзывы</h2>
+	<ul class="su-comments_list su-list">
+
+		{% for row in comments %}
+			<li class="su-list_item">
+				<div class="su-comment">
+					<p class="su-comment_text">{{ row.text }}</p>
+					<div class="su-comment_rating su-rating">
+						Рейтинг:
+						<a class="su-rating_link" href="#">
+							<span class="su-rating_current" style="width:{{ row.valueRating }}%"></span>
+						</a>
+					</div>
+					<div class="su-comment_author">{{ row.author }}</div>
+				</div>
+			</li>
+		{% endfor %}
+
+	</ul>
+	<div class="su-comments_button su-block">
+		<a class="su-block_element su-link-btn _su-comment" href="#">Оставить отзыв</a>
+	</div>
+</div>
