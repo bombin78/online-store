@@ -1,0 +1,45 @@
+//Импорт файлов
+@import '../blocks/header-search';
+@import '../blocks/header-user';
+@import '../blocks/header-nav';
+@import '../blocks/header-basket';
+@import 'header-control-variables';
+//-------------------------------
+
+#{$wrapper} {
+	position   : fixed;
+	height     : 40px;
+	width      : 100%;
+	z-index    : lib-z('header-control');
+
+	background : $bg-header;
+	&_container {
+		position : relative;
+		margin   : 0 auto;
+		padding  : 0 10px;
+		width    : $lib-width-container-normal;
+
+		@extend %lib-clearfix;
+
+		@at-root {
+			#{$search} {
+				float      : left;
+				margin-top : 5px;
+			}
+			#{$nav} {
+				margin-top  : 10px;
+				margin-left : 20px;
+			}
+			#{$basket} {
+				float      : right;
+				margin-top : 5px;
+			}
+			#{$user} {
+				float        : right;
+				margin-top   : 5px;
+				margin-right : 20px;
+			}
+		}
+
+	}
+}

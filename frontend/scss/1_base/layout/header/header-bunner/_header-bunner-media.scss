@@ -1,48 +1,16 @@
 //Импорт файлов
-@import 'blocks/header-stock';
-@import 'blocks/header-slider';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('header-banner');
-$header-stock : lib-get-class('header-stock');
-$stock-counter : lib-get-class('stock-counter');
-$stock-view : lib-get-class('stock-view');
-$stock-offer : lib-get-class('stock-offer');
-$stock-accent : lib-get-class('stock-accent');
-$stock-description : lib-get-class('stock-description');
-$indicator : lib-get-class('indicator');
-$timer : lib-get-class('timer');
-$link-img : lib-get-class('link-img');
-$detail : lib-get-class('detail');
-$block : lib-get-class('block');
+@import 'header-bunner-variables';
 //-------------------------------
 
 #{$wrapper} {
-	position        : relative;
-	margin-top      : -5px;
-	z-index         : lib-z('header-banner');
-
-	background      : transparent url('../../../../img/bg_2.jpg') 100% 100% no-repeat;
-	background-size : cover;
-
 	@include lib-respond-to(mobile) {
 		display : none;
 	}
 	&_container {
-		position : relative;
-		margin   : 0 auto;
-		padding  : 0 10px;
-		height   : 350px;
-		width    : $lib-width-container-normal;
-
-		@extend %lib-clearfix;
-
 		@include lib-respond-to(normal) {
 			height : 339px;
 			width  : $lib-width-container-narrow;
 		}
-
 		@include lib-respond-to(narrow) {
 			height : 260px;
 			width  : $lib-width-container-mobile;
@@ -57,6 +25,7 @@ $block : lib-get-class('block');
 					margin-top : 14px;
 					height     : 230px;
 				}
+
 				@at-root {
 					#{$stock-counter} {
 						@include lib-respond-to(normal) {
@@ -116,7 +85,6 @@ $block : lib-get-class('block');
 
 						}
 					}
-
 					#{$stock-offer} {
 						@include lib-respond-to(normal) {
 							padding : 20px 20px 20px 320px;

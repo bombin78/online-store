@@ -52,6 +52,7 @@ $mix-slider : lib-get-class('slider');
 	padding   : $padding-top 40px $padding-bottom 40px;
 	max-width : 1280px;
 
+	//после рефакторинга убрать
 	@include lib-respond-to(narrow) {
 		padding-right : 20px;
 		padding-left  : 20px;

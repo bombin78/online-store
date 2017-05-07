@@ -1,39 +1,10 @@
 //Импорт файлов
-@import 'blocks/header-search';
-@import 'blocks/header-user';
-@import 'blocks/header-nav';
-@import 'blocks/header-basket';
-//-------------------------------
-
-//Цвета
-$bg-header : lib-color(primary-dark);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('header-control');
-$search : lib-get-class('header-search');
-$nav : lib-get-class('header-nav');
-$basket : lib-get-class('header-basket');
-$user : lib-get-class('header-user');
-$userdropdown : lib-get-class('header-userdropdown');
-$dropdown : lib-get-class('dropdown');
-$list : lib-get-class('list');
-$link : lib-get-class('link');
+@import 'header-control-variables';
 //-------------------------------
 
 #{$wrapper} {
-	position   : fixed;
-	height     : 40px;
-	width      : 100%;
-	z-index    : lib-z('header-control');
 
-	background : $bg-header;
 	&_container {
-		position : relative;
-		margin   : 0 auto;
-		padding  : 0 10px;
-		width    : $lib-width-container-normal;
-
 		@include lib-respond-to(normal) {
 			width : $lib-width-container-narrow;
 		}
@@ -43,13 +14,9 @@ $link : lib-get-class('link');
 		@include lib-respond-to(mobile) {
 			width : 100%;
 		}
-		@extend %lib-clearfix;
 
 		@at-root {
 			#{$search} {
-				float      : left;
-				margin-top : 5px;
-
 				@include lib-respond-to(narrow) {
 					width : 180px;
 				}
@@ -59,9 +26,6 @@ $link : lib-get-class('link');
 				}
 			}
 			#{$nav} {
-				margin-top  : 10px;
-				margin-left : 20px;
-
 				@include lib-respond-to(narrow) {
 					margin-top  : 10px;
 					margin-left : 15px;
@@ -118,8 +82,6 @@ $link : lib-get-class('link');
 				}
 			}
 			#{$basket} {
-				float      : right;
-				margin-top : 5px;
 
 				@at-root {
 					#{$basket}_dropdown {
@@ -131,10 +93,6 @@ $link : lib-get-class('link');
 
 			}
 			#{$user} {
-				float        : right;
-				margin-top   : 5px;
-				margin-right : 20px;
-
 				@include lib-respond-to(narrow) {
 					max-width : 155px;
 				}

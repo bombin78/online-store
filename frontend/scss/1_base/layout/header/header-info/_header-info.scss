@@ -1,0 +1,22 @@
+//Импорт файлов
+@import '../blocks/header-logo';
+@import '../blocks/header-contacts';
+@import 'header-info-variables';
+//-------------------------------
+
+#{$wrapper} {
+	position    : relative;
+	padding-top : 30px;
+	height      : 130px;
+	z-index     : lib-z('header-info');
+
+	background  : url('../../../../../img/bg_1.png') center bottom repeat-x;
+	&_container {
+		position : relative;
+		margin   : 0 auto;
+		padding  : 0 10px;
+		width    : $lib-width-container-normal;
+
+		@extend %lib-clearfix;
+	}
+}

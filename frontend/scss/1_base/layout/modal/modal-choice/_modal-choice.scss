@@ -28,7 +28,7 @@ $list : lib-get-class('list');
 			padding-top : 145px;
 
 			color       : $color-text;
-			background  : url('../../../../img/modal/thumb.png') top center no-repeat;
+			background  : url('../../../../../img/modal/thumb.png') top center no-repeat;
 			&_message {
 				text-align : center;
 				font-size  : lib-font-size(2);

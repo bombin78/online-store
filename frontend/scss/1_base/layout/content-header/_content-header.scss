@@ -1,11 +1,6 @@
 //Импорт файлов
 @import 'blocks/breadcrumb';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('content-header');
-$banner-block : lib-get-class('banner-block');
-$breadcrumb : lib-get-class('breadcrumb');
+@import 'content-header-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -16,14 +11,5 @@ $breadcrumb : lib-get-class('breadcrumb');
 	#{$banner-block},
 	#{$breadcrumb} {
 		margin-top : 20px;
-	}
-	#{$breadcrumb} {
-		@include lib-respond-to(narrow) {
-			#{$breadcrumb}_item {
-				&:before {
-					top : -2px
-				}
-			}
-		}
 	}
 }

@@ -1,0 +1,31 @@
+//Импорт файлов
+@import 'header-info-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@include lib-respond-to(narrow) {
+		height : 118px;
+	}
+	&_container {
+		@include lib-respond-to(normal) {
+			width : $lib-width-container-narrow;
+		}
+		@include lib-respond-to(narrow) {
+			width : $lib-width-container-mobile;
+		}
+
+		@at-root {
+			#{$logo} {
+				@include lib-respond-to(narrow) {
+					height : 73px;
+				}
+			}
+			#{$contacts} {
+				@include lib-respond-to(narrow) {
+					padding-top : 16px;
+				}
+			}
+		}
+
+	}
+}

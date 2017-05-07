@@ -6,15 +6,7 @@
 @import 'blocks/footer-contacts';
 @import 'blocks/footer-catalog';
 @import 'blocks/footer-about-us';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('footer');
-$social-network : lib-get-class('footer-social-network');
-$catalog : lib-get-class('footer-catalog');
-$info : lib-get-class('footer-info');
-$about-us : lib-get-class('footer-about-us');
-$contacts : lib-get-class('footer-contacts');
+@import 'footer-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -22,13 +14,6 @@ $contacts : lib-get-class('footer-contacts');
 	margin   : 0 auto;
 	padding  : 30px 10px;
 	width    : $lib-width-container-normal;
-
-	@include lib-respond-to(normal) {
-		width : $lib-width-container-narrow;
-	}
-	@include lib-respond-to(narrow) {
-		width : $lib-width-container-mobile;
-	}
 	&_row {
 		@extend %lib-clearfix;
 
@@ -49,45 +34,6 @@ $contacts : lib-get-class('footer-contacts');
 				}
 				#{$contacts} {
 					margin-left : 30px;
-				}
-			}
-			@include lib-respond-to(normal) {
-				#{$wrapper}_cell {
-					#{$social-network} {
-						margin-right : 20px;
-						//pluso-wrap - класс плагина
-						.pluso-wrap {
-							:nth-of-type(8),
-							:nth-of-type(9),
-							:nth-of-type(10) {
-								display : none;
-							}
-						}
-					}
-					#{$catalog},
-					#{$info},
-					#{$about-us} {
-						margin : 0 20px;
-					}
-					#{$contacts} {
-						margin-left : 20px;
-					}
-				}
-			}
-			@include lib-respond-to(narrow) {
-				#{$wrapper}_cell {
-
-					#{$social-network} {
-						margin-right : 10px;
-					}
-					#{$catalog},
-					#{$info},
-					#{$about-us} {
-						margin : 0 15px;
-					}
-					#{$contacts} {
-						margin-left : 10px;
-					}
 				}
 			}
 		}

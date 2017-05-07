@@ -37,22 +37,14 @@
 // индивидуальность здесь ограничивается не контентом конкретной страницы,
 // а областью расположения в шаблоне сайта.
 @import '1_base/layout/wrapper';
-@import '1_base/layout/header/header-control';
-@import '1_base/layout/header/header-info';
-@import '1_base/layout/header/header-bunner';
+@import '1_base/layout/header/module';
 @import '1_base/layout/sidebar/sidebar';
-@import "1_base/layout/content-header/content-header";
+@import "1_base/layout/content-header/module";
 @import '1_base/layout/grid-1';
 @import '1_base/layout/grid-2';
-@import '1_base/layout/footer/footer';
+@import '1_base/layout/footer/module';
 @import '1_base/layout/popup/popup-container';
-@import '1_base/layout/modal/application';
-@import '1_base/layout/modal/change-personal';
-@import '1_base/layout/modal/choice';
-@import '1_base/layout/modal/confirmation';
-@import '1_base/layout/modal/delivery';
-@import '1_base/layout/modal/login';
-@import '1_base/layout/modal/registration';
+@import '1_base/layout/modal/module';
 //--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
