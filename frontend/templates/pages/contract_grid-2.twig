@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathContract = 'templates/pages/' %}
+	{% set pathContract = 'templates/' %}
+{% else %}
+	{% set pathContract = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -322,9 +324,6 @@
 		</ol>
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

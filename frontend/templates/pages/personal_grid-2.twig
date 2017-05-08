@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathPersonal = 'templates/pages/' %}
+	{% set pathPersonal = 'templates/' %}
+{% else %}
+	{% set pathPersonal = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -47,13 +49,11 @@
 			</div>
 		</div>
 		<h2 class="su-personal_title">Ваши заказы</h2>
-		{% include pathPersonal~'blocks/tabs.twig' with {overrideClassTabsPersonal: 'su-personal_tabs', modifierTabs: '_su-personal'} %}
+		{% include pathPersonal~'modules/tabs.twig' with {overrideClassTabsPersonal: 'su-personal_tabs', modifierTabs: '_su-personal'} %}
 	</div>
 
 {% endblock %}
 
-{% block wrapper_popup %}
-{% endblock %}
 
 {% block script %}
 	{{ parent() }}

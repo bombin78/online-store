@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathFaq = 'templates/pages/' %}
+	{% set pathFaq = 'templates/' %}
+{% else %}
+	{% set pathFaq = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -38,9 +40,6 @@
 		</ul>
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

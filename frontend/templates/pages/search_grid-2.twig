@@ -1,8 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathSearch = 'templates/pages/' %}
-	{% set pathSearchPopup = 'templates/' %}
+	{% set pathSearch = 'templates/' %}
 {% else %}
-	{% set pathSearchPopup = '../' %}
+	{% set pathSearch = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -11,14 +10,8 @@
 {% block content %}
 
 	<div class="su-search">
-		{% include pathSearch~'blocks/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
+		{% include pathSearch~'modules/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
 	</div>
-
-{% endblock %}
-
-{% block wrapper_popup %}
-
-	{% include pathSearchPopup~'layout/popup/popup-search.twig' %}
 
 {% endblock %}
 

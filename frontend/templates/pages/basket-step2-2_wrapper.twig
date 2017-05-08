@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathBasketStep22 = 'templates/pages/' %}
+	{% set pathBasketStep22 = 'templates/' %}
+{% else %}
+	{% set pathBasketStep22 = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : '../layout/connect/wrapper.twig' %}
@@ -8,8 +10,8 @@
 {% block wrapper_sections %}
 
 	<div class="su-basket">
-		{% include pathBasketStep22~'blocks/basket-header.twig' %}
-		{% include pathBasketStep22~'blocks/basket-steps.twig' %}
+		{% include pathBasketStep22~'modules/basket-header.twig' %}
+		{% include pathBasketStep22~'modules/basket-steps.twig' %}
 		<div class="su-basket-tab">
 			<div class="su-order-make">
 				<form class="su-order-make_form" action="#" method="post">
@@ -104,7 +106,7 @@
 
 						{% for row in orders %}
 							<li class="su-list_item">
-								{% include pathBasketStep22~'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
+								{% include pathBasketStep22~'modules/order.twig' with {overrideClassOrder: 'su-list_order'} %}
 							</li>
 						{% endfor %}
 
@@ -127,9 +129,6 @@
 		</div>
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

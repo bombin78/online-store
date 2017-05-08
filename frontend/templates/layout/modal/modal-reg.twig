@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set path = 'templates/layout/modal/' %}
+	{% set pathModalReg = 'templates/' %}
+{% else %}
+	{% set pathModalReg = '../../' %}
 {% endif %}
 
 <div class="su-modal-reg modal fade">
@@ -10,8 +12,8 @@
 		</div>
 		<div class="modal-body">
 			<div class="su-reg">
-				{% include path~'blocks/social-links.twig' with { overrideClassSocialLinks: 'su-reg_links' } %}
-				{% include path~'blocks/reg-form.twig' with { overrideClassLoginForm: 'su-reg_form', textButton: 'Зарегистрироваться' } %}
+				{% include pathModalReg~'modules/social-links.twig' with { overrideClassSocialLinks: 'su-reg_links' } %}
+				{% include pathModalReg~'modules/reg-form.twig' with { overrideClassLoginForm: 'su-reg_form', textButton: 'Зарегистрироваться' } %}
 			</div>
 		</div>
 		{#<div class="modal-footer"></div>#}

@@ -1,10 +1,10 @@
 {% if typeTwig == 'php' %}
-	{% set path = 'templates/layout/popup/' %}
+	{% set pathPopupContainer = 'templates/layout/popup/' %}
 {% endif %}
 
 <div class="su-popup-container">
 	{% if popupSearch %}
 		{# Всплывающее окно строки поиска #}
-		{% include path~'blocks/popup-search.twig' %}
+		{% include pathPopupContainer~'blocks/popup-search.twig' %}
 	{% endif %}
 </div>

@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathPageLeft = 'templates/pages/' %}
+	{% set pathPageLeft = 'templates/' %}
+{% else %}
+	{% set pathPageLeft = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -8,12 +10,9 @@
 {% block content %}
 
 	{#<div class="su-page-left">
-		{% include pathPageLeft~'/blocks/article.twig' %}
+		{% include pathPageLeft~'modules/article.twig' %}
 	</div>#}
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

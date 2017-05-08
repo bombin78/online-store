@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathIndex = 'templates/pages/' %}
+	{% set pathIndex = 'templates/' %}
+{% else %}
+	{% set pathIndex = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -30,7 +32,7 @@
 
 		<p>Мы сделали скидку на эти маникюрные наборы, чтобы вы могли заказать сразу несколько штук! Ведь скоро 23 февраля, поэтому закажите маникюрные наборы каждому близкому мужчине прямо сейчас!</p>
 
-		{% include pathIndex~'blocks/tile.twig' with {overrideClassTile: 'su-main_offer', dataTile: mineOffer, tileMore: 'посмотрите все товары'} %}
+		{% include pathIndex~'modules/tile.twig' with {overrideClassTile: 'su-main_offer', dataTile: mineOffer, tileMore: 'посмотрите все товары'} %}
 
 		<h2>Что скрывают профи маникюра?</h2>
 
@@ -42,12 +44,9 @@
 
 		<p><a href="http://manicurshop.ru/pro_manikyur/">Подпишитесь на рассылку</a> и будьте свободны! Вы больше не привязаны к салону и расписанию мастера. В командировке, на отдыхе, даже «зависнув» в гостях вы уверены: уж что-что, а руки всегда будут в порядке. Для этого достаточно взять с собой маникюрный набор и лак для ногтей.</p>
 
-		{% include pathIndex~'blocks/free-mail.twig' with {overrideClassfreeMail: 'su-main_free-mail'} %}
+		{% include pathIndex~'modules/free-mail.twig' with {overrideClassfreeMail: 'su-main_free-mail'} %}
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

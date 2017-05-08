@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathBasketStep1 = 'templates/pages/' %}
+	{% set pathBasketStep1 = 'templates/' %}
+{% else %}
+	{% set pathBasketStep1 = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : '../layout/connect/wrapper.twig' %}
@@ -8,8 +10,8 @@
 {% block wrapper_sections %}
 
 	<div class="su-basket">
-		{% include pathBasketStep1~'blocks/basket-header.twig' %}
-		{% include pathBasketStep1~'blocks/basket-steps.twig' %}
+		{% include pathBasketStep1~'modules/basket-header.twig' %}
+		{% include pathBasketStep1~'modules/basket-steps.twig' %}
 		<div class="su-basket-tab">
 			<div class="su-order-cart">
 				<form class="su-order-cart_form" action="#" method="post">
@@ -17,7 +19,7 @@
 
 						{% for row in orders %}
 							<li class="su-list_item">
-								{% include pathBasketStep1~'blocks/order.twig' with {overrideClassOrder: 'su-list_order'} %}
+								{% include pathBasketStep1~'modules/order.twig' with {overrideClassOrder: 'su-list_order'} %}
 							</li>
 						{% endfor %}
 
@@ -44,7 +46,7 @@
 
 					{% for row in specialOffers %}
 						<li class="su-list_item">
-							{% include pathBasketStep1~'blocks/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+							{% include pathBasketStep1~'modules/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
 						</li>
 					{% endfor %}
 
@@ -53,9 +55,6 @@
 		</div>
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathCatalog = 'templates/pages/' %}
+	{% set pathCatalog = 'templates/' %}
+{% else %}
+	{% set pathCatalog = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -9,13 +11,10 @@
 
 	<div class="su-catalog">
 		<h1 class="su-catalog_title">Каталог товаров</h1>
-		{% include pathCatalog~'blocks/tile.twig' with {overrideClassTile: 'su-catalog_sections', dataTile: catalog, onlyTile: true} %}
-		{% include pathCatalog~'blocks/tile.twig' with {overrideClassTile: 'su-catalog_popular', dataTile: popular, tileTitle: 'Самое популярное в этом разделе'} %}
+		{% include pathCatalog~'modules/tile.twig' with {overrideClassTile: 'su-catalog_sections', dataTile: catalog, onlyTile: true} %}
+		{% include pathCatalog~'modules/tile.twig' with {overrideClassTile: 'su-catalog_popular', dataTile: popular, tileTitle: 'Самое популярное в этом разделе'} %}
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

@@ -1,6 +1,5 @@
 {% if typeTwig == 'php' %}
 	{% set pathBasketStep21 = 'templates/' %}
-	{% set pathBasketStep21Pages = 'templates/pages/' %}
 {% else %}
 	{% set pathBasketStep21 = '../' %}
 {% endif %}
@@ -11,8 +10,8 @@
 {% block wrapper_sections %}
 
 	<div class="su-basket">
-		{% include pathBasketStep21Pages~'blocks/basket-header.twig' %}
-		{% include pathBasketStep21Pages~'blocks/basket-steps.twig' %}
+		{% include pathBasketStep21~'modules/basket-header.twig' %}
+		{% include pathBasketStep21~'modules/basket-steps.twig' %}
 		<div class="su-basket-tab">
 			<div class="su-order-login">
 				<div class="su-order-spoiler">
@@ -20,8 +19,8 @@
 						<a class="su-block_element" href="#">Я уже регистрировался раньше</a>
 					</h2>
 					<div class="su-order-spoiler_content ">
-						{% include pathBasketStep21~'layout/modal/blocks/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true } %}
-						{% include pathBasketStep21~'layout/modal/blocks/login-form.twig' with { overrideClassLoginForm: 'su-order-spoiler_login', textButton: 'Оформить' } %}
+						{% include pathBasketStep21~'modules/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true } %}
+						{% include pathBasketStep21~'modules/login-form.twig' with { overrideClassLoginForm: 'su-order-spoiler_login', textButton: 'Оформить' } %}
 					</div>
 				</div>
 			</div>
@@ -31,17 +30,14 @@
 						<a class="su-block_element" href="#">Я впервые делаю у вас покупку</a>
 					</h2>
 					<div class="su-order-spoiler_content">
-						{% include pathBasketStep21~'layout/modal/blocks/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true }%}
-						{% include pathBasketStep21~'layout/modal/blocks/reg-form.twig' with { overrideClassRegForm: 'su-order-spoiler_reg', textButton: 'Оформить' } %}
+						{% include pathBasketStep21~'modules/social-links.twig' with { overrideClassSocialLinks: 'su-order-spoiler_links', socialLinks: true }%}
+						{% include pathBasketStep21~'modules/reg-form.twig' with { overrideClassRegForm: 'su-order-spoiler_reg', textButton: 'Оформить' } %}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}

@@ -1,7 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set path = 'templates/' %}
+	{% set pathSidebarViewed = 'templates/' %}
 {% else %}
-	{% set path = '../../../' %}
+	{% set pathSidebarViewed = '../../../' %}
 {% endif %}
 
 <section class="su-sidebar-viewed">
@@ -10,7 +10,7 @@
 
 		{% for row in sidebarViewedOffers %}
 			<li class="su-list_item">
-				{% include path~'pages/blocks/offer.twig' with {overrideClassOffer: 'su-viewed-offer'} %}
+				{% include pathSidebarViewed~'modules/offer.twig' with {overrideClassOffer: 'su-viewed-offer'} %}
 			</li>
 		{% endfor %}
 

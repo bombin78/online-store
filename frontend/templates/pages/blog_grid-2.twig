@@ -1,5 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathBlog = 'templates/pages/' %}
+	{% set pathBlog = 'templates/' %}
+{% else %}
+	{% set pathBlog = '../' %}
 {% endif %}
 
 {% extends (typeTwig == 'php') ? 'templates/layout/connect/grid-2.twig' : '../layout/connect/grid-2.twig' %}
@@ -20,7 +22,7 @@
 				<p>
 					Многие делают маникюр самостоятельно, в домашних условиях. Это удобно, для многих очень интересно. Статьи на Маникюр Шоп и множество видеороликов по маникюру, дизайну ногтей, евроманикюру помогут Вам делать маникюр дома безукоризненно.
 				</p>
-				{% include pathBlog~'blocks/free-mail.twig' with {overrideClassfreeMail: 'su-blog_free-mail'} %}
+				{% include pathBlog~'modules/free-mail.twig' with {overrideClassfreeMail: 'su-blog_free-mail'} %}
 			</article>
 			<article>
 				<header>
@@ -107,16 +109,13 @@
 					</ul>
 				</dd>
 			</dl>
-			{% include pathBlog~'blocks/slider.twig' with {overrideClassSlider: 'su-blog_slider'} %}
+			{% include pathBlog~'modules/slider.twig' with {overrideClassSlider: 'su-blog_slider'} %}
 			<div class="su-blog_back su-block">
 				<a class="su-block_element" href="blog.html">Возврат ко всем статьям блога</a>
 			</div>
 		{% endif %}
 	</div>
 
-{% endblock %}
-
-{% block wrapper_popup %}
 {% endblock %}
 
 {% block script %}
