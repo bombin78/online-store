@@ -1,0 +1,37 @@
+//Импорт файлов
+@import 'modal-application-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 370px;
+	}
+
+	@at-root {
+		#{$application-title} {
+			color     : $color-title;
+			font-size : lib-font-size(e2);
+		}
+		#{$application-close} {
+			@include lib-close;
+		}
+		#{$application-form} {
+			color : $color-form;
+			&_country {
+				margin-top : 15px;
+			}
+			&_name#{$field-text},
+			&_email#{$field-text},
+			&_phone#{$field-text},
+			&_region#{$field-select},
+			&_address#{$field-textarea},
+			&_captcha#{$captcha},
+			&_button#{$block} {
+				margin-top : 15px;
+				width      : 300px;
+			}
+		}
+	}
+
+}

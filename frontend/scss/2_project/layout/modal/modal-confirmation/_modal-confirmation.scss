@@ -1,0 +1,26 @@
+//Импорт файлов
+@import 'modal-confirmation-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 420px;
+	}
+
+	@at-root {
+		#{$confirmation-close} {
+			@include lib-close;
+		}
+
+		#{$confirmation-text} {
+			padding-top    : 0;
+			padding-bottom : 1.25rem;
+			line-height    : 2.25rem;
+
+			color          : $color-text;
+			font-size      : lib-font-size(3);
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+//Импорт файлов
+@import 'popup-container-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@include lib-respond-to(normal) {
+		width : $lib-width-container-narrow;
+	}
+	@include lib-respond-to(narrow) {
+		width : $lib-width-container-mobile;
+	}
+}

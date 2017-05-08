@@ -1,0 +1,93 @@
+//Импорт файлов
+@import 'wrapper-variables';
+//-------------------------------
+
+#{$wrapper} {
+	background : $bg-wrapper;
+	width      : 100%;
+	//переопределение стилей для шаблона корзины
+	&#{$_basket} {
+		#{$wrapper-header} {
+			#{$header-info} {
+				padding-top : 0;
+				height      : 100px;
+			}
+		}
+		#{$wrapper-footer} {
+			#{$footer} {
+				&_cell {
+					width : 100%;
+					#{$footer-contacts} {
+						margin-left : 0;
+
+						text-align  : left;
+						&_phones#{$detail} {
+							display : inline-block;
+							#{$detail}_label {
+								float       : left;
+
+								line-height : lib-line-height(-2);
+							}
+							#{$detail}_value {
+								float : left;
+								#{$footer-contacts-list}#{$list} {
+									margin-top : 0;
+									#{$list}_item {
+										float       : left;
+										margin-left : 8px;
+									}
+								}
+							}
+						}
+						&_schedule {
+							text-align : left;
+							br {
+								display : none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@at-root {
+			#{$wrapper-header} {
+				position : relative;
+				width    : 100%;
+				z-index  : lib-z('header');
+			}
+
+			#{$wrapper-sections} {
+				position : relative;
+				width    : 100%;
+				z-index  : lib-z('page');
+			}
+
+			#{$wrapper-footer} {
+				position   : relative;
+				width      : 100%;
+				z-index    : lib-z('footer');
+
+				background : url('../../../../../img/bg_4.jpg') center top repeat-x;
+			}
+
+			#{$wrapper-popup} {
+				position : absolute;
+				top      : 0;
+				left     : 0;
+				width    : 100%;
+				z-index  : lib-z('popup');
+			}
+
+			#{$wrapper-fixed} {
+				display : none;
+				z-index : lib-z('fixed');
+			}
+
+			#{$wrapper-modal} {
+				z-index : lib-z('modal');
+			}
+		}
+
+	}
+}

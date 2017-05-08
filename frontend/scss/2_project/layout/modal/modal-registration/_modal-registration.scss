@@ -1,0 +1,24 @@
+//Импорт файлов
+@import 'modal-registration-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 465px;
+	}
+
+	#{$reg-title} {
+		color     : $color-title;
+		font-size : lib-font-size(e2);
+	}
+	#{$reg-close} {
+		@include lib-close;
+	}
+	#{$reg} {
+		#{$reg-form} {
+			margin-top: 20px;
+		}
+	}
+
+}

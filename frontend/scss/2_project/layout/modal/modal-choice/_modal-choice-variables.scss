@@ -1,0 +1,10 @@
+//Цвета
+$color-text : lib-color(primary-dark);
+//------------------------------
+
+//Классы
+$wrapper : lib-get-class('modal-choice');
+$choice-close : lib-get-class('choice-close');
+$choice-action : lib-get-class('choice-action');
+$list : lib-get-class('list');
+//-------------------------------

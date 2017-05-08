@@ -1,0 +1,45 @@
+//Импорт файлов
+@import 'modal-change-personal-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		width : 330px;
+	}
+
+	@at-root {
+		#{$personal-title} {
+			color     : $color-title;
+			font-size : lib-font-size(e2);
+		}
+
+		#{$personal-close} {
+			@include lib-close;
+		}
+
+		#{$personal-form} {
+			color : $color-form;
+			&_name#{$field-text},
+			&_email#{$field-text},
+			&_phone#{$field-text},
+			&_button#{$block} {
+				width : 300px;
+			}
+			&_email#{$field-text},
+			&_phone#{$field-text},
+			&_button#{$block} {
+				margin-top : 15px;
+			}
+			&_photo#{$block} {
+				#{$block}_element {
+					margin-top : 8px;
+					&:first-child {
+						margin-top : 15px;
+					}
+				}
+			}
+		}
+	}
+
+}

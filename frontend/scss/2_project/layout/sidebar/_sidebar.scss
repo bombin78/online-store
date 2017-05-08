@@ -1,0 +1,25 @@
+//Импорт файлов
+@import 'blocks/sidebar-banner';
+@import 'blocks/sidebar-blog';
+@import 'blocks/sidebar-buttons';
+@import 'blocks/sidebar-catalog';
+@import 'blocks/sidebar-menu';
+@import 'blocks/sidebar-viewed';
+@import 'sidebar-variables';
+//-------------------------------
+
+#{$wrapper} {
+	position    : relative;
+	padding-top : 20px;
+	z-index     : lib-z('aside');
+	#{$catalog},
+	#{$buttons},
+	#{$banner},
+	#{$blog},
+	#{$viewed} {
+		margin-top : 30px;
+		&:first-child {
+			margin-top : 0;
+		}
+	}
+}

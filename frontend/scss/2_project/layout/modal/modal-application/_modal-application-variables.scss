@@ -1,0 +1,16 @@
+//Цвета
+$color-form : lib-color(primary-dark);
+$color-title : lib-color(secondary-dark);
+//------------------------------
+
+//Классы
+$wrapper : lib-get-class('modal-application');
+$application-title : lib-get-class('application-title');
+$application-close : lib-get-class('application-close');
+$application-form : lib-get-class('application-form');
+$field-text : lib-get-class('field-text');
+$field-select : lib-get-class('field-select');
+$field-textarea : lib-get-class('field-textarea');
+$captcha : lib-get-class('captcha');
+$block : lib-get-class('block');
+//-------------------------------

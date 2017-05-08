@@ -1,0 +1,21 @@
+//Цвета
+$bg-wrapper : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('wrapper');
+$wrapper-header : lib-get-class('wrapper-header');
+$wrapper-sections : lib-get-class('wrapper-sections');
+$wrapper-footer : lib-get-class('wrapper-footer');
+$wrapper-popup : lib-get-class('wrapper-popup');
+$wrapper-fixed : lib-get-class('wrapper-fixed');
+$wrapper-modal : lib-get-class('wrapper-modal');
+$header-info : lib-get-class('header-info');
+$footer : lib-get-class('footer');
+$footer-contacts : lib-get-class('footer-contacts');
+$footer-contacts-list : lib-get-class('footer-contacts-list');
+$detail : lib-get-class('detail');
+$list : lib-get-class('list');
+$_basket : lib-get-modifier('basket');
+$_menu : lib-get-modifier('menu');
+//-------------------------------

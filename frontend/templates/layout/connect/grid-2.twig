@@ -1,0 +1,29 @@
+{% if typeTwig == 'php' %}
+	{% set pathContent = 'templates/layout/connect/' %}
+{% else %}
+	{% set pathContent = '../' %}
+{% endif %}
+
+{% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : 'wrapper.twig' %}
+
+
+{% block wrapper_sections %}
+
+	<section class="su-grid-2">
+		<div class="su-grid-2_container">
+			<aside class="su-grid-2_aside {{ typeSidebar }}">
+				<div class="su-sidebar">
+					{% include pathContent~'sidebar/sidebar.twig' %}
+				</div>
+			</aside>
+			<div class="su-grid-2_content">
+				<div class="su-content-header">
+					{% include pathContent~'content/content-header.twig' %}
+				</div>
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

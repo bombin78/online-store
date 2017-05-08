@@ -30,25 +30,26 @@
 // + наличие стилей по умолчанию, а также простота и легкость модифицирования
 @import "1_base/components/basic-components";
 @import "1_base/components/composite-components";
-
-// 1.3 Стили шаблона
-// Стили шаблона (включая блоки шаблона на основе компонент).
-// Используются правила для проектного слоя, с тем отличием, что
-// индивидуальность здесь ограничивается не контентом конкретной страницы,
-// а областью расположения в шаблоне сайта.
-@import '1_base/layout/wrapper';
-@import '1_base/layout/header/module';
-@import '1_base/layout/sidebar/sidebar';
-@import "1_base/layout/content-header/module";
-@import '1_base/layout/grid-1';
-@import '1_base/layout/grid-2';
-@import '1_base/layout/footer/module';
-@import '1_base/layout/popup/popup-container';
-@import '1_base/layout/modal/module';
 //--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
 // 2 ПРОЕКТНЫЙ СЛОЙ
+// 2.1 Стили шаблона
+// Стили шаблона (включая блоки шаблона на основе компонент).
+// Используются правила для проектного слоя, с тем отличием, что
+// индивидуальность здесь ограничивается не контентом конкретной страницы,
+// а областью расположения в шаблоне сайта.
+@import '2_project/layout/connect/module';
+@import '2_project/layout/header/module';
+@import '2_project/layout/sidebar/module';
+@import "2_project/layout/content/module";
+@import '2_project/layout/footer/module';
+@import '2_project/layout/popup/module';
+@import '2_project/layout/modal/module';
+
+// 2.2 Стили модулей
+
+// 2.3 Стили страниц
 // Стили проектного слоя подключаются к html странице отдельным фалом после
 // общего стиля (style.css). Папка с подключаемыми файлами: '2_project/pages'.
 // Индивидуальные стили страницы должны быть максимально изолированы и

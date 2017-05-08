@@ -1,0 +1,24 @@
+//Импорт файлов
+@import 'grid-1-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&_container {
+		$padding : 10px;
+
+		position : relative;
+		margin   : 0 auto;
+		padding  : $padding;
+		width    : $lib-width-container-normal;
+
+		@extend %lib-clearfix;
+
+		@at-root {
+			@include lib-grid-param (
+				$grid-class : $wrapper,
+				$content-float : only-full-width
+			);
+		}
+
+	}
+}

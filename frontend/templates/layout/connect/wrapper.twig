@@ -1,0 +1,83 @@
+{% if typeTwig == 'php' %}
+	{% set pathWrapper = 'templates/layout/' %}
+{% else %}
+	{% set pathWrapper = '../' %}
+{% endif %}
+
+<div class="su-wrapper {{ typeTemplate }}">
+
+	{# Шапка #}
+	<header class="su-wrapper-header {{ typeHeader }}">
+
+		{% if typeTemplate == '_su-normal' %}
+			{% include pathWrapper~'header/header-control.twig' %}
+			{% include pathWrapper~'header/header-info.twig' %}
+
+			{% if headerBanner == 'slider' %}
+				{% include pathWrapper~'header/header-banner.twig'  with {typeBunner: 'slider'} %}
+			{% elseif headerBanner == 'stock' %}
+				{% include pathWrapper~'header/header-banner.twig'  with {typeBunner: 'stock'} %}
+			{% endif %}
+
+		{% elseif typeTemplate == '_su-basket' %}
+			{% include pathWrapper~'header/header-info.twig' %}
+		{% else %}
+			{% include pathWrapper~'header/header-control.twig' %}
+			{% include pathWrapper~'header/header-info.twig' %}
+		{% endif %}
+
+	</header>
+
+	{# Обертка разделов #}
+	<div class="su-wrapper-sections">
+		{% block wrapper_sections %}
+		{% endblock %}
+	</div>
+
+	{# Обертка подвала #}
+	<div class="su-wrapper-footer">
+		{% include pathWrapper~'footer/footer.twig' %}
+	</div>
+
+	{# Обертка для фиксированных элементов (в данном проекте не используються) #}
+	{#<div class="su-wrapper-fixed">
+		{% block wrapper_fixed %}
+		{% endblock %}
+	</div>#}
+
+	{# Обертка для всплывающих окон #}
+	<div class="su-wrapper-popup">
+		{% include pathWrapper~'popup/popup-container.twig' %}
+	</div>
+
+	{# Обертка для модальных окон #}
+	<div class="su-wrapper-modal">
+		{% if typeTemplate != '_su-guide' %}
+			{% include pathWrapper~'modal/modal-application.twig' %}
+			{% include pathWrapper~'modal/modal-change-personal.twig' %}
+			{% include pathWrapper~'modal/modal-choice.twig' %}
+			{% include pathWrapper~'modal/modal-confirmation.twig' %}
+			{% include pathWrapper~'modal/modal-delivery.twig' %}
+			{% include pathWrapper~'modal/modal-login.twig' %}
+			{% include pathWrapper~'modal/modal-reg.twig' %}
+		{% endif %}
+	</div>
+
+</div>
+{% block script %}
+	{% if typeTemplate == '_su-normal' %}
+		<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+		<script src="js/toggle-menu.js"></script>
+		<script src="js/toggle-show.js"></script>
+		<script src="js/common.js"></script>
+		<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	{% elseif typeTemplate == '_su-basket' %}
+		<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+		{#<script src="js/.............js"></script>#}
+		<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	{% elseif typeTemplate == '_su-guide' %}
+		<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+		<script src="js/toggle-show.js"></script>
+		<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->
+	{% endif %}
+{% endblock %}

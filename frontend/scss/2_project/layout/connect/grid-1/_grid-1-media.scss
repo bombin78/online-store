@@ -1,0 +1,15 @@
+//Импорт файлов
+@import 'grid-1-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&_container {
+		@include lib-respond-to(normal) {
+			width   : $lib-width-container-narrow;
+
+		}
+		@include lib-respond-to(narrow) {
+			width   : $lib-width-container-mobile;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+//Импорт файлов
+@import 'modal-registration-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		@include lib-respond-to(narrow) {
+			width : 426px;
+		}
+	}
+}

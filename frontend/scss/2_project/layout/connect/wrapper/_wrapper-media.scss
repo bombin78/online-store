@@ -1,0 +1,25 @@
+//Импорт файлов
+@import 'wrapper-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&#{$_menu} {
+		@include lib-respond-to(mobile) {
+			position     : fixed;
+			padding-left : 260px;
+			&:after {
+				content    : '';
+				display    : block;
+				position   : absolute;
+				top        : -10px;
+				left       : 260px;
+				width      : 100%;
+				height     : 100%;
+				z-index    : lib-z(wrapper-mobile-after);
+
+				background : transparent;
+				cursor     : pointer;
+			}
+		}
+	}
+}

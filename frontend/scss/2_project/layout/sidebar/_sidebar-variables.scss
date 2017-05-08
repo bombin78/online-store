@@ -1,0 +1,20 @@
+//Цвета
+$bg-menu : lib-color(primary-light);
+$bg-dropdown-container : lib-color(primary-light);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('sidebar');
+$catalog : lib-get-class('sidebar-catalog');
+$buttons : lib-get-class('sidebar-buttons');
+$banner: lib-get-class('sidebar-banner');
+$blog: lib-get-class('sidebar-blog');
+$viewed: lib-get-class('sidebar-viewed');
+$menu : lib-get-class('sidebar-menu');
+$link-catalog : lib-get-class('link-catalog');
+$dropdown : lib-get-class('dropdown');
+$list : lib-get-class('list');
+$_show : lib-get-modifier('_show');
+$_open : lib-get-modifier('_open');
+$_list : lib-get-modifier('_list');
+//-------------------------------
