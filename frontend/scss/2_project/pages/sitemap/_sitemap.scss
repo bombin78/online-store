@@ -1,0 +1,77 @@
+//Импорт файлов
+@import '../../../utils/_lib';
+@import '../../../utils/_mixins';
+//-------------------------------
+
+//Цвета
+$color-sitemap-link : lib-color('primary-dark');
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('sitemap');
+$sitemap-level1 : lib-get-class('sitemap-level1');
+$sitemap-level2 : lib-get-class('sitemap-level2');
+$sitemap-level3 : lib-get-class('sitemap-level3');
+$sitemap-link : lib-get-class('sitemap-link');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+
+	#{$sitemap-level1}#{$list} {
+		padding-top : lib-line-top(0);
+		> #{$list}_item:first-child {
+			padding-top : 0;
+		}
+		#{$list}_item {
+			padding-left : 15px;
+			padding-top  : lib-line-top(-5);
+			#{$sitemap-link} {
+				position        : relative;
+				padding-left    : 15px;
+
+				color           : $color-sitemap-link;
+				text-decoration : none;
+				&:before {
+					content   : '\f054';
+					position  : absolute;
+					top       : 6px;
+					left      : 0;
+
+					font-size : lib-font-size(-4);
+
+					@include lib-font-icon();
+				}
+				&_text {
+					text-decoration : underline;
+					&:hover {
+						text-decoration : none;
+					}
+				}
+				&:hover {
+					#{$sitemap-link}_text {
+						text-decoration : none;
+					}
+				}
+			}
+
+			@at-root {
+				#{$sitemap-level2}#{$list} {
+					#{$list}_item {
+						@at-root {
+							#{$sitemap-level3}#{$list} {
+								#{$list}_item {
+
+								}
+							}
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+}

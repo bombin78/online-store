@@ -1,0 +1,29 @@
+//Импорт файлов
+@import '../../../utils/_lib';
+@import '../../../utils/_mixins';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('main');
+$tile : lib-get-class('tile');
+$mail : lib-get-class('free-mail');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+
+	@at-root {
+		#{$wrapper}_free-mail#{$mail} {
+			@include mix-respond-normal-free-mail();
+			@include mix-respond-narrow-free-mail();
+		}
+		#{$wrapper}_offer#{$tile} {
+			margin-top : lib-line-top(1);
+
+			@include mix-respond-normal-tile-common();
+			@include mix-respond-narrow-tile-common();
+		}
+	}
+
+}
+

@@ -1,0 +1,25 @@
+//Импорт файлов
+@import '../../../utils/_lib';
+@import '../../../utils/_mixins';
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('video');
+$banner-block : lib-get-class('banner-block');
+$block : lib-get-class('block');
+$list : lib-get-class('list');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&_list#{$list} {
+		margin-top : 15px;
+	}
+	&_partner#{$banner-block} {
+		margin-top: 30px;
+	}
+	&_back#{$block} {
+		margin-top : 40px;
+		text-align : center;
+	}
+}

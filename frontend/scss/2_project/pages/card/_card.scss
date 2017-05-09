@@ -1,0 +1,211 @@
+//Импорт файлов
+@import '../../../utils/_lib';
+@import '../../../utils/_mixins';
+//-------------------------------
+
+//Цвета
+$bg-order : lib-color(accent-base-light);
+$color-border-preview : lib-color(primary-light);
+$color-price : lib-color(accent-base-bright);
+$color-delivery-options : lib-color(secondary-base);
+$color-order-title : lib-color(accent-base-bright);
+$color-order-text : lib-color(accent-darker);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('card');
+$view : lib-get-class('card-view');
+$view-big : lib-get-class('card-view-big');
+$view-more : lib-get-class('card-view-more');
+$view-min : lib-get-class('card-view-min');
+$actions : lib-get-class('card-actions');
+$order : lib-get-class('card-order');
+$preview : lib-get-class('preview');
+$link-img : lib-get-class('link-img');
+$rating : lib-get-class('rating');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+$block : lib-get-class('block');
+$detail : lib-get-class('detail');
+$one-click : lib-get-class('one-click');
+$field-text : lib-get-class('field-text');
+$slider-wrapper : lib-get-class('slider-wrapper');
+$slider : lib-get-class('slider');
+//-------------------------------
+
+#{$wrapper} {
+	@include mix-content-common-param();
+	&._su-top-sales {
+		#{$wrapper}_main {
+			#{$view} {
+				#{$view-big}#{$preview} {
+					#{$preview}_link#{$link-img} {
+						position: relative;
+						&:after {
+							content    : '';
+							position   : absolute;
+							top        : -3px;
+							right      : -3px;
+							height     : 72px;
+							width      : 89px;
+
+							background : url('../../../../img/offers/top-sales.png') top right no-repeat;
+						}
+					}
+				}
+			}
+		}
+	}
+	&_main {
+		display    : table;
+		margin-top : 15px;
+		width      : 100%;
+		#{$view} {
+			display : table-cell;
+			width   : 280px;
+
+			@include lib-respond-to(normal) {
+				width : 270px;
+			}
+			@include lib-respond-to(narrow) {
+				width : 220px;
+			}
+			#{$view-big}#{$preview} {
+				#{$preview}_link#{$link-img} {
+					@include lib-link-img-param(
+							$height : 240px,
+							$border : $color-border-preview
+					);
+					@include lib-respond-to(narrow) {
+						@include lib-link-img-param(
+								$height : 200px
+						);
+					}
+				}
+			}
+			#{$view-more} {
+				&_list#{$list} {
+					display : inline-block;
+					#{$list}_item {
+						float       : left;
+						margin-top  : 12px;
+						margin-left : 12px;
+						@include lib-respond-to(narrow) {
+							margin-top  : 10px;
+							margin-left : 10px;
+						}
+						&:nth-of-type(3n+1) {
+							margin-left : 0;
+						}
+						#{$view-min}#{$preview} {
+							#{$preview}_link#{$link-img} {
+								@include lib-link-img-param(
+										$height : 72px,
+										$border : $color-border-preview
+								);
+								@include lib-respond-to(narrow) {
+									@include lib-link-img-param(
+											$height : 60px
+									);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		#{$actions} {
+			display        : table-cell;
+			position       : relative;
+
+			vertical-align : top;
+			&_price#{$detail} {
+				color       : $color-price;
+				font-weight : bold;
+				#{$detail}_label {
+					font-size : lib-font-size(1);
+				}
+				#{$detail}_value {
+					margin-top : 10px;
+
+					font-size  : lib-font-size(e3);
+				}
+			}
+			&_rating#{$rating} {
+				margin-top : 30px;
+
+				@include lib-respond-to(narrow) {
+					margin-top : 20px;
+				}
+			}
+			&_links#{$block} {
+				margin-top : 25px;
+
+				@include lib-respond-to(narrow) {
+					margin-top : 15px;
+				}
+				#{$block}_element {
+					&#{$link-img} {
+						float : left;
+					}
+					&#{$link} {
+						float      : right;
+						margin-top : 7px;
+
+						color      : $color-delivery-options;
+					}
+				}
+
+			}
+			&_favorites#{$block} {
+				position   : absolute;
+				top        : 0;
+				right      : 0;
+				text-align : right;
+				#{$block}_element#{$link} {
+					display : none;
+				}
+			}
+			&_order#{$order} {
+				margin-top    : 35px;
+				padding       : 15px;
+				width         : 100%;
+
+				background    : $bg-order;
+				border-radius : 4px;
+
+				@include lib-respond-to(narrow) {
+					margin-top : 25px;
+				}
+				#{$order}_title {
+					font-size : lib-font-size(1);
+					color     : $color-order-title;
+				}
+				#{$order}_text {
+					margin-top : 15px;
+					color      : $color-order-text;
+				}
+				#{$order}_form#{$one-click} {
+					display    : inline-block;
+					margin-top : 15px;
+					width      : 100%;
+					#{$one-click}_phone#{$field-text} {
+						float : left;
+						@include lib-respond-to(narrow) {
+							width : 155px;
+						}
+					}
+					#{$one-click}_button#{$block} {
+						float      : right;
+						margin-top : 17px;
+					}
+				}
+			}
+		}
+	}
+	&_slider#{$slider-wrapper} {
+		#{$slider} {
+			@include mix-respond-content-slider();
+		}
+	}
+}

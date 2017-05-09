@@ -28,8 +28,8 @@
 // 1.2 Компоненты
 // Основное правило - абстрактность как в названиях, так и в разметке
 // + наличие стилей по умолчанию, а также простота и легкость модифицирования
-@import "1_base/components/basic-components";
-@import "1_base/components/composite-components";
+@import "1_base/components/index-basic";
+@import "1_base/components/index-composite";
 //--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
@@ -39,15 +39,30 @@
 // Используются правила для проектного слоя, с тем отличием, что
 // индивидуальность здесь ограничивается не контентом конкретной страницы,
 // а областью расположения в шаблоне сайта.
-@import '2_project/layout/connect/module';
-@import '2_project/layout/header/module';
-@import '2_project/layout/sidebar/module';
-@import "2_project/layout/content/module";
-@import '2_project/layout/footer/module';
-@import '2_project/layout/popup/module';
-@import '2_project/layout/modal/module';
+@import '2_project/layout/connect/index';
+@import '2_project/layout/header/index';
+@import '2_project/layout/sidebar/index';
+@import "2_project/layout/content/index";
+@import '2_project/layout/footer/index';
+@import '2_project/layout/popup/index';
+@import '2_project/layout/modal/index';
 
 // 2.2 Стили модулей
+@import '2_project/modules/comments/index';
+@import '2_project/modules/free-mail/index';
+@import '2_project/modules/group-buttons/index';
+@import '2_project/modules/login-form/index';
+@import '2_project/modules/offer/index';
+@import '2_project/modules/order/index';
+@import '2_project/modules/pagination/index';
+@import '2_project/modules/payment-icons/index';
+@import '2_project/modules/popular/index';
+@import '2_project/modules/reg-form/index';
+@import '2_project/modules/slider/index';
+@import '2_project/modules/social-links/index';
+@import '2_project/modules/tabs/index';
+@import '2_project/modules/tile/index';
+@import '2_project/modules/videoblock/index';
 
 // 2.3 Стили страниц
 // Стили проектного слоя подключаются к html странице отдельным фалом после
