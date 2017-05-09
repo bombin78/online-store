@@ -1,0 +1,60 @@
+//Импорт файлов
+@import 'personal-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@include lib-respond-to(narrow) {
+		padding-right : 20px;
+		padding-left  : 20px;
+	}
+
+	@at-root {
+		#{$personal-header} {
+			@include lib-respond-to(narrow) {
+				padding    : 10px;
+				min-height : 122px;
+			}
+
+			@at-root {
+				#{$personal-avatar} {
+					@include lib-respond-to(narrow) {
+						top  : 10px;
+						left : 10px;
+					}
+				}
+				#{$personal-info} {
+					@include lib-respond-to(normal) {
+						padding-right : 275px;
+					}
+					@include lib-respond-to(narrow) {
+						padding-right : 220px;
+						padding-left  : 80px;
+					}
+					&_button#{$block} {
+						@include lib-respond-to(narrow) {
+							margin-top : 10px;
+						}
+					}
+				}
+				#{$personal-account} {
+					@include lib-respond-to(normal) {
+						width : 260px;
+					}
+					@include lib-respond-to(narrow) {
+						top     : 10px;
+						right   : 10px;
+						padding : 10px;
+						width   : 210px;
+					}
+					&_links#{$list} {
+						@include lib-respond-to(narrow) {
+							margin-top : 25px;
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+}

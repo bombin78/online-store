@@ -1,16 +1,5 @@
-//Классы
-$wrapper : lib-get-class('slider-wrapper');
-$slider : lib-get-class('slider');
-$offer : lib-get-class('offer');
-$description : lib-get-class('offer-description');
-$title : lib-get-class('offer-title');
-$price : lib-get-class('offer-price');
-$button : lib-get-class('offer-button');
-$list : lib-get-class('list');
-$preview : lib-get-class('preview');
-$img : lib-get-class('link-img');
-$link : lib-get-class('link');
-$block : lib-get-class('block');
+//Импорт файлов
+@import 'slider-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -79,7 +68,7 @@ $block : lib-get-class('block');
 									position : relative;
 
 									@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
-										#{$preview}_link#{$img} {
+										#{$preview}_link#{$link-img} {
 											@include lib-link-img-param(
 													$height : 180px,
 													$vertical-align : top
@@ -88,7 +77,7 @@ $block : lib-get-class('block');
 									}
 
 								}
-								#{$description} {
+								#{$offer-description} {
 									position : relative;
 									z-index  : 1;
 									&_container {
@@ -96,7 +85,7 @@ $block : lib-get-class('block');
 										overflow : visible;
 
 										@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
-											#{$title}#{$block} {
+											#{$offer-title}#{$block} {
 												position     : relative;
 												margin-top   : -45px;
 												padding-left : 0;
@@ -121,7 +110,7 @@ $block : lib-get-class('block');
 									}
 
 									@at-root #{$slider}_list#{$list} #{$list}_offer#{$offer} {
-										#{$price} {
+										#{$offer-price} {
 											right     : auto;
 											bottom    : -40px;
 											width     : 60px;
@@ -129,7 +118,7 @@ $block : lib-get-class('block');
 											font-size : lib-font-size(1);
 										}
 
-										#{$button}#{$block} {
+										#{$offer-button}#{$block} {
 											right  : 0;
 											bottom : -45px;
 										}
@@ -145,6 +134,4 @@ $block : lib-get-class('block');
 
 		}
 	}
-
 }
-

@@ -1,0 +1,16 @@
+//Цвета
+$bg-icons : lib-color(primary-light);
+$color-title : lib-color(primary-darker);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('payment-icons');
+$icon : lib-get-class('payment-icon');
+$list : lib-get-class('list');
+$_cash : lib-get-modifier('cash');
+$_bank-card : lib-get-modifier('bank-card');
+$_yandex-money : lib-get-modifier('yandex-money');
+$_euroset : lib-get-modifier('euroset');
+$_rbk : lib-get-modifier('rbk');
+$_bank-transfer : lib-get-modifier('bank-transfer');
+//-------------------------------

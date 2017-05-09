@@ -1,0 +1,40 @@
+//Импорт файлов
+@import 'free-mail-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@include lib-respond-to(normal) {
+		width : 632px;
+	}
+	@include lib-respond-to(narrow) {
+		width : 508px;
+	}
+	&_title {
+		@include lib-respond-to(normal) {
+			font-size : lib-font-size(0);
+		}
+		@include lib-respond-to(narrow) {
+			padding   : 0 15px;
+
+			font-size : lib-font-size(-2);
+		}
+	}
+	&_description {
+		@include lib-respond-to(normal) {
+			width : 344px;
+		}
+		@include lib-respond-to(narrow) {
+			margin-left : 15px;
+			width       : 255px;
+		}
+	}
+	&_user-data {
+		@include lib-respond-to(normal) {
+			width : 232px;
+		}
+		@include lib-respond-to(narrow) {
+			margin-right : 15px;
+			width        : 215px;
+		}
+	}
+}

@@ -99,10 +99,10 @@
 					</div>
 				</form>
 			</div>
-			<div class="su-order-cart">
-				<h2 class="su-order-cart_title">Мой заказ</h2>
-				<form class="su-order-cart_form" action="#" method="post">
-					<ul class="su-order-cart-list su-list">
+			<div class="su-order-card">
+				<h2 class="su-order-card_title">Мой заказ</h2>
+				<form class="su-order-card_form" action="#" method="post">
+					<ul class="su-order-card-list su-list">
 
 						{% for row in orders %}
 							<li class="su-list_item">
@@ -111,10 +111,10 @@
 						{% endfor %}
 
 					</ul>
-					<div class="su-order-cart-change su-block">
+					<div class="su-order-card-change su-block">
 						<a class="su-block_element su-link" href="basket-step1_wrapper.twig">Изменить заказ</a>
 					</div>
-					<div class="su-order-cart-cost">
+					<div class="su-order-card-cost">
 						<dl class="su-cost-delivery su-detail">
 							<dt class="su-detail_label">Стоимость доставки:</dt>
 							<dd class="su-detail_value su-currency">400</dd>

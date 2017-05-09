@@ -18,7 +18,7 @@ $color-step-button-number-active : lib-color(accent-base);
 $color-step-link-visited : lib-color(primary-lighter);
 $color-cost-total : lib-color(accent-base-bright);
 $color-one-click-link : lib-color(secondary-base);
-$color-order-cart-change : lib-color(secondary-base);
+$color-order-card-change : lib-color(secondary-base);
 $color-spoiler-title : lib-color(secondary-dark);
 $color-border-order-delivery : lib-color(primary-base-dark);
 $color-border-order-promo : lib-color(primary-base-dark);
@@ -30,14 +30,14 @@ $header : lib-get-class('basket-header');
 $steps : lib-get-class('basket-steps');
 $step : lib-get-class('basket-step');
 $tab : lib-get-class('basket-tab');
-$order-cart : lib-get-class('order-cart');
-$order-cart-list : lib-get-class('order-cart-list');
+$order-card : lib-get-class('order-card');
+$order-card-list : lib-get-class('order-card-list');
 $order : lib-get-class('order');
-$order-cart-cost : lib-get-class('order-cart-cost');
-$order-cart-button : lib-get-class('order-cart-button');
-$order-cart-hint : lib-get-class('order-cart-hint');
-$order-cart-one-click : lib-get-class('order-cart-one-click');
-$order-cart-change : lib-get-class('order-cart-change');
+$order-card-cost : lib-get-class('order-card-cost');
+$order-card-button : lib-get-class('order-card-button');
+$order-card-hint : lib-get-class('order-card-hint');
+$order-card-one-click : lib-get-class('order-card-one-click');
+$order-card-change : lib-get-class('order-card-change');
 $order-login : lib-get-class('order-login');
 $order-reg : lib-get-class('order-reg');
 $order-spoiler : lib-get-class('order-spoiler');
@@ -293,7 +293,7 @@ $_active : lib-get-modifier('active');
 		width    : 100%;
 
 		@at-root {
-			#{$order-cart},
+			#{$order-card},
 			#{$special-offers},
 			#{$order-login},
 			#{$order-reg},
@@ -303,7 +303,7 @@ $_active : lib-get-modifier('active');
 				);
 			}
 
-			#{$order-cart},
+			#{$order-card},
 			#{$special-offers},
 			#{$order-make} {
 				padding-left : 20px;
@@ -321,7 +321,7 @@ $_active : lib-get-modifier('active');
 				}
 			}
 
-			#{$order-cart} {
+			#{$order-card} {
 				&_title {
 					padding-top : 0;
 				}
@@ -331,7 +331,7 @@ $_active : lib-get-modifier('active');
 				&_form {
 
 					@at-root {
-						#{$order-cart-list}#{$list} {
+						#{$order-card-list}#{$list} {
 							#{$list}_item {
 								margin-top : 17px;
 								&:first-child {
@@ -362,7 +362,7 @@ $_active : lib-get-modifier('active');
 							}
 						}
 
-						#{$order-cart-cost} {
+						#{$order-card-cost} {
 							#{$cost-order}#{$detail},
 							#{$cost-delivery}#{$detail},
 							#{$cost-total}#{$detail} {
@@ -385,18 +385,18 @@ $_active : lib-get-modifier('active');
 							}
 						}
 
-						#{$order-cart-button} {
+						#{$order-card-button} {
 							text-align : right;
 							margin-top : -27px;
 						}
 
-						#{$order-cart-hint} {
+						#{$order-card-hint} {
 							margin-top : 25px;
 
 							font-size  : lib-font-size(-4);
 						}
 
-						#{$order-cart-one-click}{
+						#{$order-card-one-click}{
 							margin-top : 20px;
 
 							text-align : right;
@@ -404,10 +404,10 @@ $_active : lib-get-modifier('active');
 								color : $color-one-click-link;
 							}
 						}
-						#{$order-cart-change} {
+						#{$order-card-change} {
 							margin-top : 25px;
 							#{$block}_element#{$link} {
-								color : $color-order-cart-change;
+								color : $color-order-card-change;
 							}
 						}
 					}

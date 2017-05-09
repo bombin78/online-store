@@ -1,33 +1,11 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('blog');
-$mail : lib-get-class('free-mail');
-$slider-wrapper : lib-get-class('slider-wrapper');
-$slider : lib-get-class('slider');
-$block : lib-get-class('block');
-$list : lib-get-class('list');
+@import 'blog-variables';
 //-------------------------------
 
 #{$wrapper} {
 	@include mix-content-common-param();
-
-	@at-root {
-		#{$wrapper}_free-mail#{$mail} {
-			@include mix-respond-normal-free-mail();
-			@include mix-respond-narrow-free-mail();
-		}
-	}
 	&_list#{$list} {
 		margin-top : 15px;
-	}
-	&_slider#{$slider-wrapper} {
-		#{$slider} {
-			@include mix-respond-content-slider();
-		}
 	}
 	&_back#{$block} {
 		margin-top : 40px;

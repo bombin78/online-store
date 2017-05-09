@@ -1,50 +1,5 @@
-//Цвета
-$bg-tabs-control : lib-color(accent-base-light);
-$bg-tabs-control-active : lib-color(accent-light);
-$bg-tabs-control-hover : lib-color(accent-light);
-$bg-tabs-content : lib-color(accent-light);
-$bg-tabs-personal-control : lib-color(primary-light);
-$bg-tabs-personal-control-active : lib-color(primary-base-light);
-$bg-tabs-personal-content : lib-color(primary-light);
-$bg-filter-buttons : lib-color(primary-lighter);
-$bg-filter-button-desc : lib-color(secondary-accent);
-$color-tabs-control : lib-color(accent-dark);
-$color-tabs-personal-control : lib-color(primary-darker);
-$color-tabs-control-active : lib-color(accent-base-bright);
-$color-tabs-personal-control-active : lib-color(accent-base-bright);
-$color-tabs-content : lib-color(accent-darker);
-$color-tabs-personal-content : lib-color(primary-darker);
-$color-tabs-content-title : lib-color(accent-darker);
-$color-icon-benefit : lib-color(accent-base-bright);
-$color-border-item : lib-color(primary-dark);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('tabs-block');
-$control : lib-get-class('tabs-control');
-$content : lib-get-class('tabs-content');
-$page : lib-get-class('tab-page');
-$address : lib-get-class('tab-page-address');
-$list-address : lib-get-class('tab-list-address');
-$group-buttons : lib-get-class('group-buttons');
-$special-offer : lib-get-class('special-offer');
-$favorites-offer : lib-get-class('favorites-offer');
-$offer : lib-get-class('offer');
-$offer-description : lib-get-class('offer-description');
-$offer-button : lib-get-class('offer-button');
-$offer-close : lib-get-class('offer-close');
-$detail : lib-get-class('detail');
-$block : lib-get-class('block');
-$list : lib-get-class('list');
-$_personal : lib-get-modifier('personal');
-$_active : lib-get-modifier('active');
-$_open : lib-get-modifier('open');
-$_pickup : lib-get-modifier('pickup');
-$_courier-moscow : lib-get-modifier('courier-moscow');
-$_courier-spb : lib-get-modifier('courier-spb');
-$_courier-russia : lib-get-modifier('courier-russia');
-$_post-russia : lib-get-modifier('post-russia');
-$_desc : lib-get-modifier('desc');
+//Импорт файлов
+@import 'tabs-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -64,20 +19,20 @@ $_desc : lib-get-modifier('desc');
 					height           : 60px;
 					width            : 156px;
 
-					color            : $color-tabs-control;
+					color            : $color-control;
 					cursor           : pointer;
 					font-size        : lib-font-size(-2);
 					font-weight      : bold;
 					text-align       : center;
 					text-transform   : uppercase;
-					background-color : $bg-tabs-control;
+					background-color : $bg-control;
 					&:first-child {
 						margin-left : -1px;
 					}
 					&:hover,
 					&#{$_active} {
-						color            : $color-tabs-control-active;
-						background-color : $bg-tabs-control-active;
+						color            : $color-control-active;
+						background-color : $bg-control-active;
 					}
 					&#{$_pickup},
 					&#{$_courier-moscow},
@@ -129,9 +84,9 @@ $_desc : lib-get-modifier('desc');
 			margin        : 0;
 			padding       : 20px 15px;
 
-			color         : $color-tabs-content;
+			color         : $color-content;
 			border-radius : 0 0 4px 4px;
-			background    : $bg-tabs-content;
+			background    : $bg-content;
 
 			@at-root {
 				#{$page} {
@@ -142,7 +97,7 @@ $_desc : lib-get-modifier('desc');
 					&_title {
 						padding-top : 0;
 
-						color       : $color-tabs-content-title;
+						color       : $color-content-title;
 						font-size   : lib-font-size(1);
 					}
 					&_benefit#{$list} {
@@ -201,20 +156,20 @@ $_desc : lib-get-modifier('desc');
 				#{$control} {
 					&_list#{$list} {
 						#{$list}_item {
-							color            : $color-tabs-personal-control;
-							background-color : $bg-tabs-personal-control;
+							color            : $color-personal-control;
+							background-color : $bg-personal-control;
 							&:hover,
 							&#{$_active} {
-								color            : $color-tabs-personal-control-active;
-								background-color : $bg-tabs-personal-control-active;
+								color            : $color-personal-control-active;
+								background-color : $bg-personal-control-active;
 							}
 						}
 					}
 				}
 
 				#{$content} {
-					color      : $color-tabs-personal-content;
-					background : $bg-tabs-personal-content;
+					color      : $color-personal-content;
+					background : $bg-personal-content;
 
 					@at-root #{$wrapper}#{$_personal} {
 						#{$page} {
@@ -243,9 +198,9 @@ $_desc : lib-get-modifier('desc');
 							&_favorites#{$list},
 							&_address#{$list} {
 								#{$list}_item {
-									border-bottom : 1px solid $color-border-item;
+									border-bottom : 1px solid $color-item-border;
 									&:first-child {
-										border-top : 1px solid $color-border-item;
+										border-top : 1px solid $color-item-border;
 									}
 								}
 							}

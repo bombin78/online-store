@@ -3,9 +3,8 @@
 //-------------------------------
 
 #{$wrapper} {
-	@include mix-content-common-param();
-	&_tabs#{$tabs},
-	&_tabs#{$payment} {
-		margin-top : 30px;
+	@include lib-respond-to(narrow) {
+		padding-right : 20px;
+		padding-left  : 20px;
 	}
 }

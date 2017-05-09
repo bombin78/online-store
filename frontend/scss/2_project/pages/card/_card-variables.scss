@@ -1,0 +1,27 @@
+//Цвета
+$bg-order : lib-color(accent-base-light);
+$color-border-preview : lib-color(primary-light);
+$color-price : lib-color(accent-base-bright);
+$color-delivery-options : lib-color(secondary-base);
+$color-order-title : lib-color(accent-base-bright);
+$color-order-text : lib-color(accent-darker);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('card');
+$view : lib-get-class('card-view');
+$view-big : lib-get-class('card-view-big');
+$view-more : lib-get-class('card-view-more');
+$view-min : lib-get-class('card-view-min');
+$actions : lib-get-class('card-actions');
+$order : lib-get-class('card-order');
+$preview : lib-get-class('preview');
+$link-img : lib-get-class('link-img');
+$rating : lib-get-class('rating');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+$block : lib-get-class('block');
+$detail : lib-get-class('detail');
+$one-click : lib-get-class('one-click');
+$field-text : lib-get-class('field-text');
+//-------------------------------

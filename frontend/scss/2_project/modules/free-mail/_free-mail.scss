@@ -1,13 +1,5 @@
-//Цвета
-$color-free-mail-title : lib-color(primary-lighter);
-$color-free-mail-title-shadow : lib-color(primary-darker);
-$bg-free-mail : lib-color(primary-light);
-$color-border-free-mail : lib-color(primary-base);
-$color-shadow-free-mail : lib-color(primary-base-dark);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('free-mail');
+//Импорт файлов
+@import 'free-mail-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -16,20 +8,20 @@ $wrapper : lib-get-class('free-mail');
 	height        : 280px;
 
 	border-radius : 5px;
-	border        : 1px solid $color-border-free-mail;
-	background    : $bg-free-mail url('../../../../img/bg_mail.jpg') left top repeat-x;
-	box-shadow    : 0 1px 5px 0 $color-shadow-free-mail;
+	border        : 1px solid $color-border;
+	background    : $bg-wrapper url('../../../../img/bg_mail.jpg') left top repeat-x;
+	box-shadow    : 0 1px 5px 0 $color-shadow;
 	&_title {
 		padding        : 0 20px;
 		height         : 52px;
 
 		line-height    : 52px;
-		color          : $color-free-mail-title;
+		color          : $color-title;
 		font-size      : lib-font-size(1);
 		font-weight    : 900;
 		letter-spacing : 1px;
 		text-transform : uppercase;
-		text-shadow    : 1px 1px 2px $color-free-mail-title-shadow;
+		text-shadow    : 1px 1px 2px $color-title-shadow;
 	}
 	&_description {
 		float       : left;

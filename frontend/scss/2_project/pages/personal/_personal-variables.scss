@@ -1,0 +1,18 @@
+//Цвета
+$bg-personal-header : lib-color(primary-light);
+$bg-personal-account : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('personal');
+$personal-header : lib-get-class('personal-header');
+$personal-avatar : lib-get-class('personal-avatar');
+$personal-info : lib-get-class('personal-info');
+$personal-account : lib-get-class('personal-account');
+$personal-account-link : lib-get-class('personal-account-link');
+$tabs-block : lib-get-class('tabs-block');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
+$list : lib-get-class('list');
+$_personal : lib-get-modifier('personal');
+//-------------------------------

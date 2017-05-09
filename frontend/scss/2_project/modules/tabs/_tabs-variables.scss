@@ -1,0 +1,52 @@
+//Цвета
+$bg-control : lib-color(accent-base-light);
+$bg-control-active : lib-color(accent-light);
+$bg-content : lib-color(accent-light);
+$bg-personal-control : lib-color(primary-light);
+$bg-personal-control-active : lib-color(primary-base-light);
+$bg-personal-content : lib-color(primary-light);
+$bg-filter-buttons : lib-color(primary-lighter);
+$bg-filter-button-desc : lib-color(secondary-accent);
+$color-control : lib-color(accent-dark);
+$color-control-active : lib-color(accent-base-bright);
+$color-content : lib-color(accent-darker);
+$color-content-title : lib-color(accent-darker);
+$color-personal-control : lib-color(primary-darker);
+$color-personal-control-active : lib-color(accent-base-bright);
+$color-personal-content : lib-color(primary-darker);
+$color-icon-benefit : lib-color(accent-base-bright);
+$color-item-border : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('tabs-block');
+$control : lib-get-class('tabs-control');
+$content : lib-get-class('tabs-content');
+$page : lib-get-class('tab-page');
+$address : lib-get-class('tab-page-address');
+$list-address : lib-get-class('tab-list-address');
+$group-buttons : lib-get-class('group-buttons');
+$special-offer : lib-get-class('special-offer');
+$favorites-offer : lib-get-class('favorites-offer');
+$offer : lib-get-class('offer');
+$offer-description : lib-get-class('offer-description');
+$offer-button : lib-get-class('offer-button');
+$offer-close : lib-get-class('offer-close');
+$order : lib-get-class('order');
+$preview : lib-get-class('preview');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
+$list : lib-get-class('list');
+$_personal : lib-get-modifier('personal');
+$_active : lib-get-modifier('active');
+$_open : lib-get-modifier('open');
+$_pickup : lib-get-modifier('pickup');
+$_courier-moscow : lib-get-modifier('courier-moscow');
+$_courier-spb : lib-get-modifier('courier-spb');
+$_courier-russia : lib-get-modifier('courier-russia');
+$_post-russia : lib-get-modifier('post-russia');
+$_desc : lib-get-modifier('desc');
+$_activated : lib-get-modifier('activated');
+$_canceled : lib-get-modifier('canceled');
+$_completed : lib-get-modifier('completed');
+//-------------------------------

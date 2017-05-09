@@ -1,31 +1,20 @@
-//Цвета
-$bg-payment-icons : lib-color(primary-light);
-$color-title : lib-color(primary-darker);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('payment-icons');
-$icon : lib-get-class('payment-icon');
-$list : lib-get-class('list');
-$_cash : lib-get-modifier('cash');
-$_bank-card : lib-get-modifier('bank-card');
-$_yandex-money : lib-get-modifier('yandex-money');
-$_euroset : lib-get-modifier('euroset');
-$_rbk : lib-get-modifier('rbk');
-$_bank-transfer : lib-get-modifier('bank-transfer');
+//Импорт файлов
+@import 'payment-icons-variables';
 //-------------------------------
 
 #{$wrapper} {
-	margin-top       : 30px;
-	border-radius    : 4px;
-	background-color : $bg-payment-icons;
 	padding          : 20px;
 	max-width        : 820px;
+
+	border-radius    : 4px;
+	background-color : $bg-icons;
 	&_title {
 		margin-bottom : 20px;
+		padding-top   : 0;
 
 		color         : $color-title;
 		font-weight   : bold;
+		font-size     : lib-font-size(1);
 	}
 	&_list#{$list} {
 		display : inline-block;
