@@ -5,6 +5,7 @@
 #{$wrapper} {
 
 	&_container {
+
 		@include lib-respond-to(normal) {
 			width : $lib-width-container-narrow;
 		}

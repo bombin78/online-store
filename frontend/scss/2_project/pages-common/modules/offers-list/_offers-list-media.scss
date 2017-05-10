@@ -1,0 +1,76 @@
+//Импорт файлов
+@import 'offers-list-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&_item {
+		@include lib-respond-to(normal) {
+			width : 100%;
+		}
+		
+		@at-root {
+			#{$wrapper}_offer#{$offer} {
+				@include lib-respond-to(normal) {
+					padding-bottom : 88px;
+				}
+				@include lib-respond-to(narrow) {
+					padding-bottom : 84px;
+				}
+				#{$offer}_preview#{$preview} {
+					#{$preview}_link#{$link-img} {
+						@include lib-respond-to(normal) {
+							@include lib-link-img-param(
+								$height : 180px
+							);
+						}
+					}
+				}
+				#{$offer-description} {
+					@include lib-respond-to(normal) {
+						#{$offer-description}_container {
+							@include lib-respond-to(normal) {
+								height : 108px;
+							}
+							@include lib-respond-to(narrow) {
+								height : 112px;
+							}
+							#{$offer-title}#{$block},
+							#{$offer-text} {
+								@include lib-respond-to(normal) {
+									padding-left : 200px
+								}
+							}
+						}
+						&_rating#{$rating} {
+							@include lib-respond-to(normal) {
+								position : absolute;
+								bottom   : -25px;
+								left     : 200px;
+							}
+							@include lib-respond-to(narrow) {
+								bottom : -23px;
+							}
+						}
+						#{$offer-new-price}#{$detail} {
+							@include lib-respond-to(normal) {
+								bottom : -63px;
+								left   : 200px;
+								width  : 388px;
+							}
+							@include lib-respond-to(narrow) {
+								bottom      : -62px;
+								padding-top : 12px;
+								width       : 275px;
+							}
+						}
+						#{$offer-button}#{$block} {
+							@include lib-respond-to(normal) {
+								bottom : -70px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

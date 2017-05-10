@@ -1,0 +1,35 @@
+//Импорт файлов
+@import 'offers-list-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@extend %lib-clearfix;
+	&_item {
+		float : left;
+		width : 400px;
+		&:nth-of-type(odd) {
+			margin-right : 19px;
+		}
+		
+		@at-root {
+			#{$wrapper}_offer#{$offer} {
+				margin-top : 21px;
+				#{$offer}_preview#{$preview} {
+					#{$preview}_link#{$link-img} {
+
+						@include lib-link-img-param(
+							$border : $color-img-border
+						);
+					}
+				}
+				#{$offer-description} {
+					#{$offer-new-price} {
+						width      : 368px;
+
+						border-top : 1px dotted $color-new-price-border;
+					}
+				}
+			}
+		}
+	}
+}

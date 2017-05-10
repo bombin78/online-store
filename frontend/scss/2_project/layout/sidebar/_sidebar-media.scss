@@ -9,7 +9,7 @@
 		height      : 100%;
 		width       : 260px;
 	}
-	#{$catalog} {
+	#{$sidebar-catalog} {
 		@include lib-respond-to(mobile) {
 			margin-top : -42px;
 			height     : 100%;
@@ -103,4 +103,73 @@
 			}
 		}
 	}
+	#{$sidebar-viewed} {
+		@include lib-respond-to(narrow) {
+			padding : 5px 3px;
+		}
+		&_title {
+			@include lib-respond-to(narrow) {
+				padding   : 15px 21px 0 9px;
+
+				font-size : lib-font-size(0);
+			}
+		}
+		&_list#{$list} {
+			#{$list}_item {
+				@include lib-respond-to(narrow) {
+					margin : 0 6px;
+				}
+				&:first-child {
+					@include lib-respond-to(narrow) {
+						margin-top : 40px;
+					}
+
+				}
+				@at-root #{$wrapper} {
+					#{$viewed} {
+						@include lib-respond-to(narrow) {
+							padding : 10px 0;
+						}
+						&_preview#{$preview} {
+							#{$preview}_link#{$link-img} {
+								@include lib-respond-to(narrow) {
+									@include lib-link-img-param(
+										$height : 50px
+									);
+								}
+							}
+						}
+
+						@at-root #{$wrapper} {
+							#{$viewed-description} {
+								@include lib-respond-to(narrow) {
+									padding-left : 55px;
+								}
+
+								@at-root #{$wrapper} {
+									#{$viewed-title}#{$block} {
+										@include lib-respond-to(narrow) {
+											height    : 32px;
+											width     : 90px;
+
+											font-size : lib-font-size(-4);
+										}
+									}
+									#{$viewed-price}#{$detail} {
+										@include lib-respond-to(narrow) {
+											padding-top : 0;
+										}
+									}
+								}
+
+							}
+						}
+
+					}
+				}
+
+			}
+		}
+	}
+
 }

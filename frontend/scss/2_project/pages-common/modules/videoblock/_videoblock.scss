@@ -1,0 +1,39 @@
+//Импорт файлов
+@import 'videoblock-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&_list#{$list} {
+		#{$list}_item {
+			margin-top : 20px;
+
+			@at-root {
+				#{$video} {
+					&_title {
+					}
+					&_preview {
+					}
+					&_content {
+						position  : relative;
+						margin    : 0 auto;
+						width     : 100%;
+						max-width : 640px;
+
+						@include lib-responsive-ratio (16, 9);
+						iframe {
+							display  : block;
+							position : absolute;
+							top      : 0;
+							left     : 0;
+
+							height   : 100%;
+							width    : 100%;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+

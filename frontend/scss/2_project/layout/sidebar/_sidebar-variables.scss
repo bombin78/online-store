@@ -5,14 +5,22 @@ $bg-dropdown-container : lib-color(primary-light);
 
 //Классы
 $wrapper : lib-get-class('sidebar');
-$catalog : lib-get-class('sidebar-catalog');
-$buttons : lib-get-class('sidebar-buttons');
-$banner: lib-get-class('sidebar-banner');
-$blog: lib-get-class('sidebar-blog');
-$viewed: lib-get-class('sidebar-viewed');
+$sidebar-catalog : lib-get-class('sidebar-catalog');
+$sidebar-buttons : lib-get-class('sidebar-buttons');
+$sidebar-banner: lib-get-class('sidebar-banner');
+$sidebar-blog: lib-get-class('sidebar-blog');
+$sidebar-viewed: lib-get-class('sidebar-viewed');
+$viewed-title : lib-get-class('viewed-title');
+$viewed : lib-get-class('viewed');
+$viewed-description : lib-get-class('viewed-description');
+$viewed-price : lib-get-class('viewed-price');
 $menu : lib-get-class('sidebar-menu');
-$link-catalog : lib-get-class('link-catalog');
 $dropdown : lib-get-class('dropdown');
+$link-catalog : lib-get-class('link-catalog');
+$link-img : lib-get-class('link-img');
+$preview : lib-get-class('preview');
+$detail : lib-get-class('detail');
+$block : lib-get-class('block');
 $list : lib-get-class('list');
 $_show : lib-get-modifier('_show');
 $_open : lib-get-modifier('_open');

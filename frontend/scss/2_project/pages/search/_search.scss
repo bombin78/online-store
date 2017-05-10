@@ -1,22 +1,9 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('search');
-$tile : lib-get-class('tile');
+@import 'search-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
 
-	@at-root {
-		#{$wrapper}_offer#{$tile} {
-			@include mix-respond-normal-tile-common();
-			@include mix-respond-narrow-tile-common();
-		}
-	}
-
 }
-

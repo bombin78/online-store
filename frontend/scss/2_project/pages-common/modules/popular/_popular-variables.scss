@@ -1,0 +1,12 @@
+//Цвета
+$color-popular-link: lib-color(secondary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('popular');
+$popular-links : lib-get-class('popular-links');
+$popular-link : lib-get-class('popular-link');
+$detail : lib-get-class('detail');
+$list : lib-get-class('list');
+$link : lib-get-class('link');
+//-------------------------------

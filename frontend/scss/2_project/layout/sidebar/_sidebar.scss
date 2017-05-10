@@ -12,11 +12,11 @@
 	position    : relative;
 	padding-top : 20px;
 	z-index     : lib-z('aside');
-	#{$catalog},
-	#{$buttons},
-	#{$banner},
-	#{$blog},
-	#{$viewed} {
+	#{$sidebar-catalog},
+	#{$sidebar-buttons},
+	#{$sidebar-banner},
+	#{$sidebar-blog},
+	#{$sidebar-viewed} {
 		margin-top : 30px;
 		&:first-child {
 			margin-top : 0;

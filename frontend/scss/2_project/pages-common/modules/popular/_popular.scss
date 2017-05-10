@@ -1,0 +1,34 @@
+//Импорт файлов
+@import 'popular-variables';
+//-------------------------------
+
+#{$wrapper} {
+	&_detail#{$detail} {
+		display: inline-block;
+		#{$detail}_label {
+			float       : left;
+
+			line-height : 1.25rem;
+		}
+		#{$detail}_value {
+			float: left;
+
+			@at-root {
+				#{$popular-links}#{$list} {
+					#{$list}_item {
+						float       : left;
+						margin-left : 15px;
+						&:first-child {
+							margin-left : 8px;
+						}
+
+						#{$popular-link}#{$link} {
+							color: $color-popular-link;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

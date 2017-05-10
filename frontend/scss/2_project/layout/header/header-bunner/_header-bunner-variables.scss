@@ -11,7 +11,7 @@ $timer : lib-get-class('timer');
 $link-img : lib-get-class('link-img');
 $detail : lib-get-class('detail');
 $block : lib-get-class('block');
-$_start : lib-get-modifier('_start');
-$_middle : lib-get-modifier('_middle');
-$_end : lib-get-modifier('_end');
+$_start : lib-get-modifier('start');
+$_middle : lib-get-modifier('middle');
+$_end : lib-get-modifier('end');
 //-------------------------------

@@ -40,9 +40,15 @@ $mix-social-links : lib-get-class('social-links');
 $mix-social-link : lib-get-class('social-link');
 $mix-free-mail : lib-get-class('free-mail');
 $mix-slider : lib-get-class('slider');
+$mix-field-text : lib-get-class('field-text');
+$mix-field-select : lib-get-class('field-select');
+$mix-field-textarea : lib-get-class('field-textarea');
 //-------------------------------
 
+
+//-------------------------------
 // 1. Общие параметры контента
+// 1.1 По умолчанию
 @mixin mix-content-common-param(
 	$padding-top: 20px,
 	$padding-bottom: 15px
@@ -51,78 +57,18 @@ $mix-slider : lib-get-class('slider');
 	margin    : 0 auto;
 	padding   : $padding-top 40px $padding-bottom 40px;
 	max-width : 1280px;
-
-	//после рефакторинга убрать
-	@include lib-respond-to(narrow) {
-		padding-right : 20px;
-		padding-left  : 20px;
-	}
 }
 
+// 1.2 При разрешении экрана "narrow"
+@mixin mix-content-common-narrow-param() {
+	padding-right : 20px;
+	padding-left  : 20px;
+}
 //-------------------------------
 
-// 2. Общие стили для повторяющихся правил плитки
-@mixin mix-respond-normal-tile-common() {
-	#{$mix-tile}_list#{$mix-list} {
-		#{$mix-list}_item {
-			@include lib-respond-to(normal) {
-				@include lib-box12(4);
-			}
-		}
-	}
-}
-
-@mixin mix-respond-narrow-tile-common() {
-	#{$mix-tile}_list#{$mix-list} {
-		#{$mix-list}_item {
-			@include lib-respond-to(narrow) {
-				#{$mix-list}_offer#{$mix-offer} {
-					padding-bottom : 75px;
-					#{$mix-offer}_preview#{$mix-preview} {
-						#{$mix-preview}_link#{$mix-link-img} {
-							@include lib-link-img-param(
-								$height : 150px
-							);
-						}
-					}
-					#{$mix-offer-description} {
-						&_container {
-							#{$mix-offer-title}#{$mix-block} {
-								margin-top : -40px;
-								height     : 40px;
-							}
-							#{$mix-offer-annotation} {
-								height     : 35px;
-								margin-top : 4px;
-							}
-						}
-						#{$mix-offer-old-price} {
-							margin-top : 0;
-						}
-						#{$mix-offer-price} {
-							right      : auto;
-							bottom     : -20px;
-							width      : 134px;
-
-							text-align : center;
-						}
-						#{$mix-offer-button} {
-							right      : 0;
-							bottom     : -61px;
-							width      : 134px;
-
-							text-align : center;
-						}
-					}
-				}
-			}
-		}
-	}
-}
 
 //-------------------------------
-
-// 3. Переопределение стилей пдагина "jscrollpane"
+// 2. Переопределение стилей пдагина "jscrollpane"
 @mixin mix-override-jscrollpane(
 	$after-height: 45px,
 	$before-height: 45px
@@ -182,18 +128,19 @@ $mix-slider : lib-get-class('slider');
 		}
 	}
 }
-
 //-------------------------------
 
-// 4. Параметры элементов ячечеек подвала
-// 4.1 Заголовки
+
+//-------------------------------
+// 3. Параметры элементов ячечеек подвала
+// 3.1 Заголовки
 @mixin mix-footer-title() {
 	color       : $mix-color-footer-title;
 	font-family : 'OpenSansBold';
 	font-size   : lib-font-size(-2);
 }
 
-// 4.2 Списки
+// 3.2 Списки
 @mixin mix-footer-list() {
 	margin-top : 10px;
 
@@ -202,108 +149,125 @@ $mix-slider : lib-get-class('slider');
 		margin-top : 5px;
 	}
 }
-
 //-------------------------------
 
-// 5. Общие стили для входа/регистрации через
-// соц.сети на втором шаге оформелния заказа
-@mixin mix-common-order-social-links() {
-	@include lib-respond-to(narrow) {
-		#{$mix-social-links}_title {
-			display : block;
-		}
-		#{$mix-social-links}_list#{$mix-list} {
-			margin-top : 20px;
-			#{$mix-list}_item {
-				#{$mix-social-link}#{$mix-link-btn} {
-					#{$mix-link-btn}_addition {
-						display : none;
-					}
+
+//-------------------------------
+// 4. Общие стили для корзины на втором шаге оформления заказа.
+// 4.1 Вход/регистрация через соц.сети
+@mixin mix-common-order-social-links-narrow() {
+	#{$mix-social-links}_title {
+		display : block;
+	}
+	#{$mix-social-links}_list#{$mix-list} {
+		margin-top : 20px;
+		#{$mix-list}_item {
+			#{$mix-social-link}#{$mix-link-btn} {
+				#{$mix-link-btn}_addition {
+					display : none;
 				}
 			}
 		}
 	}
 }
 
-//-------------------------------
-
-// 6. Общие стили для предложений на странице тега
-// и странице предложений
-@mixin mix-common-offer(
-	$margin-top: 21px
+// 4.2. Текстовое поле блока "order-make"
+@mixin order-make-field-text(
+	$margin-top: 20px,
+	$float-label: left,
+	$float-input: right,
+	$width-label: 45%,
+	$width-input: 50%,
+	$padding-left: $width-input
 ) {
-	margin-top : $margin-top;
+	display        : inline-block;
+	margin-top     : $margin-top;
+	width          : 100%;
 
-	@include lib-respond-to(normal) {
-		padding-bottom : 88px;
-	}
-	@include lib-respond-to(narrow) {
-		padding-bottom : 84px;
-	}
-	#{$mix-offer}_preview#{$mix-preview} {
-		#{$mix-preview}_link#{$mix-link-img} {
-
-			@include lib-link-img-param(
-				$border : $mix-color-border-img
-			);
-			@include lib-respond-to(normal) {
-				@include lib-link-img-param(
-					$height : 180px
-				);
-			}
+	vertical-align : bottom;
+	#{$mix-field-text} {
+		&_label {
+			float : $float-label;
+			width : $width-label;
 		}
-	}
-	#{$mix-offer-description} {
-		#{$mix-offer-new-price} {
-			width      : 368px;
-
-			border-top : 1px dotted $mix-color-border-new-price;
+		&_input {
+			float : $float-input;
+			width : $width-input;
 		}
-
-		@include lib-respond-to(normal) {
-			#{$mix-offer-description}_container {
-				height : 108px;
-				#{$mix-offer-title}#{$mix-block},
-				#{$mix-offer-text} {
-					padding-left : 200px
-				}
-			}
-			&_rating#{$mix-rating} {
-				position : absolute;
-				bottom   : -25px;
-				left     : 200px;
-			}
-			#{$mix-offer-new-price}#{$mix-detail} {
-				bottom : -63px;
-				left   : 200px;
-				width  : 388px;
-			}
-			#{$mix-offer-button}#{$mix-block} {
-				bottom : -70px;
-			}
-		}
-		@include lib-respond-to(narrow) {
-			#{$mix-offer-description}_container {
-				height : 112px;
-			}
-			&_rating#{$mix-rating} {
-				bottom : -23px;
-			}
-			#{$mix-offer-new-price}#{$mix-detail} {
-				bottom      : -62px;
-				padding-top : 12px;
-				width       : 275px;
-			}
-			#{$mix-offer-button}#{$mix-block} {
-				bottom : -70px;
-			}
+		&_help {
+			float : left;
+			padding-left: $padding-left;
 		}
 	}
 }
 
+// 4.3. Выпадающий список блока "order-make"
+@mixin order-make-field-select(
+	$margin-top: 20px,
+	$float-label: left,
+	$float-select: right,
+	$width-label: 45%,
+	$width-select: 50%,
+	$padding-left: $width-select
+) {
+	display        : inline-block;
+	margin-top     : $margin-top;
+	width          : 100%;
+
+	vertical-align : bottom;
+	#{$mix-field-select} {
+		&_label {
+			float : $float-label;
+			width : $width-label;
+		}
+		&_select {
+			float : $float-select;
+			width : $width-select;
+		}
+		&_help {
+			float : left;
+			padding-left: $padding-left;
+		}
+	}
+}
+
+// 4.4. Текстовая область блока "order-make"
+@mixin order-make-field-textarea(
+	$margin-top: 20px,
+	$float-label: left,
+	$float-textarea: right,
+	$width-label: 45%,
+	$width-textarea: 50%,
+	$resize: vertical,
+	$padding-left: $width-textarea
+) {
+	display        : inline-block;
+	margin-top     : $margin-top;
+	width          : 100%;
+
+	vertical-align : bottom;
+	#{$mix-field-textarea} {
+		&_label {
+			float : $float-label;
+			width : $width-label;
+		}
+		&_textarea {
+			float  : $float-textarea;
+			width  : $width-textarea;
+
+			resize : $resize;
+		}
+		&_help {
+			float : left;
+			padding-left: $padding-left;
+		}
+	}
+}
 //-------------------------------
 
-// 7. Общие стили предложений в личном кабинете
+
+//-------------------------------
+// 5. Общие стили предложений в личном кабинете
 @mixin mix-common-personal-offer() {
 	height           : 51px;
 
@@ -370,6 +334,4 @@ $mix-slider : lib-get-class('slider');
 		}
 	}
 }
-
 //-------------------------------
-

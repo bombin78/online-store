@@ -9,13 +9,6 @@
 	padding  : 0 10px;
 	width    : $lib-width-container-normal;
 
-	@include lib-respond-to(normal) {
-		width : $lib-width-container-narrow;
-	}
-	@include lib-respond-to(narrow) {
-		width : $lib-width-container-mobile;
-	}
-
 	@at-root {
 		#{$popup-search} {
 			position : absolute;

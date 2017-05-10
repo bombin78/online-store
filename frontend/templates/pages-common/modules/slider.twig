@@ -1,0 +1,28 @@
+{% if typeTwig == 'php' %}
+	{% set pathSlider = 'templates/pages-common/' %}
+{% else %}
+	{% set pathSlider = '../' %}
+{% endif %}
+
+
+<div class="{{ overrideClassSlider }} su-slider-wrapper">
+	<h2 class="su-slider-wrapper_title">{{ contentSlider.title }}</h2>
+	<div class="su-slider">
+
+		<div class="su-slider_prev"></div>
+		<div class="su-slider_next"></div>
+
+		<div class="su-slider_container">
+			<ul class="su-slider_list su-list">
+
+				{% for row in contentSlider.data %}
+					<li class="su-list_item">
+						{% include pathSlider~'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+					</li>
+				{% endfor %}
+
+			</ul>
+		</div>
+
+	</div>
+</div>

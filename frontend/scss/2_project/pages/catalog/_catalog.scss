@@ -1,16 +1,11 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('catalog');
-$tile : lib-get-class('tile');
-$list : lib-get-class('list');
+@import 'catalog-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
+
 	&_sections#{$tile} {
 		margin-top : 20px;
 
@@ -19,17 +14,6 @@ $list : lib-get-class('list');
 	}
 	&_popular#{$tile} {
 		margin-top : lib-line-top(3);
-	}
-
-	@at-root {
-		#{$wrapper}_sections#{$tile} {
-			@include mix-respond-normal-tile-common();
-		}
-
-		#{$wrapper}_popular#{$tile} {
-			@include mix-respond-normal-tile-common();
-			@include mix-respond-narrow-tile-common();
-		}
 	}
 
 }

@@ -4,10 +4,12 @@
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param(
 		$padding-top: 0,
 		$padding-bottom: 0
 	);
+
 	#{$banner-block},
 	#{$breadcrumb} {
 		margin-top : 20px;

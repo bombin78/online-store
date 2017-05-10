@@ -1,0 +1,15 @@
+//Цвета
+$bg-group-item : lib-color(primary-light);
+$bg-group-item-desc : lib-color(secondary-accent);
+$color-group : lib-color(primary-base-dark);
+$color-group-link : lib-color(primary-base-dark);
+$color-group-link-desc : lib-color(primary-lighter);
+$color-group-border-top : lib-color(primary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('group-buttons');
+$group-link : lib-get-class('group-link');
+$list : lib-get-class('list');
+$_desc : lib-get-modifier('desc');
+//-------------------------------

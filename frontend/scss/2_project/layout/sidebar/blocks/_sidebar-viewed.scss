@@ -1,36 +1,41 @@
 //Цвета
 $bg-comments-list : lib-color(primary-lighter);
 $bg-comment-hover : lib-color(accent-lighter);
-$color-border-item : lib-color(primary-base);
-$color-border-img : lib-color(primary-base-light);
+$color-item-border : lib-color(primary-base);
+$color-img-border : lib-color(primary-base-light);
+$bg-viewed : lib-color(primary-lighter);
+$bg-viewed-hover : lib-color(accent-lighter);
+$bg-viewed-view : lib-color(primary-lighter);
+$color-viewed-border : lib-color(primary-base-light);
+$color-viewed-shadow : lib-color(primary-dark);
+$color-viewed-title : lib-color(secondary-base);
+$color-viewed-price : lib-color(accent-base-bright);
+$color-viewed-price-hover : lib-color(secondary-dark);
 //-------------------------------
 
 //Классы
 $wrapper : lib-get-class('sidebar-viewed');
 $viewed-offer : lib-get-class('viewed-offer');
 $list : lib-get-class('list');
-$offer : lib-get-class('offer');
-$title : lib-get-class('offer-title');
-$description : lib-get-class('offer-description');
-$new-price : lib-get-class('offer-new-price');
+$viewed : lib-get-class('viewed');
+$viewed-title : lib-get-class('viewed-title');
+$viewed-description : lib-get-class('viewed-description');
+$viewed-price : lib-get-class('viewed-price');
 $preview : lib-get-class('preview');
 $link-img : lib-get-class('link-img');
 $block : lib-get-class('block');
 $detail : lib-get-class('detail');
+$link : lib-get-class('link');
 //-------------------------------
 
 #{$wrapper} {
 	position      : relative;
-	//margin-top    : 20px;
 	padding       : 8px 5px;
 
 	border-radius : 5px;
-	background    : url(../../../../../img/bg_5.jpg);
+	background    : url('../../../../../img/bg_5.jpg');
 	box-shadow    : inset 0 1px 2px rgba(0, 0, 0, .16);
 
-	@include lib-respond-to(narrow) {
-		padding       : 5px 3px;
-	}
 	&_title {
 		position  : absolute;
 		top       : 0;
@@ -40,30 +45,22 @@ $detail : lib-get-class('detail');
 		z-index   : 3;
 
 		font-size : lib-font-size(1);
-		@include lib-respond-to(narrow) {
-			padding   : 15px 21px 0 9px;
-
-			font-size : lib-font-size(0);
-		}
 	}
 	&_list#{$list} {
 		position : relative;
 		height   : 350px;
 		width    : 100%;
 
-		//Если отключены скрипты это правило позволит отобразить обычный скролл
+		//Если отключены скрипты, это правило позволит отобразить обычный скролл
 		overflow : auto;
 
 		@include mix-override-jscrollpane();
+
 		#{$list}_item {
 			margin     : 0 8px;
 			padding    : 0;
 
-			border-top : 1px solid $color-border-item;
-
-			@include lib-respond-to(narrow) {
-				margin     : 0 6px;
-			}
+			border-top : 1px solid $color-item-border;
 			&:first-child {
 				margin-top : 40px;
 
@@ -71,62 +68,78 @@ $detail : lib-get-class('detail');
 			}
 
 			@at-root {
-				#{$viewed-offer}#{$offer} {
-					padding    : 15px 0;
+				#{$viewed} {
+					position         : relative;
+					padding          : 15px 0;
+					width            : 100%;
 
-					border     : none;
-					box-shadow : none;
-
-					@include lib-respond-to(narrow) {
-						padding : 10px 0;
+					background-color : $bg-viewed;
+					&:hover {
+						background : $bg-viewed-hover;
+						#{$viewed-description} {
+							#{$viewed-title}#{$block},
+							#{$viewed-price}#{$detail} {
+								@include lib-text-blackout-change;
+							}
+						}
 					}
-					#{$offer}_preview#{$preview} {
+					&_preview#{$preview} {
+						position : absolute;
+						z-index  : 1;
 						#{$preview}_link#{$link-img} {
-
 							@include lib-link-img-param(
-									$border : $color-border-img,
-									$height : 65px
+								$border : $color-img-border,
+								$height : 65px
 							);
-							@include lib-respond-to(narrow) {
-								@include lib-link-img-param(
-										$height : 50px
-								);
-							}
 						}
 					}
-					#{$description} {
-						@include lib-respond-to(narrow) {
-							font-size    : lib-font-size(-4);
-						}
-						&_container {
-							height : 40px;
 
-							@include lib-respond-to(narrow) {
-								height : 32px;
-							}
-							#{$title}#{$block} {
-								padding-left : 72px;
+					@at-root {
+						#{$viewed-description} {
+							position     : relative;
+							padding-left : 72px;
 
-								font-size    : lib-font-size(-3);
-								@include lib-respond-to(narrow) {
-									padding-left : 55px;
+							@at-root {
+								#{$viewed-title}#{$block} {
+									position  : relative;
+									height    : 40px;
+									width     : 135px;
+
+									font-size : lib-font-size(-3);
+									overflow  : hidden;
+
+									@include lib-text-blackout(
+										$height : 20px,
+										$width : 15px
+									);
+
+									#{$block}_element#{$link} {
+										color           : $color-viewed-title;
+										font-size       : lib-font-size(-2);
+										font-family     : 'OpenSansBold';
+										text-decoration : none;
+									}
+								}
+
+								#{$viewed-price}#{$detail} {
+									position    : relative;
+									padding-top : 5px;
+
+									text-align  : right;
+									color       : $color-viewed-price;
+
+									@include lib-text-hyphens($type : lastClip);
+									@include lib-text-blackout;
+
+									#{$detail}_value {
+										font-weight : $lib-font-weight-bold;
+									}
 								}
 							}
-						}
-					}
-					#{$new-price}#{$detail} {
-						position     : relative;
-						bottom       : 0;
-						margin-top   : 0;
-						padding-top  : 5px;
-						padding-left : 72px;
 
-						text-align   : right;
-						@include lib-respond-to(narrow) {
-							padding-top  : 0;
-							padding-left : 55px;
 						}
 					}
+
 				}
 			}
 		}

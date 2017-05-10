@@ -1,0 +1,18 @@
+//Цвета
+$bg-link : lib-color(primary-lighter);
+$color-label : lib-color(primary-dark);
+$color-el : lib-color(primary-dark);
+$color-el-visited : lib-color(primary-dark);
+$color-el-border : lib-color(primary-light);
+$color-el-border-hover : lib-color(accent-base-bright);
+$color-current : lib-color(accent-base-bright);
+$color-current-border : lib-color(accent-base-bright);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('pagination');
+$pagination-el : lib-get-class('pagination-el');
+$link : lib-get-class('link');
+$list : lib-get-class('list');
+$_current : lib-get-modifier('current');
+//-------------------------------

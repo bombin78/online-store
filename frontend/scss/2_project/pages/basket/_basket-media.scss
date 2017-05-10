@@ -1,0 +1,164 @@
+//Импорт файлов
+@import 'basket-variables';
+//-------------------------------
+
+#{$wrapper} {
+
+	@include lib-respond-to(normal) {
+		width : $lib-width-container-narrow;
+	}
+	@include lib-respond-to(narrow) {
+		width : $lib-width-container-mobile;
+	}
+
+	@at-root {
+		#{$basket-header} {
+			&_info {
+				@include lib-respond-to(narrow) {
+					margin-top : 15px;
+				}
+			}
+		}
+	}
+
+	#{$basket-tab} {
+
+		@at-root {
+			#{$order-card},
+			#{$special-offers},
+			#{$order-make} {
+				@include lib-respond-to(narrow) {
+					padding-left : 12px;
+				}
+				&:first-child {
+					@include lib-respond-to(narrow) {
+						padding-left  : 0;
+						padding-right : 12px;
+					}
+				}
+			}
+
+			#{$order-card} {
+				&_form {
+
+					@at-root {
+						#{$order-card-list}#{$list} {
+							#{$list}_item {
+
+								@at-root {
+									#{$order} {
+										@include lib-respond-to(narrow) {
+											padding-right : 160px;
+											padding-left  : 85px;
+										}
+										&_spinner#{$field-spinner},
+										&_quantity#{$block} {
+											@include lib-respond-to(narrow) {
+												right : 95px;
+											}
+										}
+										&_price#{$block} {
+											@include lib-respond-to(narrow) {
+												padding-right : 22px;
+												padding-left  : 8px;
+												width         : 95px;
+											}
+											#{$block}_element {
+												@include lib-respond-to(narrow) {
+													width : 65px;
+												}
+											}
+										}
+									}
+								}
+
+							}
+						}
+					}
+
+				}
+			}
+
+			#{$special-offers} {
+				&_list#{$list} {
+					#{$list}_item {
+						&:first-child {
+							@include lib-respond-to(narrow) {
+								margin-top : 25px;
+							}
+						}
+
+						@at-root {
+							#{$special-offer}#{$offer} {
+								@include lib-respond-to(narrow) {
+									padding-right : 115px;
+								}
+								#{$offer-description} {
+									#{$offer-button}#{$block} {
+										@include lib-respond-to(narrow) {
+											right : -105px;
+										}
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+
+			#{$order-login},
+			#{$order-reg} {
+				@include lib-respond-to(normal) {
+					padding-left : 10px;
+				}
+				&:first-child {
+					@include lib-respond-to(normal) {
+						padding-left  : 0;
+						padding-right : 10px;
+					}
+				}
+				#{$order-spoiler} {
+					&_content {
+						#{$order-spoiler}_links#{$social-links}#{$list} {
+							#{$list}_item {
+								&:first-child {
+									#{$social-link}#{$link-btn} {
+										@include lib-respond-to(normal) {
+											margin-right : 15px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			#{$order-login} {
+				#{$order-spoiler} {
+					&_content {
+						#{$order-spoiler}_links#{$social-links} {
+							@include lib-respond-to(narrow) {
+								@include mix-common-order-social-links-narrow();
+							}
+						}
+					}
+				}
+			}
+
+			#{$order-reg} {
+				#{$order-spoiler} {
+					&_content {
+						#{$order-spoiler}_links#{$social-links} {
+							@include lib-respond-to(narrow) {
+								@include mix-common-order-social-links-narrow();
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}

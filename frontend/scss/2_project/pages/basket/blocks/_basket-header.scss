@@ -1,0 +1,22 @@
+//Цвета
+$color-border-header : lib-color(primary-base-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('basket-header');
+//-------------------------------
+
+#{$wrapper} {
+	display        : inline-block;
+	padding-bottom : 10px;
+	width          : 100%;
+
+	border-bottom  : 2px solid $color-border-header;
+	&_title {
+		float : left;
+	}
+	&_info {
+		float      : right;
+		margin-top : 16px;
+	}
+}

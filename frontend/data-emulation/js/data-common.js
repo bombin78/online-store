@@ -313,92 +313,47 @@ dataEmulation['sidebarBlog'] = {
 	]
 };
 
-//6. Sidebar viewed offers
-dataEmulation['sidebarViewedOffers'] = [
+//6. Sidebar viewed
+dataEmulation['sidebarViewed'] = [
 	{
-		href: 'card.html',
-		src: 'img/offers/offer_2.jpg',
-		accent: false,
-		title: 'Кусачки Mertz 3420-14',
-		annotation: false,
-		text: false,
-		rating: false,
-		priceLabel: '',
-		priceValue: '2450',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '#',
-		buttonHref: '#',
-		buttonTitle: false
-	},
-	{
-		href: 'card.html',
-		src: 'img/offers/offer_3.jpg',
-		accent: false,
-		title: 'Кусачки Сталекс КМ01',
-		annotation: false,
-		text: false,
-		rating: false,
-		priceLabel: '',
-		priceValue: '1450',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '#',
-		buttonHref: '#',
-		buttonTitle: false
-	},
-	{
-		href: 'card.html',
+		hrefImg: 'card.html',
 		src: 'img/offers/offer_1.jpg',
-		accent: false,
+		hrefTitle: '#',
 		title: 'Маникюрные кусачки Сталекс КМ02',
-		annotation: false,
-		text: false,
-		rating: false,
 		priceLabel: '',
-		priceValue: '100',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '#',
-		buttonHref: '#',
-		buttonTitle: false
+		priceValue: 999
 	},
 	{
-		href: 'card.html',
+		hrefImg: 'card.html',
+		src: 'img/offers/offer_3.jpg',
+		hrefTitle: '#',
+		title: 'Кусачки Сталекс КМ01111111111111111111111111111111111111',
+		priceLabel: '',
+		priceValue: 2450
+	},
+	{
+		hrefImg: 'card.html',
 		src: 'img/offers/offer_4.jpg',
-		accent: false,
+		hrefTitle: '#',
 		title: 'Маникюрные кусачки Mertz 660 C',
-		annotation: false,
-		text: false,
-		rating: false,
 		priceLabel: '',
-		priceValue: '12000',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '#',
-		buttonHref: '#',
-		buttonTitle: false
+		priceValue: 30000
 	},
 	{
-		href: 'card.html',
+		hrefImg: 'card.html',
 		src: 'img/offers/offer_5.jpg',
-		accent: false,
+		hrefTitle: '#',
 		title: 'Маникюрные кусачки Mertz 664 RF',
-		annotation: false,
-		text: false,
-		rating: false,
 		priceLabel: '',
-		priceValue: '1250',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '#',
-		buttonHref: '#',
-		buttonTitle: false
+		priceValue: 100
+	},
+	{
+		hrefImg: 'card.html',
+		src: 'img/offers/offer_2.jpg',
+		hrefTitle: '#',
+		title: 'Маникюрные кусачки Mertz 33 C',
+		priceLabel: '',
+		priceValue: 333
 	}
 ];
 //---------------------------------------------------

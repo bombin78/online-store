@@ -1,23 +1,9 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Цвета
-$color-sitemap-link : lib-color('primary-dark');
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('sitemap');
-$sitemap-level1 : lib-get-class('sitemap-level1');
-$sitemap-level2 : lib-get-class('sitemap-level2');
-$sitemap-level3 : lib-get-class('sitemap-level3');
-$sitemap-link : lib-get-class('sitemap-link');
-$link : lib-get-class('link');
-$list : lib-get-class('list');
+@import 'sitemap-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
 
 	#{$sitemap-level1}#{$list} {
@@ -43,6 +29,7 @@ $list : lib-get-class('list');
 					font-size : lib-font-size(-4);
 
 					@include lib-font-icon();
+
 				}
 				&_text {
 					text-decoration : underline;
@@ -60,6 +47,7 @@ $list : lib-get-class('list');
 			@at-root {
 				#{$sitemap-level2}#{$list} {
 					#{$list}_item {
+
 						@at-root {
 							#{$sitemap-level3}#{$list} {
 								#{$list}_item {

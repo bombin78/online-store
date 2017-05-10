@@ -1,43 +1,27 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Цвета
-$color-border-article : lib-color(primary-base);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('faq');
-$section : lib-get-class('faq-section');
-$article : lib-get-class('faq-article');
-$list : lib-get-class('list');
-$block : lib-get-class('block');
-$_border : lib-get-modifier('border');
-$_open : lib-get-modifier('open');
+@import 'faq-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
+
 	&_list#{$list} {
 		#{$list}_item {
 
 			@at-root {
-				#{$section} {
-					&_title {
-
-					}
+				#{$faq-section} {
 					&_list#{$list} {
 						#{$list}_item {
 
 							@at-root {
-								#{$article} {
+								#{$faq-article} {
 									margin  : 8px 0 8px -8px;
 									padding : 8px 8px 0 8px;
 
 									border  : 1px solid transparent;
 									&_header {
-										#{$article}_title#{$block} {
+										#{$faq-article}_title#{$block} {
 											padding-top : 0;
 
 											font-family: 'OpenSansRegular';
@@ -47,10 +31,10 @@ $_open : lib-get-modifier('open');
 										display : none;
 									}
 									&#{$_border} {
-										border-color : $color-border-article;
+										border-color : $color-article-border;
 									}
 									&#{$_open} {
-										#{$article}_description {
+										#{$faq-article}_description {
 											display        : block;
 											padding-bottom : 8px;
 										}

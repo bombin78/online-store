@@ -8,9 +8,24 @@
 	<h2 class="su-sidebar-viewed_title">Вы уже смотрели:</h2>
 	<ul class="su-sidebar-viewed_list su-list">
 
-		{% for row in sidebarViewedOffers %}
+		{% for row in sidebarViewed %}
 			<li class="su-list_item">
-				{% include pathSidebarViewed~'modules/offer.twig' with {overrideClassOffer: 'su-viewed-offer'} %}
+				<div class="su-viewed">
+					<div class="su-viewed_preview su-preview">
+						<a class="su-preview_link su-link-img" href="{{ row.hrefImg }}">
+							<img class="su-link-img_img" src="{{ row.src }}" alt="">
+						</a>
+					</div>
+					<div class="su-viewed-description">
+						<div class="su-viewed-title su-block">
+							<a class="su-block_element su-link" href="{{ row.hrefTitle }}">{{ row.title }}</a>
+						</div>
+						<dl class="su-viewed-price su-detail">
+							<dt class="su-detail_label">{{ row.priceLabel }}</dt>
+							<dd class="su-detail_value su-currency">{{ row.priceValue }}</dd>
+						</dl>
+					</div>
+				</div>
 			</li>
 		{% endfor %}
 

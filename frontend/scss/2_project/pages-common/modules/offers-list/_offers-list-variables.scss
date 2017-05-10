@@ -1,0 +1,20 @@
+//Цвета
+$color-new-price-border : lib-color(primary-base-light);
+$color-img-border : lib-color(primary-base-light);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('offers-list');
+$offer : lib-get-class('offer');
+$offer-description : lib-get-class('offer-description');
+$offer-title : lib-get-class('offer-title');
+$offer-text : lib-get-class('offer-text');
+$offer-new-price : lib-get-class('offer-new-price');
+$offer-button : lib-get-class('offer-button');
+$link-img : lib-get-class('link-img');
+$list : lib-get-class('list');
+$block : lib-get-class('block');
+$preview : lib-get-class('preview');
+$rating : lib-get-class('rating');
+$detail : lib-get-class('detail');
+//-------------------------------

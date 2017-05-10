@@ -1,0 +1,54 @@
+//Импорт файлов
+@import 'pagination-variables';
+//-------------------------------
+
+#{$wrapper} {
+	width      : 100%;
+
+	text-align : right;
+	&_label {
+		color       : $color-label;
+		font-family : OpenSansBold;
+		font-size   : lib-font-size(-3);
+	}
+	&_list#{$list} {
+		display        : inline-block;
+		margin-left    : 8px;
+
+		vertical-align : -9px;
+		#{$list}_item {
+			float : left;
+
+			@at-root {
+				#{$pagination-el} {
+					float            : left;
+					display          : block;
+					box-sizing       : content-box;
+					margin-right     : 2px;
+					padding          : 3px 6px;
+					height           : 100%;
+
+					color            : $color-el;
+					font-size        : lib-font-size(-2);
+					border           : solid 1px $color-el-border;
+					background-color : $bg-link;
+					text-decoration  : none;
+					&:visited {
+						color           : $color-el-visited;
+						text-decoration : none;
+					}
+					&:hover {
+						border-color : $color-el-border-hover;
+					}
+				}
+
+				#{$_current} {
+					color        : $color-current;
+					font-weight  : $lib-font-weight-bold;
+					border-color : $color-current-border;
+				}
+			}
+
+		}
+	}
+}

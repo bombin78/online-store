@@ -1,0 +1,13 @@
+//Цвета
+$color-article-border : lib-color(primary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('faq');
+$faq-section : lib-get-class('faq-section');
+$faq-article : lib-get-class('faq-article');
+$list : lib-get-class('list');
+$block : lib-get-class('block');
+$_border : lib-get-modifier('border');
+$_open : lib-get-modifier('open');
+//-------------------------------

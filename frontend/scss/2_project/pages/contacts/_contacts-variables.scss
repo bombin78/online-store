@@ -1,0 +1,14 @@
+//Цвета
+$color-contacts-map-border : lib-color(primary-base-light);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('contacts');
+$contacts-map : lib-get-class('contacts-map');
+$contacts-feedback : lib-get-class('contacts-feedback');
+$list : lib-get-class('list');
+$field-text : lib-get-class('field-text');
+$field-textarea : lib-get-class('field-textarea');
+$block : lib-get-class('block');
+//$captcha : lib-get-class('captcha');
+//-------------------------------

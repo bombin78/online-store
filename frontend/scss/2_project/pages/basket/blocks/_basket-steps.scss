@@ -1,0 +1,101 @@
+//Цвета
+$bg-step-button : lib-color(primary-light);
+$bg-step-button-active : lib-color(accent-base);
+$bg-step-button-number : lib-color(primary-lighter);
+$color-step-button : lib-color(primary-base-dark);
+$color-step-button-active : lib-color(primary-lighter);
+$color-step-button-number : lib-color(primary-light);
+$color-step-button-number-active : lib-color(accent-base);
+$color-step-link-visited : lib-color(primary-lighter);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('basket-steps');
+$basket-step : lib-get-class('basket-step');
+$list : lib-get-class('list');
+$_first : lib-get-modifier('first');
+$_second : lib-get-modifier('second');
+$_active : lib-get-modifier('active');
+//-------------------------------
+
+#{$wrapper} {
+	margin : 30px 0;
+	&_list#{$list} {
+		display : inline-block;
+		#{$list}_item {
+			float : left;
+
+			@at-root {
+				#{$basket-step} {
+					position         : relative;
+					&#{$_first},
+					&#{$_second} {
+						&:before {
+							display          : block;
+							position         : absolute;
+							top              : 50%;
+							bottom           : 50%;
+							left             : 20px;
+							margin           : auto 0;
+							width            : 20px;
+							height           : 20px;
+
+							border-radius    : 10px;
+							color            : $color-step-button-number;
+							background-color : $bg-step-button-number;
+						}
+					}
+					&#{$_first} {
+						margin-left : 0;
+						&:before {
+							content : '1';
+						}
+					}
+					&#{$_second} {
+						margin-left : 15px;
+						&:before {
+							content : '2';
+						}
+					}
+					border-radius    : 3px;
+					background-color : $bg-step-button;
+					text-align       : center;
+					&#{$_active} {
+						&:after {
+							@include css-triangle(
+								$direction : 'down',
+								$size : 8px,
+								$offset : 100%,
+								$center : true
+							);
+						}
+					}
+					&:hover,
+					&#{$_active} {
+						background-color : $bg-step-button-active;
+						#{$basket-step}_link {
+							color : $color-step-button-active;
+						}
+						&#{$_first},
+						&#{$_second} {
+							&:before {
+								color : $color-step-button-number-active;
+							}
+						}
+					}
+					&_link {
+						display     : block;
+						padding     : 0 20px 0 50px;
+
+						color       : $color-step-button;
+						line-height : 32px;
+						&:visited {
+							color : $color-step-link-visited;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,49 @@
+//Импорт файлов
+@import 'group-buttons-variables';
+//-------------------------------
+
+#{$wrapper} {
+	width      : 100%;
+	display    : inline-block;
+
+	text-align : right;
+	font-size  : lib-font-size(-3);
+	color      : $color-group;
+
+	&_list#{$list} {
+		float      : right;
+		margin-top : -7px;
+
+		list-style : none;
+		#{$list}_item {
+			float            : left;
+			margin-left      : 1px;
+
+			border-top       : 2px solid $color-group-border-top;
+			background-color : $bg-group-item;
+			&#{$_desc} {
+				border-top       : 2px solid transparent;
+				background-color : $bg-group-item-desc;
+				#{$group-link} {
+					color : $color-group-link-desc;
+				}
+			}
+			&:first-child {
+				margin-left   : 5px;
+
+				border-radius : 4px 0 0 4px;
+			}
+			&:last-child {
+				border-radius : 0 4px 4px 0;
+			}
+			#{$group-link} {
+				display         : block;
+				padding         : 1px 15px 2px 15px;
+
+				text-decoration : none;
+				font-size       : lib-font-size(-3);
+				color           : $color-group-link;
+			}
+		}
+	}
+}

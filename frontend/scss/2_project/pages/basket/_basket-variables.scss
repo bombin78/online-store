@@ -1,0 +1,58 @@
+//Цвета
+$bg-order-spoiler : lib-color(primary-light);
+$bg-order-make : lib-color(primary-light);
+$color-order-card-change : lib-color(secondary-base);
+$color-order-delivery-border : lib-color(primary-base-dark);
+$color-order-promo-border : lib-color(primary-base-dark);
+$color-img-border : lib-color(primary-base-light);
+$color-cost-total : lib-color(accent-base-bright);
+$color-one-click-link : lib-color(secondary-base);
+$color-spoiler-title : lib-color(secondary-dark);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('basket');
+$basket-header : lib-get-class('basket-header');
+$basket-tab : lib-get-class('basket-tab');
+$order-card : lib-get-class('order-card');
+$order-card-list : lib-get-class('order-card-list');
+$order-card-cost : lib-get-class('order-card-cost');
+$order-card-button : lib-get-class('order-card-button');
+$order-card-hint : lib-get-class('order-card-hint');
+$order-card-one-click : lib-get-class('order-card-one-click');
+$order-card-change : lib-get-class('order-card-change');
+$order : lib-get-class('order');
+$order-login : lib-get-class('order-login');
+$order-reg : lib-get-class('order-reg');
+$order-spoiler : lib-get-class('order-spoiler');
+$order-make : lib-get-class('order-make');
+$order-make-button : lib-get-class('order-make-button');
+$order-personal : lib-get-class('order-personal');
+$order-delivery : lib-get-class('order-delivery');
+$order-promo : lib-get-class('order-promo');
+$cost-order : lib-get-class('cost-order');
+$cost-delivery : lib-get-class('cost-delivery');
+$cost-total : lib-get-class('cost-total');
+$special-offers : lib-get-class('special-offers');
+$special-offer : lib-get-class('special-offer');
+$offer : lib-get-class('offer');
+$offer-description : lib-get-class('offer-description');
+$offer-title : lib-get-class('offer-title');
+$offer-new-price : lib-get-class('offer-new-price');
+$offer-button : lib-get-class('offer-button');
+$social-links : lib-get-class('social-links');
+$social-link : lib-get-class('social-link');
+$login-form : lib-get-class('login-form');
+$reg-form : lib-get-class('reg-form');
+$field-text : lib-get-class('field-text');
+$field-textarea : lib-get-class('field-textarea');
+$field-select : lib-get-class('field-select');
+$field-spinner : lib-get-class('field-spinner');
+$preview : lib-get-class('preview');
+$detail : lib-get-class('detail');
+$link-img : lib-get-class('link-img');
+$link-btn : lib-get-class('link-btn');
+$link : lib-get-class('link');
+$block : lib-get-class('block');
+$list : lib-get-class('list');
+//-------------------------------

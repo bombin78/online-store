@@ -1,0 +1,11 @@
+//Импорт файлов
+@import 'faq-variables';
+//-------------------------------
+
+#{$wrapper} {
+
+	@include lib-respond-to(narrow) {
+		@include mix-content-common-narrow-param();
+	}
+
+}

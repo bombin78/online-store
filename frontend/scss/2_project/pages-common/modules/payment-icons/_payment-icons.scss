@@ -1,0 +1,79 @@
+//Импорт файлов
+@import 'payment-icons-variables';
+//-------------------------------
+
+#{$wrapper} {
+	padding          : 20px;
+	max-width        : 820px;
+
+	border-radius    : 4px;
+	background-color : $bg-icons;
+	&_title {
+		margin-bottom : 20px;
+		padding-top   : 0;
+
+		color         : $color-title;
+		font-weight   : bold;
+		font-size     : lib-font-size(1);
+	}
+	&_list#{$list} {
+		display : inline-block;
+		width   : 100%;
+		#{$list}_item {
+			margin-top : 10px;
+
+			@include lib-box12($cell : 2);
+			#{$icon} {
+				padding    : 60px 10px 10px 10px;
+
+				text-align : center;
+				&#{$_cash},
+				&#{$_bank-card},
+				&#{$_yandex-money},
+				&#{$_euroset},
+				&#{$_rbk},
+				&#{$_bank-transfer} {
+					&:before {
+						content  : '';
+						display  : block;
+						position : relative;
+						margin   : -60px 20px 0 20px;
+						height   : 60px;
+
+						overflow : hidden;
+					}
+				}
+				&#{$_cash} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') 0 0 no-repeat;
+					}
+				}
+				&#{$_bank-card} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -70px 0 no-repeat;
+					}
+				}
+				&#{$_yandex-money} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -140px 0 no-repeat;
+					}
+				}
+				&#{$_euroset} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -210px 0 no-repeat;
+					}
+				}
+				&#{$_rbk} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -280px 0 no-repeat;
+					}
+				}
+				&#{$_bank-transfer} {
+					&:before {
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -350px 0 no-repeat;
+					}
+				}
+			}
+		}
+	}
+}

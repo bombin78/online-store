@@ -46,7 +46,7 @@
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],
 		'sidebarBlog'        	=> $dataEmulation['sidebarBlog'],
-		'sidebarViewedOffers'	=> $dataEmulation['sidebarViewedOffers'],
+		'sidebarViewed'			=> $dataEmulation['sidebarViewed'],
 		'footerSocialNetwork'	=> $dataEmulation['footerSocialNetwork'],
 		'footerInfo'        	=> $dataEmulation['footerInfo'],
 		'footerCatalog'        	=> $dataEmulation['footerCatalog'],

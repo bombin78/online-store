@@ -1,7 +1,7 @@
 {% if typeTwig == 'php' %}
-	{% set pathModalLogin = 'templates/' %}
+	{% set pathModalLogin = 'templates/layout/' %}
 {% else %}
-	{% set pathModalLogin = '../../' %}
+	{% set pathModalLogin = '../' %}
 {% endif %}
 
 <div class="su-modal-login modal fade">
@@ -12,8 +12,8 @@
 		</div>
 		<div class="modal-body">
 			<div class="su-login">
-				{% include pathModalLogin~'modules/social-links.twig' with { overrideClassSocialLinks: 'su-login_links' } %}
-				{% include pathModalLogin~'modules/login-form.twig' with { overrideClassLoginForm: 'su-login_form', textButton: 'Войти' } %}
+				{% include pathModalLogin~'blocks/social-links.twig' with { overrideClassSocialLinks: 'su-login_links' } %}
+				{% include pathModalLogin~'blocks/login-form.twig' with { overrideClassLoginForm: 'su-login_form', textButton: 'Войти' } %}
 			</div>
 		</div>
 		{#<div class="modal-footer"></div>#}

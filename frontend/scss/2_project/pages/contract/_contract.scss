@@ -1,12 +1,9 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('contract');
+@import 'contract-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
+
 }

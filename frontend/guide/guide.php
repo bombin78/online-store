@@ -40,7 +40,7 @@
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],
 		'sidebarBlog'        	=> $dataEmulation['sidebarBlog'],
-		'sidebarViewedOffers'   => $dataEmulation['viewedOffers'],
+		'sidebarViewed'   => $dataEmulation['viewedOffers'],
 		'footerSocialNetwork'	=> $dataEmulation['footerSocialNetwork'],
 		'footerInfo'        	=> $dataEmulation['footerInfo'],
 		'footerCatalog'        	=> $dataEmulation['footerCatalog'],

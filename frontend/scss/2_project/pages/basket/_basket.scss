@@ -1,174 +1,6 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
+@import 'basket-variables';
 //-------------------------------
-
-//Цвета
-$color-border-img : lib-color(primary-base-light);
-$color-border-header : lib-color(primary-base-dark);
-$bg-step-button : lib-color(primary-light);
-$bg-step-button-active : lib-color(accent-base);
-$bg-step-button-number : lib-color(primary-lighter);
-$bg-order-spoiler : lib-color(primary-light);
-$bg-order-make : lib-color(primary-light);
-$color-step-button : lib-color(primary-base-dark);
-$color-step-button-active : lib-color(primary-lighter);
-$color-step-button-number : lib-color(primary-light);
-$color-step-button-number-active : lib-color(accent-base);
-$color-step-link-visited : lib-color(primary-lighter);
-$color-cost-total : lib-color(accent-base-bright);
-$color-one-click-link : lib-color(secondary-base);
-$color-order-card-change : lib-color(secondary-base);
-$color-spoiler-title : lib-color(secondary-dark);
-$color-border-order-delivery : lib-color(primary-base-dark);
-$color-border-order-promo : lib-color(primary-base-dark);
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('basket');
-$header : lib-get-class('basket-header');
-$steps : lib-get-class('basket-steps');
-$step : lib-get-class('basket-step');
-$tab : lib-get-class('basket-tab');
-$order-card : lib-get-class('order-card');
-$order-card-list : lib-get-class('order-card-list');
-$order : lib-get-class('order');
-$order-card-cost : lib-get-class('order-card-cost');
-$order-card-button : lib-get-class('order-card-button');
-$order-card-hint : lib-get-class('order-card-hint');
-$order-card-one-click : lib-get-class('order-card-one-click');
-$order-card-change : lib-get-class('order-card-change');
-$order-login : lib-get-class('order-login');
-$order-reg : lib-get-class('order-reg');
-$order-spoiler : lib-get-class('order-spoiler');
-$order-make : lib-get-class('order-make');
-$order-make-button : lib-get-class('order-make-button');
-$order-personal : lib-get-class('order-personal');
-$order-delivery : lib-get-class('order-delivery');
-$order-promo : lib-get-class('order-promo');
-$cost-order : lib-get-class('cost-order');
-$cost-delivery : lib-get-class('cost-delivery');
-$cost-total : lib-get-class('cost-total');
-$special-offers : lib-get-class('special-offers');
-$special-offer : lib-get-class('special-offer');
-$offer : lib-get-class('offer');
-$offer-description : lib-get-class('offer-description');
-$offer-title : lib-get-class('offer-title');
-$offer-new-price : lib-get-class('offer-new-price');
-$offer-button : lib-get-class('offer-button');
-$social-links : lib-get-class('social-links');
-$social-link : lib-get-class('social-link');
-$login-form : lib-get-class('login-form');
-$reg-form : lib-get-class('reg-form');
-$field-text : lib-get-class('field-text');
-$field-textarea : lib-get-class('field-textarea');
-$field-select : lib-get-class('field-select');
-$field-spinner : lib-get-class('field-spinner');
-$preview : lib-get-class('preview');
-$detail : lib-get-class('detail');
-$link-img : lib-get-class('link-img');
-$link-btn : lib-get-class('link-btn');
-$link : lib-get-class('link');
-$block : lib-get-class('block');
-$list : lib-get-class('list');
-$_first : lib-get-modifier('first');
-$_second : lib-get-modifier('second');
-$_active : lib-get-modifier('active');
-//-------------------------------
-
-// ВРЕМЕННЫЕ МЕКСИНЫ ДЛЯ ПОЛЕЙ БЛОКА ORDER-MAKE
-// 1. Текстовое поле
-@mixin order-make-field-text(
-	$margin-top: 20px,
-	$float-label: left,
-	$float-input: right,
-	$width-label: 45%,
-	$width-input: 50%,
-	$padding-left: $width-input
-) {
-	display        : inline-block;
-	margin-top     : $margin-top;
-	width          : 100%;
-
-	vertical-align : bottom;
-	#{$field-text} {
-		&_label {
-			float : $float-label;
-			width : $width-label;
-		}
-		&_input {
-			float : $float-input;
-			width : $width-input;
-		}
-		&_help {
-			float : left;
-			padding-left: $padding-left;
-		}
-	}
-}
-
-// 2. Выпадающий список
-@mixin order-make-field-select(
-	$margin-top: 20px,
-	$float-label: left,
-	$float-select: right,
-	$width-label: 45%,
-	$width-select: 50%,
-	$padding-left: $width-select
-) {
-	display        : inline-block;
-	margin-top     : $margin-top;
-	width          : 100%;
-
-	vertical-align : bottom;
-	#{$field-select} {
-		&_label {
-			float : $float-label;
-			width : $width-label;
-		}
-		&_select {
-			float : $float-select;
-			width : $width-select;
-		}
-		&_help {
-			float : left;
-			padding-left: $padding-left;
-		}
-	}
-}
-
-// 3. Текстовая область
-@mixin order-make-field-textarea(
-	$margin-top: 20px,
-	$float-label: left,
-	$float-textarea: right,
-	$width-label: 45%,
-	$width-textarea: 50%,
-	$resize: vertical,
-	$padding-left: $width-textarea
-) {
-	display        : inline-block;
-	margin-top     : $margin-top;
-	width          : 100%;
-
-	vertical-align : bottom;
-	#{$field-textarea} {
-		&_label {
-			float : $float-label;
-			width : $width-label;
-		}
-		&_textarea {
-			float  : $float-textarea;
-			width  : $width-textarea;
-
-			resize : $resize;
-		}
-		&_help {
-			float : left;
-			padding-left: $padding-left;
-		}
-	}
-}
 
 #{$wrapper} {
 	position   : relative;
@@ -176,118 +8,7 @@ $_active : lib-get-modifier('active');
 	padding    : 30px 10px;
 	min-height : 540px;
 	width      : $lib-width-container-normal;
-
-	@include lib-respond-to(normal) {
-		width : $lib-width-container-narrow;
-	}
-	@include lib-respond-to(narrow) {
-		width : $lib-width-container-mobile;
-	}
-
-	@at-root {
-		#{$header} {
-			display        : inline-block;
-			padding-bottom : 10px;
-			width          : 100%;
-
-			border-bottom  : 2px solid $color-border-header;
-			&_title {
-				float : left;
-			}
-			&_info {
-				float      : right;
-				margin-top : 16px;
-
-				@include lib-respond-to(narrow) {
-					margin-top : 15px;
-				}
-			}
-		}
-	}
-
-	#{$steps} {
-		margin : 30px 0;
-		&_list#{$list} {
-			display : inline-block;
-			#{$list}_item {
-				float : left;
-
-				@at-root {
-					#{$step} {
-						position         : relative;
-						&#{$_first},
-						&#{$_second} {
-							&:before {
-								display          : block;
-								position         : absolute;
-								top              : 50%;
-								bottom           : 50%;
-								left             : 20px;
-								margin           : auto 0;
-								width            : 20px;
-								height           : 20px;
-
-								border-radius    : 10px;
-								color            : $color-step-button-number;
-								background-color : $bg-step-button-number;
-							}
-						}
-						&#{$_first} {
-							margin-left : 0;
-							&:before {
-								content : '1';
-							}
-						}
-						&#{$_second} {
-							margin-left : 15px;
-							&:before {
-								content : '2';
-							}
-						}
-						border-radius    : 3px;
-						background-color : $bg-step-button;
-						text-align       : center;
-						&#{$_active} {
-							&:after {
-								@include css-triangle(
-										$direction : 'down',
-										$size : 8px,
-										$offset : 100%,
-										$center : true
-								);
-							}
-						}
-						&:hover,
-						&#{$_active} {
-							background-color : $bg-step-button-active;
-							#{$step}_link {
-								color : $color-step-button-active;
-							}
-							&#{$_first},
-							&#{$_second} {
-								&:before {
-									color : $color-step-button-number-active;
-								}
-							}
-						}
-						&_link {
-							display     : block;
-							padding     : 0 20px 0 50px;
-
-							color       : $color-step-button;
-							line-height : 32px;
-							&:visited {
-								color : $color-step-link-visited;
-							}
-						}
-					}
-				}
-
-			}
-		}
-	}
-
-	#{$tab} {
+	#{$basket-tab} {
 		display  : inline-block;
 		position : relative;
 		width    : 100%;
@@ -307,17 +28,9 @@ $_active : lib-get-modifier('active');
 			#{$special-offers},
 			#{$order-make} {
 				padding-left : 20px;
-
-				@include lib-respond-to(narrow) {
-					padding-left : 12px;
-				}
 				&:first-child {
 					padding-left  : 0;
 					padding-right : 20px;
-					@include lib-respond-to(narrow) {
-						padding-left  : 0;
-						padding-right : 12px;
-					}
 				}
 			}
 
@@ -337,28 +50,6 @@ $_active : lib-get-modifier('active');
 								&:first-child {
 									margin-top : 0;
 								}
-
-								@at-root {
-									#{$order} {
-										@include lib-respond-to(narrow) {
-											padding-right : 160px;
-											padding-left  : 85px;
-											&_spinner#{$field-spinner},
-											&_quantity#{$block} {
-												right : 95px;
-											}
-											&_price#{$block} {
-												padding-right : 22px;
-												padding-left  : 8px;
-												width         : 95px;
-												#{$block}_element {
-													width : 65px;
-												}
-											}
-										}
-									}
-								}
-
 							}
 						}
 
@@ -429,26 +120,19 @@ $_active : lib-get-modifier('active');
 						margin-top : 16px;
 						&:first-child {
 							margin-top : 20px;
-							@include lib-respond-to(narrow) {
-								margin-top : 25px;
-							}
 						}
 
 						@at-root {
 							#{$special-offer}#{$offer} {
 								padding : 5px 135px 25px 85px;
 								height  : 51px;
-
-								@include lib-respond-to(narrow) {
-									padding-right : 115px;
-								}
 								#{$offer}_preview#{$preview} {
 									left : 5px;
 									#{$preview}_link#{$link-img} {
 										@include lib-link-img-param(
 												$height : 40px,
 												$ratio : (16/9),
-												$border : $color-border-img
+												$border : $color-img-border
 										);
 									}
 								}
@@ -471,10 +155,6 @@ $_active : lib-get-modifier('active');
 									#{$offer-button}#{$block} {
 										right  : -125px;
 										bottom : -16px;
-
-										@include lib-respond-to(narrow) {
-											right : -105px;
-										}
 									}
 								}
 							}
@@ -502,7 +182,7 @@ $_active : lib-get-modifier('active');
 					#{$order-delivery} {
 						margin-top : 20px;
 
-						border-top : 2px solid $color-border-order-delivery;
+						border-top : 2px solid $color-order-delivery-border;
 						&_title {
 							padding-top : 20px;
 						}
@@ -520,7 +200,7 @@ $_active : lib-get-modifier('active');
 					#{$order-promo} {
 						margin-top  : 20px;
 
-						border-top  : 2px solid $color-border-order-promo;
+						border-top  : 2px solid $color-order-promo-border;
 						&_promo#{$field-text} {
 							@include order-make-field-text();
 						}
@@ -539,17 +219,9 @@ $_active : lib-get-modifier('active');
 			#{$order-login},
 			#{$order-reg} {
 				padding-left : 20px;
-
-				@include lib-respond-to(normal) {
-					padding-left : 10px;
-				}
 				&:first-child {
 					padding-left  : 0;
 					padding-right : 20px;
-					@include lib-respond-to(normal) {
-						padding-left  : 0;
-						padding-right : 10px;
-					}
 				}
 				#{$order-spoiler} {
 					padding    : 15px 15px 0 15px;
@@ -567,17 +239,6 @@ $_active : lib-get-modifier('active');
 					&_content {
 						display : none;
 						padding : 10px 0 20px 0;
-						#{$order-spoiler}_links#{$social-links}#{$list} {
-							#{$list}_item {
-								&:first-child {
-									#{$social-link}#{$link-btn} {
-										@include lib-respond-to(normal) {
-											margin-right : 15px;
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -585,9 +246,6 @@ $_active : lib-get-modifier('active');
 			#{$order-login} {
 				#{$order-spoiler} {
 					&_content {
-						#{$order-spoiler}_links#{$social-links} {
-							@include mix-common-order-social-links();
-						}
 						#{$order-spoiler}_login#{$login-form} {
 							margin-top : 20px;
 						}
@@ -598,9 +256,6 @@ $_active : lib-get-modifier('active');
 			#{$order-reg} {
 				#{$order-spoiler} {
 					&_content {
-						#{$order-spoiler}_links#{$social-links} {
-							@include mix-common-order-social-links();
-						}
 						#{$order-spoiler}_reg#{$reg-form} {
 							margin-top : 20px;
 						}

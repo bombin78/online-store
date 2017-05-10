@@ -3,10 +3,11 @@
 //-------------------------------
 
 #{$wrapper} {
+
 	@include lib-respond-to(narrow) {
-		padding-right : 20px;
-		padding-left  : 20px;
+		@include mix-content-common-narrow-param();
 	}
+
 	&_main {
 
 		#{$view} {

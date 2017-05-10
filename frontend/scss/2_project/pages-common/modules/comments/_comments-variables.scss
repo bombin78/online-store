@@ -1,0 +1,13 @@
+//Цвета
+$bg-comments-list : lib-color(primary-lighter);
+$bg-comment-hover : lib-color(accent-lighter);
+$color-border-item : lib-color(primary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('comments');
+$comment : lib-get-class('comment');
+$list : lib-get-class('list');
+$rating : lib-get-class('rating');
+$block : lib-get-class('block');
+//-------------------------------

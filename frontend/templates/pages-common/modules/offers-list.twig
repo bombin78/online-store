@@ -1,0 +1,15 @@
+{% if typeTwig == 'php' %}
+	{% set pathOffersList = 'templates/pages-common/' %}
+{% else %}
+	{% set pathOffersList = '../' %}
+{% endif %}
+
+<ul class="{{ overrideClassOffersList }} su-offers-list">
+
+	{% for row in offers %}
+		<li class="su-offers-list_item">
+			{% include pathOffersList~'blocks/offer.twig' with {overrideClassOffer: 'su-offers-list_offer'} %}
+		</li>
+	{% endfor %}
+
+</ul>

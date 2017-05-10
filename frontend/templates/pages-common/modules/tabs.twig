@@ -1,0 +1,214 @@
+{% if typeTwig == 'php' %}
+	{% set pathTabs = 'templates/pages-common/' %}
+	{% set pathTabsModules = 'templates/pages-common/modules/' %}
+{% else %}
+	{% set pathTabs = '../' %}
+	{% set pathTabsModules = '' %}
+{% endif %}
+
+
+<div class="{{ overrideClassTabs }} su-tabs-block {{ modifierTabs }}">
+	<div class="su-tabs-block_container">
+		<div id="su-tabscontrol" class="su-tabs-control">
+
+			{% if modifierTabs == "_su-personal" %}
+				<ul class="su-tabs-control_list su-list">
+					<li class="su-list_item _su-active" data-target="#tabpage_1">
+						История заказов
+					</li>
+					<li class="su-list_item" data-target="#tabpage_2">
+						Избранное
+					</li>
+					<li class="su-list_item" data-target="#tabpage_3">
+						Специальные предложения
+					</li>
+					<li class="su-list_item" data-target="#tabpage_4">
+						Мои адреса
+					</li>
+					{#<li class="su-list_item" data-target="#tabpage_5">
+						Заголовок
+					</li>#}
+				</ul>
+			{% else %}
+				<ul class="su-tabs-control_list su-list">
+					<li class="su-list_item _su-pickup _su-active" data-target="#tabpage_1">
+						Самовывоз Москва
+					</li>
+					<li class="su-list_item _su-courier-moscow" data-target="#tabpage_2">
+						Курьер по Москве
+					</li>
+					<li class="su-list_item _su-courier-spb" data-target="#tabpage_3">
+						Курьер по Питеру
+					</li>
+					<li class="su-list_item _su-courier-russia" data-target="#tabpage_4">
+						Курьер по России
+					</li>
+					<li class="su-list_item _su-post-russia" data-target="#tabpage_5">
+						почта России
+					</li>
+				</ul>
+			{% endif %}
+
+		</div>
+		<div id="su-tabscontent" class="su-tabs-content">
+
+			{% if modifierTabs == "_su-personal" %}
+				<ul class="su-tabs-content_list su-list">
+					<li class="su-list_item">
+						<article id="tabpage_1" class="su-tab-page _su-open">
+							{% include pathTabsModules~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_filter', groupButtons: groupButtonsFilter } %}
+							<ul class="su-tab-page_orders su-list">
+
+								{% for row in orders %}
+									<li class="su-list_item">
+										{% include pathTabs~'blocks/order.twig' with {overrideClassOrder: 'su-list_order', modifierOrders: '_su-personal'} %}
+									</li>
+								{% endfor %}
+
+							</ul>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_2" class="su-tab-page">
+							{% include pathTabsModules~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							<ul class="su-tab-page_favorites su-list">
+
+								{% for row in favoritesOffers %}
+									<li class="su-list_item">
+										{% include pathTabs~'blocks/offer.twig' with {overrideClassOffer: 'su-favorites-offer'} %}
+									</li>
+								{% endfor %}
+
+							</ul>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_3" class="su-tab-page">
+							{% include pathTabsModules~'group-buttons.twig' with {overrideGroupButtons: 'su-tab-page_sorting', groupButtons: groupButtonsSorting } %}
+							<ul class="su-tab-page_special su-list">
+
+								{% for row in specialOffers %}
+									<li class="su-list_item">
+										{% include pathTabs~'blocks/offer.twig' with {overrideClassOffer: 'su-special-offer'} %}
+									</li>
+								{% endfor %}
+
+							</ul>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_4" class="su-tab-page">
+							<ul class="su-tab-page_address su-list">
+
+								{% for row in addressList %}
+									<li class="su-list_item">
+										<div class="su-tab-list-address">
+											<div class="su-tab-list-address_number">{{ loop.index }}.</div>
+											 {{ row.address }}
+											<div class="su-tab-list-address_close"></div>
+										</div>
+
+									</li>
+								{% endfor %}
+
+							</ul>
+						</article>
+					</li>
+					{#<li class="su-list_item">
+						<article id="tabpage_5" class="su-tab-page">
+
+						</article>
+					</li>#}
+				</ul>
+			{% else %}
+				<ul class="su-tabs-content_list su-list">
+					<li class="su-list_item">
+						<article id="tabpage_1" class="su-tab-page _su-open">
+							<h2 class="su-tab-page_title">Заберите свой заказ в пункте самовывоза</h2>
+							<p class="su-tab-page_text">Забрав свой заказ самостоятельно, вы экономите время и не платите за доставку. Приезжайте за своим заказом – это отличный повод увидеть много чего интересного.</p>
+							<ul class="su-tab-page_benefit su-list">
+								<li class="su-list_item">Вы ничего не платите за доставку;</li>
+								<li class="su-list_item">В большинстве случаев ваш заказ готов через 2 часа;</li>
+								<li class="su-list_item">При желании вы сможете оценить наши новинки.</li>
+							</ul>
+							<dl class="su-tab-page_address su-detail">
+								<dt class="su-detail_label"><b>Наши адреса (Москва):</b></dt>
+								<dd class="su-detail_value">
+									<ul class="su-tab-page-address su-list">
+										<li class="su-list_item">
+											м. Планерная <b>30 секунд от метро</b>, ул. Планерная, 7 ТПУ Планерная (2 этаж). Ежедневно с 10:00 до 21:00
+										</li>
+										<li class="su-list_item">
+											м. Юго-Западная <b>1 минута от метро</b>, Проспект Вернадского, 86 Б ТЦ Альмирал (1 этаж). Ежедневно с 12:00 до 21:00
+										</li>
+									</ul>
+								</dd>
+							</dl>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_2" class="su-tab-page">
+							<h2 class="su-tab-page_title">Быстрый способ получить заказ в Москве</h2>
+							<p class="su-tab-page_text">
+								Ваш заказ будет доставлен курьером в течении 1–3 рабочих дней с 10:00 до 18:00.
+								<br>
+								Перед выездом курьер всегда связывается по телефону. Будьте на связи и берите трубку с незнакомых номеров, скорее всего, это он!
+							</p>
+							<dl class="su-tab-page_delivery su-detail">
+								<dt class="su-detail_label"><b>Обычная курьерская доставка:</b></dt>
+								<dd class="su-detail_value">
+									от 300 руб.<br>
+									заказ будет доставлен курьером в течении 2–3 рабочих дней с 10:00 до 18:00.
+								</dd>
+							</dl>
+							<dl class="su-tab-page_delivery su-detail">
+								<dt class="su-detail_label"><b>Срочная доставка:</b></dt>
+								<dd class="su-detail_value">
+									от 500 руб.<br>
+									доставим до 20:00 в день заказа, если оформили до 15:00 или на следующий день до 15:00, если заказ оформили после 15:00. В указанные сроки не включаются воскресенье и праздничные дни.
+								</dd>
+							</dl>
+							<p>Курьерская доставка осуществляется в пределах МКАД. Для доставки по Московской области выбирайте «Курьер по России». Система рассчитывает сумму автоматически. </p>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_3" class="su-tab-page">
+							<h2 class="su-tab-page_title">Быстрый способ получить заказ в Санкт–Петербурге</h2>
+							<p class="su-tab-page_text">
+								Ваш заказ будет доставлен курьером в течении 2–3 рабочих дней с 10:00 до 18:00.
+								<br>
+								Перед выездом курьер всегда связывается по телефону. Будьте на связи и берите трубку с незнакомых номеров, скорее всего, это он!
+							</p>
+							<dl class="su-tab-page_delivery su-detail">
+								<dt class="su-detail_label"><b>Стоимость доставки в пределах КАД:</b></dt>
+								<dd class="su-detail_value">от 300 руб.</dd>
+							</dl>
+							<dl class="su-tab-page_delivery su-detail">
+								<dt class="su-detail_label"><b>Стоимость доставки за пределами КАД:</b></dt>
+								<dd class="su-detail_value">от 350 руб.</dd>
+							</dl>
+							<p class="su-tab-page_text">Для доставки по Ленинградской области выбирайте «Курьер по России». Система рассчитывает сумму автоматически. </p>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_4" class="su-tab-page">
+							<h2 class="su-tab-page_title">Курьерская доставка по России</h2>
+							<p class="su-tab-page_text">Ваш заказ будет доставлен курьером в течении 2-4 рабочих дней с 10:00 до 18:00 в один из 217 городов России. Перед выездом курьер будет звонить, предупреждать. Будьте на связи и берите трубку с незнакомых номеров, скорее всего, это он!</p>
+							<p class="su-tab-page_text">Стоимость доставки будет рассчитана автоматически при оформлении в зависимости от выбранного населенного пункта.</p>
+						</article>
+					</li>
+					<li class="su-list_item">
+						<article id="tabpage_5" class="su-tab-page">
+							<h2 class="su-tab-page_title">Самый бюджетный способ получить заказ</h2>
+							<p class="su-tab-page_text"> Мы надежно упакуем ваш заказ и отправим по почте. Почтальон вручит вам извещение, и вы заберете посылку в ближайшем почтовом отделении в удобное для вас время. Можете оплатить на месте при получении заказа.</p>
+							<p class="su-tab-page_text">Хотите сэкономить и не платить комиссию за наложенный платеж? Тогда оплатите ваш заказ заранее любым удобным для вас способом (заказы до 1500 руб. отправляются только по предоплате).</p>
+							<p class="su-tab-page_text">Сроки доставки от 5 дней.</p>
+							<p class="su-tab-page_text">При оформлении заказа стоимость будет рассчитана автоматически в зависимости от населенного пункта и веса посылки.</p>
+						</article>
+					</li>
+				</ul>
+			{% endif %}
+
+		</div>
+	</div>
+</div>

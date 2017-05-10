@@ -11,8 +11,8 @@
 
 	<div class="su-catalog">
 		<h1 class="su-catalog_title">Каталог товаров</h1>
-		{% include pathCatalog~'modules/tile.twig' with {overrideClassTile: 'su-catalog_sections', dataTile: catalog, onlyTile: true} %}
-		{% include pathCatalog~'modules/tile.twig' with {overrideClassTile: 'su-catalog_popular', dataTile: popular, tileTitle: 'Самое популярное в этом разделе'} %}
+		{% include pathCatalog~'pages-common/modules/tile.twig' with {overrideClassTile: 'su-catalog_sections', dataTile: catalog, onlyTile: true} %}
+		{% include pathCatalog~'pages-common/modules/tile.twig' with {overrideClassTile: 'su-catalog_popular', dataTile: popular, tileTitle: 'Самое популярное в этом разделе'} %}
 	</div>
 
 {% endblock %}

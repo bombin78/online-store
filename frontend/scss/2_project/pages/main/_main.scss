@@ -1,22 +1,12 @@
 //Импорт файлов
-@import '../../../utils/_lib';
-@import '../../../utils/_mixins';
-//-------------------------------
-
-//Классы
-$wrapper : lib-get-class('main');
-$tile : lib-get-class('tile');
-$mail : lib-get-class('free-mail');
+@import 'main-variables';
 //-------------------------------
 
 #{$wrapper} {
+
 	@include mix-content-common-param();
 
 	&_offer#{$tile} {
 		margin-top : lib-line-top(1);
-
-		@include mix-respond-normal-tile-common();
-		@include mix-respond-narrow-tile-common();
 	}
 }
-

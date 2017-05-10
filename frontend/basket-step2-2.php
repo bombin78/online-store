@@ -29,7 +29,7 @@
 	require_once 'data-emulation/php/data-common.php';
 	require_once 'data-emulation/php/data-basket-step2_2.php';
 
-	$template = $twig->load('templates/pages/basket-step2-2_wrapper.twig');
+	$template = $twig->load('templates/pages/basket/basket-step2-2_wrapper.twig');
 
 	echo $template->render([
 		//Данные шаблона
@@ -46,7 +46,7 @@
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],
 		'sidebarBlog'        	=> $dataEmulation['sidebarBlog'],
-		'sidebarViewedOffers'	=> $dataEmulation['sidebarViewedOffers'],
+		'sidebarViewed'			=> $dataEmulation['sidebarViewed'],
 		'footerSocialNetwork'	=> $dataEmulation['footerSocialNetwork'],
 		'footerInfo'        	=> $dataEmulation['footerInfo'],
 		'footerCatalog'        	=> $dataEmulation['footerCatalog'],
