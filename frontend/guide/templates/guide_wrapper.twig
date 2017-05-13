@@ -1,4 +1,4 @@
-{% extends (typeTwig == 'php') ? 'templates/layout/template_wrapper.twig' : '../../templates/layout/template_wrapper.twig' %}
+{% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : '../../templates/layout/connect/wrapper.twig' %}
 
 
 {% block wrapper_sections %}
@@ -14,14 +14,14 @@
 					{% set subitem = loop.index %}
 
 					{%if typeTwig == 'php' %}
-						{% set pathContent = 'guide/'~row.url %}
+						{% set pathContent = 'guide/templates/'~row.url %}
 					{% else %}
-						{% set pathContent = '../'~row.url %}
+						{% set pathContent = row.url %}
 					{% endif %}
 
 					<li class="su-guide-list_item {{ row.modifier }}">
 						<h3 class="su-guide-subtitle">{{ item }}.{{ subitem }} {{ row.file }}</h3>
-						<div class="su-guide-code">
+						<div class="su-guide-code {{ row.modifierCode }}">
 							{% if row.withUrl %}
 								{% include pathContent with row.withUrl %}
 							{% else %}
@@ -39,7 +39,8 @@
 {% endblock %}
 
 {% block script %}
-	{{ parent() }}
+	<script src="../js/toggle-show.js"></script>
+	<script src="../js/slider.js"></script>
 	<script>
 		//------------------------------------------------------------
 		// ИНИЦИАЛИЗАЦИЯ ВЫПАДАЮЩЕГО СПИСКА КАРЗИНЫ
@@ -77,5 +78,14 @@
 			self.slideToggle();
 		});
 		//------------------------------------------------------------
+
+		// ИНИЦИАЛИЗАЦИЯ СЛАЙДЕРА КОНТЕНТА
+		//------------------------------------------------------------
+		var slider = new Slider({
+			scrollTime: 7
+		});
+
+		slider.init();
+		//------------------------------------------
 	</script>
 {% endblock %}

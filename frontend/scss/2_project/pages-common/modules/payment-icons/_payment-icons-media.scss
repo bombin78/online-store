@@ -3,20 +3,36 @@
 //-------------------------------
 
 #{$wrapper} {
+
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	@include lib-respond-to(normal) {
+		width     : 620px;
+	}
+	@include lib-respond-to(narrow) {
+		width     : 510px;
+	}
+
 	&_list#{$list} {
 		#{$list}_item {
 			@include lib-respond-to(normal) {
 				@include lib-box12($cell : 3);
 			}
 			#{$icon} {
-				&:before {
-					@include lib-respond-to(normal) {
-						margin-right : 26px;
-						margin-left  : 26px;
-					}
-					@include lib-respond-to(narrow) {
-						margin-right : 13px;
-						margin-left  : 13px;
+				&#{$_cash},
+				&#{$_bank-card},
+				&#{$_yandex-money},
+				&#{$_euroset},
+				&#{$_rbk},
+				&#{$_bank-transfer} {
+					&:before {
+						@include lib-respond-to(normal) {
+							margin-right : 26px;
+							margin-left  : 26px;
+						}
+						@include lib-respond-to(narrow) {
+							margin-right : 13px;
+							margin-left  : 13px;
+						}
 					}
 				}
 			}

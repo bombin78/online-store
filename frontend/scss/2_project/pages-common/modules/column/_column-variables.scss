@@ -4,7 +4,7 @@ $color-img-border : lib-color(primary-base-light);
 //-------------------------------
 
 //Классы
-$wrapper : lib-get-class('offers-list');
+$wrapper : lib-get-class('column');
 $offer : lib-get-class('offer');
 $offer-description : lib-get-class('offer-description');
 $offer-title : lib-get-class('offer-title');

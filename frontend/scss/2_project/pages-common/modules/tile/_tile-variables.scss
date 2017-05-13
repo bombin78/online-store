@@ -1,32 +1,11 @@
 //Цвета
-$bg-search-popup : lib-color(primary-lighter);
-$bg-search-popup-row-hover : lib-color(primary-light);
 $color-title-block-link : lib-color(accent-base-bright);
-$color-search-shadow : lib-color(primary-dark);
-$color-search-popup-shadow : lib-color(primary-base-dark);
-$color-search-popup-border : lib-color(primary-base);
 //-------------------------------
 
 //Классы
 $wrapper : lib-get-class('tile');
-$tile-search : lib-get-class('tile-search');
-$tile-search-popup : lib-get-class('tile-search-popup');
-$tile-search-name : lib-get-class('tile-search-name');
-$tile-search-quantity : lib-get-class('tile-search-quantity');
 $tile-block : lib-get-class('tile-block');
-$offer : lib-get-class('offer');
-$offer-description : lib-get-class('offer-description');
-$offer-title : lib-get-class('offer-title');
-$offer-annotation : lib-get-class('offer-annotation');
-$offer-old-price : lib-get-class('offer-old-price');
-$offer-price : lib-get-class('offer-price');
-$offer-button : lib-get-class('offer-button');
-$field : lib-get-class('field-search');
 $list : lib-get-class('list');
-$link : lib-get-class('link');
-$link-img : lib-get-class('link-img');
-$preview : lib-get-class('preview');
-$detail : lib-get-class('detail');
 $block : lib-get-class('block');
 $pagination : lib-get-class('pagination');
 //-------------------------------

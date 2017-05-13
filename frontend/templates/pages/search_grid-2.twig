@@ -10,7 +10,14 @@
 {% block content %}
 
 	<div class="su-search">
-		{% include pathSearch~'pages-common/modules/tile.twig' with {overrideClassTile: 'su-search_offer', tileSearch: true, dataTile: searchResults} %}
+		{% include pathSearch~'pages-common/modules/tile-offers.twig'
+			with {
+				overrideClassTile: 'su-search_offer',
+				tileSearch: true,
+				dataTile: searchResults,
+				tilePagination: true
+			}
+		%}
 	</div>
 
 {% endblock %}

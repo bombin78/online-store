@@ -4,6 +4,8 @@
 
 #{$wrapper} {
 	position : relative;
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	width : 820px;
 	&_title {
 		text-align : center;
 	}
@@ -48,7 +50,7 @@
 			overflow     : hidden;
 			font-size    : 0;
 
-			@at-root #{$slider} {
+			@at-root #{$wrapper} {
 				#{$slider}_list#{$list} {
 					position : relative;
 					#{$list}_item {

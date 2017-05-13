@@ -1,0 +1,40 @@
+{% if typeTwig == 'php' %}
+	{% set pathTile = 'templates/' %}
+	{% set pathTileModules = 'templates/modules/' %}
+{% else %}
+	{% set pathTile = '../' %}
+	{% set pathTileModules = '' %}
+{% endif %}
+
+
+<div class="su-tile-offers">
+
+	{% if tileTitle %}
+		<h2 class="su-tile-offers_title">{{ tileTitle }}</h2>
+	{% endif %}
+
+	{% if tileSearch %}
+		{% include pathTileModules~'search-content.twig' with {overrideClassSearch: 'su-tile-offers_search'} %}
+	{% endif %}
+
+	<ul class="su-tile-offers_list su-list">
+
+		{% for row in dataTile %}
+			<li class="su-list_item">
+				{% include pathTile~'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+			</li>
+		{% endfor %}
+
+	</ul>
+
+	{% if tileMore %}
+		<div class="su-tile-offers_more su-block">
+			<a class="su-block_element su-more" href="#">{{ tileMore }}</a>
+		</div>
+	{% endif %}
+
+	{% if tilePagination %}
+		{% include pathTileModules~'pagination.twig' with {overrideClassPagination: 'su-tile_pagination'} %}
+	{% endif %}
+
+</div>

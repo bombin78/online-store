@@ -3,7 +3,7 @@ function Slider(options){
 		prevNode    : 'su-slider_prev',
 		nextNode    : 'su-slider_next',
 		classList   : 'su-slider_list',
-		classInList   : 'su-list_item',
+		classInList : 'su-list_item',
 		scrollTime  : 10
 	};
 

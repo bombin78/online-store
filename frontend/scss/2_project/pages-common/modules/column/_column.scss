@@ -1,0 +1,42 @@
+//Импорт файлов
+@import 'column-variables';
+//-------------------------------
+
+#{$wrapper} {
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	width : 820px;
+
+	&_list#{$list} {
+		display : inline-block;
+		width   : 100%;
+		#{$list}_item {
+			float : left;
+			width : 400px;
+			&:nth-of-type(odd) {
+				margin-right : 19px;
+			}
+
+			@at-root #{$wrapper} {
+				#{$list}_offer#{$offer} {
+					margin-top : 21px;
+					#{$offer}_preview#{$preview} {
+						#{$preview}_link#{$link-img} {
+
+							@include lib-link-img-param(
+								$border : $color-img-border
+							);
+						}
+					}
+					#{$offer-description} {
+						#{$offer-new-price} {
+							width      : 368px;
+
+							border-top : 1px dotted $color-new-price-border;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

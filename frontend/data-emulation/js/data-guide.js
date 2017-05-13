@@ -1,248 +1,5 @@
 dataEmulation['typeTemplate'] = '_su-guide';
 
-dataEmulation['basicBlocks'] = [
-	{
-		title: 'Вспомогательные компоненты',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Блок-обертка (block.twig)',
-				url: 'components/basic/block.twig'
-			}
-		]
-	},
-	{
-		title: 'Тексты, заголовки и ссылки',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Составной заголовок с картинкой (title-complex.twig)',
-				url: 'components/basic/title-complex.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Текст с классом "text" (text.twig)',
-				url: 'components/basic/text.twig'
-			},
-			{
-				modifier: '_su-dark',
-				file: 'Ссылка (link.twig)',
-				url: 'components/basic/link.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Блок определения - свойство/значение (detail.twig)',
-				url: 'components/basic/detail.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Вставка знака валюты - (currency.twig)',
-				url: 'components/basic/currency.twig'
-			}
-		]
-	},
-	{
-		title: 'Кнопки, ссылки-кнопки и т.д.',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Ссылка-кнопка (link-btn.twig)',
-				url: 'components/basic/link-btn.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Кнопка (btn.twig)',
-				url: 'components/basic/btn.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Группа кнопок (group-buttons.twig)',
-				url: 'components/composite/group-buttons.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Нумерация страниц (pagination.twig)',
-				url: 'components/composite/pagination.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Блок "посмотреть все/еще" (more.twig)',
-				url: 'components/basic/more.twig'
-			}
-		]
-	},
-	{
-		title: 'Картинки',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Ссылка-картинка (link-img.twig)',
-				url: 'components/basic/link-img.twig'
-			},
-			{
-				modifier: '_su-dark',
-				file: 'Предварительный просмотр (preview.twig)',
-				url: 'components/composite/preview.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Баннер (banner-block.twig)',
-				url: 'components/composite/banner-block.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Рейтинг (rating.twig)',
-				url: 'components/basic/rating.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Фотография в тексте (photo-paragraph.twig)',
-				url: 'components/basic/photo-paragraph.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Фотография (photo-figure.twig)',
-				url: 'components/basic/photo-figure.twig'
-			}
-		]
-	},
-	{
-		title: 'Списки',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Список с классом "list" (list.twig)',
-				url: 'components/basic/list.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Многоуровневый список (list-multilevel.twig)',
-				url: 'components/basic/list-multilevel.twig'
-			},
-			{
-				modifier: '_su-dark _su-for-dropdown',
-				file: 'Выпадающий список (dropdown.twig)',
-				url: 'components/composite/dropdown.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Хлебные крошки (breadcrumb.twig)',
-				url: 'components/basic/breadcrumb.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Популярное (popular.twig)',
-				url: 'components/composite/popular.twig'
-			}
-		]
-	},
-	{
-		title: 'Поля',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Поле поиска (field-search.twig)',
-				url: 'components/basic/field-search.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Поле выбора (field-select.twig)',
-				url: 'components/basic/field-select.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Поле выбора количества - спиннер (field-spinner.twig)',
-				url: 'components/basic/field-spinner.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Текстовое поле со всеми элементами (field-text.twig)',
-				url: 'components/basic/field-text.twig',
-				withUrl: {'typeField': 'full'}
-			},
-			{
-				modifier: '_su-light',
-				file: 'Текстовое поле с меткой (field-text.twig)',
-				url: 'components/basic/field-text.twig',
-				withUrl: {'typeField': 'label'}
-			},
-			{
-				modifier: '_su-light',
-				file: 'Простое текстовое поле (field-text.twig)',
-				url: 'components/basic/field-text.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Текстовая область со всеми элементами (field-textarea.twig)',
-				url: 'components/basic/field-textarea.twig',
-				withUrl: {'typeField': 'full'}
-			},
-			{
-				modifier: '_su-light',
-				file: 'Текстовая область с меткой (field-textarea.twig)',
-				url: 'components/basic/field-textarea.twig',
-				withUrl: {'typeField': 'label'}
-			},
-			{
-				modifier: '_su-light',
-				file: 'Простая текстовая область (field-textarea.twig )',
-				url: 'components/basic/field-textarea.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Проверка на робота (captcha.twig)',
-				url: 'components/composite/captcha.twig',
-			}
-		]
-	},
-	{
-		title: 'Предложения/заказы',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Предложение (offer.twig)',
-				url: 'components/composite/offer.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Отображение предложений плиткой (tile.twig + offer.twig)',
-				url: 'components/composite/tile.twig',
-				withUrl: {'tile': true}
-			},
-			{
-				modifier: '_su-light',
-				file: 'Заказ (order.twig)',
-				url: 'components/composite/order.twig'
-			}
-		]
-	},
-	{
-		title: 'Прочее',
-		rows: [
-			{
-				modifier: '_su-light',
-				file: 'Комментарии/отзывы - для полноценного отображения необходимо подключить и инициализировать плагин jscrollpane (comments.twig)',
-				url: 'components/composite/comments.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Получите бесплатно (free-mail.twig + mailerlite.twig)',
-				url: 'components/composite/free-mail.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Способы оплаты (payment-icons.twig)',
-				url: 'components/composite/payment-icons.twig'
-			},
-			{
-				modifier: '_su-light',
-				file: 'Видео (videoblock.twig)',
-				url: 'components/composite/videoblock.twig'
-			}
-		]
-	}
-];
-
 dataEmulation['groupButtons'] = {
 	typeAction: 'Показать:',
 	valueAction: [
@@ -282,31 +39,40 @@ dataEmulation['popular'] = [
 	}
 ];
 
-dataEmulation['offer'] = [
+dataEmulation['searchPopup'] = [
 	{
-		href: '#',
-		src: 'img/offers/offer_2.jpg',
-		accent: false,
-		title: 'Кусачки Mertz 3420-14',
-		annotation: false,
-		text: 'Как правильно выбрать кусачки для кутикулы? Как правильно выбрать кусачки? ' +
-		'Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор. ' +
-		'Кусачки 660С имеют длинное полотно. Кусачки 660С имеют длинное полотно.',
-		rating: true,
-		priceLabel: 'Лучшая цена:',
-		priceValue: '2450',
-		oldPriceLabel: false,
-		oldPriceValue: false,
-		price: false,
-		buttonModifier: '_su-buy',
-		buttonHref: '#',
-		buttonTitle: 'Купить'
+		name: 'маникюрный набор',
+		quantity: '41'
+	},
+	{
+		name: 'маникюрный набор шкатулки',
+		quantity: '7'
+	},
+	{
+		name: 'маникюрные аппараты',
+		quantity: '2'
+	},
+	{
+		name: 'маникюрные кусачки 8 мм',
+		quantity: '1'
+	},
+	{
+		name: 'маникюрный набор mrz',
+		quantity: '1'
+	}
+];
+
+dataEmulation['videoList'] = [
+	{
+		title: false,
+		preview: false,
+		src: '//www.youtube.com/embed/BuNxtVF3kDs?rel=0'
 	}
 ];
 
 dataEmulation['order'] = [
 	{
-		modifierOrders: false,
+		modifierOrders: '',
 		stateLabel: false,
 		stateValue: false,
 		href: '#',
@@ -317,7 +83,7 @@ dataEmulation['order'] = [
 		close: true
 	},
 	{
-		modifierOrders: false,
+		modifierOrders: '',
 		stateLabel: false,
 		stateValue: false,
 		href: '#',
@@ -359,6 +125,64 @@ dataEmulation['order'] = [
 		quantity: '999 шт.',
 		price: 3000,
 		close: true
+	}
+];
+
+dataEmulation['tileCatalog'] = [
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Маникюрные наборы'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Маникюрный инструмент'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Оборудование и приборы'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Уход за руками'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Уход за ногами'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Уход за телом'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Уход за волосами'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Уход за лицом'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Парфюмерия и косметика'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Подарки'
+	},
+	{
+		src: '../img/catalog/thumb.jpg',
+		href:'offers.html',
+		title:'Специальные предложения'
 	}
 ];
 
@@ -501,6 +325,285 @@ dataEmulation['tileOffers'] = [
 	}
 ];
 
+dataEmulation['columnOffers'] = [
+	{
+		offerModifier: '_su-top-sales',
+		href:'card.html',
+		src: 'img/offers/offer_2.jpg',
+		accent: false,
+		title: 'Кусачки Mertz 3420-14',
+		annotation: false,
+		text:   'Как правильно выбрать кусачки для кутикулы? Как правильно выбрать кусачки?\n\
+				Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор.\n\
+				Кусачки 660С имеют длинное полотно. Кусачки 660С имеют длинное полотно.',
+		rating: true,
+		priceLabel: 'Лучшая цена:',
+		priceValue: '2450',
+		oldPriceLabel: false,
+		oldPriceValue: false,
+		price: false,
+		buttonModifier: '_su-buy',
+		buttonHref: '#',
+		buttonTitle: 'Купить'
+	},
+	{
+		offerModifier: '',
+		href:'card.html',
+		src: 'img/offers/offer_3.jpg',
+		accent: false,
+		title: 'Кусачки Сталекс КМ01',
+		annotation: false,
+		text:   'Как правильно выбрать кусачки для кутикулы? Как правильно выбрать кусачки?\n\
+				Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор.\n\
+				Кусачки 660С имеют длинное полотно. Кусачки 660С имеют длинное полотно.',
+		rating: true,
+		priceLabel: 'Лучшая цена:',
+		priceValue: '1450',
+		oldPriceLabel: false,
+		oldPriceValue: false,
+		price: false,
+		buttonModifier: '_su-buy',
+		buttonHref: '#',
+		buttonTitle: 'Купить'
+	},
+	{
+		offerModifier: '',
+		href:'card.html',
+		src: 'img/offers/offer_1.jpg',
+		accent: false,
+		title: 'Маникюрные кусачки Сталекс КМ02',
+		annotation: false,
+		text:   'Как правильно выбрать кусачки для кутикулы? Как правильно выбрать кусачки?\n\
+				Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор.\n\
+				Кусачки 660С имеют длинное полотно. Кусачки 660С имеют длинное полотно.',
+		rating: true,
+		priceLabel: 'Лучшая цена:',
+		priceValue: '100',
+		oldPriceLabel: false,
+		oldPriceValue: false,
+		price: false,
+		buttonModifier: '_su-buy',
+		buttonHref: '#',
+		buttonTitle: 'Купить'
+	},
+	{
+		offerModifier: '',
+		href:'card.html',
+		src: 'img/offers/offer_4.jpg',
+		accent: false,
+		title: 'Маникюрные кусачки Mertz 660 C',
+		annotation: false,
+		text:   'Как правильно выбрать кусачки для кутикулы? Как правильно выбрать кусачки?\n\
+				Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор.\n\
+				Кусачки 660С имеют длинное полотно. Кусачки 660С имеют длинное полотно.',
+		rating: true,
+		priceLabel: 'Лучшая цена:',
+		priceValue: '12000',
+		oldPriceLabel: false,
+		oldPriceValue: false,
+		price: false,
+		buttonModifier: '_su-buy',
+		buttonHref: '#',
+		buttonTitle: 'Купить'
+	},
+	{
+		offerModifier: '',
+		href:'card.html',
+		src: 'img/offers/offer_5.jpg',
+		accent: false,
+		title: 'Маникюрные кусачки Mertz 664 RFАААААААААААААААААААААААААААААААФФФФФФФФФФФФФФФФ',
+		annotation: false,
+		text:   'Как правильно выбрать кусачки для кутикулы?\n\
+				Этим вопросом задаются все женщины. На каких кусачках остановить свой выбор.\n\
+				Кусачки 660С имеют длинное полотно. Если у вас пальчики ииииииииииииииииииииииииииииииииииииии ',
+		rating: true,
+		priceLabel: 'Лучшая цена:',
+		priceValue: '1250',
+		oldPriceLabel: false,
+		oldPriceValue: false,
+		price: false,
+		buttonModifier: '_su-buy',
+		buttonHref: '#',
+		buttonTitle: 'Купить'
+	}
+];
+
+dataEmulation['contentSlider'] = {
+	title: 'Обратите внимание на эти товары',
+	data: [
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_2.jpg',
+			accent: false,
+			title: 'Кусачки Mertz 3420-14',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '3500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_3.jpg',
+			accent: false,
+			title: 'Кусачки Сталекс КМ0111111111111111111111111',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_1.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Сталекс КМ02',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '100',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_4.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 660 C',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '12000',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		},
+		{
+			href: 'offers.html',
+			src: '../img/offers/offer_5.jpg',
+			accent: false,
+			title: 'Маникюрные кусачки Mertz 664 RF',
+			annotation: false,
+			text: false,
+			rating: false,
+			priceLabel: false,
+			priceValue: false,
+			oldPriceLabel: false,
+			oldPriceValue: false,
+			price: '1500',
+			buttonModifier: '_su-buy',
+			buttonHref: '#',
+			buttonTitle: 'Купить'
+		}
+	]
+};
+
 dataEmulation['comments'] = [
 	{
 		text: 'заказала маме в подарок. мама была в восторге!давно себе такой набор хотела) спасибо огромное!!! :)',
@@ -539,10 +642,267 @@ dataEmulation['comments'] = [
 	}
 ];
 
-dataEmulation['videoList'] = [
+dataEmulation['basicBlocks'] = [
 	{
-		title: false,
-		preview: false,
-		src: '//www.youtube.com/embed/BuNxtVF3kDs?rel=0'
+		title: 'КОМПОНЕНТЫ: заголовки, тексты, ссылки, блоки',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Составной заголовок с картинкой (title-complex.twig)',
+				url: 'components/basic/title-complex.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Текст с классом "text" (text.twig)',
+				url: 'components/basic/text.twig'
+			},
+			{
+				modifier: '_su-dark',
+				file: 'Ссылка (link.twig)',
+				url: 'components/basic/link.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Блок определения - свойство/значение (detail.twig)',
+				url: 'components/basic/detail.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Вставка знака валюты - (currency.twig)',
+				url: 'components/basic/currency.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Блок-обертка (block.twig)',
+				url: 'components/basic/block.twig'
+			}
+		]
+	},
+	{
+		title: 'КОМПОНЕНТЫ: кнопки',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Ссылка-кнопка (link-btn.twig)',
+				url: 'components/basic/link-btn.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Кнопка (btn.twig)',
+				url: 'components/basic/btn.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Блок "посмотреть все/еще" (more.twig)',
+				url: 'components/basic/more.twig'
+			}
+		]
+	},
+	{
+		title: 'КОМПОНЕНТЫ: изображения',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Ссылка-картинка (link-img.twig)',
+				url: 'components/basic/link-img.twig'
+			},
+			{
+				modifier: '_su-dark',
+				file: 'Предварительный просмотр (preview.twig)',
+				url: 'components/composite/preview.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Баннер (banner-block.twig)',
+				url: 'components/composite/banner-block.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Рейтинг (rating.twig)',
+				url: 'components/basic/rating.twig'
+			}
+		]
+	},
+	{
+		title: 'КОМПОНЕНТЫ: списки',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Список с классом "list" (list.twig)',
+				url: 'components/basic/list.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Многоуровневый список (list-multilevel.twig)',
+				url: 'components/basic/list-multilevel.twig'
+			},
+			{
+				modifier: '_su-dark _su-for-dropdown',
+				file: 'Выпадающий список (dropdown.twig)',
+				url: 'components/composite/dropdown.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Хлебные крошки (breadcrumb.twig)',
+				url: 'components/basic/breadcrumb.twig'
+			}
+		]
+	},
+	{
+		title: 'КОМПОНЕНТЫ: поля',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Поле поиска (field-search.twig)',
+				url: 'components/basic/field-search.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Поле выбора (field-select.twig)',
+				url: 'components/basic/field-select.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Поле выбора количества - спиннер (field-spinner.twig)',
+				url: 'components/basic/field-spinner.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Текстовое поле со всеми элементами (field-text.twig)',
+				url: 'components/basic/field-text.twig',
+				withUrl: {'typeField': 'full'}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Текстовое поле с меткой (field-text.twig)',
+				url: 'components/basic/field-text.twig',
+				withUrl: {'typeField': 'label'}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Простое текстовое поле (field-text.twig)',
+				url: 'components/basic/field-text.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Текстовая область со всеми элементами (field-textarea.twig)',
+				url: 'components/basic/field-textarea.twig',
+				withUrl: {'typeField': 'full'}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Текстовая область с меткой (field-textarea.twig)',
+				url: 'components/basic/field-textarea.twig',
+				withUrl: {'typeField': 'label'}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Простая текстовая область (field-textarea.twig )',
+				url: 'components/basic/field-textarea.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Проверка на робота (captcha.twig)',
+				url: 'components/composite/captcha.twig',
+			}
+		]
+	},
+	{
+		title: 'МОДУЛИ КОНТЕНТА',
+		rows: [
+			{
+				modifier: '_su-light',
+				file: 'Строка поиска контента с всплывающим окном (search-content.twig)',
+				url: 'modules/search-content.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Популярное (popular.twig)',
+				url: 'modules/popular.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Группа кнопок (group-buttons.twig)',
+				url: 'modules/group-buttons.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Нумерация страниц (pagination.twig)',
+				url: 'modules/pagination.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Статья (article.twig)',
+				url: 'modules/article.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Фотография в тексте (photo-paragraph.twig)',
+				url: 'modules/photo-paragraph.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Фотография (photo-figure.twig)',
+				url: 'modules/photo-figure.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Видео (videoblock.twig)',
+				url: 'modules/videoblock.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Заказ (5-ть вариантов): каждая строка отдельный модуль(order.twig)',
+				url: 'modules/order.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Отображение элементов (на примере каталога) плиткой (tile.twig )',
+				url: 'modules/tile.twig',
+				withUrl: {
+					dataTile: dataEmulation['tileCatalog']
+				}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Отображение предложений плиткой (tile-offers.twig + offer.twig)',
+				url: 'modules/tile-offers.twig',
+				withUrl: {
+					tileTitle: 'Заголовок модуля',
+					dataTile: dataEmulation['tileOffers'],
+					tileMore: 'посмотрите все товары'
+				}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Отображение предложений колонкой (column.twig + offer.twig)',
+				url: 'modules/column.twig',
+				withUrl: {
+					dataColumn: dataEmulation['columnOffers']
+				}
+			},
+			{
+				modifier: '_su-light',
+				file: 'Комментарии/отзывы - для полноценного отображения необходимо подключить и инициализировать плагин jscrollpane (comments.twig)',
+				url: 'modules/comments.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Получите бесплатно (free-mail.twig + mailerlite.twig)',
+				url: 'modules/free-mail.twig'
+			},
+			{
+				modifier: '_su-light',
+				file: 'Способы оплаты (payment-icons.twig)',
+				url: 'modules/payment-icons.twig'
+			},
+			{
+				modifier: '_su-light',
+				modifierCode: '_open',
+				file: 'Слайдер контента (slider.twig + offer.twig)',
+				url: 'modules/slider.twig',
+				withUrl: {'tile': true}
+			}
+		]
 	}
 ];

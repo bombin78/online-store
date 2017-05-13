@@ -57,7 +57,7 @@ $dataEmulation['groupButtonsSorting'] = [
 	]
 ];
 
-$dataEmulation['offers'] = [
+$dataEmulation['offersColumn'] = [
 	[
 		'offerModifier' => '_su-top-sales',
 		'href' =>'card.html',

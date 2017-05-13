@@ -13,7 +13,7 @@
 		<h1 class="su-offers_title">Маникюрные кусачки</h1>
 		{% include pathOffers~'pages-common/modules/popular.twig' with {overrideClassPopular: 'su-offers_popular'} %}
 		{% include pathOffers~'pages-common/modules/group-buttons.twig' with {overrideGroupButtons: 'su-offers_sorting', groupButtons: groupButtonsSorting} %}
-		{% include pathOffers~'pages-common/modules/offers-list.twig' with {overrideClassOffersList: 'su-offers_list'} %}
+		{% include pathOffers~'pages-common/modules/column.twig' with {overrideClassColumn: 'su-offers_column', dataColumn: columnOffers} %}
 		{% include pathOffers~'pages-common/modules/pagination.twig' with {overrideClassPagination: 'su-offers_pagination'} %}
 	</div>
 

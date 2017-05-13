@@ -1,0 +1,14 @@
+//Цвета
+$bg-search-popup : lib-color(primary-lighter);
+$bg-search-popup-row-hover : lib-color(primary-light);
+$color-search-shadow : lib-color(primary-dark);
+$color-search-popup-shadow : lib-color(primary-base-dark);
+$color-search-popup-border : lib-color(primary-base);
+//-------------------------------
+
+//Классы
+$wrapper : lib-get-class('search-content');
+$search-popup : lib-get-class('search-popup');
+$field : lib-get-class('field-search');
+$list : lib-get-class('list');
+//-------------------------------

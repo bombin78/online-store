@@ -28,8 +28,8 @@
 // 1.2 Компоненты
 // Основное правило - абстрактность как в названиях, так и в разметке
 // + наличие стилей по умолчанию, а также простота и легкость модифицирования
-@import "1_base/components/index-basic";
-@import "1_base/components/index-composite";
+@import "1_base/components/basic/index";
+@import "1_base/components/composite/index";
 //--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
@@ -50,17 +50,7 @@
 
 // 2.2 Стили страниц (общие)
 @import '2_project/pages-common/blocks/index';
-@import '2_project/pages-common/modules/comments/index';
-@import '2_project/pages-common/modules/free-mail/index';
-@import '2_project/pages-common/modules/group-buttons/index';
-@import '2_project/pages-common/modules/offers-list/index';
-@import '2_project/pages-common/modules/pagination/index';
-@import '2_project/pages-common/modules/payment-icons/index';
-@import '2_project/pages-common/modules/popular/index';
-@import '2_project/pages-common/modules/slider/index';
-@import '2_project/pages-common/modules/tabs/index';
-@import '2_project/pages-common/modules/tile/index';
-@import '2_project/pages-common/modules/videoblock/index';
+@import '2_project/pages-common/modules/index';
 
 // 2.3 Стили страниц (индивидуальные)
 // Стили проектного слоя подключаются к html странице отдельным фалом после

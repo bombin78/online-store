@@ -1,0 +1,122 @@
+//Импорт файлов
+@import 'tile-offers-variables';
+//-------------------------------
+
+#{$wrapper} {
+	margin-top    : 20px;
+	padding       : 5px;
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	width         : 820px;
+
+	border-radius : 5px;
+	background    : url('../../../../../img/bg_5.jpg');
+	&_title {
+		padding-top    : lib-line-top(0);
+		padding-bottom : lib-line-top(0);
+		padding-left   : 4px;
+	}
+	&_search#{$search-content} {
+		padding : 10px 5px;
+	}
+	&_list#{$list} {
+
+		@extend %lib-clearfix;
+
+		#{$list}_item {
+			padding : 5px;
+
+			@include lib-box12(3);
+
+			@at-root #{$wrapper}_list#{$list} {
+				#{$list}_offer#{$offer} {
+					padding : 10px 10px 62px 10px;
+					&._su-top-sales {
+						#{$offer}_preview#{$preview} {
+							#{$preview}_link#{$link-img} {
+								&:after {
+									top   : -13px;
+									right : -14px;
+								}
+							}
+						}
+					}
+					#{$offer}_preview#{$preview} {
+						position : relative;
+
+						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
+							#{$preview}_link#{$link-img} {
+								@include lib-link-img-param(
+									$height : 180px,
+									$vertical-align : top
+								);
+							}
+						}
+
+					}
+					#{$offer-description} {
+						position : relative;
+						z-index  : 1;
+						&_container {
+							height   : auto;
+							overflow : visible;
+
+							@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
+								#{$offer-title}#{$block} {
+									position     : relative;
+									margin-top   : -45px;
+									padding-left : 0;
+									height       : 45px;
+
+									overflow     : hidden;
+									text-align   : center;
+									background   : linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
+
+									@include lib-text-blackout(
+										$height : 50%,
+										$width : 12px
+									);
+									#{$block}_element#{$link} {
+										padding-top : 5px;
+										height      : 100%;
+										max-width   : 100%;
+									}
+								}
+							}
+
+						}
+
+						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
+							#{$offer-old-price}#{$detail} {
+								margin-top : 2px;
+
+								font-size  : lib-font-size(-1);
+								text-align : center;
+							}
+
+							#{$offer-price} {
+								right  : auto;
+								bottom : -40px;
+							}
+
+							#{$offer-button}#{$block} {
+								right  : 0;
+								bottom : -45px;
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+	&_more#{$block} {
+		margin-top     : 20px;
+		padding-bottom : 15px;
+		width          : 100%;
+
+		text-align     : center;
+	}
+	&_pagination#{$pagination} {
+		padding : 10px 5px;
+	}
+}

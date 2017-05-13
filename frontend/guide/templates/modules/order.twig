@@ -1,7 +1,7 @@
 {% for row in order %}
 	<div class="su-order {{ row.modifierOrders }}">
 
-		{% if row.modifierOrders %}
+		{% if row.stateLabel %}
 			<div class="su-order-state">
 				<dl class="su-order-state_detail su-detail">
 					<dt class="su-detail_label">{{ row.stateLabel }}</dt>

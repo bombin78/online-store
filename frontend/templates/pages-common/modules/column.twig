@@ -1,0 +1,17 @@
+{% if typeTwig == 'php' %}
+	{% set pathColumn = 'templates/pages-common/' %}
+{% else %}
+	{% set pathColumn = '../' %}
+{% endif %}
+
+<div class="{{ overrideClassColumn }} su-column">
+	<ul class="su-column_list su-list">
+
+		{% for row in dataColumn %}
+			<li class="su-list_item">
+				{% include pathColumn~'blocks/offer.twig' with {overrideClassOffer: 'su-list_offer'} %}
+			</li>
+		{% endfor %}
+
+	</ul>
+</div>

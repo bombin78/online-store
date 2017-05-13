@@ -3,93 +3,109 @@
 //-------------------------------
 
 #{$wrapper} {
-	&_prev {
-		@include lib-respond-to(normal) {
-			left : -3px;
-		}
-	}
-	&_next {
-		@include lib-respond-to(normal) {
-			right : 0;
-		}
-	}
-	&_prev,
-	&_next {
-		@include lib-respond-to(narrow) {
-			margin-top : -12px;
-			height     : 24px;
-			width      : 16px;
 
-			font-size  : 24px;
-		}
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	@include lib-respond-to(normal) {
+		width     : 620px;
 	}
-	&_container {
-		@include lib-respond-to(normal) {
-			width : 571px;
+	@include lib-respond-to(narrow) {
+		width     : 510px;
+	}
+	#{$slider} {
+		&_prev {
+			@include lib-respond-to(normal) {
+				left : -3px;
+			}
 		}
-		@include lib-respond-to(narrow) {
-			height : 228px;
-			width  : 468px;
+		&_next {
+			@include lib-respond-to(normal) {
+				right : 0;
+			}
 		}
-		#{$slider}_list#{$list} {
-			#{$list}_item {
-				@include lib-respond-to(normal) {
-					margin-left : 8px;
-					&:first-child {
-						margin-left : 0;
-					}
-				}
-				@include lib-respond-to(narrow) {
-					margin-left : 6px;
-					width       : 152px;
-					&:first-child {
-						margin-left : 0;
-					}
-				}
-				#{$list}_offer#{$offer} {
-					@include lib-respond-to(narrow) {
-						padding-bottom : 10px;
-					}
-					#{$offer}_preview#{$preview} {
-						#{$preview}_link#{$link-img} {
+		&_prev,
+		&_next {
+			@include lib-respond-to(narrow) {
+				margin-top : -12px;
+				height     : 24px;
+				width      : 16px;
+
+				font-size  : 24px;
+			}
+		}
+		&_container {
+			@include lib-respond-to(normal) {
+				width : 571px;
+			}
+			@include lib-respond-to(narrow) {
+				height : 228px;
+				width  : 468px;
+			}
+
+			@at-root #{$wrapper} {
+				#{$slider}_list#{$list} {
+					#{$list}_item {
+						@include lib-respond-to(normal) {
+							margin-left : 8px;
+						}
+						@include lib-respond-to(narrow) {
+							margin-left : 6px;
+							width       : 152px;
+						}
+						&:first-child {
+							@include lib-respond-to(normal) {
+								margin-left : 0;
+							}
 							@include lib-respond-to(narrow) {
-								@include lib-link-img-param(
-									$height : 132px
-								);
+								margin-left : 0;
 							}
 						}
-					}
-					#{$offer-description} {
-						&_container {
-							#{$offer-title} {
-								@include lib-respond-to(narrow) {
-									margin-top : -40px;
-									height     : 40px;
+						#{$list}_offer#{$offer} {
+							@include lib-respond-to(narrow) {
+								padding-bottom : 10px;
+							}
+							#{$offer}_preview#{$preview} {
+								#{$preview}_link#{$link-img} {
+									@include lib-respond-to(narrow) {
+										@include lib-link-img-param(
+											$height : 132px
+										);
+									}
 								}
 							}
-						}
-						#{$offer-price} {
-							@include lib-respond-to(narrow) {
-								position   : relative;
-								bottom     : auto;
-								margin-top : 10px;
-								width      : 100%;
+							#{$offer-description} {
+								&_container {
+									#{$offer-title} {
+										@include lib-respond-to(narrow) {
+											margin-top : -40px;
+											height     : 40px;
+										}
+									}
+								}
+								#{$offer-price} {
+									@include lib-respond-to(narrow) {
+										position   : relative;
+										bottom     : auto;
+										margin-top : 10px;
+										width      : 100%;
 
-								text-align : center;
-							}
-						}
-						#{$offer-button} {
-							@include lib-respond-to(narrow) {
-								position   : relative;
-								bottom     : auto;
-								margin-top : 14px;
+										text-align : center;
+									}
+								}
+								#{$offer-button} {
+									@include lib-respond-to(narrow) {
+										position   : relative;
+										bottom     : auto;
+										margin-top : 14px;
 
-								text-align : center;
+										text-align : center;
+									}
+								}
 							}
 						}
 					}
 				}
 			}
+
 		}
 	}
 }

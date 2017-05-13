@@ -4,84 +4,22 @@
 
 #{$wrapper} {
 	padding       : 5px;
-	max-width     : 820px;
-
-	border-radius : 5px;
-	background    : url('../../../../../img/bg_5.jpg');
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	width     : 820px;
 	&_title {
 		padding-top    : lib-line-top(0);
 		padding-bottom : lib-line-top(0);
 		padding-left   : 4px;
-	}
-	#{$tile-search} {
-		position : relative;
-		padding  : 10px 5px;
-		z-index  : 2;
-		&_form {
-			position : relative;
-			#{$tile-search}_line#{$field} {
-				border-radius : 5px;
-				border-width  : 1px;
-				box-shadow    : 0 1px 2px $color-search-shadow;
-				#{$field}_postfix {
-					margin-top : 0;
-				}
-			}
-
-			@at-root #{$wrapper} {
-				#{$tile-search-popup} {
-					position      : absolute;
-					top           : 100%;
-					left          : 0;
-					padding       : 2px;
-					margin-top    : 2px;
-					width         : 100%;
-
-					border-radius : 5px;
-					border        : 1px solid $color-search-popup-border;
-					background    : $bg-search-popup;
-					box-shadow    : 0 1px 5px 0 $color-search-popup-shadow;
-					&_list#{$list} {
-						display : table;
-						width   : 100%;
-						#{$list}_item {
-							display : table-row;
-							&:hover,
-							&.active {
-								background-color : $bg-search-popup-row-hover;
-							}
-							#{$tile-search-name},
-							#{$tile-search-quantity} {
-								display   : table-cell;
-								padding   : 2px 4px;
-
-								font-size : 14px;
-								cursor    : pointer;
-							}
-							#{$tile-search-quantity} {
-								text-align : right;
-							}
-						}
-					}
-				}
-			}
-
-		}
 	}
 	&_list#{$list} {
 
 		@extend %lib-clearfix;
 
 		#{$list}_item {
-			// С помощью плитки выводится каталог и список предложений:
-			// будьте внимательны при изменении этого параметра.
 			padding : 5px;
 
-			// С помощью плитки выводится каталог и список предложений:
-			// будьте внимательны при изменении этого параметра.
 			@include lib-box12(3);
 
-			// Эти правила влияют только на отображение каталога.
 			@at-root {
 				#{$tile-block} {
 					position      : relative;
@@ -133,97 +71,7 @@
 					}
 				}
 			}
-
-			// Эти правила влияют только на спосок предложений,
-			// отображаемых в виде плитки.
-			@at-root #{$wrapper}_list#{$list} {
-				#{$list}_offer#{$offer} {
-					padding : 10px 10px 62px 10px;
-					&._su-top-sales {
-						#{$offer}_preview#{$preview} {
-							#{$preview}_link#{$link-img} {
-								&:after {
-									top   : -13px;
-									right : -14px;
-								}
-							}
-						}
-					}
-					#{$offer}_preview#{$preview} {
-						position : relative;
-
-						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
-							#{$preview}_link#{$link-img} {
-								@include lib-link-img-param(
-									$height : 180px,
-									$vertical-align : top
-								);
-							}
-						}
-
-					}
-					#{$offer-description} {
-						position : relative;
-						z-index  : 1;
-						&_container {
-							height   : auto;
-							overflow : visible;
-
-							@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
-								#{$offer-title}#{$block} {
-									position     : relative;
-									margin-top   : -45px;
-									padding-left : 0;
-									height       : 45px;
-
-									overflow     : hidden;
-									text-align   : center;
-									background   : linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.9), #ffffff, #ffffff);
-
-									@include lib-text-blackout(
-										$height : 50%,
-										$width : 12px
-									);
-									#{$block}_element#{$link} {
-										padding-top : 5px;
-										height      : 100%;
-										max-width   : 100%;
-									}
-								}
-							}
-
-						}
-
-						@at-root #{$wrapper}_list#{$list} #{$list}_offer#{$offer} {
-							#{$offer-old-price}#{$detail} {
-								margin-top : 2px;
-
-								font-size  : lib-font-size(-1);
-								text-align : center;
-							}
-
-							#{$offer-price} {
-								right  : auto;
-								bottom : -40px;
-							}
-
-							#{$offer-button}#{$block} {
-								right  : 0;
-								bottom : -45px;
-							}
-						}
-
-					}
-				}
-			}
 		}
-	}
-	&_more#{$block} {
-		margin-top     : 20px;
-		padding-bottom : 15px;
-		width          : 100%;
-
-		text-align     : center;
 	}
 	&_pagination#{$pagination} {
 		padding : 10px 5px;

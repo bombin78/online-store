@@ -27,7 +27,6 @@ dataEmulation['breadcrumb'] = [
 	}
 ];
 
-
 dataEmulation['popular'] = [
 	{
 		modifier: '',
@@ -57,7 +56,7 @@ dataEmulation['groupButtonsSorting'] = {
 	]
 };
 
-dataEmulation['offers'] = [
+dataEmulation['columnOffers'] = [
 	{
 		offerModifier: '_su-top-sales',
 		href:'card.html',

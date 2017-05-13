@@ -3,68 +3,19 @@
 //-------------------------------
 
 #{$wrapper} {
+
+	//Для корректного отображения необходимо жесткое ограничение по ширине
+	@include lib-respond-to(normal) {
+		width     : 620px;
+	}
+	@include lib-respond-to(narrow) {
+		width     : 510px;
+	}
+
 	&_list#{$list} {
 		#{$list}_item {
-			// С помощью плитки выводится каталог и список предложений:
-			// будьте внимательны при изменении этого параметра.
 			@include lib-respond-to(normal) {
 				@include lib-box12(4);
-			}
-
-			// Эти правила влияют только на спосок предложений,
-			// отображаемых в виде плитки.
-			#{$list}_offer#{$offer} {
-				@include lib-respond-to(narrow) {
-					padding-bottom : 75px;
-				}
-				#{$offer}_preview#{$preview} {
-					#{$preview}_link#{$link-img} {
-						@include lib-respond-to(narrow) {
-							@include lib-link-img-param(
-								$height : 150px
-							);
-						}
-					}
-				}
-				#{$offer-description} {
-					&_container {
-						#{$offer-title}#{$block} {
-							@include lib-respond-to(narrow) {
-								margin-top : -40px;
-								height     : 40px;
-							}
-						}
-						#{$offer-annotation} {
-							@include lib-respond-to(narrow) {
-								height     : 35px;
-								margin-top : 4px;
-							}
-						}
-					}
-					#{$offer-old-price} {
-						@include lib-respond-to(narrow) {
-							margin-top : 0;
-						}
-					}
-					#{$offer-price} {
-						@include lib-respond-to(narrow) {
-							right      : auto;
-							bottom     : -20px;
-							width      : 134px;
-
-							text-align : center;
-						}
-					}
-					#{$offer-button} {
-						@include lib-respond-to(narrow) {
-							right      : 0;
-							bottom     : -61px;
-							width      : 134px;
-
-							text-align : center;
-						}
-					}
-				}
 			}
 		}
 	}
