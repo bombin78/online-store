@@ -40,7 +40,7 @@
 		'sidebarButtons'        => $dataEmulation['sidebarButtons'],
 		'sidebarBanner'        	=> $dataEmulation['sidebarBanner'],
 		'sidebarBlog'        	=> $dataEmulation['sidebarBlog'],
-		'sidebarViewed'   => $dataEmulation['viewedOffers'],
+		'sidebarViewed'   		=> $dataEmulation['viewedOffers'],
 		'footerSocialNetwork'	=> $dataEmulation['footerSocialNetwork'],
 		'footerInfo'        	=> $dataEmulation['footerInfo'],
 		'footerCatalog'        	=> $dataEmulation['footerCatalog'],
@@ -49,14 +49,17 @@
 		'footerCopyright'    	=> $dataEmulation['footerCopyright'],
 		'footerDeveloper'    	=> $dataEmulation['footerDeveloper'],
 		//Данные контента
-		'basicBlocks'         	=> $dataEmulation['basicBlocks'],
 		'groupButtons'         	=> $dataEmulation['groupButtons'],
 		'popular'         		=> $dataEmulation['popular'],
-		'offer'         		=> $dataEmulation['offer'],
+		'searchPopup'        	=> $dataEmulation['searchPopup'],
+		'videoList'	         	=> $dataEmulation['videoList'],
 		'order'         		=> $dataEmulation['order'],
+		'tileCatalog'         	=> $dataEmulation['tileCatalog'],
 		'tileOffers'         	=> $dataEmulation['tileOffers'],
+		'columnOffers'        	=> $dataEmulation['columnOffers'],
+		'contentSlider'        	=> $dataEmulation['contentSlider'],
 		'comments'	         	=> $dataEmulation['comments'],
-		'videoList'	         	=> $dataEmulation['videoList']
+		'basicBlocks'         	=> $dataEmulation['basicBlocks']
 	]);
 ?>
 </body>

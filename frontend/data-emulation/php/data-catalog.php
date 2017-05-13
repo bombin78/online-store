@@ -18,7 +18,7 @@ $dataEmulation['breadcrumb'] = [
 	]
 ];
 
-$dataEmulation['catalog'] = [
+$dataEmulation['tileCatalog'] = [
 	[
 		'src' => 'img/catalog/thumb.jpg',
 		'href' =>'offers.html',

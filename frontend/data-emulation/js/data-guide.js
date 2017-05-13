@@ -130,57 +130,57 @@ dataEmulation['order'] = [
 
 dataEmulation['tileCatalog'] = [
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Маникюрные наборы'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Маникюрный инструмент'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Оборудование и приборы'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Уход за руками'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Уход за ногами'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Уход за телом'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Уход за волосами'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Уход за лицом'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Парфюмерия и косметика'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Подарки'
 	},
 	{
-		src: '../img/catalog/thumb.jpg',
+		src: 'img/example/example_8.jpg',
 		href:'offers.html',
 		title:'Специальные предложения'
 	}
@@ -433,7 +433,7 @@ dataEmulation['contentSlider'] = {
 	data: [
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_2.jpg',
+			src: 'img/offers/offer_2.jpg',
 			accent: false,
 			title: 'Кусачки Mertz 3420-14',
 			annotation: false,
@@ -450,7 +450,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_3.jpg',
+			src: 'img/offers/offer_3.jpg',
 			accent: false,
 			title: 'Кусачки Сталекс КМ0111111111111111111111111',
 			annotation: false,
@@ -467,7 +467,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_1.jpg',
+			src: 'img/offers/offer_1.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Сталекс КМ02',
 			annotation: false,
@@ -484,7 +484,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_4.jpg',
+			src: 'img/offers/offer_4.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 660 C',
 			annotation: false,
@@ -501,7 +501,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -518,7 +518,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -535,7 +535,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -552,7 +552,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -569,7 +569,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -586,7 +586,7 @@ dataEmulation['contentSlider'] = {
 		},
 		{
 			href: 'offers.html',
-			src: '../img/offers/offer_5.jpg',
+			src: 'img/offers/offer_5.jpg',
 			accent: false,
 			title: 'Маникюрные кусачки Mertz 664 RF',
 			annotation: false,
@@ -852,7 +852,7 @@ dataEmulation['basicBlocks'] = [
 			},
 			{
 				modifier: '_su-light',
-				file: 'Заказ (5-ть вариантов): каждая строка отдельный модуль(order.twig)',
+				file: 'Заказ (5-ть вариантов): каждая строка отдельный модуль (order.twig)',
 				url: 'modules/order.twig'
 			},
 			{
@@ -900,8 +900,7 @@ dataEmulation['basicBlocks'] = [
 				modifier: '_su-light',
 				modifierCode: '_open',
 				file: 'Слайдер контента (slider.twig + offer.twig)',
-				url: 'modules/slider.twig',
-				withUrl: {'tile': true}
+				url: 'modules/slider.twig'
 			}
 		]
 	}

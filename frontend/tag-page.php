@@ -57,7 +57,7 @@
 		'breadcrumb'         	=> $dataEmulation['breadcrumb'],
 		'popular'         		=> $dataEmulation['popular'],
 		'groupButtonsSorting' 	=> $dataEmulation['groupButtonsSorting'],
-		'offers'         		=> $dataEmulation['offers'],
+		'offersColumn'         	=> $dataEmulation['offersColumn'],
 		'videoList'         	=> $dataEmulation['videoList'],
 		'linksBlog'         	=> $dataEmulation['linksBlog']
 	]);
