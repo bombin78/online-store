@@ -19,7 +19,7 @@ $dataEmulation['basketSteps'] = [
 $dataEmulation['orders'] = [
 	[
 		'href' 		=> '#',
-		'src:' 		=> 'img/offers/offer_1.jpg',
+		'src' 		=> 'img/offers/offer_1.jpg',
 		'title' 	=> 'Кусачки Mertz 3420-14 fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
 		'quantity' 	=> '2 шт.',
 		'price' 	=> 999,
