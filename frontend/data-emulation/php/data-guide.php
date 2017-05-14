@@ -733,6 +733,12 @@ $dataEmulation['basicBlocks'] = [
 				'url' 		=> 'components/basic/list.twig'
 			],
 			[
+				'modifier'	=> '_su-light',
+				'file' 		=>  'Список с классом "list" и модификатором "_su-circle" (list.twig)',
+				'url' 		=>  'components/basic/list.twig',
+				'withUrl' 	=>  ['modifierList' => '_su-circle']
+			],
+			[
 				'modifier' 	=> '_su-light',
 				'file' 		=> 'Многоуровневый список (list-multilevel.twig)',
 				'url' 		=> 'components/basic/list-multilevel.twig'
