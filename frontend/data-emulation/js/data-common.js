@@ -265,13 +265,13 @@ dataEmulation['sidebarBanner'] = [
 	{
 		modifier: '',
 		href: "#",
-		src: 'img/sidebar/banner/banner_1.png',
+		src: 'img/sidebar/img_1.png',
 		alt: 'Бесплатный курс "ПРО Маникюр"'
 	},
 	{
 		modifier: '',
 		href: "#",
-		src: 'img/sidebar/banner/banner_2.png',
+		src: 'img/sidebar/img_2.png',
 		alt: 'Заточка маникюрного инструмента'
 	}
 ];

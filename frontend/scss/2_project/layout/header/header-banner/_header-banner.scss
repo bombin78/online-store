@@ -1,13 +1,13 @@
 //Импорт файлов
 @import '../blocks/header-stock';
 @import '../blocks/header-slider';
-@import 'header-bunner-variables';
+@import 'header-banner-variables';
 //-------------------------------
 
 #{$wrapper} {
 	position        : relative;
 	margin-top      : -5px;
-	z-index         : lib-z('header-banner');
+	z-index         : lib-z('header-bnr');
 
 	background      : transparent url('../../../../../img/bg_2.jpg') 100% 100% no-repeat;
 	background-size : cover;

@@ -2,7 +2,7 @@ dataEmulation['typeHeader'] = '_su-active';
 
 dataEmulation['contentBanner'] = {
 	href: '#',
-	src: 'img/offers/offer-banner.jpg',
+	src: 'img/content-common/gellak.jpg',
 	alt: 'баннер контента'
 };
 

@@ -25,17 +25,17 @@
 			<h1 class="su-tags_title">Маникюрные кусачки</h1>
 			{% include pathTags~'pages-common/modules/popular.twig' with {overrideClassPopular: 'su-tags_popular'} %}
 			{% include pathTags~'pages-common/modules/group-buttons.twig' with {overrideGroupButtons: 'su-tags_sorting', groupButtons: groupButtonsSorting} %}
-			{% include pathTags~'pages-common/modules/column.twig' with {overrideClassOffersList: 'su-column_offers'} %}
+			{% include pathTags~'pages-common/modules/column.twig' with {overrideClassColumn: 'su-column_offers', dataColumn: columnOffers} %}
 			{% include pathTags~'pages-common/modules/pagination.twig' with {overrideClassPagination: 'su-tags_pagination'} %}
 			<ul class="su-tags_articles su-list">
 				<li class="su-list_item">
-					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassArticle: 'su-list_article'} %}
 				</li>
 				<li class="su-list_item">
-					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassArticle: 'su-list_article'} %}
 				</li>
 				<li class="su-list_item">
-					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassOffer: 'su-list_article'} %}
+					{% include pathTags~'pages-common/modules/article.twig' with {overrideClassArticle: 'su-list_article'} %}
 				</li>
 			</ul>
 			{% include pathTags~'pages-common/modules/videoblock.twig' with {overrideClassVideo: 'su-list_video'} %}

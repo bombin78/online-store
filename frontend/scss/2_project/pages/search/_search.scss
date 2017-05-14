@@ -6,4 +6,8 @@
 
 	@include mix-content-common-param();
 
+	&_offer#{$tile-offers} {
+		margin-top: 0;
+	}
+
 }

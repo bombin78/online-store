@@ -15,6 +15,13 @@
 		{% include pathOffers~'pages-common/modules/group-buttons.twig' with {overrideGroupButtons: 'su-offers_sorting', groupButtons: groupButtonsSorting} %}
 		{% include pathOffers~'pages-common/modules/column.twig' with {overrideClassColumn: 'su-offers_column', dataColumn: columnOffers} %}
 		{% include pathOffers~'pages-common/modules/pagination.twig' with {overrideClassPagination: 'su-offers_pagination'} %}
+		{% include pathOffers~'pages-common/modules/article.twig' with {overrideClassArticle: 'su-offers_article'} %}
+		{% include pathOffers~'pages-common/modules/videoblock.twig' with {overrideClassVideo: 'su-offers_video'} %}
+		<div class="su-offers_partner su-bnr-block">
+			<a class="su-bnr-block_link su-link-img" href="#">
+				<img class="su-link-img_img" src="img/content-common/partner.gif" alt="Наш партнер">
+			</a>
+		</div>
 	</div>
 
 {% endblock %}

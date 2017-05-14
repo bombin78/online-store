@@ -2,11 +2,11 @@
 	{% set pathBasketStep21 = 'templates/' %}
 	{% set pathBasketStep21Header = 'templates/pages/basket/' %}
 {% else %}
-	{% set pathBasketStep21 = '../' %}
+	{% set pathBasketStep21 = '../../' %}
 	{% set pathBasketStep21Header = '' %}
 {% endif %}
 
-{% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : '../layout/connect/wrapper.twig' %}
+{% extends (typeTwig == 'php') ? 'templates/layout/connect/wrapper.twig' : '../../layout/connect/wrapper.twig' %}
 
 
 {% block wrapper_sections %}

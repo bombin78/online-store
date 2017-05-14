@@ -6,10 +6,9 @@
 
 	@include mix-content-common-param();
 
-	&_sorting#{$group-buttons} {
-		margin-top : 20px;
-	}
-	&_pagination#{$pagination} {
+	&_sorting#{$group-buttons},
+	&_pagination#{$pagination},
+	&_partner#{$bnr-block} {
 		margin-top : 20px;
 	}
 }

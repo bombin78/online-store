@@ -3,7 +3,7 @@ $dataEmulation['typeHeader'] = '_su-active';
 
 $dataEmulation['contentBanner'] = [
 	'href'	=> '#',
-	'src' 	=> 'img/offers/offer-banner.jpg',
+	'src' 	=> 'img/content-common/gellak.jpg',
 	'alt' 	=> 'баннер контента'
 ];
 
@@ -18,7 +18,7 @@ $dataEmulation['breadcrumb'] = [
 	]
 ];
 
-$dataEmulation['tileCatalog'] = [
+$dataEmulation['catalog'] = [
 	[
 		'src' => 'img/catalog/thumb.jpg',
 		'href' =>'offers.html',

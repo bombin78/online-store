@@ -2,7 +2,7 @@ dataEmulation['typeHeader'] = '_su-active';
 
 dataEmulation['contentBanner'] = {
 	href: '#',
-	src: 'img/offers/offer-banner.jpg',
+	src: 'img/content-common/gellak.jpg',
 	alt: 'баннер контента'
 };
 
@@ -156,5 +156,13 @@ dataEmulation['columnOffers'] = [
 		buttonModifier: '_su-buy',
 		buttonHref: '#',
 		buttonTitle: 'Купить'
+	}
+];
+
+dataEmulation['videoList'] = [
+	{
+		title: false,
+		preview: false,
+		src: '//www.youtube.com/embed/BuNxtVF3kDs?rel=0'
 	}
 ];

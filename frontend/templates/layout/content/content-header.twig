@@ -1,10 +1,10 @@
 {% if typeTwig == 'php' %}
-	{% set pathContentHeader = 'templates/layout/content-header/' %}
+	{% set pathContentHeader = 'templates/layout/content/' %}
 {% endif %}
 
 {% if contentBanner %}
-	<div class="su-banner-block">
-		<a class="su-banner-block_link su-link-img {{ contentBanner.modifier }}" href="{{ contentBanner.href }}">
+	<div class="su-bnr-block">
+		<a class="su-bnr-block_link su-link-img {{ contentBanner.modifier }}" href="{{ contentBanner.href }}">
 			<img class="su-link-img_img" src="{{ contentBanner.src }}" alt="{{ contentBanner.alt }}">
 		</a>
 	</div>

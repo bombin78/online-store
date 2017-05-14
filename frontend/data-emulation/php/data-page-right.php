@@ -5,7 +5,7 @@ $dataEmulation['typeSidebar'] = '_su-aside-right';
 
 $dataEmulation['contentBanner'] = [
 	'href'	=> '#',
-	'src' 	=> 'img/banner/banner.jpg',
+	'src' 	=> 'img/content-common/paraffinotherapy.jpg',
 	'alt' 	=> 'баннер контента'
 ];
 

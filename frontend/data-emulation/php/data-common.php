@@ -265,13 +265,13 @@ $dataEmulation['sidebarBanner'] = [
 	[
 		'modifier' 	=> '',
 		'href' 		=> '#',
-		'src' 		=> 'img/sidebar/banner/banner_1.png',
+		'src' 		=> 'img/sidebar/img_1.png',
 		'alt' 		=> 'Бесплатный курс "ПРО Маникюр"'
 	],
 	[
 		'modifier' 	=> '',
 		'href' 		=> '#',
-		'src' 		=> 'img/sidebar/banner/banner_2.png',
+		'src' 		=> 'img/sidebar/img_2.png',
 		'alt' 		=> 'Заточка маникюрного инструмента'
 	]
 ];
@@ -405,8 +405,8 @@ $dataEmulation['footerAboutUs'] = [
 $dataEmulation['footerContacts'] = [
 	'title' => 'Заказ по телефону:',
 	'phones' => [
-		['phone' => '+7 (495] 645-35-03'],
-		['phone' => '+7 (812] 309-53-28']
+		['phone' => '+7 (495) 645-35-03'],
+		['phone' => '+7 (812) 309-53-28']
 	],
 	'schedule' => 'Звоните в будни <br>с 10:00 до 19:00'
 ];
