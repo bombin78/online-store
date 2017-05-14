@@ -30,6 +30,7 @@ $stock-description : lib-get-class('stock-description');
 $indicator : lib-get-class('indicator');
 $timer : lib-get-class('timer');
 $detail : lib-get-class('detail');
+$preview : lib-get-class('preview');
 $link-img : lib-get-class('link-img');
 $block : lib-get-class('block');
 $link : lib-get-class('link');
@@ -184,9 +185,9 @@ $_second : lib-get-modifier('second');
 			position : relative;
 			padding  : 20px 20px 20px 400px;
 			@at-root {
-				#{$stock-view} {
+				#{$stock-view}#{$preview} {
 					position : absolute;
-					&_link#{$link-img} {
+					#{$preview}_link#{$link-img} {
 						@include lib-link-img-param(
 							$height : 194px
 						);

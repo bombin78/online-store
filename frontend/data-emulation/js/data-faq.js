@@ -31,7 +31,7 @@ dataEmulation.faq = [
 									нажмите кнопку «Оплатить» и вы перейдете на страницу оплаты:\n\
 								 </p>\n\
 								<br>\n\
-								<img src="guide/img/example/example_5.jpg" width="750" height="492" alt="step1" title="step1">'
+								<img src="img/faq/img.jpg" width="750" height="492" alt="step1" title="step1">'
 			},
 			{
 				modifierArticle: '',
@@ -78,7 +78,7 @@ dataEmulation.faq = [
 									нажмите кнопку «Оплатить» и вы перейдете на страницу оплаты:\n\
 								</p>\n\
 								<br>\n\
-								<img src="guide/img/example/example_5.jpg" width="500" height="328" alt="step1" title="step1">'
+								<img src="img/faq/img.jpg" width="500" height="328" alt="step1" title="step1">'
 			},
 			{
 				modifierArticle: '',

@@ -92,8 +92,8 @@
 						@include lib-respond-to(narrow) {
 							padding : 15px 15px 15px 215px;
 						}
-						#{$stock-view} {
-							&_link#{$link-img} {
+						#{$stock-view}#{$preview} {
+							#{$preview}_link#{$link-img} {
 								@include lib-respond-to(normal) {
 									@include lib-link-img-param(
 										$height : 190px
