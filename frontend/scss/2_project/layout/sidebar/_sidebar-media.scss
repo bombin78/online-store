@@ -5,7 +5,9 @@
 #{$wrapper} {
 	@include lib-respond-to(mobile) {
 		position    : fixed;
+		top         : 0;
 		margin-left : -270px;
+		padding-top : 120px;
 		height      : 100%;
 		width       : 260px;
 	}
@@ -14,17 +16,30 @@
 			margin-top : -42px;
 			height     : 100%;
 			width      : 100%;
-
-			overflow   : auto;
 		}
 		#{$menu} {
 			@include lib-respond-to(mobile) {
+				padding-top   : 41px;
+
+				height        : 100%;
+
 				background    : $bg-menu;
 				border        : none;
 				border-radius : 0;
 			}
-
+			&_title {
+				@include lib-respond-to(mobile) {
+					position : absolute;
+					top      : 0;
+					left     : 0;
+				}
+			}
 			&_list#{$list} {
+				@include lib-respond-to(mobile) {
+					height   : 100%;
+
+					overflow : auto;
+				}
 				#{$list}_item {
 					@include lib-respond-to(mobile) {
 						padding-left : 0;
@@ -123,53 +138,40 @@
 					@include lib-respond-to(narrow) {
 						margin-top : 40px;
 					}
-
 				}
-				@at-root #{$wrapper} {
-					#{$viewed} {
-						@include lib-respond-to(narrow) {
-							padding : 10px 0;
-						}
-						&_preview#{$preview} {
-							#{$preview}_link#{$link-img} {
-								@include lib-respond-to(narrow) {
-									@include lib-link-img-param(
-										$height : 50px
-									);
-								}
-							}
-						}
-
-						@at-root #{$wrapper} {
-							#{$viewed-description} {
-								@include lib-respond-to(narrow) {
-									padding-left : 55px;
-								}
-
-								@at-root #{$wrapper} {
-									#{$viewed-title}#{$block} {
-										@include lib-respond-to(narrow) {
-											height    : 32px;
-											width     : 90px;
-
-											font-size : lib-font-size(-4);
-										}
-									}
-									#{$viewed-price}#{$detail} {
-										@include lib-respond-to(narrow) {
-											padding-top : 0;
-										}
-									}
-								}
-
-							}
-						}
-
-					}
-				}
-
 			}
 		}
 	}
+	#{$viewed} {
+		@include lib-respond-to(narrow) {
+			padding : 10px 0;
+		}
+		&_preview#{$preview} {
+			#{$preview}_link#{$link-img} {
+				@include lib-respond-to(narrow) {
+					@include lib-link-img-param(
+						$height : 50px
+					);
+				}
+			}
+		}
+	}
+	#{$viewed-description} {
+		@include lib-respond-to(narrow) {
+			padding-left : 55px;
+		}
+	}
+	#{$viewed-title}#{$block} {
+		@include lib-respond-to(narrow) {
+			height    : 32px;
+			width     : 90px;
 
+			font-size : lib-font-size(-4);
+		}
+	}
+	#{$viewed-price}#{$detail} {
+		@include lib-respond-to(narrow) {
+			padding-top : 0;
+		}
+	}
 }
