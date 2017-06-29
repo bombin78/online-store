@@ -5,7 +5,7 @@
 #{$wrapper} {
 	&#{$_menu} {
 		@include lib-respond-to(mobile) {
-			position     : fixed;
+			//position     : fixed;
 			padding-left : 260px;
 			&:after {
 				content    : '';
