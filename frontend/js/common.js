@@ -1,7 +1,32 @@
 //------------------------------------------------------------
-// ИНИЦИАЛИЗАЦИЯ МЕНЮ МОБИЛЬНОЙ ВЕРСИИ САЙТА
-var toggleMenu = new ToggleMenu ();
-toggleMenu.init();
+// МОДУЛЬ ПОКАЗАТЬ/СКРЫТЬ МЕНЮ В МОБИЛЬНОЙ ВЕРСИИ.
+// Стили находятся в директории "scss/layout/connect/wrapper".
+(function () {
+	var selectorWrapper = '.su-wrapper',
+		modifierWrapper = '_su-show-menu',
+		selectorWrapperCover = '.su-wrapper-cover',
+		selectorBtn = '.su-header-nav_button',
+		showStyle = {paddingLeft: 275},
+		hideStyle = {paddingLeft: 0};
+
+	$(document)
+		.on('click', selectorBtn, function () {
+			//Если модификатора нет, открываем меню.
+			if (!$(selectorWrapper).hasClass(modifierWrapper)) {
+				$(selectorWrapper).css(showStyle);
+				$(selectorWrapper).addClass(modifierWrapper);
+				$(selectorWrapper).removeAttr('style');
+			}
+		})
+		.on('click', selectorWrapperCover, function () {
+			//Если модификатор есть, скрываем меню.
+			if ($(selectorWrapper).hasClass(modifierWrapper)) {
+				$(selectorWrapper).css(hideStyle);
+				$(selectorWrapper).removeClass(modifierWrapper);
+				$(selectorWrapper).removeAttr('style');
+			}
+		});
+})();
 //------------------------------------------------------------
 
 //------------------------------------------------------------

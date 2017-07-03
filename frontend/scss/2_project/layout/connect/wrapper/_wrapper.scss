@@ -3,8 +3,9 @@
 //-------------------------------
 
 #{$wrapper} {
-	background : $bg-wrapper;
+	position   : relative;
 	width      : 100%;
+	background : $bg-wrapper;
 	//переопределение стилей для шаблона корзины
 	&#{$_basket} {
 		#{$wrapper-header} {
@@ -49,45 +50,41 @@
 				}
 			}
 		}
+	}
+	#{$wrapper-header} {
+		position : relative;
+		width    : 100%;
+		z-index  : lib-z('header');
+	}
 
-		@at-root {
-			#{$wrapper-header} {
-				position : relative;
-				width    : 100%;
-				z-index  : lib-z('header');
-			}
+	#{$wrapper-sections} {
+		position : relative;
+		width    : 100%;
+		z-index  : lib-z('page');
+	}
 
-			#{$wrapper-sections} {
-				position : relative;
-				width    : 100%;
-				z-index  : lib-z('page');
-			}
+	#{$wrapper-footer} {
+		position   : relative;
+		width      : 100%;
+		z-index    : lib-z('footer');
 
-			#{$wrapper-footer} {
-				position   : relative;
-				width      : 100%;
-				z-index    : lib-z('footer');
+		background : url('../../../../../img/bg_4.jpg') center top repeat-x;
+	}
 
-				background : url('../../../../../img/bg_4.jpg') center top repeat-x;
-			}
+	#{$wrapper-popup} {
+		position : absolute;
+		top      : 0;
+		left     : 0;
+		width    : 100%;
+		z-index  : lib-z('popup');
+	}
 
-			#{$wrapper-popup} {
-				position : absolute;
-				top      : 0;
-				left     : 0;
-				width    : 100%;
-				z-index  : lib-z('popup');
-			}
+	#{$wrapper-fixed} {
+		display : none;
+		z-index : lib-z('fixed');
+	}
 
-			#{$wrapper-fixed} {
-				display : none;
-				z-index : lib-z('fixed');
-			}
-
-			#{$wrapper-modal} {
-				z-index : lib-z('modal');
-			}
-		}
-
+	#{$wrapper-modal} {
+		z-index : lib-z('modal');
 	}
 }

@@ -63,11 +63,13 @@
 		{% endif %}
 	</div>
 
+	{# Блока перекрывающий wrapper при открытом меню в мобильной версии #}
+	<div class="su-wrapper-cover"></div>
+
 </div>
 {% block script %}
 	{% if typeTemplate == '_su-normal' %}
 		<!-- СКРИПТЫ ДЛЯ ВЕРСТКИ -->
-		<script src="js/toggle-menu.js"></script>
 		<script src="js/toggle-show.js"></script>
 		<script src="js/common.js"></script>
 		<!-- /СКРИПТЫ ДЛЯ ВЕРСТКИ -->

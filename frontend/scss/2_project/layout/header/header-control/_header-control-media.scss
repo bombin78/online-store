@@ -3,9 +3,7 @@
 //-------------------------------
 
 #{$wrapper} {
-
 	&_container {
-
 		@include lib-respond-to(normal) {
 			width : $lib-width-container-narrow;
 		}
@@ -15,95 +13,79 @@
 		@include lib-respond-to(mobile) {
 			width : 100%;
 		}
+	}
+	#{$search} {
+		@include lib-respond-to(narrow) {
+			width : 180px;
+		}
+		@include lib-respond-to(mobile) {
+			margin-left : 52px;
+			width       : 39%;
+		}
+	}
+	#{$nav} {
+		@include lib-respond-to(narrow) {
+			margin-top  : 10px;
+			margin-left : 15px;
+		}
+		@include lib-respond-to(mobile) {
+			position      : absolute;
+			top           : 0;
+			left          : -275px;
+			margin-top    : 0;
+			margin-left   : 0;
+			padding       : 10px 20px 15px 20px;
+			width         : 275px;
 
-		@at-root {
-			#{$search} {
-				@include lib-respond-to(narrow) {
-					width : 180px;
-				}
-				@include lib-respond-to(mobile) {
-					margin-left : 52px;
-					width       : 39%;
-				}
+			background    : #ececec;
+			border-bottom : 1px dashed #717171;
+		}
+		&_list#{$list} {
+			@include lib-respond-to(mobile) {
+				display     : block;
+
+				font-size   : lib-font-size(-4);
+				font-weight : $lib-font-weight-bold;
 			}
-			#{$nav} {
-				@include lib-respond-to(narrow) {
-					margin-top  : 10px;
-					margin-left : 15px;
-				}
+			#{$list}_item {
 				@include lib-respond-to(mobile) {
-					position      : absolute;
-					top           : 0;
-					left          : -260px;
-					margin-top    : 0;
-					margin-left   : 0;
-					padding       : 10px 20px 15px 20px;
-					width         : 260px;
-
-					background    : #ececec;
-					border-bottom : 1px dashed #717171;
-				}
-
-				@at-root {
-					#{$nav}_list#{$list} {
-						@include lib-respond-to(mobile) {
-							display     : block;
-
-							font-size   : lib-font-size(-4);
-							font-weight : $lib-font-weight-bold;
-						}
-						#{$list}_item {
-							@include lib-respond-to(mobile) {
-								float   : none;
-								margin  : 0;
-								padding : 6px 0;
-								&:after {
-									display : none;
-								}
-							}
-
-							@at-root {
-								#{$list}_link#{$link} {
-									@include lib-respond-to(mobile) {
-										color : #717171;
-									}
-								}
-							}
-
-						}
-					}
-				}
-
-				&_button {
+					float   : none;
+					margin  : 0;
+					padding : 6px 0;
 					&:after {
-						@include lib-respond-to(mobile) {
-							display : block;
-						}
+						display : none;
 					}
 				}
 			}
-			#{$basket} {
-
-				@at-root {
-					#{$basket}_dropdown {
-						@include lib-respond-to(narrow) {
-							min-width : 225px;
-						}
-					}
-				}
-
-			}
-			#{$user} {
-				@include lib-respond-to(narrow) {
-					max-width : 155px;
-				}
-				#{$userdropdown}#{$dropdown} {
-					@include lib-respond-to(narrow) {
-						width : 112px;
-					}
+			#{$list}_link#{$link} {
+				@include lib-respond-to(mobile) {
+					color : #717171;
 				}
 			}
 		}
-
+		&_button {
+			&:after {
+				@include lib-respond-to(mobile) {
+					display : block;
+				}
+			}
+		}
+	}
+	#{$basket} {
+		&_dropdown {
+			@include lib-respond-to(narrow) {
+				min-width : 225px;
+			}
+		}
+	}
+	#{$user} {
+		@include lib-respond-to(narrow) {
+			max-width : 155px;
+		}
+		#{$userdropdown}#{$dropdown} {
+			@include lib-respond-to(narrow) {
+				width : 112px;
+			}
+		}
 	}
 }

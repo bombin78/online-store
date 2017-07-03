@@ -6,10 +6,10 @@
 	@include lib-respond-to(mobile) {
 		position    : fixed;
 		top         : 0;
-		margin-left : -270px;
+		margin-left : -285px;
 		padding-top : 120px;
 		height      : 100%;
-		width       : 260px;
+		width       : 275px;
 	}
 	#{$sidebar-catalog} {
 		@include lib-respond-to(mobile) {

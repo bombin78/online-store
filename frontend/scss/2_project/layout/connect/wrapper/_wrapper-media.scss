@@ -3,23 +3,57 @@
 //-------------------------------
 
 #{$wrapper} {
-	&#{$_menu} {
-		@include lib-respond-to(mobile) {
-			//position     : fixed;
-			padding-left : 260px;
-			&:after {
-				content    : '';
-				display    : block;
-				position   : absolute;
-				top        : -10px;
-				left       : 260px;
-				width      : 100%;
-				height     : 100%;
-				z-index    : lib-z(wrapper-mobile-after);
+	@include lib-respond-to(mobile) {
+		padding-left : 0;
 
-				background : transparent;
-				cursor     : pointer;
+		transition   : padding-left 0.3s;
+	}
+	&._su-show-menu {
+		@include lib-respond-to(mobile) {
+			padding-left : 275px;
+		}
+		.su-wrapper-header {
+			@include lib-respond-to(mobile) {
+				//padding-left : 275px;
+			}
+		}
+		.su-wrapper-cover {
+			@include lib-respond-to(mobile) {
+				position : fixed;
+				top      : 0;
+				left     : 275px;
+				z-index  : lib-z('wrapper-cover');
+
+				width    : 100%;
+				height   : 100vh;
+
+				cursor   : pointer;
 			}
 		}
 	}
+	.su-wrapper-header {
+		@include lib-respond-to(mobile) {
+			padding-left : 0;
+
+			transition   : padding-left 0.3s;
+		}
+	}
+	//&#{$_menu} {
+	//	@include lib-respond-to(mobile) {
+	//		padding-left : 260px;
+	//		&:after {
+	//			content    : '';
+	//			display    : block;
+	//			position   : absolute;
+	//			top        : -10px;
+	//			left       : 260px;
+	//			width      : 100%;
+	//			height     : 100%;
+	//			z-index    : lib-z(wrapper-mobile-after);
+	//
+	//			background : transparent;
+	//			cursor     : pointer;
+	//		}
+	//	}
+	//}
 }
