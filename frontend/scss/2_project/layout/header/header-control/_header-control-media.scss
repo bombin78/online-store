@@ -22,6 +22,12 @@
 			margin-left : 52px;
 			width       : 39%;
 		}
+		@include lib-respond-to(mobileS) {
+			width : 45%;
+		}
+		@include lib-respond-to(mobileXS) {
+			width : 50%;
+		}
 	}
 	#{$nav} {
 		@include lib-respond-to(narrow) {
@@ -71,20 +77,52 @@
 			}
 		}
 	}
-	#{$basket} {
-		&_dropdown {
-			@include lib-respond-to(narrow) {
-				min-width : 225px;
-			}
-		}
-	}
 	#{$user} {
 		@include lib-respond-to(narrow) {
 			max-width : 155px;
 		}
+		@include lib-respond-to(mobileXS) {
+			margin-right : 15px;
+		}
 		#{$userdropdown}#{$dropdown} {
 			@include lib-respond-to(narrow) {
 				width : 112px;
+			}
+		}
+	}
+	#{$basket} {
+		&_link {
+			@include lib-respond-to(mobileXS) {
+				padding   : {
+					left  : 15px;
+					right : 15px;
+				}
+			}
+			&:after {
+				@include lib-respond-to(mobileXS) {
+					left : 7px;
+				}
+			}
+		}
+		&_title {
+			@include lib-respond-to(mobileM) {
+				display : none;
+			}
+		}
+		&_symbol,
+		&_total {
+			@include lib-respond-to(mobileS) {
+				display : none;
+			}
+		}
+		&_amount {
+			@include lib-respond-to(mobileXS) {
+				display : none;
+			}
+		}
+		&_dropdown {
+			@include lib-respond-to(narrow) {
+				min-width : 225px;
 			}
 		}
 	}

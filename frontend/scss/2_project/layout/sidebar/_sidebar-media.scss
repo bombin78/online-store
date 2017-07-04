@@ -58,7 +58,7 @@
 					}
 					#{$list}_link#{$link-catalog} {
 						@include lib-respond-to(mobile) {
-							padding-left : 0;
+							padding-left : 6px;
 						}
 						&#{$_list} {
 							&:before {

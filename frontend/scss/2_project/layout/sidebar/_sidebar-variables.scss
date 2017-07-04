@@ -22,7 +22,7 @@ $preview : lib-get-class('preview');
 $detail : lib-get-class('detail');
 $block : lib-get-class('block');
 $list : lib-get-class('list');
-$_show : lib-get-modifier('_show');
-$_open : lib-get-modifier('_open');
-$_list : lib-get-modifier('_list');
+$_show : lib-get-modifier('show');
+$_open : lib-get-modifier('open');
+$_list : lib-get-modifier('list');
 //-------------------------------
