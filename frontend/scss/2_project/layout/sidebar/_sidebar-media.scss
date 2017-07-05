@@ -44,15 +44,29 @@
 					@include lib-respond-to(mobile) {
 						padding-left : 0;
 					}
-					> #{$list}_dropdown#{$dropdown}#{$_show} {
-						@include lib-respond-to(mobile) {
-							display : block;
-						}
-					}
 					&:hover {
-						> #{$list}_dropdown#{$dropdown}:not(#{$_show}) {
+						> #{$list}_dropdown#{$dropdown} {
 							@include lib-respond-to(mobile) {
 								display : none;
+							}
+						}
+					}
+					&#{$_open} {
+						@include lib-respond-to(mobile) {
+							background : $bg-open;
+						}
+						> #{$list}_link#{$link-catalog} {
+							&#{$_list} {
+								&:after {
+									@include lib-respond-to(mobile) {
+										content : '\f077';
+									}
+								}
+							}
+						}
+						> #{$list}_dropdown#{$dropdown} {
+							@include lib-respond-to(mobile) {
+								display : block;
 							}
 						}
 					}
@@ -72,20 +86,15 @@
 									display : block;
 								}
 							}
-							&#{$_open} {
-								&:after {
-									@include lib-respond-to(mobile) {
-										content : '\f077';
-									}
-								}
-							}
 						}
 					}
 					#{$list}_dropdown#{$dropdown} {
 						@include lib-respond-to(mobile) {
-							position : relative;
-							left     : 0;
-							padding  : 0;
+							position    : relative;
+							left        : 0;
+							padding     : 0;
+
+							margin-left : 0;
 						}
 						#{$dropdown}_container {
 							@include lib-respond-to(mobile) {
@@ -95,7 +104,7 @@
 
 								border-radius : 0;
 								border        : none;
-								background    : $bg-dropdown-container;
+								background    : $bg-open;
 								box-shadow    : none;
 							}
 							#{$dropdown}_title {
@@ -107,7 +116,7 @@
 								@include lib-respond-to(mobile) {
 									margin-top   : 0;
 									padding-top  : 0;
-									padding-left : 10px;
+									padding-left : 12px;
 
 									background   : transparent;
 								}

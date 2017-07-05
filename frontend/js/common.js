@@ -30,6 +30,56 @@
 //------------------------------------------------------------
 
 //------------------------------------------------------------
+// МОДУЛЬ ПОКАЗАТЬ/СКРЫТЬ МЕНЮ 2-ГО УРОВНЯ В МОБИЛЬНОЙ ВЕРСИИ.
+$('.su-level1._su-list').on('click', function (e) {
+	e.preventDefault();
+	var wrapper = $(this).closest('.su-list_item'),
+		wrapperModifier = '_su-open',
+		wrapperAttr = 'style',
+		description = wrapper.find('.su-dropdown'),
+		duration = 200;
+
+	if (wrapper.hasClass(wrapperModifier)) {
+		description.slideUp(duration, function () {
+			wrapper.removeClass(wrapperModifier);
+			description.removeAttr(wrapperAttr);
+		});
+	}
+	else {
+		description.slideDown(duration, function () {
+			wrapper.addClass(wrapperModifier);
+			description.removeAttr(wrapperAttr);
+		});
+	}
+});
+//------------------------------------------------------------
+
+//------------------------------------------------------------
+// МОДУЛЬ ПОКАЗАТЬ/СКРЫТЬ МЕНЮ 3-ГО УРОВНЯ В МОБИЛЬНОЙ ВЕРСИИ.
+$('.su-level2._su-list').on('click', function (e) {
+	e.preventDefault();
+	var wrapper = $(this).closest('.su-list_item'),
+		wrapperModifier = '_su-open',
+		wrapperAttr = 'style',
+		description = wrapper.find('.su-dropdown'),
+		duration = 200;
+
+	if (wrapper.hasClass(wrapperModifier)) {
+		wrapper.removeClass(wrapperModifier);
+		description.slideUp(duration, function () {
+			description.removeAttr(wrapperAttr);
+		});
+	}
+	else {
+		description.slideDown(duration, function () {
+			wrapper.addClass(wrapperModifier);
+			description.removeAttr(wrapperAttr);
+		});
+	}
+});
+//------------------------------------------------------------
+
+//------------------------------------------------------------
 // ИНИЦИАЛИЗАЦИЯ ВЫПАДАЮЩЕГО СПИСКА КАРЗИНЫ
 var toggleBasket = new ToggleShow();
 toggleBasket.init(
@@ -60,31 +110,31 @@ var toggleUser = new ToggleShow();
 //------------------------------------------------------------
 // КАТАЛОГ МОБИЛЬНОЙ ВЕРСИИ САЙТА
 // ИНИЦИАЛИЗАЦИЯ 1-ГО УРОВНЯ
-var toggleCatalogLevel1 = new ToggleShow();
-toggleCatalogLevel1.init(
-	{
-		closeDropdown: 'otherClose',
-		classNameLevel: 'su-level1',
-		classNameMain: 'su-list_item',
-		classNameOpen: 'su-list_link',
-		classNameDrop: 'su-list_dropdown',
-		modifierNameOpen: '_su-open',
-		modifierNameDrop: '_su-show'
-	}
-);
-// ИНИЦИАЛИЗАЦИЯ 2-ГО УРОВНЯ
-var toggleCatalogLevel2 = new ToggleShow();
-toggleCatalogLevel2.init(
-	{
-		closeDropdown: 'otherClose',
-		classNameLevel: 'su-level2',
-		classNameMain: 'su-list_item',
-		classNameOpen: 'su-list_link',
-		classNameDrop: 'su-list_dropdown',
-		modifierNameOpen: '_su-open',
-		modifierNameDrop: '_su-show'
-	}
-);
+// var toggleCatalogLevel1 = new ToggleShow();
+// toggleCatalogLevel1.init(
+// 	{
+// 		closeDropdown: 'otherClose',
+// 		classNameLevel: 'su-level1',
+// 		classNameMain: 'su-list_item',
+// 		classNameOpen: 'su-list_link',
+// 		classNameDrop: 'su-list_dropdown',
+// 		modifierNameOpen: '_su-open',
+// 		modifierNameDrop: '_su-show'
+// 	}
+// );
+// // ИНИЦИАЛИЗАЦИЯ 2-ГО УРОВНЯ
+// var toggleCatalogLevel2 = new ToggleShow();
+// toggleCatalogLevel2.init(
+// 	{
+// 		closeDropdown: 'otherClose',
+// 		classNameLevel: 'su-level2',
+// 		classNameMain: 'su-list_item',
+// 		classNameOpen: 'su-list_link',
+// 		classNameDrop: 'su-list_dropdown',
+// 		modifierNameOpen: '_su-open',
+// 		modifierNameDrop: '_su-show'
+// 	}
+// );
 //------------------------------------------------------------
 
 // УСТРАНЕНИЕ ЭФФЕКТА СМЕЩЕНИЯ ШАПКИ ПРИ ОТКРЫТИИ МОДАЛЬНОГО ОКНА
@@ -154,3 +204,4 @@ $(function(){
 	}
 });
 //------------------------------------------------------------
+
