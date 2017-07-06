@@ -1,6 +1,6 @@
 //Классы
 $wrapper : lib-get-class('footer-about-us');
-$about-us-list : lib-get-class('footer-about-us-list');
+$footer-about-us-list : lib-get-class('footer-about-us-list');
 $detail : lib-get-class('detail');
 $list : lib-get-class('list');
 //-------------------------------
@@ -10,13 +10,7 @@ $list : lib-get-class('list');
 	#{$detail}_label {
 		@include mix-footer-title;
 	}
-	#{$detail}_value {
-
-		@at-root {
-			#{$about-us-list}#{$list} {
-				@include mix-footer-list;
-			}
-		}
-
+	#{$footer-about-us-list}#{$list} {
+		@include mix-footer-list;
 	}
 }

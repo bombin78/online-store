@@ -15,20 +15,16 @@ $link : lib-get-class('link');
 		width          : 100%;
 
 		vertical-align : bottom;
-
-		@at-root {
-			#{$wrapper}_email#{$field-text} {
-				float         : left;
-				padding-right : 10px;
-				width         : 50%;
-			}
-			#{$wrapper}_password#{$field-text} {
-				float        : right;
-				padding-left : 10px;
-				width        : 50%;
-			}
-		}
-
+	}
+	&_email#{$field-text} {
+		float         : left;
+		padding-right : 10px;
+		width         : 50%;
+	}
+	&_password#{$field-text} {
+		float        : right;
+		padding-left : 10px;
+		width        : 50%;
 	}
 	&_name#{$field-text},
 	&_row,

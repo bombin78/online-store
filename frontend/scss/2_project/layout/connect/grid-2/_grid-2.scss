@@ -3,29 +3,25 @@
 //-------------------------------
 
 #{$wrapper} {
-	&_container {
-		$padding: 10px;
+	$padding: 10px;
 
+	&_container {
 		position : relative;
 		margin   : 0 auto;
 		padding  : $padding;
 		width    : $lib-width-container-normal;
-
-		@extend %lib-clearfix;
-
-		@at-root {
-			@include lib-grid-param (
-				$grid-class: $wrapper,
-				$padding-container-px: $padding,
-				$width-container-px: $lib-width-container-normal,
-				$width-aside-px: 250px,
-				$aside-float: left,
-				$content-float: left
-			);
-		}
-
 	}
-	#{$wrapper}_aside#{$_aside-right} {
+
+	@include lib-grid-param (
+		$grid-class: $wrapper,
+		$padding-container-px: $padding,
+		$width-container-px: $lib-width-container-normal,
+		$width-aside-px: 250px,
+		$aside-float: left,
+		$content-float: left
+	);
+
+	&_aside#{$_aside-right} {
 		float: right;
 	}
 }

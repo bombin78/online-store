@@ -5,7 +5,7 @@ $color-footer-schedule : lib-color(primary-lighter);
 
 //Классы
 $wrapper : lib-get-class('footer-contacts');
-$contacts-list : lib-get-class('footer-contacts-list');
+$footer-contacts-list : lib-get-class('footer-contacts-list');
 $detail : lib-get-class('detail');
 $list : lib-get-class('list');
 //-------------------------------
@@ -17,19 +17,13 @@ $list : lib-get-class('list');
 		#{$detail}_label {
 			@include mix-footer-title;
 		}
-		#{$detail}_value {
+	}
+	#{$footer-contacts-list}#{$list} {
+		margin-top : 15px;
 
-			@at-root {
-				#{$contacts-list}#{$list} {
-					margin-top : 15px;
-
-					color      : $color-footer-phone;
-					font-size  : lib-font-size(-2);
-					text-align : right;
-				}
-			}
-
-		}
+		color      : $color-footer-phone;
+		font-size  : lib-font-size(-2);
+		text-align : right;
 	}
 	&_schedule {
 		margin-top  : 12px;

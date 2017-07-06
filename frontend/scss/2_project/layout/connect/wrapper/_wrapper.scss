@@ -8,45 +8,41 @@
 	background : $bg-wrapper;
 	//переопределение стилей для шаблона корзины
 	&#{$_basket} {
-		#{$wrapper-header} {
-			#{$header-info} {
+		#{$header-info} {
 				padding-top : 0;
 				height      : 100px;
 			}
-		}
-		#{$wrapper-footer} {
-			#{$footer} {
-				&_cell {
-					width : 100%;
-					#{$footer-contacts} {
-						margin-left : 0;
+		#{$footer} {
+			&_cell {
+				width : 100%;
+			}
+			#{$footer-contacts} {
+				margin-left : 0;
 
-						text-align  : left;
-						&_phones#{$detail} {
-							display : inline-block;
-							#{$detail}_label {
-								float       : left;
+				text-align  : left;
+				&_phones#{$detail} {
+					display : inline-block;
+					#{$detail}_label {
+						float       : left;
 
-								line-height : lib-line-height(-2);
-							}
-							#{$detail}_value {
-								float : left;
-								#{$footer-contacts-list}#{$list} {
-									margin-top : 0;
-									#{$list}_item {
-										float       : left;
-										margin-left : 8px;
-									}
-								}
-							}
-						}
-						&_schedule {
-							text-align : left;
-							br {
-								display : none;
-							}
-						}
+						line-height : lib-line-height(-2);
 					}
+					#{$detail}_value {
+						float : left;
+					}
+				}
+				&_schedule {
+					text-align : left;
+					br {
+						display : none;
+					}
+				}
+			}
+			#{$footer-contacts-list}#{$list} {
+				margin-top : 0;
+				#{$list}_item {
+					float       : left;
+					margin-left : 8px;
 				}
 			}
 		}

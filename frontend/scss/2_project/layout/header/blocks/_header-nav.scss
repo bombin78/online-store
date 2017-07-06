@@ -60,13 +60,9 @@ $link : lib-get-class('link');
 					display : none;
 				}
 			}
-
-			@at-root #{$list}_item {
-				#{$list}_link#{$link} {
-					display : block;
-				}
-			}
-
+		}
+		#{$list}_link#{$link} {
+			display : block;
 		}
 	}
 }

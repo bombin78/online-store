@@ -15,176 +15,165 @@
 			height : 260px;
 			width  : $lib-width-container-mobile;
 		}
-
-		@at-root {
-			#{$header-stock} {
-				@include lib-respond-to(normal) {
-					height : 304px;
-				}
+	}
+	#{$header-stock} {
+		@include lib-respond-to(normal) {
+			height : 304px;
+		}
+		@include lib-respond-to(narrow) {
+			margin-top : 14px;
+			height     : 230px;
+		}
+	}
+	#{$stock-counter} {
+		@include lib-respond-to(normal) {
+			width : 300px;
+		}
+		@include lib-respond-to(narrow) {
+			width : 200px;
+		}
+		&_text {
+			&#{$_start} {
 				@include lib-respond-to(narrow) {
-					margin-top : 14px;
-					height     : 230px;
+					padding-top : 15px;
+					font-size   : lib-font-size(1);
 				}
-
-				@at-root {
-					#{$stock-counter} {
-						@include lib-respond-to(normal) {
-							width : 300px;
-						}
-						@include lib-respond-to(narrow) {
-							width : 200px;
-						}
-						&_title {
-							#{$stock-counter}_text {
-								&#{$_start} {
-									@include lib-respond-to(narrow) {
-										padding-top : 15px;
-										font-size   : lib-font-size(1);
-									}
-								}
-								&#{$_middle} {
-									@include lib-respond-to(narrow) {
-										padding-top : 15px;
-										font-size   : lib-font-size(2);
-									}
-								}
-								&#{$_end} {
-									@include lib-respond-to(narrow) {
-										padding-top : 7px;
-										font-size   : lib-font-size(1);
-									}
-								}
-							}
-						}
-						&_done#{$indicator} {
-							#{$indicator}_info {
-								@include lib-respond-to(narrow) {
-									padding-top : 15px;
-								}
-							}
-						}
-						&_timer#{$timer} {
-							#{$timer}_title {
-								@include lib-respond-to(narrow) {
-									padding-top : 15px;
-								}
-							}
-							#{$timer}_time {
-								@include lib-respond-to(narrow) {
-									padding : 2%;
-								}
-								#{$timer}_value {
-									@include lib-respond-to(normal) {
-										font-size : lib-font-size(3);
-									}
-									@include lib-respond-to(narrow) {
-										font-size : lib-font-size(2)
-									}
-								}
-							}
-
-						}
-					}
-					#{$stock-offer} {
-						@include lib-respond-to(normal) {
-							padding : 20px 20px 20px 320px;
-						}
-						@include lib-respond-to(narrow) {
-							padding : 15px 15px 15px 215px;
-						}
-						#{$stock-view}#{$preview} {
-							#{$preview}_link#{$link-img} {
-								@include lib-respond-to(normal) {
-									@include lib-link-img-param(
-										$height : 190px
-									);
-								}
-								@include lib-respond-to(narrow) {
-									@include lib-link-img-param(
-										$height : 140px
-									);
-								}
-							}
-						}
-						#{$stock-accent} {
-							@include lib-respond-to(normal) {
-								padding-left : 210px;
-								height       : 190px;
-							}
-							@include lib-respond-to(narrow) {
-								padding-left : 155px;
-								height       : 140px;
-							}
-							&_title {
-								@include lib-respond-to(narrow) {
-									font-size   : lib-font-size(1);
-									line-height : lib-line-height(1);
-								}
-							}
-							&_name#{$block} {
-								@include lib-respond-to(normal) {
-									margin-top : 22px;
-								}
-								@include lib-respond-to(narrow) {
-									margin-top : 10px;
-								}
-								#{$block}_element#{$link} {
-									@include lib-respond-to(normal) {
-										font-size : lib-font-size(0);
-									}
-								}
-							}
-							&_old-price#{$detail} {
-								@include lib-respond-to(narrow) {
-									padding-top : 13px;
-								}
-							}
-							&_new-price#{$detail} {
-								@include lib-respond-to(narrow) {
-									padding-top : 5px;
-								}
-								#{$detail}_label {
-									@include lib-respond-to(narrow) {
-										font-size : lib-font-size(1);
-									}
-								}
-								#{$detail}_value {
-									@include lib-respond-to(narrow) {
-										font-size : lib-font-size(2);
-									}
-								}
-							}
-							&_stamp#{$detail} {
-								@include lib-respond-to(normal) {
-									top   : 45%;
-									right : 20px;
-								}
-								@include lib-respond-to(narrow) {
-									height : 84px;
-									width  : 84px;
-								}
-								#{$detail}_label {
-									@include lib-respond-to(narrow) {
-										padding-top : 23px;
-									}
-								}
-							}
-							&_button#{$block} {
-								@include lib-respond-to(narrow) {
-									margin-top : 14px;
-								}
-							}
-						}
-						#{$stock-description} {
-							@include lib-respond-to(narrow) {
-								padding-top : 12px;
-							}
-						}
-					}
+			}
+			&#{$_middle} {
+				@include lib-respond-to(narrow) {
+					padding-top : 15px;
+					font-size   : lib-font-size(2);
 				}
-
+			}
+			&#{$_end} {
+				@include lib-respond-to(narrow) {
+					padding-top : 7px;
+					font-size   : lib-font-size(1);
+				}
 			}
 		}
-
+		&_done#{$indicator} {
+			#{$indicator}_info {
+				@include lib-respond-to(narrow) {
+					padding-top : 15px;
+				}
+			}
+		}
+		&_timer#{$timer} {
+			#{$timer}_title {
+				@include lib-respond-to(narrow) {
+					padding-top : 15px;
+				}
+			}
+			#{$timer}_time {
+				@include lib-respond-to(narrow) {
+					padding : 2%;
+				}
+			}
+			#{$timer}_value {
+				@include lib-respond-to(normal) {
+					font-size : lib-font-size(3);
+				}
+				@include lib-respond-to(narrow) {
+					font-size : lib-font-size(2)
+				}
+			}
+		}
+	}
+	#{$stock-offer} {
+		@include lib-respond-to(normal) {
+			padding : 20px 20px 20px 320px;
+		}
+		@include lib-respond-to(narrow) {
+			padding : 15px 15px 15px 215px;
+		}
+	}
+	#{$stock-view}#{$preview} {
+		#{$preview}_link#{$link-img} {
+			@include lib-respond-to(normal) {
+				@include lib-link-img-param(
+					$height : 190px
+				);
+			}
+			@include lib-respond-to(narrow) {
+				@include lib-link-img-param(
+					$height : 140px
+				);
+			}
+		}
+	}
+	#{$stock-accent} {
+		@include lib-respond-to(normal) {
+			padding-left : 210px;
+			height       : 190px;
+		}
+		@include lib-respond-to(narrow) {
+			padding-left : 155px;
+			height       : 140px;
+		}
+		&_title {
+			@include lib-respond-to(narrow) {
+				font-size   : lib-font-size(1);
+				line-height : lib-line-height(1);
+			}
+		}
+		&_name#{$block} {
+			@include lib-respond-to(normal) {
+				margin-top : 22px;
+			}
+			@include lib-respond-to(narrow) {
+				margin-top : 10px;
+			}
+			#{$block}_element#{$link} {
+				@include lib-respond-to(normal) {
+					font-size : lib-font-size(0);
+				}
+			}
+		}
+		&_old-price#{$detail} {
+			@include lib-respond-to(narrow) {
+				padding-top : 13px;
+			}
+		}
+		&_new-price#{$detail} {
+			@include lib-respond-to(narrow) {
+				padding-top : 5px;
+			}
+			#{$detail}_label {
+				@include lib-respond-to(narrow) {
+					font-size : lib-font-size(1);
+				}
+			}
+			#{$detail}_value {
+				@include lib-respond-to(narrow) {
+					font-size : lib-font-size(2);
+				}
+			}
+		}
+		&_stamp#{$detail} {
+			@include lib-respond-to(normal) {
+				top   : 45%;
+				right : 20px;
+			}
+			@include lib-respond-to(narrow) {
+				height : 84px;
+				width  : 84px;
+			}
+			#{$detail}_label {
+				@include lib-respond-to(narrow) {
+					padding-top : 23px;
+				}
+			}
+		}
+		&_button#{$block} {
+			@include lib-respond-to(narrow) {
+				margin-top : 14px;
+			}
+		}
+	}
+	#{$stock-description} {
+		@include lib-respond-to(narrow) {
+			padding-top : 12px;
+		}
 	}
 }

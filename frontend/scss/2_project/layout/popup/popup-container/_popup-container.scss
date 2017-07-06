@@ -9,12 +9,9 @@
 	padding  : 0 10px;
 	width    : $lib-width-container-normal;
 
-	@at-root {
-		#{$popup-search} {
-			position : absolute;
-			top      : 43px;
-			left     : 10px;
-		}
+	#{$popup-search} {
+		position : absolute;
+		top      : 43px;
+		left     : 10px;
 	}
-
 }

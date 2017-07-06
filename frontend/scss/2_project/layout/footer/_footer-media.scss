@@ -9,49 +9,41 @@
 	@include lib-respond-to(narrow) {
 		width : $lib-width-container-mobile;
 	}
-	&_row {
-
-		@at-root {
-			#{$wrapper}_cell {
-				#{$social-network} {
-					@include lib-respond-to(normal) {
-						margin-right : 20px;
-					}
-					@include lib-respond-to(narrow) {
-						margin-right : 10px;
-					}
-					//pluso-wrap - класс плагина
-					.pluso-wrap {
-						:nth-of-type(8),
-						:nth-of-type(9),
-						:nth-of-type(10) {
-							@include lib-respond-to(normal) {
-								display : none;
-							}
-						}
-					}
-				}
-				#{$catalog},
-				#{$info},
-				#{$about-us} {
-					@include lib-respond-to(normal) {
-						margin : 0 20px;
-					}
-					@include lib-respond-to(narrow) {
-						margin : 0 15px;
-					}
-
-				}
-				#{$contacts} {
-					@include lib-respond-to(normal) {
-						margin-left : 20px;
-					}
-					@include lib-respond-to(narrow) {
-						margin-left : 10px;
-					}
+	#{$footer-social-network} {
+		@include lib-respond-to(normal) {
+			margin-right : 20px;
+		}
+		@include lib-respond-to(narrow) {
+			margin-right : 10px;
+		}
+		//pluso-wrap - класс плагина
+		.pluso-wrap {
+			:nth-of-type(8),
+			:nth-of-type(9),
+			:nth-of-type(10) {
+				@include lib-respond-to(normal) {
+					display : none;
 				}
 			}
 		}
+	}
+	#{$footer-catalog},
+	#{$footer-info},
+	#{$footer-about-us} {
+		@include lib-respond-to(normal) {
+			margin : 0 20px;
+		}
+		@include lib-respond-to(narrow) {
+			margin : 0 15px;
+		}
 
+	}
+	#{$footer-contacts} {
+		@include lib-respond-to(normal) {
+			margin-left : 20px;
+		}
+		@include lib-respond-to(narrow) {
+			margin-left : 10px;
+		}
 	}
 }

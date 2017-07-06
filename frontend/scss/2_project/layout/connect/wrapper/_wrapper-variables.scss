@@ -10,6 +10,7 @@ $wrapper-footer : lib-get-class('wrapper-footer');
 $wrapper-popup : lib-get-class('wrapper-popup');
 $wrapper-fixed : lib-get-class('wrapper-fixed');
 $wrapper-modal : lib-get-class('wrapper-modal');
+$wrapper-cover : lib-get-class('wrapper-cover');
 $header-info : lib-get-class('header-info');
 $footer : lib-get-class('footer');
 $footer-contacts : lib-get-class('footer-contacts');
@@ -17,5 +18,5 @@ $footer-contacts-list : lib-get-class('footer-contacts-list');
 $detail : lib-get-class('detail');
 $list : lib-get-class('list');
 $_basket : lib-get-modifier('basket');
-$_menu : lib-get-modifier('menu');
+$_show-menu : lib-get-modifier('show-menu');
 //-------------------------------

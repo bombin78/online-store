@@ -107,19 +107,19 @@
 								background    : $bg-open;
 								box-shadow    : none;
 							}
-							#{$dropdown}_title {
-								@include lib-respond-to(mobile) {
-									display : none;
-								}
+						}
+						#{$dropdown}_title {
+							@include lib-respond-to(mobile) {
+								display : none;
 							}
-							#{$dropdown}_list#{$list} {
-								@include lib-respond-to(mobile) {
-									margin-top   : 0;
-									padding-top  : 0;
-									padding-left : 12px;
+						}
+						#{$dropdown}_list#{$list} {
+							@include lib-respond-to(mobile) {
+								margin-top   : 0;
+								padding-top  : 0;
+								padding-left : 12px;
 
-									background   : transparent;
-								}
+								background   : transparent;
 							}
 						}
 					}

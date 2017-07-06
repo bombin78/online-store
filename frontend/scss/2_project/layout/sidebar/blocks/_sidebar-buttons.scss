@@ -9,13 +9,9 @@ $link-btn : lib-get-class('link-btn');
 	&_list#{$list} {
 		#{$list}_item {
 			margin-top : 6px;
-
-			@at-root #{$wrapper}_list#{$list} {
-				#{$list}_link#{$link-btn} {
-					width : 100%;
-				}
-			}
-
+		}
+		#{$list}_link#{$link-btn} {
+			width : 100%;
 		}
 	}
 }

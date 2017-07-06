@@ -9,9 +9,9 @@
 	}
 
 	#{$breadcrumb} {
-		@include lib-respond-to(narrow) {
-			#{$breadcrumb}_item {
-				&:before {
+		&_item {
+			&:before {
+				@include lib-respond-to(narrow) {
 					top : -2px
 				}
 			}

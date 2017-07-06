@@ -12,15 +12,12 @@
 		padding : 0;
 	}
 
-	@at-root {
-		#{$delivery-close} {
-			@include lib-close;
-		}
-
-		#{$delivery-text} {
-			color     : $color-text;
-			font-size : lib-font-size(3);
-		}
+	#{$delivery-close} {
+		@include lib-close;
 	}
 
+	#{$delivery-text} {
+		color     : $color-text;
+		font-size : lib-font-size(3);
+	}
 }

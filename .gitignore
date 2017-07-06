@@ -1,3 +1,6 @@
 .idea
+cloc-1.72.exe
 node_modules
 public
+frontend/guide/img/article/
+frontend/scss/2_project/pages-common/modules/article/

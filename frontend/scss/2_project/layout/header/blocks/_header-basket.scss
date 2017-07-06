@@ -14,11 +14,11 @@ $color-link-visited : lib-color(primary-lighter);
 
 //Классы
 $wrapper : lib-get-class('header-basket');
-$selected : lib-get-class('basket-selected');
-$label : lib-get-class('basket-label');
-$value : lib-get-class('basket-value');
-$total : lib-get-class('basket-total');
-$button : lib-get-class('basket-button');
+$basket-selected : lib-get-class('basket-selected');
+$basket-label : lib-get-class('basket-label');
+$basket-value : lib-get-class('basket-value');
+$basket-total : lib-get-class('basket-total');
+$basket-button : lib-get-class('basket-button');
 $list : lib-get-class('list');
 $link : lib-get-class('link');
 $currency : lib-get-class('currency');
@@ -56,6 +56,7 @@ $_show : lib-get-modifier('show');
 			left      : 12px;
 
 			font-size : lib-font-size(-2);
+
 			@include lib-font-icon;
 		}
 	}
@@ -74,76 +75,68 @@ $_show : lib-get-modifier('show');
 		&#{$_show} {
 			display : block;
 		}
+	}
 
-		@at-root {
-			#{$selected}#{$list} {
-				display   : table;
-				width     : 100%;
+	#{$basket-selected}#{$list} {
+		display   : table;
+		width     : 100%;
 
-				font-size : lib-font-size(-2);
-				#{$list}_item {
-					display    : table-row-group;
+		font-size : lib-font-size(-2);
+		#{$list}_item {
+			display    : table-row-group;
 
-					list-style : none;
-					&:hover {
-						background : $bg-dropdown-detail-hover;
-					}
-
-					@at-root #{$selected}#{$list} {
-						#{$list}_link#{$link} {
-							display : table-row;
-
-							@at-root {
-								#{$label} {
-									display        : table-cell;
-									padding        : 5px 0 5px 10px;
-
-									color          : $color-label;
-									vertical-align : middle;
-									border-bottom  : 1px dashed $color-dropdown-border-detail;
-								}
-								#{$value} {
-									display        : table-cell;
-									padding        : 5px 10px 5px 5px;
-
-									vertical-align : middle;
-									text-align     : right;
-									white-space    : nowrap;
-									border-bottom  : 1px dashed $color-dropdown-border-detail;
-									&_cost {
-										display          : inline-block;
-										padding          : 6px 10px;
-
-										color            : $color-cost;
-										border-radius    : 12px;
-										background-color : $bg-cost;
-										font-weight      : $lib-font-weight-bold;
-										&#{$currency}:after {
-											vertical-align : middle;
-										}
-									}
-								}
-							}
-
-						}
-					}
-
-				}
-			}
-
-			#{$total} {
-				margin-top  : 12px;
-
-				color       : $color-total;
-				text-align  : center;
-				font-weight : $lib-font-weight-bold;
-			}
-
-			#{$button}#{$block} {
-				margin-top : 10px;
-
-				text-align : center;
+			list-style : none;
+			&:hover {
+				background : $bg-dropdown-detail-hover;
 			}
 		}
+		#{$list}_link#{$link} {
+			display : table-row;
+		}
+	}
+
+	#{$basket-label} {
+		display        : table-cell;
+		padding        : 5px 0 5px 10px;
+
+		color          : $color-label;
+		vertical-align : middle;
+		border-bottom  : 1px dashed $color-dropdown-border-detail;
+	}
+
+	#{$basket-value} {
+		display        : table-cell;
+		padding        : 5px 10px 5px 5px;
+
+		vertical-align : middle;
+		text-align     : right;
+		white-space    : nowrap;
+		border-bottom  : 1px dashed $color-dropdown-border-detail;
+		&_cost {
+			display          : inline-block;
+			padding          : 6px 10px;
+
+			color            : $color-cost;
+			border-radius    : 12px;
+			background-color : $bg-cost;
+			font-weight      : $lib-font-weight-bold;
+			&#{$currency}:after {
+				vertical-align : middle;
+			}
+		}
+	}
+
+	#{$basket-total} {
+		margin-top  : 12px;
+
+		color       : $color-total;
+		text-align  : center;
+		font-weight : $lib-font-weight-bold;
+	}
+
+	#{$basket-button}#{$block} {
+		margin-top : 10px;
+
+		text-align : center;
 	}
 }

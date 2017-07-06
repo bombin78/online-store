@@ -16,27 +16,23 @@
 	width    : $lib-width-container-normal;
 	&_row {
 		@extend %lib-clearfix;
-
-		@at-root {
-			#{$wrapper}_cell {
-				@include lib-box10(2);
-				#{$social-network} {
-					margin-right : 30px;
-					//pluso - класс плагина
-					&_pluso.pluso {
-						margin-left : -5px;
-					}
-				}
-				#{$catalog},
-				#{$info},
-				#{$about-us} {
-					margin : 0 30px;
-				}
-				#{$contacts} {
-					margin-left : 30px;
-				}
-			}
+	}
+	&_cell {
+		@include lib-box10(2);
+	}
+	#{$footer-social-network} {
+		margin-right : 30px;
+		//pluso - класс плагина
+		&_pluso.pluso {
+			margin-left : -5px;
 		}
-
+	}
+	#{$footer-catalog},
+	#{$footer-info},
+	#{$footer-about-us} {
+		margin : 0 30px;
+	}
+	#{$footer-contacts} {
+		margin-left : 30px;
 	}
 }

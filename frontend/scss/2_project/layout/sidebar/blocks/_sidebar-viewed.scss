@@ -66,83 +66,72 @@ $link : lib-get-class('link');
 
 				border-top : none;
 			}
+		}
+	}
+	#{$viewed} {
+		position         : relative;
+		padding          : 15px 0;
+		width            : 100%;
 
-			@at-root {
-				#{$viewed} {
-					position         : relative;
-					padding          : 15px 0;
-					width            : 100%;
-
-					background-color : $bg-viewed;
-					&:hover {
-						background : $bg-viewed-hover;
-						#{$viewed-description} {
-							#{$viewed-title}#{$block},
-							#{$viewed-price}#{$detail} {
-								@include lib-text-blackout-change;
-							}
-						}
-					}
-					&_preview#{$preview} {
-						position : absolute;
-						z-index  : 1;
-						#{$preview}_link#{$link-img} {
-							@include lib-link-img-param(
-								$border : $color-img-border,
-								$height : 65px
-							);
-						}
-					}
-
-					@at-root {
-						#{$viewed-description} {
-							position     : relative;
-							padding-left : 72px;
-
-							@at-root {
-								#{$viewed-title}#{$block} {
-									position  : relative;
-									height    : 40px;
-									width     : 135px;
-
-									font-size : lib-font-size(-3);
-									overflow  : hidden;
-
-									@include lib-text-blackout(
-										$height : 20px,
-										$width : 15px
-									);
-
-									#{$block}_element#{$link} {
-										color           : $color-viewed-title;
-										font-size       : lib-font-size(-2);
-										font-family     : 'OpenSansBold';
-										text-decoration : none;
-									}
-								}
-
-								#{$viewed-price}#{$detail} {
-									position    : relative;
-									padding-top : 5px;
-
-									text-align  : right;
-									color       : $color-viewed-price;
-
-									@include lib-text-hyphens($type : lastClip);
-									@include lib-text-blackout;
-
-									#{$detail}_value {
-										font-weight : $lib-font-weight-bold;
-									}
-								}
-							}
-
-						}
-					}
-
+		background-color : $bg-viewed;
+		&:hover {
+			background : $bg-viewed-hover;
+			#{$viewed-description} {
+				#{$viewed-title}#{$block},
+				#{$viewed-price}#{$detail} {
+					@include lib-text-blackout-change;
 				}
 			}
 		}
+		&_preview#{$preview} {
+			position : absolute;
+			z-index  : 1;
+			#{$preview}_link#{$link-img} {
+				@include lib-link-img-param(
+					$border : $color-img-border,
+					$height : 65px
+				);
+			}
+		}
+	}
+	#{$viewed-description} {
+		position     : relative;
+		padding-left : 72px;
+	}
 
+	#{$viewed-title}#{$block} {
+		position  : relative;
+		height    : 40px;
+		width     : 135px;
+
+		font-size : lib-font-size(-3);
+		overflow  : hidden;
+
+		@include lib-text-blackout(
+			$height : 20px,
+			$width : 15px
+		);
+
+		#{$block}_element#{$link} {
+			color           : $color-viewed-title;
+			font-size       : lib-font-size(-2);
+			font-family     : 'OpenSansBold';
+			text-decoration : none;
+		}
+	}
+
+	#{$viewed-price}#{$detail} {
+		position    : relative;
+		padding-top : 5px;
+
+		text-align  : right;
+		color       : $color-viewed-price;
+
+		@include lib-text-hyphens($type : lastClip);
+		@include lib-text-blackout;
+
+		#{$detail}_value {
+			font-weight : $lib-font-weight-bold;
+		}
 	}
 }

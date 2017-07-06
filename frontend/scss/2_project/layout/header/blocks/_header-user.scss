@@ -50,15 +50,11 @@ $_show : lib-get-modifier('show');
 			border-radius : 3px;
 			background    : $bg-dropdown;
 			box-shadow    : 0 1px 5px 0 $color-dropdown-shadow;
-
-			@at-root #{$wrapper}_dropdown#{$dropdown} {
-				#{$dropdown}_list#{$list} {
-					#{$list}_item {
-						font-size : lib-font-size(-3);
-					}
-				}
+		}
+		#{$dropdown}_list#{$list} {
+			#{$list}_item {
+				font-size : lib-font-size(-3);
 			}
-
 		}
 	}
 }

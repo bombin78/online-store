@@ -26,7 +26,6 @@ $stock-counter : lib-get-class('stock-counter');
 $stock-offer : lib-get-class('stock-offer');
 $stock-view : lib-get-class('stock-view');
 $stock-accent : lib-get-class('stock-accent');
-$stock-description : lib-get-class('stock-description');
 $indicator : lib-get-class('indicator');
 $timer : lib-get-class('timer');
 $detail : lib-get-class('detail');
@@ -50,244 +49,227 @@ $_second : lib-get-modifier('second');
 	border-radius : 5px;
 	background    : url('../../../../../img/bg_stock-1.png') left top repeat-x;
 
-	@at-root {
-		#{$stock-counter} {
-			position      : absolute;
-			top           : 0;
-			left          : 0;
-			height        : 100%;
-			width         : 380px;
-			z-index       : 1;
+	#{$stock-counter} {
+		position      : absolute;
+		top           : 0;
+		left          : 0;
+		height        : 100%;
+		width         : 380px;
+		z-index       : 1;
 
-			text-align    : center;
-			border-radius : 5px 0 0 5px;
-			background    : $bg-stock-counter url('../../../../../img/bg_stock-2.jpg') right top no-repeat;
-			&_title {
+		text-align    : center;
+		border-radius : 5px 0 0 5px;
+		background    : $bg-stock-counter url('../../../../../img/bg_stock-2.jpg') right top no-repeat;
+		&_text {
+			display : block;
 
-				@at-root {
-					#{$stock-counter}_text {
-						display : block;
+			&#{$_start} {
+				padding-top : 20px;
 
-						&#{$_start} {
-							padding-top : 20px;
-
-							color       : $color-stock-title-start;
-							font-size   : lib-font-size(2);
-						}
-						&#{$_middle} {
-							padding-top : 20px;
-
-							color       : $color-stock-title-middle;
-							font-size   : lib-font-size(3);
-							font-weight : $lib-font-weight-bold;
-							text-shadow : 1px 2px 2px $color-stock-title-middle-shadow;
-						}
-						&#{$_end} {
-							padding-top : 8px;
-
-							color       : $color-stock-title-end;
-							font-size   : lib-font-size(2);
-						}
-					}
-				}
-
+				color       : $color-stock-title-start;
+				font-size   : lib-font-size(2);
 			}
-			&_done#{$indicator} {
-				#{$indicator}_info {
-					display     : block;
-					padding-top : 20px;
+			&#{$_middle} {
+				padding-top : 20px;
 
-					color       : $color-indicator-info;
-					font-size   : lib-font-size(-1);
-					font-weight : $lib-font-weight-bold;
+				color       : $color-stock-title-middle;
+				font-size   : lib-font-size(3);
+				font-weight : $lib-font-weight-bold;
+				text-shadow : 1px 2px 2px $color-stock-title-middle-shadow;
+			}
+			&#{$_end} {
+				padding-top : 8px;
+
+				color       : $color-stock-title-end;
+				font-size   : lib-font-size(2);
+			}
+		}
+		&_done#{$indicator} {
+			#{$indicator}_info {
+				display     : block;
+				padding-top : 20px;
+
+				color       : $color-indicator-info;
+				font-size   : lib-font-size(-1);
+				font-weight : $lib-font-weight-bold;
+			}
+			#{$indicator}_bar {
+				display       : inline-block;
+				position      : relative;
+				margin-top    : 8px;
+				height        : 13px;
+				width         : 80%;
+
+				border        : 1px solid $bg-indicator-bar;
+				border-radius : 7px;
+				background    : $bg-indicator-bar;
+				&:after {
+					content       : '';
+					position      : absolute;
+					top           : 0;
+					left          : 0;
+					height        : 100%;
+					width         : 100%;
+
+					border-radius : inherit;
+					box-shadow    : inset 0 3px 6px 0 rgba(102, 51, 51, 0.25), inset 0 -3px 6px 0 rgba(102, 51, 51, 0.25);
 				}
-				#{$indicator}_bar {
-					display       : inline-block;
-					position      : relative;
-					margin-top    : 8px;
-					height        : 13px;
-					width         : 80%;
+			}
+			#{$indicator}_filler {
+				display       : block;
+				height        : 100%;
+				width         : 100%;
 
-					border        : 1px solid $bg-indicator-bar;
-					border-radius : 7px;
-					background    : $bg-indicator-bar;
+				border-radius : inherit;
+				background    : $bg-indicator-filler;
+			}
+		}
+		&_timer#{$timer} {
+			#{$timer}_title {
+				display     : block;
+				padding-top : 20px;
+
+				color       : $color-title-timer;
+				font-size   : lib-font-size(-1);
+				font-weight : $lib-font-weight-bold;
+			}
+			#{$timer}_time {
+				display       : inline-block;
+				margin-top    : 8px;
+				padding       : 3% 8%;
+				width         : 80%;
+
+				color         : $color-time;
+				background    : $bg-time;
+				border-radius : 6px;
+				box-shadow    : inset 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+				text-shadow   : 1px 1px 2px $color-time-shadow;
+			}
+			#{$timer}_label,
+			#{$timer}_value {
+				float : left;
+				width : 33%;
+			}
+			#{$timer}_label {
+				font-size : lib-font-size(-4);
+			}
+			#{$timer}_value {
+				position    : relative;
+				padding-top : 2%;
+
+				font-size   : lib-font-size(e4);
+				font-weight : $lib-font-weight-bold;
+				&#{$_minute},
+				&#{$_second} {
 					&:after {
-						content       : '';
-						position      : absolute;
-						top           : 0;
-						left          : 0;
-						height        : 100%;
-						width         : 100%;
-
-						border-radius : inherit;
-						box-shadow    : inset 0 3px 6px 0 rgba(102, 51, 51, 0.25), inset 0 -3px 6px 0 rgba(102, 51, 51, 0.25);
-
-					}
-					#{$indicator}_filler {
-						display       : block;
-						height        : 100%;
-						width         : 100%;
-
-						border-radius : inherit;
-						background    : $bg-indicator-filler;
-					}
-				}
-			}
-			&_timer#{$timer} {
-				#{$timer}_title {
-					display     : block;
-					padding-top : 20px;
-
-					color       : $color-title-timer;
-					font-size   : lib-font-size(-1);
-					font-weight : $lib-font-weight-bold;
-				}
-				#{$timer}_time {
-					display       : inline-block;
-					margin-top    : 8px;
-					padding       : 3% 8%;
-					width         : 80%;
-
-					color         : $color-time;
-					background    : $bg-time;
-					border-radius : 6px;
-					box-shadow    : inset 0 4px 5px 0 rgba(0, 0, 0, 0.3);
-					text-shadow   : 1px 1px 2px $color-time-shadow;
-					#{$timer}_label,
-					#{$timer}_value {
-						float : left;
-						width : 33%;
-					}
-					#{$timer}_label {
-						font-size : lib-font-size(-4);
-					}
-					#{$timer}_value {
-						position    : relative;
-						padding-top : 2%;
-
-						font-size   : lib-font-size(e4);
-						font-weight : $lib-font-weight-bold;
-						&#{$_minute},
-						&#{$_second} {
-							&:after {
-								content  : ':';
-								position : absolute;
-								top      : 2%;
-								left     : -2px;
-							}
-						}
+						content  : ':';
+						position : absolute;
+						top      : 2%;
+						left     : -2px;
 					}
 				}
 			}
 		}
+	}
 
-		#{$stock-offer} {
-			position : relative;
-			padding  : 20px 20px 20px 400px;
-			@at-root {
-				#{$stock-view}#{$preview} {
-					position : absolute;
-					#{$preview}_link#{$link-img} {
-						@include lib-link-img-param(
-							$height : 194px
-						);
-					}
-				}
+	#{$stock-offer} {
+		position : relative;
+		padding  : 20px 20px 20px 400px;
+	}
+	#{$stock-view}#{$preview} {
+		position : absolute;
+		#{$preview}_link#{$link-img} {
+			@include lib-link-img-param(
+				$height : 194px
+			);
+		}
+	}
 
-				#{$stock-accent} {
-					padding-left : 214px;
-					height       : 194px;
-					&_title {
-						color         : $color-title-accent;
-						font-size     : lib-font-size(2);
-						line-height   : lib-line-height(2);
-						font-weight   : $lib-font-weight-bold;
-						border-bottom : 2px solid $color-title-accent;
-					}
-					&_name#{$block} {
-						margin-top : 23px;
-						#{$block}_element#{$link} {
-							color           : $color-name-accent;
-							font-size       : lib-font-size(1);
-							font-weight     : $lib-font-weight-bold;
-							text-decoration : none;
-						}
-					}
-					&_old-price#{$detail} {
-						color           : $color-old-price-accent;
-						font-size       : lib-font-size(-2);
-						text-decoration : line-through;
-						font-weight     : $lib-font-weight-bold;
-						#{$detail}_label,
-						#{$detail}_value {
-							display : inline;
-						}
-
-					}
-					&_new-price#{$detail} {
-						padding-top : 7px;
-
-						color       : $color-new-price-accent;
-						font-weight : $lib-font-weight-bold;
-						#{$detail}_label {
-							display        : inline-block;
-
-							font-size      : lib-font-size(2);
-							vertical-align : middle;
-						}
-						#{$detail}_value {
-							display        : inline-block;
-
-							font-size      : lib-font-size(3);
-							vertical-align : middle;
-						}
-					}
-					&_stamp#{$detail} {
-						position      : absolute;
-						margin-top    : -50px;
-						top           : 45%;
-						right         : 125px;
-						padding-top   : 0;
-						height        : 100px;
-						width         : 100px;
-
-						border-radius : 50px;
-						background    : $bg-stamp-accent;
-						color         : $color-stamp-accent;
-						font-weight   : $lib-font-weight-bold;
-						text-align    : center;
-						&:after {
-							@include css-triangle(
-								$color : $color-triangle-stamp-accent,
-								$direction : 'left',
-								$size : 8px,
-								$ratio : 2,
-								$offset : -7px,
-								$center : true
-							)
-						}
-						#{$detail}_label {
-							padding-top : 30px;
-
-							font-size   : lib-font-size(-2);
-						}
-						#{$detail}_value {
-							padding-top : 7px;
-
-							font-size   : lib-font-size(2);
-						}
-					}
-					&_button#{$block} {
-						margin-top : 21px;
-					}
-				}
-
-				#{$stock-description} {
-
-				}
+	#{$stock-accent} {
+		padding-left : 214px;
+		height       : 194px;
+		&_title {
+			color         : $color-title-accent;
+			font-size     : lib-font-size(2);
+			line-height   : lib-line-height(2);
+			font-weight   : $lib-font-weight-bold;
+			border-bottom : 2px solid $color-title-accent;
+		}
+		&_name#{$block} {
+			margin-top : 23px;
+			#{$block}_element#{$link} {
+				color           : $color-name-accent;
+				font-size       : lib-font-size(1);
+				font-weight     : $lib-font-weight-bold;
+				text-decoration : none;
+			}
+		}
+		&_old-price#{$detail} {
+			color           : $color-old-price-accent;
+			font-size       : lib-font-size(-2);
+			text-decoration : line-through;
+			font-weight     : $lib-font-weight-bold;
+			#{$detail}_label,
+			#{$detail}_value {
+				display : inline;
 			}
 
 		}
+		&_new-price#{$detail} {
+			padding-top : 7px;
 
+			color       : $color-new-price-accent;
+			font-weight : $lib-font-weight-bold;
+			#{$detail}_label {
+				display        : inline-block;
+
+				font-size      : lib-font-size(2);
+				vertical-align : middle;
+			}
+			#{$detail}_value {
+				display        : inline-block;
+
+				font-size      : lib-font-size(3);
+				vertical-align : middle;
+			}
+		}
+		&_stamp#{$detail} {
+			position      : absolute;
+			margin-top    : -50px;
+			top           : 45%;
+			right         : 125px;
+			padding-top   : 0;
+			height        : 100px;
+			width         : 100px;
+
+			border-radius : 50px;
+			background    : $bg-stamp-accent;
+			color         : $color-stamp-accent;
+			font-weight   : $lib-font-weight-bold;
+			text-align    : center;
+			&:after {
+				@include css-triangle(
+					$color : $color-triangle-stamp-accent,
+					$direction : 'left',
+					$size : 8px,
+					$ratio : 2,
+					$offset : -7px,
+					$center : true
+				)
+			}
+			#{$detail}_label {
+				padding-top : 30px;
+
+				font-size   : lib-font-size(-2);
+			}
+			#{$detail}_value {
+				padding-top : 7px;
+
+				font-size   : lib-font-size(2);
+			}
+		}
+		&_button#{$block} {
+			margin-top : 21px;
+		}
 	}
 }

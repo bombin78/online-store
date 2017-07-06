@@ -20,26 +20,22 @@
 		width    : $lib-width-container-normal;
 
 		@extend %lib-clearfix;
-
-		@at-root {
-			#{$search} {
-				float      : left;
-				margin-top : 5px;
-			}
-			#{$nav} {
-				margin-top  : 10px;
-				margin-left : 20px;
-			}
-			#{$basket} {
-				float      : right;
-				margin-top : 5px;
-			}
-			#{$user} {
-				float        : right;
-				margin-top   : 5px;
-				margin-right : 20px;
-			}
-		}
-
+	}
+	#{$search} {
+		float      : left;
+		margin-top : 5px;
+	}
+	#{$nav} {
+		margin-top  : 10px;
+		margin-left : 20px;
+	}
+	#{$basket} {
+		float      : right;
+		margin-top : 5px;
+	}
+	#{$user} {
+		float        : right;
+		margin-top   : 5px;
+		margin-right : 20px;
 	}
 }
