@@ -4,10 +4,36 @@
 
 #{$wrapper} {
 	@include lib-respond-to(normal) {
-		width : $lib-width-container-narrow;
+		width : $lib-width-container-normal;
 	}
 	@include lib-respond-to(narrow) {
+		width : $lib-width-container-narrow;
+	}
+	@include lib-respond-to(mobile) {
 		width : $lib-width-container-mobile;
+	}
+	&_row {
+		&:first-child {
+			@include lib-respond-to(mobile) {
+				position       : relative;
+				padding-bottom : 90px;
+			}
+		}
+	}
+	&_cell {
+		&:first-child {
+			@include lib-respond-to(mobile) {
+				position : absolute;
+				bottom   : 0;
+				left     : 0;
+				width    : 100%;
+			}
+		}
+		&:not(:first-child) {
+			@include lib-respond-to(mobile) {
+				width : 25%;
+			}
+		}
 	}
 	#{$footer-social-network} {
 		@include lib-respond-to(normal) {
@@ -15,6 +41,28 @@
 		}
 		@include lib-respond-to(narrow) {
 			margin-right : 10px;
+		}
+		@include lib-respond-to(mobile) {
+			margin-right: 0;
+		}
+		&_title {
+			@include lib-respond-to(mobile) {
+				display : block;
+			}
+			br {
+				@include lib-respond-to(mobile) {
+					display: none;
+				}
+			}
+		}
+		//pluso - класс плагина
+		&_pluso.pluso {
+			@include lib-respond-to(mobile) {
+				margin   : {
+					top  : 5px;
+					left : 0;
+				}
+			}
 		}
 		//pluso-wrap - класс плагина
 		.pluso-wrap {

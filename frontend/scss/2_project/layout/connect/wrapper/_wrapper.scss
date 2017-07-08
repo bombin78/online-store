@@ -9,9 +9,9 @@
 	//переопределение стилей для шаблона корзины
 	&#{$_basket} {
 		#{$header-info} {
-				padding-top : 0;
-				height      : 100px;
-			}
+			padding-top : 0;
+			height      : 100px;
+		}
 		#{$footer} {
 			&_cell {
 				width : 100%;
@@ -47,6 +47,7 @@
 			}
 		}
 	}
+
 	#{$wrapper-header} {
 		position : relative;
 		width    : 100%;
@@ -64,7 +65,8 @@
 		width      : 100%;
 		z-index    : lib-z('footer');
 
-		background : url('../../../../../img/bg_4.jpg') center top repeat-x;
+		background : url('../../../../../img/bg_4.jpg') center top no-repeat;
+		background-size:  cover;
 	}
 
 	#{$wrapper-popup} {

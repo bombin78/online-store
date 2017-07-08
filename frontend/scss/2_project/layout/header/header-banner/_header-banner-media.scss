@@ -9,11 +9,11 @@
 	&_container {
 		@include lib-respond-to(normal) {
 			height : 339px;
-			width  : $lib-width-container-narrow;
+			width  : $lib-width-container-normal;
 		}
 		@include lib-respond-to(narrow) {
 			height : 260px;
-			width  : $lib-width-container-mobile;
+			width  : $lib-width-container-narrow;
 		}
 	}
 	#{$header-stock} {

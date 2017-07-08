@@ -9,13 +9,16 @@
 		position : relative;
 		margin   : 0 auto;
 		padding  : $padding;
-		width    : $lib-width-container-normal;
+		width    : $lib-width-container-large;
+
+		@extend %lib-clearfix;
+
 	}
 
 	@include lib-grid-param (
-		$grid-class: $wrapper,
+		$grid-class: &,
 		$padding-container-px: $padding,
-		$width-container-px: $lib-width-container-normal,
+		$width-container-px: $lib-width-container-large,
 		$width-aside-px: 250px,
 		$aside-float: left,
 		$content-float: left

@@ -13,7 +13,7 @@
 	position : relative;
 	margin   : 0 auto;
 	padding  : 30px 10px;
-	width    : $lib-width-container-normal;
+	width    : $lib-width-container-large;
 	&_row {
 		@extend %lib-clearfix;
 	}

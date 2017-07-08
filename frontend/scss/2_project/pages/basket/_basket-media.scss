@@ -5,10 +5,10 @@
 #{$wrapper} {
 
 	@include lib-respond-to(normal) {
-		width : $lib-width-container-narrow;
+		width : $lib-width-container-normal;
 	}
 	@include lib-respond-to(narrow) {
-		width : $lib-width-container-mobile;
+		width : $lib-width-container-narrow;
 	}
 
 	@at-root {

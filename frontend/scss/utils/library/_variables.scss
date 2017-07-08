@@ -67,9 +67,10 @@ $lib-breakpoints: (
 
 //----------------------------
 // 4. ШИРИНА САЙТА
-$lib-width-container-normal : 1170px;
-$lib-width-container-narrow : 970px;
-$lib-width-container-mobile : 750px;
+$lib-width-container-large  : 1170px;
+$lib-width-container-normal : 970px;// -> breakpoints:normal
+$lib-width-container-narrow : 750px;// -> breakpoints:narrow
+$lib-width-container-mobile : 100%; // -> breakpoints:mobile
 //----------------------------
 
 //----------------------------

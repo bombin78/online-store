@@ -7,34 +7,34 @@
 
 	&_container {
 		@include lib-respond-to(normal) {
-			width : $lib-width-container-narrow;
+			width : $lib-width-container-normal;
 		}
 		@include lib-respond-to(narrow) {
-			width : $lib-width-container-mobile;
+			width : $lib-width-container-narrow;
 		}
 	}
 
 	@include lib-respond-to(normal) {
 		@include lib-grid-param (
-			$grid-class: $wrapper,
+			$grid-class: &,
 			$padding-container-px: $padding,
-			$width-container-px: $lib-width-container-narrow,
+			$width-container-px: $lib-width-container-normal,
 			$width-aside-px: 250px,
 			$aside-float: only-width
 		);
 	}
 	@include lib-respond-to(narrow) {
 		@include lib-grid-param (
-			$grid-class: $wrapper,
+			$grid-class: &,
 			$padding-container-px: $padding,
-			$width-container-px: $lib-width-container-mobile,
+			$width-container-px: $lib-width-container-narrow,
 			$width-aside-px: 180px,
 			$aside-float: only-width
 		);
 	}
 	@include lib-respond-to(mobile) {
 		@include lib-grid-param (
-			$grid-class: $wrapper,
+			$grid-class: &,
 			$content-float: only-full-width
 		);
 	}
