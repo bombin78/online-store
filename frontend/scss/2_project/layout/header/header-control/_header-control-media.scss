@@ -11,7 +11,7 @@
 			width : $lib-width-container-narrow;
 		}
 		@include lib-respond-to(mobile) {
-			width : 100%;
+			width : $lib-width-container-mobile;
 		}
 	}
 	#{$search} {

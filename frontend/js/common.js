@@ -6,8 +6,8 @@
 		modifierWrapper = '_su-show-menu',
 		selectorWrapperCover = '.su-wrapper-cover',
 		selectorBtn = '.su-header-nav_button',
-		showStyle = {paddingLeft: 275},
-		hideStyle = {paddingLeft: 0};
+		showStyle = {left: 275},
+		hideStyle = {left: 0};
 
 	$(document)
 		.on('click', selectorBtn, function () {

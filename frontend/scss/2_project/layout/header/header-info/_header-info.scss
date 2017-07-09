@@ -7,6 +7,7 @@
 #{$wrapper} {
 	position    : relative;
 	padding-top : 30px;
+	min-width   : $lib-min-width;
 	height      : 130px;
 	z-index     : lib-z('header-info');
 

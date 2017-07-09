@@ -12,6 +12,9 @@
 		@include lib-respond-to(narrow) {
 			width : $lib-width-container-narrow;
 		}
+		@include lib-respond-to(narrow) {
+			width : $lib-width-container-mobile;
+		}
 	}
 
 	@include lib-respond-to(normal) {
@@ -35,7 +38,8 @@
 	@include lib-respond-to(mobile) {
 		@include lib-grid-param (
 			$grid-class: &,
-			$content-float: only-full-width
+			$content-float: only-full-width,
+			$width-container-px: $lib-width-container-mobile
 		);
 	}
 }

@@ -6,6 +6,13 @@
 	@include lib-respond-to(narrow) {
 		height : 118px;
 	}
+	@include lib-respond-to(mobile) {
+		height : 110px;
+	}
+	@include lib-respond-to(mobile) {
+		height         : 130px;
+		padding-bottom : 20px;
+	}
 	&_container {
 		@include lib-respond-to(normal) {
 			width : $lib-width-container-normal;
@@ -13,15 +20,55 @@
 		@include lib-respond-to(narrow) {
 			width : $lib-width-container-narrow;
 		}
+		@include lib-respond-to(mobile) {
+			width : $lib-width-container-mobile;
+		}
 	}
 	#{$logo} {
 		@include lib-respond-to(narrow) {
 			height : 73px;
 		}
+		@include lib-respond-to(mobile) {
+			height : 65px;
+		}
 	}
 	#{$contacts} {
 		@include lib-respond-to(narrow) {
 			padding-top : 16px;
+		}
+		@include lib-respond-to(mobileS) {
+			position : absolute;
+			bottom   : -27px;
+			width    : 100%;
+			left     : 0;
+			padding  : 0 10px;
+		}
+		&_schedule {
+			@include lib-respond-to(mobile) {
+				display : none;
+			}
+		}
+		&_phones#{$list} {
+			@include lib-respond-to(mobileM) {
+				font-size : lib-font-size(1);
+			}
+			@include lib-respond-to(mobileS) {
+				font-size : lib-font-size(-2);
+			}
+			#{$list}_item {
+				&:first-child {
+					@include lib-respond-to(mobileS) {
+						float      : left;
+						margin-top : 0;
+					}
+				}
+				&:last-child {
+					@include lib-respond-to(mobileS) {
+						float      : right;
+						margin-top : 0;
+					}
+				}
+			}
 		}
 	}
 }

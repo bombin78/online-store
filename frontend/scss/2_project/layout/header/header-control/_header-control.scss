@@ -10,6 +10,7 @@
 	position   : fixed;
 	height     : 40px;
 	width      : 100%;
+	min-width  : $lib-min-width;
 	z-index    : lib-z('header-control');
 
 	background : $bg-header;

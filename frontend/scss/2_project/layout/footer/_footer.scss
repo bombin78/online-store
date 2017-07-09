@@ -10,10 +10,11 @@
 //-------------------------------
 
 #{$wrapper} {
-	position : relative;
-	margin   : 0 auto;
-	padding  : 30px 10px;
-	width    : $lib-width-container-large;
+	position  : relative;
+	margin    : 0 auto;
+	padding   : 30px 10px;
+	width     : $lib-width-container-large;
+	min-width : $lib-min-width;
 	&_row {
 		@extend %lib-clearfix;
 	}

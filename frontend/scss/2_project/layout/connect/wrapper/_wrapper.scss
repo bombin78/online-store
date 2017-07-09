@@ -5,6 +5,7 @@
 #{$wrapper} {
 	position   : relative;
 	width      : 100%;
+	min-width  : $lib-min-width;
 	background : $bg-wrapper;
 	//переопределение стилей для шаблона корзины
 	&#{$_basket} {
@@ -61,12 +62,12 @@
 	}
 
 	#{$wrapper-footer} {
-		position   : relative;
-		width      : 100%;
-		z-index    : lib-z('footer');
+		position        : relative;
+		width           : 100%;
+		z-index         : lib-z('footer');
 
-		background : url('../../../../../img/bg_4.jpg') center top no-repeat;
-		background-size:  cover;
+		background      : url('../../../../../img/bg_4.jpg') center top no-repeat;
+		background-size : cover;
 	}
 
 	#{$wrapper-popup} {
