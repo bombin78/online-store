@@ -7,16 +7,28 @@
 		width : 632px;
 	}
 	@include lib-respond-to(narrow) {
-		width : 508px;
+		width  : 520px;
+		height : 270px;
 	}
+	@include lib-respond-to(mobile) {
+		width : 620px;
+	}
+	@include lib-respond-to(mobileXL) {
+		padding-bottom : 15px;
+		width          : 100%;
+		max-width      : 360px;
+		height         : auto;
+	}
+
 	&_title {
 		@include lib-respond-to(normal) {
 			font-size : lib-font-size(0);
 		}
 		@include lib-respond-to(narrow) {
-			padding   : 0 15px;
+			padding     : 10px 15px 22px 15px;
 
-			font-size : lib-font-size(-2);
+			font-size   : lib-font-size(-2);
+			line-height : 1.44;
 		}
 	}
 	&_description {
@@ -27,6 +39,16 @@
 			margin-left : 15px;
 			width       : 255px;
 		}
+		@include lib-respond-to(mobile) {
+			width : 350px;
+		}
+		@include lib-respond-to(mobileXL) {
+			float       : none;
+			margin-left : 0;
+			padding     : 0 10px;
+			width       : 100%;
+		}
+
 	}
 	&_user-data {
 		@include lib-respond-to(normal) {
@@ -34,7 +56,15 @@
 		}
 		@include lib-respond-to(narrow) {
 			margin-right : 15px;
-			width        : 215px;
+			width        : 225px;
+		}
+		@include lib-respond-to(mobile) {
+			width : 230px;
+		}
+		@include lib-respond-to(mobileXL) {
+			float  : none;
+			margin : 15px auto 0;
+			width  : 280px;
 		}
 	}
 }

@@ -9,7 +9,7 @@
 	@include lib-respond-to(mobile) {
 		height : 110px;
 	}
-	@include lib-respond-to(mobile) {
+	@include lib-respond-to(mobileS) {
 		height         : 130px;
 		padding-bottom : 20px;
 	}

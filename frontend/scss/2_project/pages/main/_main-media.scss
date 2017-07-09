@@ -7,5 +7,17 @@
 	@include lib-respond-to(narrow) {
 		@include mix-content-common-narrow-param();
 	}
-
+	@include lib-respond-to(mobile) {
+		@include mix-content-common-mobile-mobile();
+	}
+	#{$title-complex} {
+		@include lib-respond-to(mobileM) {
+			padding-left : 0;
+		}
+		&:after {
+			@include lib-respond-to(mobileM) {
+				display : none;
+			}
+		}
+	}
 }
