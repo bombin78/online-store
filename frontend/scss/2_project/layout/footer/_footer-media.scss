@@ -16,7 +16,7 @@
 		&:first-child {
 			@include lib-respond-to(mobile) {
 				position       : relative;
-				padding-bottom : 90px;
+				padding-bottom : 98px;
 			}
 		}
 	}
@@ -29,9 +29,29 @@
 				width    : 100%;
 			}
 		}
+
 		&:not(:first-child) {
 			@include lib-respond-to(mobile) {
 				width : 25%;
+			}
+			@include lib-respond-to(mobileXL) {
+				width : 33.333%;
+			}
+			@include lib-respond-to(mobileL) {
+				width : 50%;
+			}
+		}
+		&:nth-of-type(3) {
+			@include lib-respond-to(mobileXL) {
+				display : none;
+			}
+		}
+		&:nth-of-type(4) {
+			@include lib-respond-to(mobileXL) {
+				padding-left : 3.5%;
+			}
+			@include lib-respond-to(mobileL) {
+				display : none;
 			}
 		}
 	}
@@ -43,7 +63,9 @@
 			margin-right : 10px;
 		}
 		@include lib-respond-to(mobile) {
-			margin-right: 0;
+			margin-right : 0;
+
+			text-align   : center;
 		}
 		&_title {
 			@include lib-respond-to(mobile) {
@@ -51,7 +73,7 @@
 			}
 			br {
 				@include lib-respond-to(mobile) {
-					display: none;
+					display : none;
 				}
 			}
 		}
@@ -59,18 +81,39 @@
 		&_pluso.pluso {
 			@include lib-respond-to(mobile) {
 				margin   : {
-					top  : 5px;
+					top  : 10px;
 					left : 0;
 				}
 			}
 		}
 		//pluso-wrap - класс плагина
 		.pluso-wrap {
+			:nth-of-type(1) {
+				@include lib-respond-to(mobile) {
+					margin-left : 0;
+				}
+			}
+			:nth-of-type(6),
+			:nth-of-type(7) {
+				@include lib-respond-to(mobileS) {
+					display : none;
+				}
+			}
 			:nth-of-type(8),
 			:nth-of-type(9),
 			:nth-of-type(10) {
 				@include lib-respond-to(normal) {
 					display : none;
+				}
+			}
+			:nth-of-type(11) {
+				@include lib-respond-to(mobile) {
+					display : none;
+				}
+			}
+			:nth-of-type(12) {
+				@include lib-respond-to(mobile) {
+					margin-right : 0;
 				}
 			}
 		}
@@ -86,12 +129,38 @@
 		}
 
 	}
+	#{$footer-info} {
+		@include lib-respond-to(mobileL) {
+			margin : 0;
+		}
+	}
 	#{$footer-contacts} {
 		@include lib-respond-to(normal) {
 			margin-left : 20px;
 		}
 		@include lib-respond-to(narrow) {
 			margin-left : 10px;
+		}
+		@include lib-respond-to(mobileL) {
+			margin-left : 0;
+		}
+	}
+	#{$footer-copyright},
+	#{$footer-developer} {
+		@include lib-respond-to(mobile) {
+			width      : 100%;
+
+			text-align : center;
+		}
+	}
+	#{$footer-copyright} {
+		@include lib-respond-to(mobile) {
+			line-height : 1.44;
+		}
+		#{$link} {
+			@include lib-respond-to(mobile) {
+				display : inline-block;
+			}
 		}
 	}
 }
