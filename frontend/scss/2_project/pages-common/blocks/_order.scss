@@ -90,7 +90,7 @@ $_completed : lib-get-modifier('completed');
 			line-height    : 1;
 			vertical-align : middle;
 			font-size      : lib-font-size(1);
-			font-family    : 'OpenSansBold';
+			font-family    : 'OpenSansBold', sans-serif;
 			@include lib-text-hyphens($type : lastClip);
 			@include lib-text-blackout (
 				$color1 : 236,

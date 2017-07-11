@@ -115,7 +115,7 @@ $link : lib-get-class('link');
 		#{$block}_element#{$link} {
 			color           : $color-viewed-title;
 			font-size       : lib-font-size(-2);
-			font-family     : 'OpenSansBold';
+			font-family     : 'OpenSansBold', sans-serif;
 			text-decoration : none;
 		}
 	}

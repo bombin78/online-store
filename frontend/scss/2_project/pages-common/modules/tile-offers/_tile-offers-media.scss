@@ -6,10 +6,23 @@
 
 	//Для корректного отображения необходимо жесткое ограничение по ширине
 	@include lib-respond-to(normal) {
-		width     : 620px;
+		width : 620px;
 	}
 	@include lib-respond-to(narrow) {
-		width     : 510px;
+		width : 510px;
+	}
+	@include lib-respond-to(mobile) {
+		margin-left  : auto;
+		margin-right : auto;
+
+		width        : 100%;
+		max-width    : 690px;
+	}
+	@include lib-respond-to(mobileS) {
+		max-width : 360px;
+	}
+	@include lib-respond-to(mobileXS) {
+		max-width : 192px;
 	}
 
 	&_list#{$list} {
@@ -17,59 +30,116 @@
 			@include lib-respond-to(normal) {
 				@include lib-box12(4);
 			}
-
-			#{$list}_offer#{$offer} {
+			@include lib-respond-to(mobile) {
+				@include lib-box12(3);
+			}
+			@include lib-respond-to(mobileL) {
+				@include lib-box12(4);
+			}
+			@include lib-respond-to(mobileS) {
+				@include lib-box12(6);
+			}
+			@include lib-respond-to(mobileXS) {
+				@include lib-box12(12);
+			}
+		}
+		#{$list}_offer#{$offer} {
+			@include lib-respond-to(narrow) {
+				padding-bottom : 75px;
+			}
+			@include lib-respond-to(mobile) {
+				padding-bottom : 85px;
+			}
+			&#{$_top-sales} {
+				#{$preview}_link#{$link-img} {
+					&:after {
+						@include lib-respond-to(mobile) {
+							right : -10px;
+						}
+					}
+				}
+			}
+			#{$offer}_preview#{$preview} {
+				#{$preview}_link#{$link-img} {
+					@include lib-respond-to(narrow) {
+						@include lib-link-img-param(
+							$height : 150px
+						);
+					}
+					@include lib-respond-to(mobile) {
+						height : 140px;
+					}
+					&:after {
+						@include lib-respond-to(mobile) {
+							right : -4px;
+						}
+					}
+				}
+			}
+			#{$offer-title}#{$block} {
 				@include lib-respond-to(narrow) {
-					padding-bottom : 75px;
+					margin-top : -40px;
+					height     : 40px;
 				}
-				#{$offer}_preview#{$preview} {
-					#{$preview}_link#{$link-img} {
-						@include lib-respond-to(narrow) {
-							@include lib-link-img-param(
-								$height : 150px
-							);
-						}
-					}
-				}
-				#{$offer-description} {
-					&_container {
-						#{$offer-title}#{$block} {
-							@include lib-respond-to(narrow) {
-								margin-top : -40px;
-								height     : 40px;
-							}
-						}
-						#{$offer-annotation} {
-							@include lib-respond-to(narrow) {
-								height     : 35px;
-								margin-top : 4px;
-							}
-						}
-					}
-					#{$offer-old-price} {
-						@include lib-respond-to(narrow) {
-							margin-top : 0;
-						}
-					}
-					#{$offer-price} {
-						@include lib-respond-to(narrow) {
-							right      : auto;
-							bottom     : -20px;
-							width      : 134px;
+				@include lib-respond-to(mobile) {
+					margin-top : -45px;
 
-							text-align : center;
-						}
-					}
-					#{$offer-button} {
-						@include lib-respond-to(narrow) {
-							right      : 0;
-							bottom     : -61px;
-							width      : 134px;
-
-							text-align : center;
-						}
-					}
+					height     : 45px;
 				}
+			}
+			#{$offer-annotation} {
+				@include lib-respond-to(narrow) {
+					height     : 35px;
+					margin-top : 4px;
+				}
+				@include lib-respond-to(mobile) {
+					display : none;
+				}
+			}
+			#{$offer-old-price} {
+				@include lib-respond-to(narrow) {
+					margin-top : 0;
+				}
+				@include lib-respond-to(mobile) {
+					display : none;
+				}
+			}
+			#{$offer-price} {
+				@include lib-respond-to(narrow) {
+					right      : auto;
+					bottom     : -20px;
+					width      : 134px;
+
+					text-align : center;
+				}
+				@include lib-respond-to(mobile) {
+					bottom : -30px;
+					width  : 100%;
+				}
+			}
+			#{$offer-button}#{$block} {
+				@include lib-respond-to(narrow) {
+					right      : 0;
+					bottom     : -61px;
+					width      : 134px;
+
+					text-align : center;
+				}
+				@include lib-respond-to(mobile) {
+					right       : auto;
+					bottom      : -72px;
+					left        : 50%;
+					margin-left : -67px;
+				}
+			}
+		}
+	}
+
+	&_more#{$block} {
+		#{$more} {
+			@include lib-respond-to(mobileXS) {
+				width  : 172px;
+				height : 55px;
 			}
 		}
 	}
