@@ -25,7 +25,8 @@ $list : lib-get-class('list');
 	top           : 42px;
 	left          : 0;
 	padding       : 2px;
-	width         : 350px;
+	width         : 100%;
+	max-width     : 350px;
 
 	border-radius : 5px;
 	border        : 1px solid $color-popup-border;
@@ -65,9 +66,9 @@ $list : lib-get-class('list');
 			@include lib-text-hyphens($type : lastEllipsis);
 		}
 		&_title {
-			display: block;
+			display : block;
 
-			color : $color-offer-title;
+			color   : $color-offer-title;
 
 			@include lib-text-hyphens($type : limitРyphens);
 		}

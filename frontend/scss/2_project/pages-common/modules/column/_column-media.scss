@@ -6,10 +6,18 @@
 
 	//Для корректного отображения необходимо жесткое ограничение по ширине
 	@include lib-respond-to(normal) {
-		width     : 620px;
+		width : 620px;
 	}
 	@include lib-respond-to(narrow) {
-		width     : 510px;
+		width : 510px;
+	}
+	@include lib-respond-to(mobile) {
+		margin    : {
+			left  : auto;
+			right : auto;
+		}
+		width     : 100%;
+		max-width : 600px;
 	}
 
 	&_list#{$list} {
@@ -19,71 +27,69 @@
 				width : 100%;
 			}
 
-			@at-root #{$wrapper} {
-				#{$list}_offer#{$offer} {
+			&:nth-of-type(odd) {
+				@include lib-respond-to(mobile) {
+					margin-right : 0;
+				}
+			}
+		}
+		#{$list}_offer#{$offer} {
+			@include lib-respond-to(normal) {
+				padding-bottom : 88px;
+			}
+			@include lib-respond-to(narrow) {
+				padding-bottom : 84px;
+			}
+			#{$offer}_preview#{$preview} {
+				#{$preview}_link#{$link-img} {
 					@include lib-respond-to(normal) {
-						padding-bottom : 88px;
+						@include lib-link-img-param(
+							$height : 180px
+						);
+					}
+				}
+			}
+			#{$offer-description} {
+				&_container {
+					@include lib-respond-to(normal) {
+						height : 108px;
 					}
 					@include lib-respond-to(narrow) {
-						padding-bottom : 84px;
+						height : 112px;
 					}
-					#{$offer}_preview#{$preview} {
-						#{$preview}_link#{$link-img} {
-							@include lib-respond-to(normal) {
-								@include lib-link-img-param(
-									$height : 180px
-								);
-							}
-						}
+				}
+				&_rating#{$rating} {
+					@include lib-respond-to(normal) {
+						position : absolute;
+						bottom   : -25px;
+						left     : 200px;
 					}
-					#{$offer-description} {
-						@include lib-respond-to(normal) {
-							#{$offer-description}_container {
-								@include lib-respond-to(normal) {
-									height : 108px;
-								}
-								@include lib-respond-to(narrow) {
-									height : 112px;
-								}
-								#{$offer-title}#{$block},
-								#{$offer-text} {
-									@include lib-respond-to(normal) {
-										padding-left : 200px
-									}
-								}
-							}
-							&_rating#{$rating} {
-								@include lib-respond-to(normal) {
-									position : absolute;
-									bottom   : -25px;
-									left     : 200px;
-								}
-								@include lib-respond-to(narrow) {
-									bottom : -23px;
-								}
-							}
-							#{$offer-new-price}#{$detail} {
-								@include lib-respond-to(normal) {
-									bottom : -63px;
-									left   : 200px;
-									width  : 388px;
-								}
-								@include lib-respond-to(narrow) {
-									bottom      : -62px;
-									padding-top : 12px;
-									width       : 275px;
-								}
-							}
-							#{$offer-button}#{$block} {
-								@include lib-respond-to(normal) {
-									bottom : -70px;
-								}
-							}
-						}
+					@include lib-respond-to(narrow) {
+						bottom : -23px;
 					}
+				}
+			}
+			#{$offer-title}#{$block},
+			#{$offer-text} {
+				@include lib-respond-to(normal) {
+					padding-left : 200px
+				}
+			}
+			#{$offer-new-price}#{$detail} {
+				@include lib-respond-to(normal) {
+					bottom       : -63px;
+					padding-left : 200px;
+				}
+				@include lib-respond-to(narrow) {
+					bottom      : -62px;
+					padding-top : 12px;
+				}
+			}
+			#{$offer-button}#{$block} {
+				@include lib-respond-to(normal) {
+					bottom : -70px;
 				}
 			}
 		}
 	}
-
 }

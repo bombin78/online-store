@@ -11,11 +11,41 @@
 	@include lib-respond-to(narrow) {
 		width     : 510px;
 	}
+	@include lib-respond-to(narrow) {
+		width     : 510px;
+	}
+	@include lib-respond-to(mobile) {
+		margin-left  : auto;
+		margin-right : auto;
+
+		width        : 100%;
+	}
+	@include lib-respond-to(mobileM) {
+		max-width : 450px;
+	}
+	@include lib-respond-to(mobileS) {
+		max-width : 360px;
+	}
+	@include lib-respond-to(mobileXS) {
+		max-width : 192px;
+	}
 
 	&_list#{$list} {
 		#{$list}_item {
 			@include lib-respond-to(normal) {
 				@include lib-box12(4);
+			}
+			@include lib-respond-to(mobile) {
+				@include lib-box12(3);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include lib-box12(4);
+			}
+			@include lib-respond-to(mobileM) {
+				@include lib-box12(6);
+			}
+			@include lib-respond-to(mobileXS) {
+				@include lib-box12(12);
 			}
 		}
 	}

@@ -4,9 +4,9 @@
 
 #{$wrapper} {
 	@include lib-respond-to(mobile) {
-		left : 0;
+		left       : 0;
 
-		transition   : left 0.3s;
+		transition : left 0.3s;
 	}
 	&#{$_show-menu} {
 		@include lib-respond-to(mobile) {
@@ -26,11 +26,9 @@
 			}
 		}
 	}
-	#{$wrapper-header} {
+	#{$wrapper-popup} {
 		@include lib-respond-to(mobile) {
-			//padding-left : 0;
-
-			//transition   : padding-left 0.3s;
+			padding : 0 10px;
 		}
 	}
 }
