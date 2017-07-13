@@ -3,168 +3,149 @@
 //-------------------------------
 
 #{$wrapper} {
-	&_container {
+	#{$tabs-control} {
+		&_list#{$list} {
+			#{$list}_item {
+				@include lib-respond-to(normal) {
+					margin-left : 6px;
+					width       : 119px;
 
-		@at-root #{$wrapper} {
-			#{$control} {
-				&_list#{$list} {
-					#{$list}_item {
-						@include lib-respond-to(normal) {
-							margin-left : 6px;
-							width       : 119px;
-
-							font-size   : lib-font-size(-3);
-						}
+					font-size   : lib-font-size(-3);
+				}
+				@include lib-respond-to(narrow) {
+					margin-left : 5px;
+					padding     : 8px 5px;
+					width       : 98px;
+				}
+				&:first-child {
+					@include lib-respond-to(normal) {
+						margin-left : -1px;
+					}
+					@include lib-respond-to(narrow) {
+						margin-left : -1px;
+					}
+				}
+				&#{$_pickup},
+				&#{$_courier-moscow},
+				&#{$_courier-spb},
+				&#{$_courier-russia},
+				&#{$_post-russia} {
+					@include lib-respond-to(narrow) {
+						height : 98px;
+					}
+					&:before {
 						@include lib-respond-to(narrow) {
-							margin-left : 5px;
-							padding     : 8px 5px;
-							width       : 98px;
-						}
-						&:first-child {
-							@include lib-respond-to(normal) {
-								margin-left : -1px;
-							}
-							@include lib-respond-to(narrow) {
-								margin-left : -1px;
-							}
-						}
-						#{$list}_item {
-							&#{$_pickup},
-							&#{$_courier-moscow},
-							&#{$_courier-spb},
-							&#{$_courier-russia},
-							&#{$_post-russia} {
-								@include lib-respond-to(narrow) {
-									height : 98px;
-								}
-								&:before {
-									@include lib-respond-to(narrow) {
-										display    : block;
-										margin-top : -8px;
-										height     : 55px;
-										width      : 100%;
+							display    : block;
+							margin-top : -8px;
+							height     : 55px;
+							width      : 100%;
 
-										font-size  : 30px;
-										@include lib-font-icon (
-											$line-height : 55px
-										);
-									}
-								}
-							}
+							font-size  : 30px;
+							@include lib-font-icon (
+								$line-height : 55px
+							);
 						}
 					}
 				}
 			}
-			#{$content} {
-				@include lib-respond-to(narrow) {
-					padding : 15px 10px;
+		}
+	}
+
+	#{$tabs-content} {
+		@include lib-respond-to(narrow) {
+			padding : 15px 10px;
+		}
+	}
+
+	&#{$_personal} {
+
+		#{$tabs-control} {
+			&_list#{$list} {
+				#{$list}_item {
+					@include lib-respond-to(normal) {
+						margin-left : 6px;
+						width       : 119px;
+
+						font-size   : lib-font-size(-3);
+					}
+					@include lib-respond-to(narrow) {
+						margin-left : 5px;
+						padding     : 6px 4px;
+						height      : 45px;
+						width       : 98px;
+					}
+					&:first-child {
+						@include lib-respond-to(normal) {
+							margin-left : -1px;
+						}
+						@include lib-respond-to(narrow) {
+							margin-left : -1px;
+						}
+					}
 				}
 			}
 		}
 
-	}
-	&#{$_personal} {
-		#{$wrapper}_container {
+		#{$tabs-content} {
+			@include lib-respond-to(narrow) {
+				padding : 15px 10px;
+			}
+		}
 
-			@at-root #{$wrapper}#{$_personal} {
-				#{$control} {
-					&_list#{$list} {
-						@include lib-respond-to(normal) {
-							#{$list}_item {
-								@include lib-respond-to(normal) {
-									margin-left : 6px;
-									width       : 119px;
-
-									font-size   : lib-font-size(-3);
-								}
-								@include lib-respond-to(narrow) {
-									margin-left : 5px;
-									padding     : 6px 4px;
-									height      : 45px;
-									width       : 98px;
-								}
-								&:first-child {
-									@include lib-respond-to(normal) {
-										margin-left : -1px;
-									}
-									@include lib-respond-to(narrow) {
-										margin-left : -1px;
-									}
-								}
-							}
+		#{$tab-page} {
+			&_special#{$list} {
+				#{$list}_item {
+					#{$special-offer}#{$offer} {
+						@include lib-respond-to(narrow) {
+							padding-right : 115px;
 						}
-					}
-				}
-
-				#{$content} {
-					@include lib-respond-to(narrow) {
-						padding : 15px 10px;
-					}
-
-					@at-root #{$wrapper}#{$_personal} {
-						#{$page} {
-							&_special#{$list} {
-								#{$list}_item {
-									#{$special-offer}#{$offer} {
-										@include lib-respond-to(narrow) {
-											padding-right : 115px;
-										}
-										#{$offer-description} {
-											#{$offer-button}#{$block} {
-												@include lib-respond-to(narrow) {
-													right  : -105px;
-													bottom : -19px;
-												}
-											}
-										}
-									}
-								}
-							}
-							&_favorites#{$list} {
-								#{$list}_item {
-									#{$favorites-offer}#{$offer} {
-										@include lib-respond-to(narrow) {
-											padding-right : 135px;
-										}
-										#{$offer-description} {
-											#{$offer-button}#{$block} {
-												@include lib-respond-to(narrow) {
-													right  : -105px;
-													bottom : -19px;
-												}
-											}
-											#{$offer-close} {
-												@include lib-respond-to(narrow) {
-													right : -131px;
-												}
-											}
-										}
-									}
-								}
-							}
-							&_orders#{$list} {
-								#{$list}_item {
-									#{$list}_order#{$order} {
-										&#{$_activated},
-										&#{$_canceled},
-										&#{$_completed} {
-											@include lib-respond-to(narrow) {
-												padding-left : 156px;
-											}
-											#{$order}_preview#{$preview} {
-												@include lib-respond-to(narrow) {
-													left: 78px;
-												}
-											}
-										}
-									}
+						#{$offer-description} {
+							#{$offer-button}#{$block} {
+								@include lib-respond-to(narrow) {
+									right  : -105px;
+									bottom : -19px;
 								}
 							}
 						}
 					}
 				}
 			}
-
+			&_favorites#{$list} {
+				#{$list}_item {
+					#{$favorites-offer}#{$offer} {
+						@include lib-respond-to(narrow) {
+							padding-right : 135px;
+						}
+						#{$offer-button}#{$block} {
+							@include lib-respond-to(narrow) {
+								right  : -105px;
+								bottom : -19px;
+							}
+						}
+						#{$offer-close} {
+							@include lib-respond-to(narrow) {
+								right : -131px;
+							}
+						}
+					}
+				}
+			}
+			&_orders#{$list} {
+				#{$list}_order#{$order} {
+					&#{$_activated},
+					&#{$_canceled},
+					&#{$_completed} {
+						@include lib-respond-to(narrow) {
+							padding-left : 156px;
+						}
+						#{$order}_preview#{$preview} {
+							@include lib-respond-to(narrow) {
+								left: 78px;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

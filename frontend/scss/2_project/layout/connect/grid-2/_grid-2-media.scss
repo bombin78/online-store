@@ -12,7 +12,7 @@
 		@include lib-respond-to(narrow) {
 			width : $lib-width-container-narrow;
 		}
-		@include lib-respond-to(narrow) {
+		@include lib-respond-to(mobile) {
 			width : $lib-width-container-mobile;
 		}
 	}

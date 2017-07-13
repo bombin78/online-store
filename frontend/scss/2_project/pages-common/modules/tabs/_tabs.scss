@@ -7,254 +7,241 @@
 		margin        : 0 auto;
 
 		border-radius : 4px;
-		#{$control} {
-			margin   : 0 auto 5px;
+	}
 
-			overflow : hidden;
+	#{$tabs-control} {
+		margin   : 0 auto 5px;
+
+		overflow : hidden;
+		&_list#{$list} {
+			#{$list}_item {
+				float            : left;
+				margin-left      : 10px;
+				padding          : 10px 8px;
+				height           : 60px;
+				width            : 156px;
+
+				color            : $color-control;
+				cursor           : pointer;
+				font-size        : lib-font-size(-2);
+				font-weight      : bold;
+				text-align       : center;
+				text-transform   : uppercase;
+				background-color : $bg-control;
+				&:first-child {
+					margin-left : -1px;
+				}
+				&:hover,
+				&#{$_active} {
+					color            : $color-control-active;
+					background-color : $bg-control-active;
+				}
+				&#{$_pickup},
+				&#{$_courier-moscow},
+				&#{$_courier-spb},
+				&#{$_courier-russia},
+				&#{$_post-russia} {
+					height : 114px;
+					&:before {
+						display    : block;
+						margin-top : -10px;
+						height     : 65px;
+						width      : 100%;
+
+						font-size  : 40px;
+						@include lib-font-icon (
+							$line-height : 65px
+						);
+					}
+				}
+				&#{$_pickup} {
+					&:before {
+						content : '\f290';
+					}
+				}
+				&#{$_courier-moscow} {
+					&:before {
+						content : '\e901';
+					}
+				}
+				&#{$_courier-spb} {
+					&:before {
+						content : '\e902';
+					}
+				}
+				&#{$_courier-russia} {
+					&:before {
+						content : '\f072';
+					}
+				}
+				&#{$_post-russia} {
+					&:before {
+						content : '\e903';
+					}
+				}
+			}
+		}
+	}
+
+	#{$tabs-content} {
+		margin        : 0;
+		padding       : 20px 15px;
+
+		color         : $color-content;
+		border-radius : 0 0 4px 4px;
+		background    : $bg-content;
+	}
+
+	#{$tab-page} {
+		display : none;
+		&#{$_open} {
+			display : block;
+		}
+		&_title {
+			padding-top : 0;
+
+			color       : $color-content-title;
+			font-size   : lib-font-size(1);
+		}
+		&_benefit#{$list} {
+			padding-top : 20px;
+			#{$list}_item {
+				&:before {
+					content     : '\f00c';
+					display     : inline-block;
+					margin-left : 40px;
+					height      : 100%;
+					width       : 25px;
+
+					color       : $color-icon-benefit;
+					font-size   : lib-font-size(0);
+
+					@include lib-font-icon;
+				}
+			}
+		}
+		&_address#{$detail} {
+			padding-top : 30px;
+			#{$detail}_value {
+				padding-top : 5px;
+			}
+		}
+		&_delivery#{$detail} {
+			padding-top : 30px;
+			min-height  : lib-line-height(0);
+			#{$detail}_label {
+				float        : left;
+				margin-right : 4px;
+			}
+		}
+		&_filter#{$group-buttons},
+		&_sorting#{$group-buttons},
+		&_orders#{$list},
+		&_special#{$list},
+		&_favorites#{$list} {
+			display : none;
+		}
+	}
+
+	#{$tab-address}#{$list} {
+		#{$list}_item {
+			margin-top : 10px;
+		}
+	}
+
+	&#{$_personal} {
+
+		#{$tabs-control} {
 			&_list#{$list} {
 				#{$list}_item {
-					float            : left;
-					margin-left      : 10px;
-					padding          : 10px 8px;
-					height           : 60px;
-					width            : 156px;
-
-					color            : $color-control;
-					cursor           : pointer;
-					font-size        : lib-font-size(-2);
-					font-weight      : bold;
-					text-align       : center;
-					text-transform   : uppercase;
-					background-color : $bg-control;
-					&:first-child {
-						margin-left : -1px;
-					}
+					color            : $color-personal-control;
+					background-color : $bg-personal-control;
 					&:hover,
 					&#{$_active} {
-						color            : $color-control-active;
-						background-color : $bg-control-active;
+						color            : $color-personal-control-active;
+						background-color : $bg-personal-control-active;
 					}
-					&#{$_pickup},
-					&#{$_courier-moscow},
-					&#{$_courier-spb},
-					&#{$_courier-russia},
-					&#{$_post-russia} {
-						height : 114px;
-						&:before {
-							display    : block;
-							margin-top : -10px;
-							height     : 65px;
-							width      : 100%;
+				}
+			}
+		}
 
-							font-size  : 40px;
-							@include lib-font-icon (
-								$line-height : 65px
+		#{$tabs-content} {
+			color      : $color-personal-content;
+			background : $bg-personal-content;
+		}
+
+		#{$tab-page} {
+			&_filter#{$group-buttons},
+			&_sorting#{$group-buttons},
+			&_orders#{$list},
+			&_special#{$list},
+			&_favorites#{$list} {
+				display : block;
+			}
+			&_filter#{$group-buttons},
+			&_sorting#{$group-buttons} {
+				margin-bottom : 20px;
+				#{$group-buttons}_list#{$list} {
+					margin-top : -2px;
+					#{$list}_item {
+						background-color : $bg-filter-buttons;
+						&#{$_desc} {
+							background-color : $bg-filter-button-desc;
+						}
+					}
+				}
+			}
+			&_orders#{$list},
+			&_special#{$list},
+			&_favorites#{$list},
+			&_address#{$list} {
+				#{$list}_item {
+					border-bottom : 1px solid $color-item-border;
+					&:first-child {
+						border-top : 1px solid $color-item-border;
+					}
+				}
+			}
+			&_special#{$list} {
+				#{$list}_item {
+					#{$special-offer}#{$offer} {
+						padding : 5px 125px 25px 85px;
+
+						@include mix-common-personal-offer();
+					}
+				}
+			}
+			&_favorites#{$list} {
+				#{$list}_item {
+					#{$favorites-offer}#{$offer} {
+						padding : 5px 150px 25px 85px;
+
+						@include mix-common-personal-offer();
+						#{$offer-close} {
+							@include lib-close(
+								$top : 0,
+								$right : -146px
 							);
 						}
 					}
-					&#{$_pickup} {
-						&:before {
-							content : '\f290';
-						}
-					}
-					&#{$_courier-moscow} {
-						&:before {
-							content : '\e901';
-						}
-					}
-					&#{$_courier-spb} {
-						&:before {
-							content : '\e902';
-						}
-					}
-					&#{$_courier-russia} {
-						&:before {
-							content : '\f072';
-						}
-					}
-					&#{$_post-russia} {
-						&:before {
-							content : '\e903';
-						}
-					}
 				}
 			}
 		}
-		#{$content} {
-			margin        : 0;
-			padding       : 20px 15px;
 
-			color         : $color-content;
-			border-radius : 0 0 4px 4px;
-			background    : $bg-content;
-
-			@at-root {
-				#{$page} {
-					display : none;
-					&#{$_open} {
-						display : block;
-					}
-					&_title {
-						padding-top : 0;
-
-						color       : $color-content-title;
-						font-size   : lib-font-size(1);
-					}
-					&_benefit#{$list} {
-						padding-top : 20px;
-						#{$list}_item {
-							&:before {
-								content     : '\f00c';
-								display     : inline-block;
-								margin-left : 40px;
-								height      : 100%;
-								width       : 25px;
-
-								color       : $color-icon-benefit;
-								font-size   : lib-font-size(0);
-
-								@include lib-font-icon;
-							}
-						}
-					}
-					&_address#{$detail} {
-						padding-top : 30px;
-						#{$detail}_value {
-							padding-top : 5px;
-							#{$address}#{$list} {
-								#{$list}_item {
-									margin-top : 10px;
-								}
-							}
-						}
-
-					}
-					&_delivery#{$detail} {
-						padding-top : 30px;
-						min-height  : lib-line-height(0);
-						#{$detail}_label {
-							float        : left;
-							margin-right : 4px;
-						}
-					}
-					&_filter#{$group-buttons},
-					&_sorting#{$group-buttons},
-					&_orders#{$list},
-					&_special#{$list},
-					&_favorites#{$list} {
-						display : none;
-					}
-				}
+		#{$tab-list-address} {
+			position : relative;
+			padding  : 5px 35px 5px 25px;
+			&_number {
+				position : absolute;
+				top      : 5px;
+				left     : 5px;
 			}
-
-		}
-	}
-	&#{$_personal} {
-		#{$wrapper}_container {
-
-			@at-root #{$wrapper}#{$_personal} {
-				#{$control} {
-					&_list#{$list} {
-						#{$list}_item {
-							color            : $color-personal-control;
-							background-color : $bg-personal-control;
-							&:hover,
-							&#{$_active} {
-								color            : $color-personal-control-active;
-								background-color : $bg-personal-control-active;
-							}
-						}
-					}
-				}
-
-				#{$content} {
-					color      : $color-personal-content;
-					background : $bg-personal-content;
-
-					@at-root #{$wrapper}#{$_personal} {
-						#{$page} {
-							&_filter#{$group-buttons},
-							&_sorting#{$group-buttons},
-							&_orders#{$list},
-							&_special#{$list},
-							&_favorites#{$list} {
-								display : block;
-							}
-							&_filter#{$group-buttons},
-							&_sorting#{$group-buttons} {
-								margin-bottom : 20px;
-								#{$group-buttons}_list#{$list} {
-									margin-top : -2px;
-									#{$list}_item {
-										background-color : $bg-filter-buttons;
-										&#{$_desc} {
-											background-color : $bg-filter-button-desc;
-										}
-									}
-								}
-							}
-							&_orders#{$list},
-							&_special#{$list},
-							&_favorites#{$list},
-							&_address#{$list} {
-								#{$list}_item {
-									border-bottom : 1px solid $color-item-border;
-									&:first-child {
-										border-top : 1px solid $color-item-border;
-									}
-								}
-							}
-							&_special#{$list} {
-								#{$list}_item {
-									#{$special-offer}#{$offer} {
-										padding : 5px 125px 25px 85px;
-
-										@include mix-common-personal-offer();
-									}
-								}
-							}
-							&_favorites#{$list} {
-								#{$list}_item {
-									#{$favorites-offer}#{$offer} {
-										padding : 5px 150px 25px 85px;
-
-										@include mix-common-personal-offer();
-										#{$offer-description} {
-											#{$offer-close} {
-												@include lib-close(
-													$top : 0,
-													$right : -146px
-												);
-											}
-										}
-									}
-								}
-							}
-							&_address#{$list} {
-								#{$list}_item {
-									#{$list-address} {
-										position : relative;
-										padding  : 5px 35px 5px 25px;
-										&_number {
-											position : absolute;
-											top      : 5px;
-											left     : 5px;
-										}
-										&_close {
-											@include lib-close(
-												$top : 4px,
-												$right : 4px
-											);
-										}
-									}
-								}
-							}
-						}
-					}
-
-				}
+			&_close {
+				@include lib-close(
+					$top : 4px,
+					$right : 4px
+				);
 			}
-
 		}
 	}
 }

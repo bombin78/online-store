@@ -22,7 +22,7 @@
 		max-width : 360px;
 	}
 	@include lib-respond-to(mobileXS) {
-		max-width : 192px;
+		max-width : 100%;
 	}
 
 	&_list#{$list} {
@@ -40,7 +40,9 @@
 				@include lib-box12(6);
 			}
 			@include lib-respond-to(mobileXS) {
-				@include lib-box12(12);
+				float  : none;
+				margin : 0 auto;
+				width  : 182px;
 			}
 		}
 		#{$list}_offer#{$offer} {
@@ -131,15 +133,6 @@
 					left        : 50%;
 					margin-left : -67px;
 				}
-			}
-		}
-	}
-
-	&_more#{$block} {
-		#{$more} {
-			@include lib-respond-to(mobileXS) {
-				width  : 172px;
-				height : 55px;
 			}
 		}
 	}

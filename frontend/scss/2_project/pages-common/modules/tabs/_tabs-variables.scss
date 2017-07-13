@@ -20,11 +20,11 @@ $color-item-border : lib-color(primary-dark);
 
 //Классы
 $wrapper : lib-get-class('tabs-block');
-$control : lib-get-class('tabs-control');
-$content : lib-get-class('tabs-content');
-$page : lib-get-class('tab-page');
-$address : lib-get-class('tab-page-address');
-$list-address : lib-get-class('tab-list-address');
+$tabs-control : lib-get-class('tabs-control');
+$tabs-content : lib-get-class('tabs-content');
+$tab-page : lib-get-class('tab-page');
+$tab-address : lib-get-class('tab-page-address');
+$tab-list-address : lib-get-class('tab-list-address');
 $group-buttons : lib-get-class('group-buttons');
 $special-offer : lib-get-class('special-offer');
 $favorites-offer : lib-get-class('favorites-offer');

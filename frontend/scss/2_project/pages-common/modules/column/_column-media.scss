@@ -72,7 +72,7 @@
 			#{$offer-title}#{$block},
 			#{$offer-text} {
 				@include lib-respond-to(normal) {
-					padding-left : 200px
+					padding-left : 200px;
 				}
 			}
 			#{$offer-new-price}#{$detail} {
