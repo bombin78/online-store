@@ -8,7 +8,7 @@
 		@include mix-content-common-narrow-param();
 	}
 	@include lib-respond-to(mobile) {
-		@include mix-content-common-mobile-mobile();
+		@include mix-content-common-mobile-param();
 	}
 	#{$title-complex} {
 		@include lib-respond-to(mobileM) {

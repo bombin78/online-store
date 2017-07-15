@@ -114,6 +114,7 @@ $lib-detail : lib-get-class('detail');
 // 4.2 Затемнение текста
 @mixin lib-text-blackout(
 	$vertical-position  : "bottom",
+	$right				: 0,
 	$height             : 100%,
 	$width              : 8px,
 	$color1             : 255,
@@ -125,15 +126,15 @@ $lib-detail : lib-get-class('detail');
 	$bg3 : rgba($color1, $color2, $color3, 1.0);
 
 	&:before {
-		content                 : '';
-		position                : absolute;
-		#{$vertical-position}   : 0;
-		right                   : 0;
-		height                  : $height;
-		width                   : $width;
-		z-index                 : 1;
+		content                   : '';
+		position                  : absolute;
+		#{$vertical-position}     : 0;
+		right                     : $right;
+		height                    : $height;
+		width                     : $width;
+		z-index                   : 1;
 
-		background              : linear-gradient(to right, $bg1, $bg2, $bg3);
+		background                : linear-gradient(to right, $bg1, $bg2, $bg3);
 	}
 }
 
@@ -253,8 +254,7 @@ $lib-detail : lib-get-class('detail');
 //-------------------------------
 
 // 8. Параметры ссылки в блоке предварительного просмотра
-@mixin lib-link-img-param(
-	//по умолчанию - квадрат
+@mixin lib-link-img-param(//по умолчанию - квадрат
 	$height: 150px,
 	$ratio: 1,
 	$bg: none,
@@ -293,8 +293,7 @@ $lib-detail : lib-get-class('detail');
 // 9. Отзывчивое соотношение
 // Миксин для создания масштабируемых элементов(обычно изображения/картинки заднего фона),
 // чтобы поддерживать соотношение.
-@mixin lib-responsive-ratio(
-	//по умолчанию - квадрат
+@mixin lib-responsive-ratio(//по умолчанию - квадрат
 	$x:1,
 	$y:1
 ) {
@@ -337,8 +336,8 @@ $lib-detail : lib-get-class('detail');
 		border-top    : $size solid $color;
 		top           : $offset;
 		@if $center {
-			margin-left: 50%;
-			left: -$side-size;
+			margin-left : 50%;
+			left        : -$side-size;
 		}
 	} @else if $direction == up {
 		border-left   : $side-size solid transparent;
@@ -346,8 +345,8 @@ $lib-detail : lib-get-class('detail');
 		border-bottom : $size solid $color;
 		bottom        : $offset;
 		@if $center {
-			margin-left: 50%;
-			left: -$side-size;
+			margin-left : 50%;
+			left        : -$side-size;
 		}
 	} @else if $direction == right {
 		border-top    : $side-size solid transparent;
@@ -355,8 +354,8 @@ $lib-detail : lib-get-class('detail');
 		border-left   : $size solid $color;
 		right         : $offset;
 		@if $center {
-			margin-top: 50%;
-			top: -$side-size;
+			margin-top : 50%;
+			top        : -$side-size;
 		}
 	} @else if $direction == left {
 		border-top    : $side-size solid transparent;
@@ -364,8 +363,8 @@ $lib-detail : lib-get-class('detail');
 		border-right  : $size solid $color;
 		left          : $offset;
 		@if $center {
-			margin-top: 50%;
-			top: -$side-size;
+			margin-top : 50%;
+			top        : -$side-size;
 		}
 	}
 }
@@ -386,7 +385,7 @@ $lib-detail : lib-get-class('detail');
 	color     : $lib-color-close;
 	font-size : lib-font-size(e2);
 	&:hover {
-		color     : $lib-color-close-hover;
+		color : $lib-color-close-hover;
 	}
 	&:after {
 		content : '\f057';

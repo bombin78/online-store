@@ -19,7 +19,6 @@
 		width     : 100%;
 		max-width : 600px;
 	}
-
 	&_list#{$list} {
 		#{$list}_item {
 
@@ -40,11 +39,29 @@
 			@include lib-respond-to(narrow) {
 				padding-bottom : 84px;
 			}
+			@include lib-respond-to(mobileXS) {
+				padding    : {
+					top    : 10px;
+					left   : 10px;
+					right  : 10px;
+					bottom : 90px;
+				}
+			}
 			#{$offer}_preview#{$preview} {
 				#{$preview}_link#{$link-img} {
 					@include lib-respond-to(normal) {
 						@include lib-link-img-param(
 							$height : 180px
+						);
+					}
+					@include lib-respond-to(mobileL) {
+						@include lib-link-img-param(
+							$height : 130px
+						);
+					}
+					@include lib-respond-to(mobileS) {
+						@include lib-link-img-param(
+							$height : 105px
 						);
 					}
 				}
@@ -67,12 +84,24 @@
 					@include lib-respond-to(narrow) {
 						bottom : -23px;
 					}
+					@include lib-respond-to(mobileL) {
+						left : 145px;
+					}
+					@include lib-respond-to(mobileS) {
+						left : 0;
+					}
 				}
 			}
 			#{$offer-title}#{$block},
 			#{$offer-text} {
 				@include lib-respond-to(normal) {
 					padding-left : 200px;
+				}
+				@include lib-respond-to(mobileL) {
+					padding-left : 145px;
+				}
+				@include lib-respond-to(mobileXS) {
+					padding-left : 116px;
 				}
 			}
 			#{$offer-new-price}#{$detail} {
@@ -84,10 +113,34 @@
 					bottom      : -62px;
 					padding-top : 12px;
 				}
+				@include lib-respond-to(mobileL) {
+					padding-left : 0;
+				}
+				@include lib-respond-to(mobileXS) {
+					bottom      : -81px;
+					padding-top : 8px;
+				}
+				&:before {
+					@include lib-respond-to(narrow) {
+						right : 95px;
+					}
+					@include lib-respond-to(mobile) {
+						right : 101px;
+					}
+				}
+				#{$detail}_value {
+					@include lib-respond-to(mobileXS) {
+						display     : block;
+						margin-left : 0;
+					}
+				}
 			}
 			#{$offer-button}#{$block} {
 				@include lib-respond-to(normal) {
 					bottom : -70px;
+				}
+				@include lib-respond-to(mobileXS) {
+					bottom : -79px;
 				}
 			}
 		}

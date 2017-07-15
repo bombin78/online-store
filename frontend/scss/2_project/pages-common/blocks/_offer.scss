@@ -127,10 +127,13 @@ $_top-sales : lib-get-modifier('top-sales');
 		font-size    : lib-font-size(-3);
 	}
 
-	#{$offer-new-price},
+	#{$offer-new-price} {
+		@include lib-text-hyphens($type : lastClip);
+		@include lib-text-blackout($right: 101px);
+	}
 	#{$offer-old-price} {
 		@include lib-text-hyphens($type : lastClip);
-		@include lib-text-blackout;
+		@include lib-text-blackout();
 	}
 
 	#{$offer-new-price}#{$detail} {

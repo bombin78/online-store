@@ -69,7 +69,7 @@ $mix-field-textarea : lib-get-class('field-textarea');
 }
 
 // 1.3 При разрешении экрана "mobile"
-@mixin mix-content-common-mobile-mobile() {
+@mixin mix-content-common-mobile-param() {
 	padding: {
 		right : 0;
 		left  : 0;
