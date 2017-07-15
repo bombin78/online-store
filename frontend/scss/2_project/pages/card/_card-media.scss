@@ -7,66 +7,111 @@
 	@include lib-respond-to(narrow) {
 		@include mix-content-common-narrow-param();
 	}
+	@include lib-respond-to(mobile) {
+		@include mix-content-common-mobile-param();
+	}
 
-	&_main {
-
-		#{$view} {
-			@include lib-respond-to(normal) {
-				width : 270px;
-			}
+	#{$card-view} {
+		@include lib-respond-to(normal) {
+			width : 270px;
+		}
+		@include lib-respond-to(narrow) {
+			width : 220px;
+		}
+		@include lib-respond-to(mobileL) {
+			display : table;
+			width   : 100%;
+		}
+	}
+	#{$card-view-big}#{$preview} {
+		@include lib-respond-to(mobileL) {
+			display        : table-cell;
+			vertical-align : top;
+		}
+		#{$preview}_link#{$link-img} {
 			@include lib-respond-to(narrow) {
-				width : 220px;
+				@include lib-link-img-param(
+					$height : 200px
+				);
 			}
-			#{$view-big}#{$preview} {
-				#{$preview}_link#{$link-img} {
-					@include lib-respond-to(narrow) {
-						@include lib-link-img-param(
-								$height : 200px
-						);
+			@include lib-respond-to(mobileS) {
+				@include lib-link-img-param(
+					$height : 130px
+				);
+			}
+		}
+	}
+	#{$card-view-more} {
+		@include lib-respond-to(mobileL) {
+			display        : table-cell;
+			vertical-align : top;
+		}
+		&_list#{$list} {
+			@include lib-respond-to(mobileL) {
+				max-height : 200px;
+				overflow   : hidden;
+			}
+			@include lib-respond-to(mobileS) {
+				max-height : 130px;
+			}
+			#{$list}_item {;
+				@include lib-respond-to(narrow) {
+					margin-top  : 10px;
+					margin-left : 10px;
+				}
+				@include lib-respond-to(mobileL) {
+					margin     : {
+						top    : 0;
+						bottom : 10px;
 					}
 				}
-			}
-			#{$view-more} {
-				&_list#{$list} {
-					#{$list}_item {;
-						@include lib-respond-to(narrow) {
-							margin-top  : 10px;
-							margin-left : 10px;
-						}
-						#{$view-min}#{$preview} {
-							#{$preview}_link#{$link-img} {
-								@include lib-respond-to(narrow) {
-									@include lib-link-img-param(
-											$height : 60px
-									);
-								}
-							}
-						}
+				&:nth-of-type(3n+1) {
+					@include lib-respond-to(mobileL) {
+						margin-left : 10px;
 					}
 				}
 			}
 		}
-		#{$actions} {
-			&_rating#{$rating} {
-				@include lib-respond-to(narrow) {
-					margin-top : 20px;
-				}
+	}
+	#{$card-view-min}#{$preview} {
+		#{$preview}_link#{$link-img} {
+			@include lib-respond-to(narrow) {
+				@include lib-link-img-param(
+					$height : 60px
+				);
 			}
-			&_links#{$block} {
-				@include lib-respond-to(narrow) {
-					margin-top : 15px;
-				}
+		}
+	}
+	#{$card-actions} {
+		@include lib-respond-to(mobileL) {
+			display    : block;
+			margin-top : 25px;
+		}
+		&_rating#{$rating} {
+			@include lib-respond-to(narrow) {
+				margin-top : 20px;
 			}
-			&_order#{$order} {
+		}
+		&_links#{$block} {
+			@include lib-respond-to(narrow) {
+				margin-top : 15px;
+			}
+		}
+	}
+	#{$card-order} {
+		@include lib-respond-to(narrow) {
+			margin-top : 25px;
+		}
+		@include lib-respond-to(mobileXS) {
+			padding : 10px;
+		}
+		&_form#{$one-click} {
+			#{$one-click}_phone#{$field-text} {
 				@include lib-respond-to(narrow) {
-					margin-top : 25px;
+					width : 155px;
 				}
-				#{$order}_form#{$one-click} {
-					#{$one-click}_phone#{$field-text} {
-						@include lib-respond-to(narrow) {
-							width : 155px;
-						}
-					}
+				@include lib-respond-to(mobile) {
+					width : 180px;
 				}
 			}
 		}

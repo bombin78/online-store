@@ -1,0 +1,12 @@
+p {
+	> img {
+		@include lib-respond-to(mobileM) {
+			max-width : 45%;
+		}
+		@include lib-respond-to(mobileS) {
+			float     : none;
+			display   : block;
+			max-width : 100%;
+		}
+	}
+}

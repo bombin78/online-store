@@ -9,12 +9,12 @@ $color-order-text : lib-color(accent-darker);
 
 //Классы
 $wrapper : lib-get-class('card');
-$view : lib-get-class('card-view');
-$view-big : lib-get-class('card-view-big');
-$view-more : lib-get-class('card-view-more');
-$view-min : lib-get-class('card-view-min');
-$actions : lib-get-class('card-actions');
-$order : lib-get-class('card-order');
+$card-view : lib-get-class('card-view');
+$card-view-big : lib-get-class('card-view-big');
+$card-view-more : lib-get-class('card-view-more');
+$card-view-min : lib-get-class('card-view-min');
+$card-actions : lib-get-class('card-actions');
+$card-order : lib-get-class('card-order');
 $preview : lib-get-class('preview');
 $link-img : lib-get-class('link-img');
 $rating : lib-get-class('rating');

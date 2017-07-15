@@ -6,10 +6,13 @@
 
 	//Для корректного отображения необходимо жесткое ограничение по ширине
 	@include lib-respond-to(normal) {
-		width     : 620px;
+		width : 620px;
 	}
 	@include lib-respond-to(narrow) {
-		width     : 510px;
+		width : 510px;
+	}
+	@include lib-respond-to(mobile) {
+		display : none;
 	}
 	#{$slider} {
 		&_prev {
@@ -40,72 +43,66 @@
 				height : 228px;
 				width  : 468px;
 			}
-
-			@at-root #{$wrapper} {
-				#{$slider}_list#{$list} {
-					#{$list}_item {
-						@include lib-respond-to(normal) {
-							margin-left : 8px;
-						}
-						@include lib-respond-to(narrow) {
-							margin-left : 6px;
-							width       : 152px;
-						}
-						&:first-child {
-							@include lib-respond-to(normal) {
-								margin-left : 0;
-							}
+		}
+		&_list#{$list} {
+			#{$list}_item {
+				@include lib-respond-to(normal) {
+					margin-left : 8px;
+				}
+				@include lib-respond-to(narrow) {
+					margin-left : 6px;
+					width       : 152px;
+				}
+				&:first-child {
+					@include lib-respond-to(normal) {
+						margin-left : 0;
+					}
+					@include lib-respond-to(narrow) {
+						margin-left : 0;
+					}
+				}
+				#{$list}_offer#{$offer} {
+					@include lib-respond-to(narrow) {
+						padding-bottom : 10px;
+					}
+					#{$offer}_preview#{$preview} {
+						#{$preview}_link#{$link-img} {
 							@include lib-respond-to(narrow) {
-								margin-left : 0;
+								@include lib-link-img-param(
+									$height : 132px
+								);
 							}
 						}
-						#{$list}_offer#{$offer} {
+					}
+					#{$offer-description} {
+						#{$offer-title} {
 							@include lib-respond-to(narrow) {
-								padding-bottom : 10px;
+								margin-top : -40px;
+								height     : 40px;
 							}
-							#{$offer}_preview#{$preview} {
-								#{$preview}_link#{$link-img} {
-									@include lib-respond-to(narrow) {
-										@include lib-link-img-param(
-											$height : 132px
-										);
-									}
-								}
+						}
+						#{$offer-price} {
+							@include lib-respond-to(narrow) {
+								position   : relative;
+								bottom     : auto;
+								margin-top : 10px;
+								width      : 100%;
+
+								text-align : center;
 							}
-							#{$offer-description} {
-								&_container {
-									#{$offer-title} {
-										@include lib-respond-to(narrow) {
-											margin-top : -40px;
-											height     : 40px;
-										}
-									}
-								}
-								#{$offer-price} {
-									@include lib-respond-to(narrow) {
-										position   : relative;
-										bottom     : auto;
-										margin-top : 10px;
-										width      : 100%;
+						}
+						#{$offer-button} {
+							@include lib-respond-to(narrow) {
+								position   : relative;
+								bottom     : auto;
+								margin-top : 14px;
 
-										text-align : center;
-									}
-								}
-								#{$offer-button} {
-									@include lib-respond-to(narrow) {
-										position   : relative;
-										bottom     : auto;
-										margin-top : 14px;
-
-										text-align : center;
-									}
-								}
+								text-align : center;
 							}
 						}
 					}
 				}
 			}
-
 		}
 	}
 }
