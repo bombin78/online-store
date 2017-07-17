@@ -8,261 +8,258 @@
 	padding    : 30px 10px;
 	min-height : 540px;
 	width      : $lib-width-container-large;
+
 	#{$basket-tab} {
 		display  : inline-block;
 		position : relative;
 		width    : 100%;
+	}
 
-		@at-root {
-			#{$order-card},
-			#{$special-offers},
-			#{$order-login},
-			#{$order-reg},
-			#{$order-make} {
-				@include lib-box12(
-						$cell : 6
-				);
+	#{$order-card},
+	#{$special-offers},
+	#{$order-login},
+	#{$order-reg},
+	#{$order-make} {
+		@include lib-box12(
+			$cell : 6
+		);
+	}
+
+	#{$order-card},
+	#{$special-offers},
+	#{$order-make} {
+		padding-left : 20px;
+		&:first-child {
+			padding-left  : 0;
+			padding-right : 20px;
+		}
+	}
+
+	#{$order-card} {
+		&_title {
+			padding-top : 0;
+		}
+		&_title + &_form {
+			margin-top : 15px;
+		}
+	}
+
+	#{$order-card-list}#{$list} {
+		#{$list}_item {
+			margin-top : 17px;
+			&:first-child {
+				margin-top : 0;
 			}
+		}
+	}
 
-			#{$order-card},
-			#{$special-offers},
-			#{$order-make} {
-				padding-left : 20px;
+	#{$cost-order}#{$detail},
+	#{$cost-delivery}#{$detail},
+	#{$cost-total}#{$detail} {
+		display     : inline-block;
+
+		font-size   : lib-font-size(e2);
+		font-weight : $lib-font-weight-bold;
+		#{$detail}_label {
+			float : left;
+		}
+		#{$detail}_value {
+			float       : left;
+			margin-left : 7px;
+
+			color       : $color-cost-total;
+		}
+	}
+
+	#{$cost-order}#{$detail} {
+		padding-top : 30px;
+	}
+
+	#{$order-card-button} {
+		text-align : right;
+		margin-top : -27px;
+	}
+
+	#{$order-card-hint} {
+		margin-top : 25px;
+
+		font-size  : lib-font-size(-4);
+	}
+
+	#{$order-card-one-click} {
+		margin-top : 20px;
+
+		text-align : right;
+		#{$block}_element#{$link} {
+			color : $color-one-click-link;
+		}
+	}
+
+	#{$order-card-change} {
+		margin-top : 25px;
+		#{$block}_element#{$link} {
+			color : $color-order-card-change;
+		}
+	}
+
+	#{$special-offers} {
+		&_title {
+			padding-top : 0;
+		}
+		&_text {
+			padding-top : 10px;
+
+			font-size   : lib-font-size(-4);
+		}
+		&_list#{$list} {
+			#{$list}_item {
+				margin-top : 16px;
 				&:first-child {
-					padding-left  : 0;
-					padding-right : 20px;
-				}
-			}
-
-			#{$order-card} {
-				&_title {
-					padding-top : 0;
-				}
-				&_title + &_form {
-					margin-top : 15px;
-				}
-				&_form {
-
-					@at-root {
-						#{$order-card-list}#{$list} {
-							#{$list}_item {
-								margin-top : 17px;
-								&:first-child {
-									margin-top : 0;
-								}
-							}
-						}
-
-						#{$order-card-cost} {
-							#{$cost-order}#{$detail},
-							#{$cost-delivery}#{$detail},
-							#{$cost-total}#{$detail} {
-								display     : inline-block;
-
-								font-size   : lib-font-size(e2);
-								font-weight : $lib-font-weight-bold;
-								#{$detail}_label {
-									float : left;
-								}
-								#{$detail}_value {
-									float       : left;
-									margin-left : 7px;
-
-									color       : $color-cost-total;
-								}
-							}
-							#{$cost-order}#{$detail} {
-								padding-top: 30px;
-							}
-						}
-
-						#{$order-card-button} {
-							text-align : right;
-							margin-top : -27px;
-						}
-
-						#{$order-card-hint} {
-							margin-top : 25px;
-
-							font-size  : lib-font-size(-4);
-						}
-
-						#{$order-card-one-click}{
-							margin-top : 20px;
-
-							text-align : right;
-							#{$block}_element#{$link} {
-								color : $color-one-click-link;
-							}
-						}
-						#{$order-card-change} {
-							margin-top : 25px;
-							#{$block}_element#{$link} {
-								color : $color-order-card-change;
-							}
-						}
-					}
-
-				}
-			}
-
-			#{$special-offers} {
-				&_title {
-					padding-top : 0;
-				}
-				&_text {
-					padding-top : 10px;
-
-					font-size   : lib-font-size(-4);
-				}
-				&_list#{$list} {
-					#{$list}_item {
-						margin-top : 16px;
-						&:first-child {
-							margin-top : 20px;
-						}
-
-						@at-root {
-							#{$special-offer}#{$offer} {
-								padding : 5px 135px 25px 85px;
-								height  : 51px;
-								#{$offer}_preview#{$preview} {
-									left : 5px;
-									#{$preview}_link#{$link-img} {
-										@include lib-link-img-param(
-												$height : 40px,
-												$ratio : (16/9),
-												$border : $color-img-border
-										);
-									}
-								}
-								#{$offer-description} {
-									position : relative;
-									&_container {
-										height : 100%;
-										#{$offer-title}#{$block} {
-											padding-left : 0;
-											@include lib-text-hyphens(
-													$type : lastClip
-											);
-										}
-									}
-									#{$offer-new-price}#{$detail} {
-										bottom      : -20px;
-										margin-top  : 0;
-										padding-top : 0;
-									}
-									#{$offer-button}#{$block} {
-										right  : -125px;
-										bottom : -16px;
-									}
-								}
-							}
-						}
-
-					}
-				}
-			}
-
-			#{$order-make} {
-				&_form {
-					padding    : 20px 15px;
-
-					background : $bg-order-make;
-					#{$order-personal} {
-						&_title {
-							padding-top : 0;
-						}
-						&_name#{$field-text},
-						&_phone#{$field-text},
-						&_email#{$field-text} {
-							@include order-make-field-text();
-						}
-					}
-					#{$order-delivery} {
-						margin-top : 20px;
-
-						border-top : 2px solid $color-order-delivery-border;
-						&_title {
-							padding-top : 20px;
-						}
-						&_city#{$field-text} {
-							@include order-make-field-text();
-						}
-						&_address#{$field-textarea} {
-							@include order-make-field-textarea();
-						}
-						&_method#{$field-select},
-						&_payment#{$field-select} {
-							@include order-make-field-select();
-						}
-					}
-					#{$order-promo} {
-						margin-top  : 20px;
-
-						border-top  : 2px solid $color-order-promo-border;
-						&_promo#{$field-text} {
-							@include order-make-field-text();
-						}
-						&_comment#{$field-textarea} {
-							@include order-make-field-textarea();
-						}
-					}
-					#{$order-make-button}#{$block} {
-						margin-top : 20px;
-
-						text-align : center;
-					}
-				}
-			}
-
-			#{$order-login},
-			#{$order-reg} {
-				padding-left : 20px;
-				&:first-child {
-					padding-left  : 0;
-					padding-right : 20px;
-				}
-				#{$order-spoiler} {
-					padding    : 15px 15px 0 15px;
-
-					background : $bg-order-spoiler;
-					&_title#{$block} {
-						padding-top    : 0;
-						padding-bottom : 15px;
-						#{$block}_element {
-							cursor          : pointer;
-							color           : $color-spoiler-title;
-							text-decoration : none;
-						}
-					}
-					&_content {
-						display : none;
-						padding : 10px 0 20px 0;
-					}
-				}
-			}
-
-			#{$order-login} {
-				#{$order-spoiler} {
-					&_content {
-						#{$order-spoiler}_login#{$login-form} {
-							margin-top : 20px;
-						}
-					}
-				}
-			}
-
-			#{$order-reg} {
-				#{$order-spoiler} {
-					&_content {
-						#{$order-spoiler}_reg#{$reg-form} {
-							margin-top : 20px;
-						}
-					}
+					margin-top : 20px;
 				}
 			}
 		}
+	}
 
+	#{$special-offer}#{$offer} {
+		padding : 5px 135px 25px 85px;
+		height  : 51px;
+
+		#{$offer}_preview#{$preview} {
+			left : 5px;
+			#{$preview}_link#{$link-img} {
+				@include lib-link-img-param(
+					$height : 40px,
+					$ratio : (16/9),
+					$border : $color-img-border
+				);
+			}
+		}
+
+		#{$offer-description} {
+			position : relative;
+			&_container {
+				height : 100%;
+			}
+		}
+
+		#{$offer-title}#{$block} {
+			padding-left : 0;
+			@include lib-text-hyphens(
+				$type : lastClip
+			);
+		}
+
+		#{$offer-new-price}#{$detail} {
+			bottom      : -20px;
+			margin-top  : 0;
+			padding-top : 0;
+		}
+
+		#{$offer-button}#{$block} {
+			right  : -125px;
+			bottom : -16px;
+		}
+	}
+
+	#{$order-make} {
+		&_form {
+			padding    : 20px 15px;
+
+			background : $bg-order-make;
+		}
+	}
+
+	#{$order-personal} {
+		&_title {
+			padding-top : 0;
+		}
+		&_name#{$field-text},
+		&_phone#{$field-text},
+		&_email#{$field-text} {
+			@include order-make-field-text();
+		}
+	}
+
+	#{$order-delivery} {
+		margin-top : 20px;
+
+		border-top : 2px solid $color-order-delivery-border;
+		&_title {
+			padding-top : 20px;
+		}
+		&_city#{$field-text} {
+			@include order-make-field-text();
+		}
+		&_address#{$field-textarea} {
+			@include order-make-field-textarea();
+		}
+		&_method#{$field-select},
+		&_payment#{$field-select} {
+			@include order-make-field-select();
+		}
+	}
+
+	#{$order-promo} {
+		margin-top : 20px;
+
+		border-top : 2px solid $color-order-promo-border;
+		&_promo#{$field-text} {
+			@include order-make-field-text();
+		}
+		&_comment#{$field-textarea} {
+			@include order-make-field-textarea();
+		}
+	}
+
+	#{$order-make-button}#{$block} {
+		margin-top : 20px;
+
+		text-align : center;
+	}
+
+	#{$order-login},
+	#{$order-reg} {
+		padding-left : 20px;
+		&:first-child {
+			padding-left  : 0;
+			padding-right : 20px;
+		}
+
+		#{$order-spoiler} {
+			padding    : 15px 15px 0 15px;
+
+			background : $bg-order-spoiler;
+			&_title#{$block} {
+				padding-top    : 0;
+				padding-bottom : 15px;
+				#{$block}_element {
+					cursor          : pointer;
+					color           : $color-spoiler-title;
+					text-decoration : none;
+				}
+			}
+			&_content {
+				display : none;
+				padding : 10px 0 20px 0;
+			}
+		}
+
+	}
+
+	#{$order-login} {
+		#{$order-spoiler} {
+			&_login#{$login-form} {
+				margin-top : 20px;
+			}
+		}
+	}
+
+	#{$order-reg} {
+		#{$order-spoiler} {
+			&_reg#{$reg-form} {
+				margin-top : 20px;
+			}
+		}
 	}
 }

@@ -10,155 +10,186 @@
 	@include lib-respond-to(narrow) {
 		width : $lib-width-container-narrow;
 	}
+	@include lib-respond-to(mobile) {
+		width : $lib-width-container-mobile;
+	}
 
-	@at-root {
-		#{$basket-header} {
-			&_info {
+	#{$basket-header} {
+		&_info {
+			@include lib-respond-to(narrow) {
+				margin-top : 15px;
+			}
+		}
+	}
+
+	#{$order-card},
+	#{$special-offers},
+	#{$order-make} {
+		@include lib-respond-to(narrow) {
+			padding-left : 12px;
+		}
+		@include lib-respond-to(mobile) {
+			padding-top  : 30px;
+			padding-left : 0;
+		}
+		&:first-child {
+			@include lib-respond-to(narrow) {
+				padding-left  : 0;
+				padding-right : 12px;
+			}
+			@include lib-respond-to(mobile) {
+				padding-top   : 0;
+				padding-right : 0;
+			}
+		}
+	}
+	#{$order-card},
+	#{$special-offers},
+	#{$order-login},
+	#{$order-reg},
+	#{$order-make} {
+		@include lib-respond-to(mobile) {
+			@include lib-box12(
+				$cell : 12
+			);
+		}
+	}
+
+	#{$order} {
+		@include lib-respond-to(narrow) {
+			padding-right : 160px;
+			padding-left  : 85px;
+		}
+		@include lib-respond-to(mobileS) {
+			padding-right : 30px;
+
+			height        : 80px;
+		}
+		&_preview#{$preview} {
+			#{$preview}_link#{$link-img} {
+				@include lib-respond-to(mobileS) {
+					@include lib-link-img-param(
+						$height : 70px,
+						$ratio : (71/70)
+					);
+				}
+			}
+		}
+		&_title#{$block} {
+			@include lib-respond-to(mobileS) {
+				line-height : 22px;
+			}
+			#{$block}_element#{$link} {
+				@include lib-respond-to(mobileS) {
+					max-height : 22px;
+				}
+			}
+		}
+		&_spinner#{$field-spinner},
+		&_quantity#{$block} {
+			@include lib-respond-to(narrow) {
+				right : 95px;
+			}
+		}
+		&_spinner#{$field-spinner},
+		&_quantity#{$block} {
+			@include lib-respond-to(mobileS) {
+				top   : 32px;
+				right : auto;
+				left  : 81px;
+			}
+		}
+		&_price#{$block} {
+			@include lib-respond-to(narrow) {
+				padding-right : 22px;
+				padding-left  : 8px;
+				width         : 95px;
+			}
+			@include lib-respond-to(mobileS) {
+				top   : 32px;
+				right : auto;
+				left  : 135px;
+			}
+			#{$block}_element {
 				@include lib-respond-to(narrow) {
-					margin-top : 15px;
+					width : 65px;
+				}
+				@include lib-respond-to(mobileS) {
+					width : 155px;
 				}
 			}
 		}
 	}
 
-	#{$basket-tab} {
-
-		@at-root {
-			#{$order-card},
-			#{$special-offers},
-			#{$order-make} {
-				@include lib-respond-to(narrow) {
-					padding-left : 12px;
-				}
+	#{$special-offers} {
+		&_list#{$list} {
+			#{$list}_item {
 				&:first-child {
 					@include lib-respond-to(narrow) {
-						padding-left  : 0;
-						padding-right : 12px;
+						margin-top : 25px;
 					}
 				}
 			}
+		}
+	}
 
-			#{$order-card} {
-				&_form {
-
-					@at-root {
-						#{$order-card-list}#{$list} {
-							#{$list}_item {
-
-								@at-root {
-									#{$order} {
-										@include lib-respond-to(narrow) {
-											padding-right : 160px;
-											padding-left  : 85px;
-										}
-										&_spinner#{$field-spinner},
-										&_quantity#{$block} {
-											@include lib-respond-to(narrow) {
-												right : 95px;
-											}
-										}
-										&_price#{$block} {
-											@include lib-respond-to(narrow) {
-												padding-right : 22px;
-												padding-left  : 8px;
-												width         : 95px;
-											}
-											#{$block}_element {
-												@include lib-respond-to(narrow) {
-													width : 65px;
-												}
-											}
-										}
-									}
-								}
-
-							}
-						}
-					}
-
+	#{$special-offer}#{$offer} {
+		@include lib-respond-to(narrow) {
+			padding-right : 115px;
+		}
+		#{$offer-description} {
+			#{$offer-button}#{$block} {
+				@include lib-respond-to(narrow) {
+					right : -105px;
 				}
 			}
+		}
+	}
 
-			#{$special-offers} {
-				&_list#{$list} {
-					#{$list}_item {
-						&:first-child {
-							@include lib-respond-to(narrow) {
-								margin-top : 25px;
-							}
-						}
-
-						@at-root {
-							#{$special-offer}#{$offer} {
-								@include lib-respond-to(narrow) {
-									padding-right : 115px;
-								}
-								#{$offer-description} {
-									#{$offer-button}#{$block} {
-										@include lib-respond-to(narrow) {
-											right : -105px;
-										}
-									}
-								}
-							}
-						}
-
-					}
-				}
+	#{$order-login},
+	#{$order-reg} {
+		@include lib-respond-to(normal) {
+			padding-left : 10px;
+		}
+		&:first-child {
+			@include lib-respond-to(normal) {
+				padding-left  : 0;
+				padding-right : 10px;
 			}
+		}
 
-			#{$order-login},
-			#{$order-reg} {
-				@include lib-respond-to(normal) {
-					padding-left : 10px;
-				}
-				&:first-child {
-					@include lib-respond-to(normal) {
-						padding-left  : 0;
-						padding-right : 10px;
-					}
-				}
-				#{$order-spoiler} {
-					&_content {
-						#{$order-spoiler}_links#{$social-links}#{$list} {
-							#{$list}_item {
-								&:first-child {
-									#{$social-link}#{$link-btn} {
-										@include lib-respond-to(normal) {
-											margin-right : 15px;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-
-			#{$order-login} {
-				#{$order-spoiler} {
-					&_content {
-						#{$order-spoiler}_links#{$social-links} {
-							@include lib-respond-to(narrow) {
-								@include mix-common-order-social-links-narrow();
-							}
-						}
-					}
-				}
-			}
-
-			#{$order-reg} {
-				#{$order-spoiler} {
-					&_content {
-						#{$order-spoiler}_links#{$social-links} {
-							@include lib-respond-to(narrow) {
-								@include mix-common-order-social-links-narrow();
+		#{$order-spoiler} {
+			&_links#{$social-links}#{$list} {
+				#{$list}_item {
+					&:first-child {
+						#{$social-link}#{$link-btn} {
+							@include lib-respond-to(normal) {
+								margin-right : 15px;
 							}
 						}
 					}
 				}
 			}
 		}
+	}
 
+	#{$order-login} {
+		#{$order-spoiler} {
+			&_links#{$social-links} {
+				@include lib-respond-to(narrow) {
+					@include mix-common-order-social-links-narrow();
+				}
+			}
+		}
+	}
+
+	#{$order-reg} {
+		#{$order-spoiler} {
+			&_links#{$social-links} {
+				@include lib-respond-to(narrow) {
+					@include mix-common-order-social-links-narrow();
+				}
+			}
+		}
 	}
 }
