@@ -38,7 +38,7 @@
 			@include lib-respond-to(mobile) {
 				@include lib-box12(3);
 			}
-			@include lib-respond-to(mobileXL) {
+			@include lib-respond-to(mobileXXL) {
 				@include lib-box12(4);
 			}
 			@include lib-respond-to(mobileM) {
