@@ -129,7 +129,7 @@ $_top-sales : lib-get-modifier('top-sales');
 
 	#{$offer-new-price} {
 		@include lib-text-hyphens($type : lastClip);
-		@include lib-text-blackout($right: 101px);
+		@include lib-text-blackout();
 	}
 	#{$offer-old-price} {
 		@include lib-text-hyphens($type : lastClip);

@@ -8,6 +8,92 @@
 
 		transition : left 0.3s;
 	}
+	//переопределение стилей для шаблона корзины
+	&#{$_basket} {
+		#{$header-info} {
+			@include lib-respond-to(narrow) {
+				height : 88px;
+			}
+			@include lib-respond-to(mobile) {
+				height : 80px;
+			}
+			@include lib-respond-to(mobileS) {
+				height : 100px;
+			}
+		}
+		#{$footer} {
+			&_row {
+				@include lib-respond-to(mobile) {
+					padding-bottom : 0;
+				}
+			}
+			&_cell:first-child {
+				@include lib-respond-to(mobile) {
+					position : static;
+				}
+			}
+
+			#{$footer-contacts} {
+				@include lib-respond-to(mobile) {
+					text-align : center;
+				}
+				&_phones#{$detail} {
+					#{$detail} {
+						&_label,
+						&_value {
+							@include lib-respond-to(mobile) {
+								float : none
+							}
+						}
+						&_value {
+							@include lib-respond-to(mobile) {
+								margin-top : 5px;
+							}
+						}
+					}
+				}
+				&_schedule {
+					@include lib-respond-to(mobile) {
+						text-align : center;
+					}
+				}
+			}
+		}
+		//	&_cell {
+		//		width : 100%;
+		//	}
+		//	#{$footer-contacts} {
+		//		margin-left : 0;
+		//
+		//		text-align  : left;
+		//		&_phones#{$detail} {
+		//			display : inline-block;
+		//			#{$detail}_label {
+		//				float       : left;
+		//
+		//				line-height : lib-line-height(-2);
+		//			}
+		//			#{$detail}_value {
+		//				float : left;
+		//			}
+		//		}
+		//		&_schedule {
+		//			text-align : left;
+		//			br {
+		//				display : none;
+		//			}
+		//		}
+		//	}
+		//	#{$footer-contacts-list}#{$list} {
+		//		margin-top : 0;
+		//		#{$list}_item {
+		//			float       : left;
+		//			margin-left : 8px;
+		//		}
+		//	}
+		//}
+	}
+
 	&#{$_show-menu} {
 		@include lib-respond-to(mobile) {
 			left : 275px;

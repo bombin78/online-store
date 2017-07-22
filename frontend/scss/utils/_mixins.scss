@@ -183,7 +183,7 @@ $mix-field-textarea : lib-get-class('field-textarea');
 }
 
 // 4.2. Текстовое поле блока "order-make"
-@mixin order-make-field-text(
+@mixin mix-order-make-field-text(
 	$margin-top: 20px,
 	$float-label: left,
 	$float-input: right,
@@ -213,7 +213,7 @@ $mix-field-textarea : lib-get-class('field-textarea');
 }
 
 // 4.3. Выпадающий список блока "order-make"
-@mixin order-make-field-select(
+@mixin mix-order-make-field-select(
 	$margin-top: 20px,
 	$float-label: left,
 	$float-select: right,
@@ -243,7 +243,7 @@ $mix-field-textarea : lib-get-class('field-textarea');
 }
 
 // 4.4. Текстовая область блока "order-make"
-@mixin order-make-field-textarea(
+@mixin mix-order-make-field-textarea(
 	$margin-top: 20px,
 	$float-label: left,
 	$float-textarea: right,

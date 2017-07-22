@@ -26,6 +26,9 @@
 				}
 			}
 			#{$offer-new-price} {
+				&:before {
+					right : 101px;
+				}
 				&:after {
 					content    : '';
 					display    : block;

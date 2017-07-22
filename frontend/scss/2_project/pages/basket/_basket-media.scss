@@ -29,6 +29,10 @@
 			padding-left : 12px;
 		}
 		@include lib-respond-to(mobileXL) {
+			@include lib-box12(
+				$cell : 12
+			);
+
 			padding-top  : 30px;
 			padding-left : 0;
 		}
@@ -43,17 +47,6 @@
 			}
 		}
 	}
-	#{$order-card},
-	#{$special-offers},
-	#{$order-login},
-	#{$order-reg},
-	#{$order-make} {
-		@include lib-respond-to(mobileXL) {
-			@include lib-box12(
-				$cell : 12
-			);
-		}
-	}
 
 	#{$order} {
 		@include lib-respond-to(narrow) {
@@ -61,6 +54,16 @@
 			padding-left  : 85px;
 		}
 		@include lib-respond-to(mobile) {
+			padding-right : 30px;
+
+			height        : 80px;
+		}
+		@include lib-respond-to(mobileXL) {
+			padding-right : 180px;
+
+			height        : auto;
+		}
+		@include lib-respond-to(mobileS) {
 			padding-right : 30px;
 
 			height        : 80px;
@@ -73,14 +76,38 @@
 						$ratio : (71/70)
 					);
 				}
+				@include lib-respond-to(mobileXL) {
+					@include lib-link-img-param(
+						$height : 40px,
+						$ratio : (16/9)
+					);
+				}
+				@include lib-respond-to(mobileS) {
+					@include lib-link-img-param(
+						$height : 70px,
+						$ratio : (71/70)
+					);
+				}
 			}
 		}
 		&_title#{$block} {
 			@include lib-respond-to(mobile) {
 				line-height : 22px;
 			}
+			@include lib-respond-to(mobileXL) {
+				line-height : 40px
+			}
+			@include lib-respond-to(mobileS) {
+				line-height : 22px;
+			}
 			#{$block}_element#{$link} {
 				@include lib-respond-to(mobile) {
+					max-height : 22px;
+				}
+				@include lib-respond-to(mobileXL) {
+					max-height : 40px;
+				}
+				@include lib-respond-to(mobileS) {
 					max-height : 22px;
 				}
 			}
@@ -90,10 +117,17 @@
 			@include lib-respond-to(narrow) {
 				right : 95px;
 			}
-		}
-		&_spinner#{$field-spinner},
-		&_quantity#{$block} {
 			@include lib-respond-to(mobile) {
+				top   : 32px;
+				right : auto;
+				left  : 81px;
+			}
+			@include lib-respond-to(mobileXL) {
+				top   : 5px;
+				right : 110px;
+				left  : auto;
+			}
+			@include lib-respond-to(mobileS) {
 				top   : 32px;
 				right : auto;
 				left  : 81px;
@@ -110,14 +144,68 @@
 				right : auto;
 				left  : 135px;
 			}
+			@include lib-respond-to(mobileXL) {
+				top   : 5px;
+				right : 0;
+				left  : auto;
+
+				width : 110px;
+			}
+			@include lib-respond-to(mobileS) {
+				top   : 32px;
+				right : auto;
+				left  : 135px;
+			}
 			#{$block}_element {
 				@include lib-respond-to(narrow) {
 					width : 65px;
 				}
 				@include lib-respond-to(mobile) {
-					width : 155px;
+					width : 144px;
+				}
+				@include lib-respond-to(mobileXL) {
+					width : 75px;
+				}
+				@include lib-respond-to(mobileS) {
+					width : 144px;
 				}
 			}
+		}
+	}
+
+	#{$cost-order}#{$detail},
+	#{$cost-delivery}#{$detail},
+	#{$cost-total}#{$detail} {
+		#{$detail}_label,
+		#{$detail}_value {
+			@include lib-respond-to(mobile) {
+				font-size : lib-font-size(1);
+			}
+		}
+	}
+
+	#{$cost-delivery}#{$detail},
+	#{$cost-total}#{$detail} {
+		@include lib-respond-to(mobile) {
+			padding-top : 10px;
+		}
+		#{$detail}_label,
+		#{$detail}_value {
+			@include lib-respond-to(mobile) {
+				padding-top : 10px;
+			}
+		}
+	}
+
+	#{$order-card-button} {
+		@include lib-respond-to(mobile) {
+			margin-top : 12px;
+		}
+		@include lib-respond-to(mobileXL) {
+			margin-top : -27px;
+		}
+		@include lib-respond-to(mobileS) {
+			margin-top : 12px;
 		}
 	}
 
@@ -141,10 +229,30 @@
 			padding-right : 5px;
 			height        : 82px;
 		}
+		@include lib-respond-to(mobileXL) {
+			padding-right : 120px;
+			height        : 51px;
+		}
+		@include lib-respond-to(mobileS) {
+			padding-right : 5px;
+			height        : 82px;
+		}
 
 		#{$offer}_preview#{$preview} {
 			#{$preview}_link#{$link-img} {
 				@include lib-respond-to(mobile) {
+					@include lib-link-img-param(
+						$height : 70px,
+						$ratio : (71/70)
+					);
+				}
+				@include lib-respond-to(mobileXL) {
+					@include lib-link-img-param(
+						$height : 40px,
+						$ratio : (16/9)
+					);
+				}
+				@include lib-respond-to(mobileS) {
 					@include lib-link-img-param(
 						$height : 70px,
 						$ratio : (71/70)
@@ -157,8 +265,22 @@
 			@include lib-respond-to(mobile) {
 				bottom : -45px;
 			}
+			@include lib-respond-to(mobileXL) {
+				bottom : -20px;
+			}
+			@include lib-respond-to(mobileS) {
+				bottom : -45px;
+			}
 			#{$detail}_value {
 				@include lib-respond-to(mobile) {
+					display     : block;
+					margin-left : 0;
+				}
+				@include lib-respond-to(mobileXL) {
+					display     : inline;
+					margin-left : 5px;
+				}
+				@include lib-respond-to(mobileS) {
 					display     : block;
 					margin-left : 0;
 				}
@@ -173,6 +295,14 @@
 				right  : 0;
 				bottom : -48px;
 			}
+			@include lib-respond-to(mobileXL) {
+				right  : -110px;
+				bottom : -16px;
+			}
+			@include lib-respond-to(mobileS) {
+				right  : 0;
+				bottom : -48px;
+			}
 		}
 	}
 
@@ -181,14 +311,47 @@
 		@include lib-respond-to(normal) {
 			padding-left : 10px;
 		}
+		@include lib-respond-to(mobileL) {
+			padding  : {
+				top  : 20px;
+				left : 0;
+			}
+
+			width : 100%;
+		}
 		&:first-child {
 			@include lib-respond-to(normal) {
 				padding-left  : 0;
 				padding-right : 10px;
 			}
+			@include lib-respond-to(mobileL) {
+				padding   : {
+					top   : 0;
+					right : 0;
+				}
+			}
 		}
 
 		#{$order-spoiler} {
+			@include lib-respond-to(mobileXL) {
+				padding   : {
+					top   : 10px;
+					right : 10px;
+					left  : 10px;
+				}
+			}
+			@include lib-respond-to(mobileL) {
+				padding   : {
+					top   : 15px;
+					right : 15px;
+					left  : 15px;
+				}
+			}
+			&_title#{$block} {
+				@include lib-respond-to(mobileXXL) {
+					font-size : lib-font-size(e2);
+				}
+			}
 			&_links#{$social-links}#{$list} {
 				#{$list}_item {
 					&:first-child {
@@ -210,6 +373,24 @@
 					@include mix-common-order-social-links-narrow();
 				}
 			}
+			&_login#{$login-form} {
+				#{$login-form}_email#{$field-text},
+				#{$login-form}_password#{$field-text} {
+					@include lib-respond-to(mobile) {
+						padding-right : 0;
+						width         : 100%;
+					}
+				}
+				#{$login-form}_row#{$block} {
+					#{$block}_element#{$link} {
+						@include lib-respond-to(mobile) {
+							margin-left : 0;
+							margin-top  : 34px;
+							width       : 100%;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -219,6 +400,179 @@
 				@include lib-respond-to(narrow) {
 					@include mix-common-order-social-links-narrow();
 				}
+			}
+			&_reg#{$reg-form} {
+				#{$reg-form}_name#{$field-text},
+				#{$reg-form}_email#{$field-text} {
+					@include lib-respond-to(mobile) {
+						padding-right : 0;
+						width         : 100%;
+					}
+				}
+				#{$reg-form}_password#{$field-text} {
+					@include lib-respond-to(mobile) {
+						padding  : {
+							top  : 20px;
+							left : 0;
+						}
+						width : 100%;
+					}
+				}
+			}
+		}
+	}
+
+	#{$order-make} {
+		@include lib-respond-to(mobileXL) {
+			position   : absolute;
+			top        : 100%;
+			margin-top : -950px;
+		}
+	}
+
+	#{$order-make} + #{$order-card} {
+		@include lib-respond-to(mobileXL) {
+			padding    : {
+				top    : 0;
+				bottom : 980px;
+			}
+		}
+	}
+
+	#{$order-personal} {
+		&_name#{$field-text},
+		&_phone#{$field-text},
+		&_email#{$field-text} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-text(
+					$width-label : 45%,
+					$width-input : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%
+				);
+			}
+		}
+	}
+
+	#{$order-delivery} {
+		&_city#{$field-text} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%,
+					$padding-left : 0
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-text(
+					$width-label : 45%,
+					$width-input : 50%,
+					$padding-left : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%,
+					$padding-left : 0
+				);
+			}
+		}
+		&_address#{$field-textarea} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-textarea(
+					$width-label : 100%,
+					$width-textarea : 100%
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-textarea(
+					$width-label : 45%,
+					$width-textarea : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-textarea(
+					$width-label : 100%,
+					$width-textarea : 100%
+				);
+			}
+		}
+		&_method#{$field-select},
+		&_payment#{$field-select} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-select(
+					$width-label : 100%,
+					$width-select : 100%
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-select(
+					$width-label : 45%,
+					$width-select : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-select(
+					$width-label : 100%,
+					$width-select : 100%
+				);
+			}
+		}
+	}
+
+	#{$order-promo} {
+		&_promo#{$field-text} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%,
+					$padding-left : 0
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-text(
+					$width-label : 45%,
+					$width-input : 50%,
+					$padding-left : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-text(
+					$width-label : 100%,
+					$width-input : 100%,
+					$padding-left : 0
+				);
+			}
+		}
+		&_comment#{$field-textarea} {
+			@include lib-respond-to(mobile) {
+				@include mix-order-make-field-textarea(
+					$width-label : 100%,
+					$width-textarea : 100%
+				);
+			}
+			@include lib-respond-to(mobileXL) {
+				@include mix-order-make-field-textarea(
+					$width-label : 45%,
+					$width-textarea : 50%
+				);
+			}
+			@include lib-respond-to(mobileS) {
+				@include mix-order-make-field-textarea(
+					$width-label : 100%,
+					$width-textarea : 100%
+				);
 			}
 		}
 	}
