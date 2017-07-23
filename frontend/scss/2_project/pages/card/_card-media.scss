@@ -102,7 +102,7 @@
 		@include lib-respond-to(narrow) {
 			margin-top : 25px;
 		}
-		@include lib-respond-to(mobileXS) {
+		@include lib-respond-to(mobileXXS) {
 			padding : 10px;
 		}
 		&_form#{$one-click} {

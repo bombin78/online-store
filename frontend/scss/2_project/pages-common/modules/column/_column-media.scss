@@ -39,7 +39,7 @@
 			@include lib-respond-to(narrow) {
 				padding-bottom : 84px;
 			}
-			@include lib-respond-to(mobileXS) {
+			@include lib-respond-to(mobileXXS) {
 				padding    : {
 					top    : 10px;
 					left   : 10px;
@@ -100,7 +100,7 @@
 				@include lib-respond-to(mobileL) {
 					padding-left : 145px;
 				}
-				@include lib-respond-to(mobileXS) {
+				@include lib-respond-to(mobileXXS) {
 					padding-left : 116px;
 				}
 			}
@@ -116,7 +116,7 @@
 				@include lib-respond-to(mobileL) {
 					padding-left : 0;
 				}
-				@include lib-respond-to(mobileXS) {
+				@include lib-respond-to(mobileXXS) {
 					bottom      : -81px;
 					padding-top : 8px;
 				}
@@ -129,7 +129,7 @@
 					}
 				}
 				#{$detail}_value {
-					@include lib-respond-to(mobileXS) {
+					@include lib-respond-to(mobileXXS) {
 						display     : block;
 						margin-left : 0;
 					}
@@ -139,7 +139,7 @@
 				@include lib-respond-to(normal) {
 					bottom : -70px;
 				}
-				@include lib-respond-to(mobileXS) {
+				@include lib-respond-to(mobileXXS) {
 					bottom : -79px;
 				}
 			}

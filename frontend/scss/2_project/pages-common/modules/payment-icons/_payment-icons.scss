@@ -5,8 +5,7 @@
 #{$wrapper} {
 	margin-top       : 20px;
 	padding          : 20px;
-	//Для корректного отображения необходимо жесткое ограничение по ширине
-	width            : 820px;
+	width            : 100%;
 
 	border-radius    : 4px;
 	background-color : $bg-icons;
@@ -23,9 +22,11 @@
 		width   : 100%;
 		#{$list}_item {
 			margin-top : 10px;
+			height     : 120px;
 
 			@include lib-box12($cell : 2);
 			#{$icon} {
+				position   : relative;
 				padding    : 60px 10px 10px 10px;
 
 				text-align : center;
@@ -36,43 +37,46 @@
 				&#{$_rbk},
 				&#{$_bank-transfer} {
 					&:before {
-						content  : '';
-						display  : block;
-						position : relative;
-						margin   : -60px 20px 0 20px;
-						height   : 60px;
+						content     : '';
+						display     : block;
+						position    : absolute;
+						top         : 0;
+						left        : 50%;
+						margin-left : -31px;
+						width       : 62px;
+						height      : 60px;
 
-						overflow : hidden;
+						overflow    : hidden;
 					}
 				}
 				&#{$_cash} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') 0 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -4px 0 no-repeat;
 					}
 				}
 				&#{$_bank-card} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') -70px 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -75px 0 no-repeat;
 					}
 				}
 				&#{$_yandex-money} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') -140px 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -146px 0 no-repeat;
 					}
 				}
 				&#{$_euroset} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') -210px 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -214px 0 no-repeat;
 					}
 				}
 				&#{$_rbk} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') -280px 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -286px 0 no-repeat;
 					}
 				}
 				&#{$_bank-transfer} {
 					&:before {
-						background : url('../../../../../img/about-purchase/payment_sprite.png') -350px 0 no-repeat;
+						background : url('../../../../../img/about-purchase/payment_sprite.png') -356px 0 no-repeat;
 					}
 				}
 			}

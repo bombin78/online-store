@@ -25,7 +25,7 @@
 		@include lib-respond-to(mobileS) {
 			width : 45%;
 		}
-		@include lib-respond-to(mobileXS) {
+		@include lib-respond-to(mobileXXS) {
 			width : 50%;
 		}
 	}
@@ -81,7 +81,7 @@
 		@include lib-respond-to(narrow) {
 			max-width : 155px;
 		}
-		@include lib-respond-to(mobileXS) {
+		@include lib-respond-to(mobileXXS) {
 			margin-right : 15px;
 		}
 		#{$userdropdown}#{$dropdown} {
@@ -92,14 +92,14 @@
 	}
 	#{$basket} {
 		&_link {
-			@include lib-respond-to(mobileXS) {
+			@include lib-respond-to(mobileXXS) {
 				padding   : {
 					left  : 15px;
 					right : 15px;
 				}
 			}
 			&:after {
-				@include lib-respond-to(mobileXS) {
+				@include lib-respond-to(mobileXXS) {
 					left : 7px;
 				}
 			}
@@ -116,7 +116,7 @@
 			}
 		}
 		&_amount {
-			@include lib-respond-to(mobileXS) {
+			@include lib-respond-to(mobileXXS) {
 				display : none;
 			}
 		}

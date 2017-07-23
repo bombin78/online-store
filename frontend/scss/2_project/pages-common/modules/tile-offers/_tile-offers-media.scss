@@ -21,7 +21,7 @@
 	@include lib-respond-to(mobileS) {
 		max-width : 360px;
 	}
-	@include lib-respond-to(mobileXS) {
+	@include lib-respond-to(mobileXXS) {
 		max-width : 100%;
 	}
 
@@ -39,7 +39,7 @@
 			@include lib-respond-to(mobileS) {
 				@include lib-box12(6);
 			}
-			@include lib-respond-to(mobileXS) {
+			@include lib-respond-to(mobileXXS) {
 				float  : none;
 				margin : 0 auto;
 				width  : 182px;
