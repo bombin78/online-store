@@ -149,12 +149,10 @@
 						@include lib-respond-to(narrow) {
 							padding-right : 115px;
 						}
-						#{$offer-description} {
-							#{$offer-button}#{$block} {
-								@include lib-respond-to(narrow) {
-									right  : -105px;
-									bottom : -19px;
-								}
+						#{$offer-button}#{$block} {
+							@include lib-respond-to(narrow) {
+								right  : -105px;
+								bottom : -19px;
 							}
 						}
 					}

@@ -316,33 +316,33 @@ $mix-field-textarea : lib-get-class('field-textarea');
 				$color2 : 236,
 				$color3 : 236
 			);
-			#{$mix-offer-title}#{$mix-block} {
-				padding-left : 0;
-				@include lib-text-hyphens(
-					$type : lastClip
-				);
-			}
-			#{$mix-offer}_text {
-				padding-top : 10px;
+		}
+	}
+	#{$mix-offer-title}#{$mix-block} {
+		padding-left : 0;
+		@include lib-text-hyphens(
+			$type : lastClip
+		);
+	}
+	#{$mix-offer}_text {
+		padding-top : 10px;
 
-				font-size   : lib-font-size(-4);
-			}
-		}
-		#{$mix-offer-new-price}#{$mix-detail} {
-			bottom      : -20px;
-			margin-top  : 0;
-			padding-top : 0;
+		font-size   : lib-font-size(-4);
+	}
+	#{$mix-offer-new-price}#{$mix-detail} {
+		bottom      : -20px;
+		margin-top  : 0;
+		padding-top : 0;
 
-			@include lib-text-blackout(
-				$color1 : 236,
-				$color2 : 236,
-				$color3 : 236
-			);
-		}
-		#{$mix-offer-button}#{$mix-block} {
-			right  : -115px;
-			bottom : -16px;
-		}
+		@include lib-text-blackout(
+			$color1 : 236,
+			$color2 : 236,
+			$color3 : 236
+		);
+	}
+	#{$mix-offer-button}#{$mix-block} {
+		right  : -115px;
+		bottom : -16px;
 	}
 }
 //-------------------------------

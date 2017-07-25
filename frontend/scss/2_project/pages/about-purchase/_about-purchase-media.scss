@@ -10,4 +10,5 @@
 	@include lib-respond-to(mobile) {
 		@include mix-content-common-mobile-param();
 	}
+
 }
