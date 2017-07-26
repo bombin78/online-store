@@ -6,6 +6,9 @@
 	position : relative;
 	//Для корректного отображения необходимо жесткое ограничение по ширине
 	width : 820px;
+	&#{$_hidden} {
+		display : none;
+	}
 	&_title {
 		text-align : center;
 	}

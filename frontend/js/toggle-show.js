@@ -53,7 +53,6 @@ function ToggleShow() {
 					$(this).find(cs2).removeClass(mr2);
 				}
 				$(this).find(cs3).removeClass(mr3);
-				console.log(0);
 			}
 		});
 	}
@@ -67,8 +66,6 @@ function ToggleShow() {
 			e.preventDefault();
 
 			changeModifiers(fullCycle, foundLink, foundList, mr2, mr3);
-
-			console.log(1);
 		}
 		else if (selfDrop[0]) {
 			// Выпадающий блок закрываеться по клику внутри его области
@@ -78,13 +75,9 @@ function ToggleShow() {
 				fullCycle = false;
 
 				changeModifiers(fullCycle, foundLink, foundList, mr2, mr3);
-
-				console.log(2);
 			}
 			// Выпадающий блок НЕ закрываеться по клику внутри его области
 			else {
-				console.log(3);
-
 				return false;
 			}
 		}
@@ -97,13 +90,10 @@ function ToggleShow() {
 				fullCycle = false;
 
 				changeModifiers(fullCycle, foundLink, foundList, mr2, mr3);
-				console.log(4);
 			}
 			// Выпадающий блок НЕ закрываеться по клику за пределами
 			// открывающей/закрывающей ссылки и выпадающего блока
 			else {
-				console.log(5);
-
 				return false;
 			}
 		}

@@ -11,9 +11,7 @@
 	@include lib-respond-to(narrow) {
 		width : 510px;
 	}
-	@include lib-respond-to(mobile) {
-		display : none;
-	}
+
 	#{$slider} {
 		&_prev {
 			@include lib-respond-to(normal) {
