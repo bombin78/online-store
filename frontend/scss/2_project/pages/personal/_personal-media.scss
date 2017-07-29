@@ -7,6 +7,9 @@
 	@include lib-respond-to(narrow) {
 		@include mix-content-common-narrow-param();
 	}
+	@include lib-respond-to(mobile) {
+		@include mix-content-common-mobile-param();
+	}
 
 	#{$personal-header} {
 		@include lib-respond-to(narrow) {
@@ -30,6 +33,9 @@
 			padding-right : 220px;
 			padding-left  : 80px;
 		}
+		@include lib-respond-to(mobileM) {
+			padding-right : 0;
+		}
 		&_button#{$block} {
 			@include lib-respond-to(narrow) {
 				margin-top : 10px;
@@ -47,9 +53,20 @@
 			padding : 10px;
 			width   : 210px;
 		}
+		@include lib-respond-to(mobileM) {
+			position   : relative;
+			left       : 0;
+			top        : 0;
+			right      : auto;
+			margin-top : 10px;
+			width      : 100%;
+		}
 		&_links#{$list} {
 			@include lib-respond-to(narrow) {
 				margin-top : 25px;
+			}
+			@include lib-respond-to(mobileM) {
+				margin-top : 5px;
 			}
 		}
 	}

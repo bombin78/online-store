@@ -194,6 +194,37 @@
 					}
 				}
 			}
+			&_filter#{$group-buttons},
+			&_sorting#{$group-buttons} {
+				@include lib-respond-to(mobileM) {
+					text-align : left;
+
+				}
+				#{$group-buttons}_list#{$list} {
+					@include lib-respond-to(mobileM) {
+						float      : left;
+						margin-top : 5px;
+						width      : 100%;
+					}
+					#{$list}_item {
+						&:first-child {
+							@include lib-respond-to(mobileM) {
+								margin-left : 0;
+							}
+						}
+						&:nth-of-type(3) {
+							@include lib-respond-to(mobileS) {
+								border-radius : 0 4px 4px 0;
+							}
+						}
+						&:nth-of-type(n+4) {
+							@include lib-respond-to(mobileS) {
+								display : none;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
