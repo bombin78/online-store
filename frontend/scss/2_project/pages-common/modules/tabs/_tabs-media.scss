@@ -179,6 +179,14 @@
 				}
 			}
 			&_orders#{$list} {
+				#{$list}_item {
+					@include lib-respond-to(mobileM) {
+						height : 51px;
+					}
+					@include lib-respond-to(mobileS) {
+						height : 75px;
+					}
+				}
 				#{$list}_order#{$order} {
 					&#{$_activated},
 					&#{$_canceled},
@@ -186,9 +194,75 @@
 						@include lib-respond-to(narrow) {
 							padding-left : 156px;
 						}
+						@include lib-respond-to(mobile) {
+							padding-left : 168px;
+						}
+						@include lib-respond-to(mobileM) {
+							padding-right : 30px;
+						}
+						@include lib-respond-to(mobileS) {
+							padding  : {
+								right: 5px;
+								top  : 27px;
+								left : 85px;
+							}
+						}
+						#{$order-state}_detail#{$detail} {
+							#{$detail}_label,
+							#{$detail}_value {
+								@include lib-respond-to(mobileS) {
+									display: inline-block;
+								}
+							}
+						}
 						#{$order}_preview#{$preview} {
 							@include lib-respond-to(narrow) {
 								left : 78px;
+							}
+							@include lib-respond-to(mobile) {
+								left : 87px;
+							}
+							@include lib-respond-to(mobileS) {
+								top  : 27px;
+								left : 5px;
+							}
+						}
+						#{$order}_title#{$block} {
+							@include lib-respond-to(mobileM) {
+								height      : 20px;
+
+								white-space : nowrap;
+							}
+							&:before {
+								@include lib-respond-to(mobileM) {
+									height : 100%;
+								}
+							}
+						}
+						#{$order}_quantity#{$block} {
+							@include lib-respond-to(mobileM) {
+								top         : 25px;
+								right       : auto;
+								left        : 168px;
+
+								line-height : 20px;
+							}
+							@include lib-respond-to(mobileS) {
+								top  : 47px;
+								left : 86px;
+							}
+						}
+						#{$order}_price#{$block} {
+							@include lib-respond-to(mobileM) {
+								top         : 25px;
+								right       : auto;
+								left        : 230px;
+
+								line-height : 20px;
+							}
+							@include lib-respond-to(mobileS) {
+								top  : 47px;
+								left : 150px;
 							}
 						}
 					}
