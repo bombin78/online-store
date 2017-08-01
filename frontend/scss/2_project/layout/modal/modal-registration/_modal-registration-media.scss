@@ -3,10 +3,49 @@
 //-------------------------------
 
 #{$wrapper} {
+	@include lib-respond-to(mobile) {
+		padding-right : 0 !important;
+	}
+
 	//класс фреймворка bootstrap
 	.modal-dialog {
 		@include lib-respond-to(narrow) {
 			width : 426px;
+		}
+		@include lib-respond-to(mobile) {
+			margin        : 30px auto;
+			padding-right : 0 !important;
+
+			width         : 300px;
+		}
+	}
+
+	#{$social-links} {
+		&_list#{$list} {
+			#{$list}_item {
+				&:last-child {
+					@include lib-respond-to(mobile) {
+						margin-top : 15px;
+					}
+				}
+			}
+		}
+	}
+
+	#{$reg-form} {
+		&_name#{$field-text},
+		&_email#{$field-text} {
+			@include lib-respond-to(mobile) {
+				padding-right : 0;
+				width         : 100%;
+			}
+		}
+		&_password#{$field-text} {
+			@include lib-respond-to(mobile) {
+				margin-top   : 20px;
+				padding-left : 0;
+				width        : 100%;
+			}
 		}
 	}
 }

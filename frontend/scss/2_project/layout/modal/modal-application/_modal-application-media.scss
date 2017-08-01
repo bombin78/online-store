@@ -1,5 +1,5 @@
 //Импорт файлов
-@import 'modal-login-variables';
+@import 'modal-application-variables';
 //-------------------------------
 
 #{$wrapper} {
@@ -9,9 +9,6 @@
 
 	//класс фреймворка bootstrap
 	.modal-dialog {
-		@include lib-respond-to(narrow) {
-			width : 426px;
-		}
 		@include lib-respond-to(mobile) {
 			margin        : 30px auto;
 			padding-right : 0 !important;
@@ -20,23 +17,14 @@
 		}
 	}
 
-	#{$social-links} {
-		&_list#{$list} {
-			#{$list}_item {
-				&:last-child {
-					@include lib-respond-to(mobile) {
-						margin-top : 15px;
-					}
-				}
-			}
-		}
-	}
-
-	#{$login-form} {
+	#{$application-form} {
+		&_name#{$field-text},
 		&_email#{$field-text},
-		&_password#{$field-text} {
+		&_phone#{$field-text},
+		&_region#{$field-select},
+		&_address#{$field-textarea},
+		&_button#{$block} {
 			@include lib-respond-to(mobile) {
-				margin-right : 0;
 				width        : 100%;
 			}
 		}

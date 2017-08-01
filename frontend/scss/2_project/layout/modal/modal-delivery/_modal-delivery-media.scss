@@ -1,0 +1,19 @@
+//Импорт файлов
+@import 'modal-delivery-variables';
+//-------------------------------
+
+#{$wrapper} {
+	@include lib-respond-to(mobile) {
+		padding-right : 0 !important;
+	}
+
+	//класс фреймворка bootstrap
+	.modal-dialog {
+		@include lib-respond-to(mobile) {
+			margin        : 30px auto;
+			padding-right : 0 !important;
+
+			width         : 300px;
+		}
+	}
+}

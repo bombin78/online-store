@@ -145,14 +145,50 @@
 		#{$tab-page} {
 			&_special#{$list} {
 				#{$list}_item {
+					@include lib-respond-to(mobileS) {
+						height : 80px;
+					}
 					#{$special-offer}#{$offer} {
 						@include lib-respond-to(narrow) {
 							padding-right : 115px;
+						}
+						@include lib-respond-to(mobileS) {
+							padding-right : 5px;
+						}
+						#{$offer}_preview#{$preview} {
+							#{$preview}_link#{$link-img} {
+								@include lib-respond-to(mobileS) {
+									@include lib-link-img-param(
+										$height : 70px,
+										$ratio : (71/70)
+									);
+								}
+							}
+						}
+						#{$offer-new-price}#{$detail} {
+							@include lib-respond-to(mobileS) {
+								bottom : -35px;
+								width  : 158px;
+							}
+							@include lib-respond-to(mobileXS) {
+								bottom : -45px;
+								width  : 88px;
+							}
+							#{$detail}_value {
+								@include lib-respond-to(mobileXS) {
+									display     : block;
+									margin-left : 0;
+								}
+							}
 						}
 						#{$offer-button}#{$block} {
 							@include lib-respond-to(narrow) {
 								right  : -105px;
 								bottom : -19px;
+							}
+							@include lib-respond-to(mobileS) {
+								right  : 0;
+								bottom : -41px;
 							}
 						}
 					}
@@ -160,19 +196,58 @@
 			}
 			&_favorites#{$list} {
 				#{$list}_item {
+					@include lib-respond-to(mobileS) {
+						height : 80px;
+					}
 					#{$favorites-offer}#{$offer} {
 						@include lib-respond-to(narrow) {
 							padding-right : 135px;
+						}
+						@include lib-respond-to(mobileS) {
+							padding-right : 30px;
+						}
+						#{$offer}_preview#{$preview} {
+							#{$preview}_link#{$link-img} {
+								@include lib-respond-to(mobileS) {
+									@include lib-link-img-param(
+										$height : 70px,
+										$ratio : (71/70)
+									);
+								}
+							}
+						}
+						#{$offer-new-price}#{$detail} {
+							@include lib-respond-to(mobileS) {
+								bottom : -35px;
+								width  : 119px;
+							}
+							@include lib-respond-to(mobileXXS) {
+								bottom : -45px;
+								width  : 88px;
+							}
+							#{$detail}_value {
+								@include lib-respond-to(mobileXXS) {
+									display     : block;
+									margin-left : 0;
+								}
+							}
 						}
 						#{$offer-button}#{$block} {
 							@include lib-respond-to(narrow) {
 								right  : -105px;
 								bottom : -19px;
 							}
+							@include lib-respond-to(mobileS) {
+								right  : -25px;
+								bottom : -41px;
+							}
 						}
 						#{$offer-close} {
 							@include lib-respond-to(narrow) {
 								right : -131px;
+							}
+							@include lib-respond-to(mobileS) {
+								right : -25px;
 							}
 						}
 					}
@@ -201,17 +276,17 @@
 							padding-right : 30px;
 						}
 						@include lib-respond-to(mobileS) {
-							padding  : {
-								right: 5px;
-								top  : 27px;
-								left : 85px;
+							padding   : {
+								right : 5px;
+								top   : 27px;
+								left  : 85px;
 							}
 						}
 						#{$order-state}_detail#{$detail} {
 							#{$detail}_label,
 							#{$detail}_value {
 								@include lib-respond-to(mobileS) {
-									display: inline-block;
+									display : inline-block;
 								}
 							}
 						}
