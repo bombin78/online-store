@@ -11,6 +11,6 @@ $application-form : lib-get-class('application-form');
 $field-text : lib-get-class('field-text');
 $field-select : lib-get-class('field-select');
 $field-textarea : lib-get-class('field-textarea');
-//$captcha : lib-get-class('captcha');
+$captcha : lib-get-class('captcha');
 $block : lib-get-class('block');
 //-------------------------------

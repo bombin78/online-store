@@ -24,7 +24,7 @@
 		&_phone#{$field-text},
 		&_region#{$field-select},
 		&_address#{$field-textarea},
-		//&_captcha#{$captcha},
+		&_captcha#{$captcha},
 		&_button#{$block} {
 			margin-top : 15px;
 			width      : 300px;
