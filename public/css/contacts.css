@@ -1,0 +1,42 @@
+.su-contacts {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 40px 15px 40px;
+  max-width: 1280px;
+}
+
+.su-contacts_list.su-list .su-list_item .su-contacts-map {
+  margin-top: 5px;
+  height: 400px;
+  width: 100%;
+  border: 1px solid #e3e3e3;
+}
+
+.su-contacts .su-contacts-feedback {
+  width: 300px;
+}
+
+.su-contacts .su-contacts-feedback_name.su-field-text,
+.su-contacts .su-contacts-feedback_email.su-field-text,
+.su-contacts .su-contacts-feedback_message.su-field-textarea {
+  margin-top: 15px;
+}
+
+.su-contacts .su-contacts-feedback_button.su-block {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .su-contacts {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .su-contacts {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

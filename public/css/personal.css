@@ -1,0 +1,183 @@
+.su-personal {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 40px 15px 40px;
+  max-width: 1280px;
+}
+
+.su-personal .su-personal-header {
+  position: relative;
+  margin-top: 30px;
+  padding: 15px;
+  min-height: 145px;
+  background: #ececec;
+}
+
+.su-personal .su-personal-avatar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 70px;
+  width: 70px;
+}
+
+.su-personal .su-personal-avatar_img {
+  max-height: 100%;
+}
+
+.su-personal .su-personal-info {
+  padding: 0 315px 0 85px;
+}
+
+.su-personal .su-personal-info_name {
+  display: block;
+}
+
+.su-personal .su-personal-info_phone.su-detail,
+.su-personal .su-personal-info_email.su-detail {
+  display: table;
+  padding-top: 10px;
+}
+
+.su-personal .su-personal-info_phone.su-detail .su-detail_label,
+.su-personal .su-personal-info_phone.su-detail .su-detail_value,
+.su-personal .su-personal-info_email.su-detail .su-detail_label,
+.su-personal .su-personal-info_email.su-detail .su-detail_value {
+  display: table-cell;
+}
+
+.su-personal .su-personal-info_phone.su-detail .su-detail_label,
+.su-personal .su-personal-info_email.su-detail .su-detail_label {
+  padding-right: 4px;
+}
+
+.su-personal .su-personal-info_button.su-block {
+  margin-top: 15px;
+}
+
+.su-personal .su-personal-account {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 15px;
+  width: 300px;
+  background: #ffffff;
+}
+
+.su-personal .su-personal-account_balance.su-detail {
+  display: table;
+  padding-top: 0;
+}
+
+.su-personal .su-personal-account_balance.su-detail .su-detail_label,
+.su-personal .su-personal-account_balance.su-detail .su-detail_value {
+  display: table-cell;
+}
+
+.su-personal .su-personal-account_balance.su-detail .su-detail_label {
+  padding-right: 4px;
+}
+
+.su-personal .su-personal-account_links.su-list {
+  margin-top: 19px;
+}
+
+.su-personal .su-personal-account_links.su-list .su-list_item {
+  padding-top: 5px;
+}
+
+.su-personal .su-tabs-block._su-personal {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .su-personal {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-header {
+    padding: 10px;
+    min-height: 122px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-avatar {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .su-personal .su-personal-info {
+    padding-right: 275px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-info {
+    padding-right: 220px;
+    padding-left: 80px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .su-personal .su-personal-info {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-info_button.su-block {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .su-personal .su-personal-account {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-account {
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .su-personal .su-personal-account {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .su-personal .su-personal-account_links.su-list {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .su-personal .su-personal-account_links.su-list {
+    margin-top: 5px;
+  }
+}

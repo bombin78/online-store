@@ -1,6 +1,7 @@
 .idea
 cloc-1.72.exe
 node_modules
-public
+public/css-only-desktop/
+public/js-only-desktop/
 frontend/guide/img/article/
 frontend/scss/2_project/pages-common/modules/article/

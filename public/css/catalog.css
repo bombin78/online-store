@@ -1,0 +1,29 @@
+.su-catalog {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 40px 15px 40px;
+  max-width: 1280px;
+}
+
+.su-catalog_sections.su-tile {
+  margin-top: 20px;
+}
+
+.su-catalog_popular.su-tile {
+  margin-top: 2.34375rem;
+}
+
+@media screen and (max-width: 992px) {
+  .su-catalog {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .su-catalog {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

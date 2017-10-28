@@ -1,0 +1,37 @@
+.su-main {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 40px 15px 40px;
+  max-width: 1280px;
+}
+
+.su-main_offer.su-tile {
+  margin-top: 1.40625rem;
+}
+
+@media screen and (max-width: 992px) {
+  .su-main {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .su-main {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .su-main .su-title-complex {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .su-main .su-title-complex:after {
+    display: none;
+  }
+}
